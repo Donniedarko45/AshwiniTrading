@@ -38,6 +38,26 @@
     
     --color-surface: #F8FAFC;
 
+    /* Centralized Brand Design Tokens */
+    --color-brand-bg-dark: #0B0A11;
+    --color-brand-bg-deep: #110B29;
+    --color-brand-bg-card: #1C1844;
+    --color-brand-bg-card-dark: #0A0D26;
+    --color-brand-glow: #392490;
+    
+    --color-brand-orange-light: #FF8C37;
+    --color-brand-orange: #FF7B47;
+    --color-brand-orange-hover: #E6561B;
+    --color-brand-orange-grad-start: #FF8845;
+    --color-brand-orange-grad-end: #FF6E30;
+    
+    --color-brand-cyan: #00E5FF;
+    --color-brand-emerald: #10B981;
+    --color-brand-emerald-light: #16A34A;
+    --color-brand-purple: #8B5CF6;
+    --color-brand-blue: #2563EB;
+    --color-brand-indigo: #4F46E5;
+
     --radius-sm: calc(var(--radius) * 0.6);
     --radius-md: calc(var(--radius) * 0.8);
     --radius-lg: var(--radius);
@@ -98,5 +118,20 @@
   }
   .form-shadow {
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+  }
+  .brand-glow-purple {
+    filter: blur(140px);
+    background-color: var(--color-brand-glow);
+    border-radius: 9999px;
+    pointer-events: none;
+    position: absolute;
+  }
+  .glass-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .wreath-overlay {
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
   }
 }
