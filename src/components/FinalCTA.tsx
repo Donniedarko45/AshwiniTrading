@@ -1,56 +1,79 @@
 import React from 'react';
 import { ArrowRight, Clock } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { motion } from 'motion/react';
+import { fadeIn, scaleUp } from '../lib/animations';
 
 export default function FinalCTA() {
   return (
-    <section className="py-24 relative overflow-hidden bg-gradient-to-br from-[#0F766E] to-[#1E3A8A]">
+    <section className="py-32 relative overflow-hidden bg-gradient-to-br from-[#0F172A] via-[#1E1B4B] to-[#312E81]">
       {/* Decorative elements */}
-      <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '24px 24px' }} />
-      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-teal-400/20 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3" />
-      <div className="absolute bottom-0 left-0 w-[800px] h-[800px] bg-blue-600/30 rounded-full blur-[120px] translate-y-1/2 -translate-x-1/3" />
+      <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '32px 32px' }} />
+      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-indigo-500/20 rounded-full blur-[140px] -translate-y-1/2 translate-x-1/3" />
+      <div className="absolute bottom-0 left-0 w-[800px] h-[800px] bg-blue-600/20 rounded-full blur-[140px] translate-y-1/2 -translate-x-1/3" />
 
-      <div className="max-w-3xl mx-auto px-6 relative z-10 text-center">
+      <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
         
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/20 bg-white/10 backdrop-blur-md mb-8 text-white">
-          <Clock className="w-4 h-4" />
-          <span className="text-xs font-bold tracking-widest uppercase">DECISION TIME</span>
-        </div>
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeIn}
+        >
+          <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-indigo-400/30 bg-indigo-500/10 backdrop-blur-md mb-8 text-indigo-200">
+            <Clock className="w-4 h-4" />
+            <span className="text-xs font-bold tracking-widest uppercase">DECISION TIME</span>
+          </div>
 
-        <h2 className="text-5xl md:text-[64px] font-extrabold mb-6 leading-[1.1] tracking-tight text-white">
-          Compared. Convinced. <span className="text-emerald-300">Now is the move.</span>
-        </h2>
+          <h2 className="text-5xl md:text-6xl lg:text-[72px] font-extrabold mb-6 leading-[1.05] tracking-tighter text-white">
+            Compared. Convinced. <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">Now is the move.</span>
+          </h2>
+          
+          <p className="text-xl md:text-2xl text-slate-300 mb-12 font-medium">
+            Bangalore's next batch starts <span className="bg-yellow-500/20 text-yellow-300 px-2 py-0.5 rounded-md mx-1 border border-yellow-500/30">in 12 days</span>. <span className="bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded-md mx-1 border border-emerald-500/30">9 seats left</span>.
+          </p>
+        </motion.div>
         
-        <p className="text-xl md:text-2xl text-white mb-12 font-medium">
-          Bangalore's next batch starts <span className="bg-yellow-500/20 text-yellow-300 px-2 rounded">in 12 days</span> . <span className="bg-yellow-500/20 text-yellow-300 px-2 rounded">9 seats left</span> .
-        </p>
-        
-        <div className="bg-white/10 backdrop-blur-lg border border-white/20 p-8 rounded-[32px] max-w-lg mx-auto shadow-2xl text-left">
-          <div className="space-y-5">
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={scaleUp}
+          className="bg-white/5 backdrop-blur-2xl border border-white/10 p-8 md:p-10 rounded-[32px] max-w-lg mx-auto shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] text-left relative overflow-hidden"
+        >
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-blue-500"></div>
+          <div className="space-y-6">
             <div>
-              <label className="block text-white text-sm font-bold mb-2">Name</label>
-              <input type="text" placeholder="Your full name" className="w-full h-14 rounded-xl px-4 border-0 focus:ring-2 focus:ring-emerald-400 bg-white text-slate-900 font-medium placeholder:text-slate-400" />
+              <label className="block text-slate-300 text-sm font-bold mb-2">Name</label>
+              <input type="text" placeholder="Your full name" className="w-full h-14 rounded-xl px-4 border-0 focus:ring-2 focus:ring-indigo-500 bg-white/90 text-slate-900 font-medium placeholder:text-slate-500 outline-none transition-all" />
             </div>
             
             <div>
-              <label className="block text-white text-sm font-bold mb-2">Phone</label>
-              <div className="flex">
-                <div className="bg-slate-100 border-r border-slate-200 h-14 px-4 flex items-center justify-center rounded-l-xl text-slate-600 font-bold">
-                  +91
-                </div>
-                <input type="tel" placeholder="10-digit mobile" className="flex-1 h-14 rounded-r-xl px-4 border-0 focus:ring-2 focus:ring-emerald-400 bg-white text-slate-900 font-medium placeholder:text-slate-400" />
+              <label className="block text-slate-300 text-sm font-bold mb-2">Phone</label>
+              <div className="flex gap-2">
+                <input type="text" value="+91" readOnly className="w-20 bg-slate-200/90 text-slate-700 font-semibold h-14 text-center border-0 rounded-xl outline-none" />
+                <input type="tel" placeholder="10-digit mobile" className="flex-1 h-14 rounded-xl px-4 border-0 focus:ring-2 focus:ring-indigo-500 bg-white/90 text-slate-900 font-medium placeholder:text-slate-500 outline-none transition-all" />
               </div>
             </div>
 
-            <Button className="w-full h-14 rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold text-lg mt-4 shadow-[0_0_30px_-5px_rgba(249,115,22,0.6)]">
+            <motion.button 
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="w-full h-14 flex items-center justify-center bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold text-lg mt-6 shadow-[0_0_40px_-10px_rgba(249,115,22,0.6)] rounded-xl border-0 uppercase tracking-wide transition-all"
+            >
               START YOUR DM CAREER <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
+            </motion.button>
           </div>
-        </div>
+        </motion.div>
 
-        <p className="text-center text-emerald-100 text-sm font-medium mt-6">
+        <motion.p 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.4 }}
+          className="text-center text-slate-400 text-sm font-medium mt-8 tracking-wide"
+        >
           <span className="font-bold text-white">15-min call</span> · Zero pressure · Get the full picture
-        </p>
+        </motion.p>
 
       </div>
     </section>
