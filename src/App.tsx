@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '@/components/sections/Navbar';
 import Hero from '@/components/sections/Hero';
+import MobileStickyBar from '@/components/shared/MobileStickyBar';
 import { LazySection } from '@/components/shared/LazySection';
 
 // Static components for above-the-fold rendering
@@ -37,6 +38,9 @@ export default function App() {
 
       {/* Footer is always at the bottom, so lazy load it as well */}
       <LazySection importFunc={() => import('@/components/sections/Footer')} />
+
+      {/* Sticky Bottom Bar for Mobile Conversion */}
+      <MobileStickyBar />
     </div>
   );
 }
