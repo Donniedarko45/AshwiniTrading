@@ -6,13 +6,13 @@ import { LeadForm } from '@/components/shared/LeadForm';
 
 export default function FinalCTA() {
   return (
-    <section className="py-32 relative overflow-hidden bg-gradient-to-br from-[#0F172A] via-[#1E1B4B] to-[#312E81]">
+    <section id="final-cta" className="py-16 sm:py-32 relative overflow-hidden bg-gradient-to-br from-[#0F172A] via-[#1E1B4B] to-[#312E81] px-5 sm:px-6">
       {/* Decorative elements */}
       <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '32px 32px' }} aria-hidden="true" />
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-indigo-500/20 rounded-full blur-[140px] -translate-y-1/2 translate-x-1/3" />
       <div className="absolute bottom-0 left-0 w-[800px] h-[800px] bg-blue-600/20 rounded-full blur-[140px] translate-y-1/2 -translate-x-1/3" />
 
-      <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
+      <div className="max-w-4xl mx-auto relative z-10 text-center">
         
         <motion.div 
           initial="hidden"
@@ -25,12 +25,15 @@ export default function FinalCTA() {
             <span className="text-xs font-bold tracking-widest uppercase">DECISION TIME</span>
           </div>
 
-          <h2 className="text-5xl md:text-6xl lg:text-[72px] font-extrabold mb-6 leading-[1.05] tracking-tighter text-white">
+          <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-[72px] font-extrabold mb-6 leading-[1.1] sm:leading-[1.05] tracking-tighter text-white">
             Compared. Convinced. <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">Now is the move.</span>
           </h2>
           
-          <p className="text-xl md:text-2xl text-slate-300 mb-12 font-medium">
-            Bangalore's next batch <span className="bg-yellow-500/20 text-yellow-300 px-2 py-0.5 rounded-md mx-1 border border-yellow-500/30">Starts in 12 Days</span> · <span className="bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded-md mx-1 border border-emerald-500/30">Only 3 Seats Remaining for the July Cohort</span>
+          <p className="text-base sm:text-xl md:text-2xl text-slate-300 mb-10 sm:mb-12 font-medium flex flex-col sm:flex-row flex-wrap justify-center items-center gap-2 sm:gap-3">
+            <span>Bangalore's next batch</span>
+            <span className="bg-yellow-500/20 text-yellow-300 px-2.5 py-0.5 rounded-md border border-yellow-500/30 text-sm sm:text-base">Starts in 12 Days</span>
+            <span className="hidden sm:inline">·</span>
+            <span className="bg-emerald-500/20 text-emerald-300 px-2.5 py-0.5 rounded-md border border-emerald-500/30 text-sm sm:text-base">Only 3 Seats Remaining for July Cohort</span>
           </p>
         </motion.div>
         

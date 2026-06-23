@@ -4,16 +4,17 @@ import { comparisonData } from '@/data/comparison';
 
 export default function Comparison() {
   return (
-    <section className="py-24 bg-white px-6">
+    <section className="py-16 md:py-24 bg-white px-5 sm:px-6">
       <div className="max-w-6xl mx-auto">
         <div className="text-brand-blue font-bold tracking-widest text-sm uppercase mb-4">
           COMPARISON
         </div>
-        <h2 className="text-4xl md:text-[56px] font-extrabold text-slate-900 tracking-tight leading-[1.1] mb-16 max-w-4xl">
+        <h2 className="text-3xl sm:text-4xl md:text-[56px] font-extrabold text-slate-900 tracking-tight leading-[1.1] mb-10 md:mb-16 max-w-4xl">
           How our <span className="text-brand-blue">digital marketing institute in Bangalore</span> compares to your other options
         </h2>
 
-        <div className="overflow-x-auto pb-8">
+        {/* Desktop Table View */}
+        <div className="hidden md:block overflow-x-auto pb-8">
           <div className="min-w-[900px]">
             {/* Table Header */}
             <div className="flex rounded-t-2xl overflow-hidden">
@@ -86,6 +87,66 @@ export default function Comparison() {
               ))}
             </div>
           </div>
+        </div>
+
+        {/* Mobile Stacked Cards View */}
+        <div className="md:hidden space-y-6">
+          {comparisonData.map((row, idx) => (
+            <div 
+              key={idx} 
+              className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col"
+            >
+              {/* Feature Header */}
+              <div className="bg-slate-900 px-5 py-4 text-white font-bold text-sm border-b border-slate-800">
+                {row.feature}
+              </div>
+              
+              <div className="p-5 space-y-4">
+                {/* Ashwini Trading (Highlighted) */}
+                <div className="bg-indigo-50/30 border border-indigo-100 rounded-xl p-4 flex flex-col gap-2 relative">
+                  <div className="absolute top-3 right-3 w-5 h-5 rounded-full bg-brand-orange flex items-center justify-center">
+                    <Star className="w-3 h-3 text-white" fill="currentColor" />
+                  </div>
+                  <span className="text-[10px] font-extrabold text-brand-indigo tracking-wider uppercase">ASHWINI</span>
+                  <div className="flex items-start gap-2 mt-1">
+                    <div className="mt-1 shrink-0 w-4 h-4 rounded-full bg-emerald-100 flex items-center justify-center">
+                      <Check className="w-2.5 h-2.5 text-emerald-600" strokeWidth={3} />
+                    </div>
+                    <span className="font-extrabold text-slate-900 text-sm leading-snug">{row.bluetick}</span>
+                  </div>
+                </div>
+
+                {/* Self Learning */}
+                <div className="border border-slate-100 rounded-xl p-4 flex flex-col gap-1.5">
+                  <span className="text-[10px] font-bold text-slate-400 tracking-wider uppercase">SELF-LEARNING</span>
+                  <div className="flex items-start gap-2">
+                    <div className="shrink-0 w-4 h-4 rounded-full bg-red-100 flex items-center justify-center mt-0.5">
+                      <X className="w-2.5 h-2.5 text-red-500" strokeWidth={3} />
+                    </div>
+                    <span className="text-sm font-semibold text-slate-700">{row.self}</span>
+                  </div>
+                </div>
+
+                {/* Online Platforms */}
+                <div className="border border-slate-100 rounded-xl p-4 flex flex-col gap-1.5">
+                  <span className="text-[10px] font-bold text-slate-400 tracking-wider uppercase">ONLINE PLATFORMS</span>
+                  <div className="flex items-start gap-2">
+                    <Minus className="w-4 h-4 text-slate-400 shrink-0 mt-0.5" />
+                    <span className="text-sm font-semibold text-slate-700">{row.online}</span>
+                  </div>
+                </div>
+
+                {/* Other Institutes */}
+                <div className="border border-slate-100 rounded-xl p-4 flex flex-col gap-1.5">
+                  <span className="text-[10px] font-bold text-slate-400 tracking-wider uppercase">OTHER INSTITUTES</span>
+                  <div className="flex items-start gap-2">
+                    <Minus className="w-4 h-4 text-slate-400 shrink-0 mt-0.5" />
+                    <span className="text-sm font-semibold text-slate-700">{row.other}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

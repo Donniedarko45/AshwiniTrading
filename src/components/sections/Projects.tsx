@@ -3,19 +3,19 @@ import { studentProjects } from '@/data/projects';
 
 export default function Projects() {
   return (
-    <section id="projects" className="bg-[#FFFDF7] py-24 px-6 md:px-12">
+    <section id="projects" className="bg-[#FFFDF7] py-16 md:py-24 px-5 sm:px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl md:text-5xl lg:text-[56px] font-extrabold text-slate-900 tracking-tight leading-[1.1] mb-6 max-w-4xl">
+        <h2 className="text-3xl sm:text-4xl md:text-[56px] font-extrabold text-slate-900 tracking-tight leading-[1.1] mb-6 max-w-4xl">
           Real work our students built – for real companies
         </h2>
-        <p className="text-slate-600 text-lg font-medium mb-16 max-w-3xl leading-relaxed">
+        <p className="text-base sm:text-lg text-slate-600 mb-10 sm:mb-16 max-w-3xl leading-relaxed">
           Every project below was deployed, used, and measured by Companies.<br/>
           Not just a simulation. Your project list will look like this in 90 days.
         </p>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
            {studentProjects.map((proj, i) => (
-              <div key={i} className="bg-white rounded-[24px] p-8 shadow-sm hover:shadow-xl transition-shadow border border-slate-100 flex flex-col h-full animate-in fade-in slide-in-from-bottom-3 duration-300">
+              <div key={i} className="bg-white rounded-[24px] p-5 sm:p-8 shadow-sm hover:shadow-xl transition-shadow border border-slate-100 flex flex-col h-full animate-in fade-in slide-in-from-bottom-3 duration-300">
                  <div className="text-brand-orange text-[10px] font-extrabold tracking-widest uppercase flex items-center gap-2 mb-4 bg-orange-50 w-fit px-2.5 py-1 rounded-full">
                     <div className="w-1.5 h-1.5 rounded-full bg-brand-orange" />
                     {proj.type}
@@ -35,7 +35,7 @@ export default function Projects() {
                      className="text-slate-600 text-[15px] font-medium leading-relaxed mb-6 mt-auto"
                      dangerouslySetInnerHTML={{ __html: proj.descHtml }}
                   />
-                  <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-[11px] font-extrabold tracking-wider text-brand-blue hover:text-brand-indigo transition-colors cursor-pointer">
+                  <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-[11px] font-extrabold tracking-wider text-brand-blue hover:text-brand-indigo transition-colors cursor-pointer min-h-[44px]">
                     <span>VIEW CAMPAIGN CASE STUDY</span>
                     <span>→</span>
                   </div>

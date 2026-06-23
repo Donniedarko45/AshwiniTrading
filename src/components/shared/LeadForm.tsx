@@ -109,6 +109,7 @@ export function LeadForm({
                 id="phone-bar"
                 name="phone"
                 type="tel"
+                inputMode="numeric"
                 autoComplete="tel"
                 placeholder="10-digit mobile"
                 value={formData.phone}
@@ -156,7 +157,7 @@ export function LeadForm({
 
   // Card Variant
   return (
-    <div className={`rounded-[24px] p-8 md:p-10 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.4)] relative overflow-hidden ${
+    <div className={`rounded-[24px] p-5 sm:p-8 md:p-10 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.4)] relative overflow-hidden ${
       isLight ? 'bg-white border border-slate-100' : 'bg-white/5 backdrop-blur-2xl border border-white/10'
     }`}>
       {/* Top indicator stripe */}
@@ -207,6 +208,7 @@ export function LeadForm({
               id="phone-card"
               name="phone"
               type="tel"
+              inputMode="numeric"
               autoComplete="tel"
               placeholder="10-digit mobile"
               value={formData.phone}
@@ -261,7 +263,7 @@ export function LeadForm({
           disabled={isSubmitting}
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
-          className="w-full h-14 flex items-center justify-center bg-gradient-to-r from-brand-orange-grad-start to-brand-orange-grad-end hover:from-brand-orange hover:to-brand-orange-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2 text-white font-bold text-lg tracking-wide rounded-xl shadow-lg shadow-orange-500/20 mt-6 border-0 transition-all uppercase disabled:opacity-75 disabled:pointer-events-none gap-2"
+          className="w-full h-14 flex items-center justify-center bg-gradient-to-r from-brand-orange-grad-start to-brand-orange-grad-end hover:from-brand-orange hover:to-brand-orange-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2 text-white font-bold text-base sm:text-lg tracking-wide rounded-xl shadow-lg shadow-orange-500/20 mt-6 border-0 transition-all uppercase disabled:opacity-75 disabled:pointer-events-none gap-2"
         >
           {isSubmitting ? (
             <>

@@ -13,12 +13,12 @@ export default function Hero() {
   ];
 
   return (
-    <section className="relative min-h-screen bg-brand-bg-dark overflow-hidden pt-36 pb-20">
+    <section className="relative min-h-screen bg-brand-bg-dark overflow-hidden pt-28 sm:pt-36 pb-16 sm:pb-20">
       {/* Glow overlays */}
       <div className="absolute top-[-10%] right-[-5%] w-[800px] h-[800px] bg-brand-glow/30 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-brand-glow/20 rounded-full blur-[140px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 flex flex-col lg:flex-row gap-16 lg:gap-20 items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 flex flex-col lg:flex-row gap-12 lg:gap-20 items-center justify-between">
         
         {/* Left Column */}
         <motion.div 
@@ -29,7 +29,7 @@ export default function Hero() {
         >
           <motion.div 
             variants={fadeIn} 
-            className="text-xs sm:text-sm font-bold tracking-widest text-[#d1d5db] uppercase mb-10 pl-6 border-l-[3px] border-white/20 leading-relaxed"
+            className="text-xs sm:text-sm font-bold tracking-widest text-[#d1d5db] uppercase mb-6 sm:mb-10 pl-6 border-l-[3px] border-white/20 leading-relaxed"
           >
             #1 DIGITAL MARKETING COURSE IN BANGALORE —<br />
             PLACEMENT-FIRST, AI-NATIVE.
@@ -37,7 +37,7 @@ export default function Hero() {
 
           <motion.h1 
             variants={fadeIn} 
-            className="text-5xl sm:text-7xl lg:text-[80px] xl:text-[90px] font-extrabold leading-[0.95] tracking-tighter mb-12 font-sans"
+            className="text-3xl sm:text-5xl md:text-7xl lg:text-[80px] font-extrabold leading-[1.05] sm:leading-[0.95] tracking-tighter mb-8 sm:mb-12 font-sans"
           >
             <span className="text-transparent bg-clip-text bg-gradient-to-br from-brand-orange-light to-[#FCA048] block mb-2">LAUNCH</span>
             <span className="block text-white mb-2 leading-none">YOUR DIGITAL</span>
@@ -90,8 +90,8 @@ export default function Hero() {
           </div>
 
           {/* Badges below form */}
-          <div className="flex gap-4 mt-6">
-            <div className="flex-1 flex flex-col items-center justify-center relative bg-gradient-to-b from-[#1C1844] to-transparent border border-white/5 rounded-xl p-4 min-h-[140px] backdrop-blur-sm">
+          <div className="flex flex-col sm:flex-row gap-4 mt-6">
+            <div className="flex-1 flex flex-col items-center justify-center relative bg-gradient-to-b from-[#1C1844] to-transparent border border-white/5 rounded-xl p-4 min-h-[100px] backdrop-blur-sm">
               {/* Wreath icons */}
               <div className="absolute inset-0 flex items-center justify-center opacity-40 pointer-events-none">
                  <svg width="100%" height="100%" viewBox="0 0 120 120" fill="none" className="text-[#FFB800] absolute transform scale-125">

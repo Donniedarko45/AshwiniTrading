@@ -4,21 +4,21 @@ import { careerSwitchers } from '@/data/switchers';
 
 export default function CareerSwitchers() {
   return (
-    <section className="py-24 bg-white px-6">
+    <section className="py-16 md:py-24 bg-white px-5 sm:px-6">
       <div className="max-w-7xl mx-auto">
         <div className="text-brand-blue font-bold tracking-widest text-sm uppercase mb-4">
           CAREER SWITCHERS
         </div>
-        <h2 className="text-4xl md:text-[56px] font-extrabold text-slate-900 tracking-tight leading-[1.1] mb-6 max-w-4xl">
+        <h2 className="text-3xl sm:text-4xl md:text-[56px] font-extrabold text-slate-900 tracking-tight leading-[1.1] mb-6 max-w-4xl">
           Switching from a non-marketing job? You're not alone – <span className="text-brand-blue">41%</span> of our students are.
         </h2>
-        <p className="text-lg text-slate-600 mb-16 max-w-3xl">
+        <p className="text-base sm:text-lg text-slate-600 mb-10 sm:mb-16 max-w-3xl">
           In our last 4 batches, 41% of students came from non-marketing backgrounds - IT, BPO, sales, finance, even teaching.
         </p>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-16">
+        <div className="grid md:grid-cols-3 gap-6 mb-10 sm:mb-16">
           {careerSwitchers.map((person, idx) => (
-            <div key={idx} className="bg-white border text-left rounded-3xl p-6 md:p-8 shadow-sm flex flex-col hover:shadow-md transition-shadow">
+            <div key={idx} className="bg-white border text-left rounded-3xl p-5 sm:p-8 shadow-sm flex flex-col hover:shadow-md transition-shadow">
               {/* Profile Header */}
               <div className="flex items-center gap-4 mb-8">
                 <img 
@@ -61,7 +61,7 @@ export default function CareerSwitchers() {
           ))}
         </div>
 
-        <p className="text-center text-slate-500 text-lg font-medium max-w-2xl mx-auto italic">
+        <p className="text-center text-slate-500 text-base sm:text-lg font-medium max-w-2xl mx-auto italic">
           Working pros switching careers: weekend batches + Sunday mock interviews are built specifically for you.
         </p>
       </div>

@@ -38,7 +38,7 @@ const themeStyles = {
 
 export default function CourseTracks() {
   return (
-    <section id="courses" className="py-32 px-6 md:px-12 bg-white text-center border-t border-slate-100">
+    <section id="courses" className="py-16 md:py-32 px-5 sm:px-6 md:px-12 bg-white text-center border-t border-slate-100">
        <div className="max-w-7xl mx-auto">
          <motion.div 
            initial="hidden"
@@ -48,13 +48,13 @@ export default function CourseTracks() {
            className="mb-20"
          >
            <div className="text-brand-blue font-extrabold text-sm tracking-widest uppercase mb-4">COURSE TRACKS</div>
-           <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#111827] tracking-tight mb-8 max-w-4xl mx-auto leading-tight">
+           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#111827] tracking-tight mb-8 max-w-4xl mx-auto leading-tight">
              Choose your track – <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">digital marketing courses in Bangalore</span> for every goal
            </h2>
          </motion.div>
 
          <motion.div 
-           className="grid lg:grid-cols-3 gap-10 text-left items-stretch"
+           className="grid lg:grid-cols-3 gap-6 lg:gap-10 text-left items-stretch"
            initial="hidden"
            whileInView="visible"
            viewport={{ once: true, margin: "-100px" }}
@@ -66,7 +66,7 @@ export default function CourseTracks() {
                 <motion.div 
                   key={track.id}
                   variants={scaleUp} 
-                  className={`border rounded-[32px] p-8 md:p-10 flex flex-col hover:shadow-xl transition-all duration-300 h-full group ${styles.container}`}
+                  className={`border rounded-[32px] p-5 sm:p-8 md:p-10 flex flex-col hover:shadow-xl transition-all duration-300 h-full group ${styles.container}`}
                 >
                   {/* Badges */}
                   <div className="flex flex-wrap gap-3 mb-8">
@@ -88,7 +88,7 @@ export default function CourseTracks() {
                     </div>
                   </div>
 
-                  <h3 className="text-2xl lg:text-[26px] font-extrabold text-slate-900 mb-8 leading-snug tracking-tight">
+                  <h3 className="text-xl sm:text-2xl lg:text-[26px] font-extrabold text-slate-900 mb-6 sm:mb-8 leading-snug tracking-tight">
                     {track.title}
                   </h3>
                   
@@ -136,7 +136,7 @@ export default function CourseTracks() {
                      <div className={`text-2xl font-extrabold ${styles.emiText}`}>
                        {track.emi} <span className="text-sm font-medium text-slate-500">/month</span>
                      </div>
-                     <div className="text-[11px] font-bold text-slate-500 mt-1 uppercase tracking-wider">
+                     <div className="text-xs sm:text-[11px] font-bold text-slate-500 mt-1 uppercase tracking-wider">
                        Total Program Fee: {track.totalFee} (All Taxes Incl.)
                      </div>
                    </div>

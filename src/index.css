@@ -108,7 +108,8 @@
     @apply bg-background text-foreground antialiased;
   }
   html {
-    @apply font-sans scroll-smooth;
+    @apply font-sans scroll-smooth scroll-pt-20;
+    -webkit-tap-highlight-color: transparent;
   }
 }
 
@@ -133,5 +134,12 @@
   }
   .wreath-overlay {
     clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  }
+  .touch-target {
+    min-width: 44px;
+    min-height: 44px;
+  }
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
   }
 }

@@ -18,19 +18,19 @@ export default function ResumeTransformation() {
   ];
 
   return (
-    <section className="py-24 bg-slate-50 px-6">
+    <section className="py-16 md:py-24 bg-slate-50 px-5 sm:px-6">
       <div className="max-w-7xl mx-auto">
         <div className="text-brand-blue font-bold tracking-widest text-sm uppercase mb-4">
           RESUME TRANSFORMATION
         </div>
-        <h2 className="text-4xl md:text-[56px] font-extrabold text-slate-900 tracking-tight leading-[1.1] mb-16 max-w-4xl">
+        <h2 className="text-3xl sm:text-4xl md:text-[56px] font-extrabold text-slate-900 tracking-tight leading-[1.1] mb-10 md:mb-16 max-w-4xl">
           Your resume on Day 1 vs. your resume on Day 121
         </h2>
 
-        <div className="flex flex-col lg:flex-row items-stretch gap-6 lg:gap-10 mb-16">
+        <div className="flex flex-col lg:flex-row items-stretch gap-6 lg:gap-10 mb-10 sm:mb-16">
           
           {/* Day 1 Resume */}
-          <div className="flex-1 bg-[#F8F9FA] rounded-[32px] p-8 md:p-12 border border-slate-200 font-mono text-sm text-slate-500 w-full relative">
+          <div className="flex-1 bg-[#F8F9FA] rounded-[32px] p-5 sm:p-8 md:p-12 border border-slate-200 font-mono text-sm text-slate-500 w-full relative">
             <div className="absolute top-8 right-8 text-right">
               <div className="bg-slate-200 text-slate-600 px-3 py-1 rounded-full text-xs font-bold w-max ml-auto mb-1">DAY 1</div>
               <div className="text-xs">Fresh Graduate</div>
@@ -92,7 +92,7 @@ export default function ResumeTransformation() {
           </div>
 
           {/* Day 121 Resume */}
-          <div className="flex-1 bg-white rounded-[32px] p-8 md:p-12 border-2 border-blue-500 shadow-[0_20px_50px_-12px_rgba(37,99,235,0.15)] font-sans w-full relative overflow-hidden">
+          <div className="flex-1 bg-white rounded-[32px] p-5 sm:p-8 md:p-12 border-2 border-blue-500 shadow-[0_20px_50px_-12px_rgba(37,99,235,0.15)] font-sans w-full relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-bl-[100px] -z-10" />
             
             <div className="flex justify-between items-end border-b-4 border-blue-500 pb-4 mb-6">
@@ -161,7 +161,7 @@ export default function ResumeTransformation() {
           </div>
         </div>
 
-        <p className="text-center text-slate-500 text-xl font-medium max-w-2xl mx-auto italic">
+        <p className="text-center text-slate-500 text-base sm:text-xl font-medium max-w-2xl mx-auto italic">
           This is the difference 120 days makes. Same person – a portfolio's worth of credibility heavier.
         </p>
       </div>
