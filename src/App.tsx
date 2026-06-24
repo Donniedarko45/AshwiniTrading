@@ -2,6 +2,7 @@ import React, { useState, useEffect, Suspense } from 'react';
 import Navbar from '@/components/sections/Navbar';
 import Hero from '@/components/sections/Hero';
 import MobileStickyBar from '@/components/shared/MobileStickyBar';
+import FloatingSocials from '@/components/shared/FloatingSocials';
 import { LazySection } from '@/components/shared/LazySection';
 
 // Lazy load full page routes to load immediately on navigation (without intersection observer)
@@ -91,6 +92,9 @@ export default function App() {
 
       {/* Sticky Bottom Bar for Mobile Conversion */}
       <MobileStickyBar />
+
+      {/* Floating WhatsApp and Telegram Support Icons */}
+      <FloatingSocials />
     </div>
   );
 }
