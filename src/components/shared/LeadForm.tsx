@@ -234,7 +234,7 @@ export function LeadForm({
               value={formData.role}
               onChange={handleChange}
               className={`w-full appearance-none h-14 rounded-xl border px-4 text-base focus:outline-none focus:ring-2 focus:ring-ring/50 focus:border-ring transition-all font-medium ${
-                isLight ? 'border-slate-200 bg-slate-50 text-slate-700' : 'border-white/10 bg-[#161226] text-slate-300'
+                isLight ? 'border-slate-200 bg-slate-50 text-slate-700' : 'border-white/10 bg-brand-bg-card text-slate-300'
               }`}
             >
               <option value="Choose one">Choose one</option>

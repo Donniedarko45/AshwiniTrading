@@ -429,7 +429,7 @@ export default function CollegeCollaboration() {
 
               <div className="relative max-w-5xl w-full max-h-[80vh] flex flex-col items-center" onClick={e => e.stopPropagation()}>
                 {/* Images Swiper */}
-                <div className="relative w-full h-[60vh] flex items-center justify-center overflow-hidden rounded-[20px] bg-[#0A0D26]">
+                <div className="relative w-full h-[60vh] flex items-center justify-center overflow-hidden rounded-[20px] bg-brand-bg-card-dark">
                   <img 
                     src={collaborationGallery[lightboxIndex].url} 
                     alt={collaborationGallery[lightboxIndex].caption} 
@@ -721,7 +721,7 @@ export default function CollegeCollaboration() {
                           required
                           value={formState.fullName}
                           onChange={handleInputChange}
-                          className="w-full bg-[#0A0D26]/60 border border-white/10 rounded-xl py-3.5 pl-12 pr-4 text-white text-sm focus-visible:border-ring focus-visible:ring-1 focus-visible:ring-ring/50 focus:outline-none transition-all placeholder:text-slate-600"
+                          className="w-full bg-brand-bg-deep/60 border border-white/10 rounded-xl py-3.5 pl-12 pr-4 text-white text-sm focus-visible:border-ring focus-visible:ring-1 focus-visible:ring-ring/50 focus:outline-none transition-all placeholder:text-slate-600"
                           placeholder="e.g. Dr. Ramesh Kumar"
                         />
                       </div>
@@ -741,7 +741,7 @@ export default function CollegeCollaboration() {
                           required
                           value={formState.designation}
                           onChange={handleInputChange}
-                          className="w-full bg-[#0A0D26]/60 border border-white/10 rounded-xl py-3.5 pl-12 pr-4 text-white text-sm focus-visible:border-ring focus-visible:ring-1 focus-visible:ring-ring/50 focus:outline-none transition-all placeholder:text-slate-600"
+                          className="w-full bg-brand-bg-deep/60 border border-white/10 rounded-xl py-3.5 pl-12 pr-4 text-white text-sm focus-visible:border-ring focus-visible:ring-1 focus-visible:ring-ring/50 focus:outline-none transition-all placeholder:text-slate-600"
                           placeholder="e.g. Professor / Placement Officer"
                         />
                       </div>
@@ -763,7 +763,7 @@ export default function CollegeCollaboration() {
                           required
                           value={formState.collegeName}
                           onChange={handleInputChange}
-                          className="w-full bg-[#0A0D26]/60 border border-white/10 rounded-xl py-3.5 pl-12 pr-4 text-white text-sm focus-visible:border-ring focus-visible:ring-1 focus-visible:ring-ring/50 focus:outline-none transition-all placeholder:text-slate-600"
+                          className="w-full bg-brand-bg-deep/60 border border-white/10 rounded-xl py-3.5 pl-12 pr-4 text-white text-sm focus-visible:border-ring focus-visible:ring-1 focus-visible:ring-ring/50 focus:outline-none transition-all placeholder:text-slate-600"
                           placeholder="e.g. Christ University, Bangalore"
                         />
                       </div>
@@ -782,7 +782,7 @@ export default function CollegeCollaboration() {
                           required
                           value={formState.preferredMonth}
                           onChange={handleInputChange}
-                          className="w-full bg-[#0A0D26]/60 border border-white/10 rounded-xl py-3.5 pl-12 pr-4 text-white text-sm focus-visible:border-ring focus-visible:ring-1 focus-visible:ring-ring/50 focus:outline-none transition-all cursor-pointer placeholder:text-slate-600"
+                          className="w-full bg-brand-bg-deep/60 border border-white/10 rounded-xl py-3.5 pl-12 pr-4 text-white text-sm focus-visible:border-ring focus-visible:ring-1 focus-visible:ring-ring/50 focus:outline-none transition-all cursor-pointer placeholder:text-slate-600"
                         >
                           <option value="" disabled className="text-slate-800 bg-white">Select a month</option>
                           <option value="immediate" className="text-slate-800 bg-white">As soon as possible</option>
@@ -809,7 +809,7 @@ export default function CollegeCollaboration() {
                           required
                           value={formState.email}
                           onChange={handleInputChange}
-                          className="w-full bg-[#0A0D26]/60 border border-white/10 rounded-xl py-3.5 pl-12 pr-4 text-white text-sm focus-visible:border-ring focus-visible:ring-1 focus-visible:ring-ring/50 focus:outline-none transition-all placeholder:text-slate-600"
+                          className="w-full bg-brand-bg-deep/60 border border-white/10 rounded-xl py-3.5 pl-12 pr-4 text-white text-sm focus-visible:border-ring focus-visible:ring-1 focus-visible:ring-ring/50 focus:outline-none transition-all placeholder:text-slate-600"
                           placeholder="e.g. name@institution.edu"
                         />
                       </div>
@@ -829,7 +829,7 @@ export default function CollegeCollaboration() {
                           required
                           value={formState.phone}
                           onChange={handleInputChange}
-                          className="w-full bg-[#0A0D26]/60 border border-white/10 rounded-xl py-3.5 pl-12 pr-4 text-white text-sm focus-visible:border-ring focus-visible:ring-1 focus-visible:ring-ring/50 focus:outline-none transition-all placeholder:text-slate-600"
+                          className="w-full bg-brand-bg-deep/60 border border-white/10 rounded-xl py-3.5 pl-12 pr-4 text-white text-sm focus-visible:border-ring focus-visible:ring-1 focus-visible:ring-ring/50 focus:outline-none transition-all placeholder:text-slate-600"
                           placeholder="e.g. +91 98765 43210"
                         />
                       </div>
@@ -849,7 +849,7 @@ export default function CollegeCollaboration() {
                          rows={4}
                          value={formState.message}
                          onChange={handleInputChange}
-                         className="w-full bg-brand-bg-body/60 border border-white/10 rounded-xl py-3.5 pl-12 pr-4 text-white text-sm focus-visible:border-brand-cyan focus-visible:ring-1 focus-visible:ring-brand-cyan/50 focus:outline-none transition-all placeholder:text-slate-600"
+                         className="w-full bg-brand-bg-deep/60 border border-white/10 rounded-xl py-3.5 pl-12 pr-4 text-white text-sm focus-visible:border-ring focus-visible:ring-1 focus-visible:ring-ring/50 focus:outline-none transition-all placeholder:text-slate-600"
                          placeholder="Please describe expected student strength, course focus (basics, options, or careers), etc..."
                       />
                     </div>

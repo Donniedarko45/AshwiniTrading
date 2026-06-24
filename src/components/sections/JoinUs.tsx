@@ -392,7 +392,7 @@ export default function JoinUs() {
           
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#e3c974]/10 border border-[#e3c974]/20 text-[#e3c974] text-xs font-bold tracking-widest uppercase mb-4">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-orange/10 border border-brand-orange/20 text-brand-orange text-xs font-bold tracking-widest uppercase mb-4">
                 SYLLABUS HIGHLIGHTS
               </div>
               <h2 className="text-3xl sm:text-5xl font-extrabold text-white">What You Will Learn</h2>
