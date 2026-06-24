@@ -17,7 +17,7 @@ export default function Reviews() {
         {/* Header Block */}
         <div className="max-w-3xl mb-20 text-left">
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-brand-light-heading tracking-tight leading-[1.1] mb-6">
-            Hear From <span className="text-brand-orange">Our Students</span>
+            Hear From <span className="text-brand-primary">Our Students</span>
           </h2>
           <p className="text-brand-light-body text-lg sm:text-xl font-semibold">
             Success Stories from Our Learning Community
@@ -37,7 +37,7 @@ export default function Reviews() {
                   <div className={`absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full flex items-center justify-center shadow-md z-10 ${
                     review.platform === 'whatsapp' 
                       ? 'bg-brand-success shadow-brand-success/20 text-white' 
-                      : 'bg-brand-cyan shadow-brand-cyan/20 text-slate-950'
+                      : 'bg-brand-secondary shadow-brand-secondary/20 text-slate-950'
                   }`}>
                     {review.platform === 'whatsapp' ? (
                       <svg className="w-5.5 h-5.5 fill-current text-white" viewBox="0 0 24 24">
@@ -68,7 +68,7 @@ export default function Reviews() {
         {/* Bottom CTA Block */}
         <div className="max-w-4xl mx-auto text-center mt-24 sm:mt-32 mb-10">
           <h2 className="text-3xl sm:text-4xl md:text-[44px] font-extrabold text-brand-light-heading mb-4 tracking-tight">
-            You could be our next <span className="text-brand-orange underline decoration-[5px] decoration-brand-orange/30 underline-offset-4">success story</span>.
+            You could be our next <span className="text-brand-primary underline decoration-[5px] decoration-brand-primary/30 underline-offset-4">success story</span>.
           </h2>
           <p className="text-brand-light-body font-medium mb-8 text-base sm:text-lg">
             Few seats left for the upcoming mentorship batch.
@@ -87,7 +87,7 @@ export default function Reviews() {
           />
           
           <div className="text-brand-light-muted text-sm font-medium mt-6">
-            <span className="text-brand-orange font-bold">7 seats left</span> · No spam · Reply within 15 mins
+            <span className="text-brand-primary font-bold">7 seats left</span> · No spam · Reply within 15 mins
           </div>
         </div>
       </div>

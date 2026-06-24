@@ -14,7 +14,7 @@ export const studentProjects: StudentProject[] = [
     author: "Priya R.",
     company: "Flipkart",
     tags: ["GPT-4", "Custom GPT", "Notion AI"],
-    descHtml: "Custom GPT trained on brand voice. Now generating <span class='text-blue-600 font-bold'>40+ marketing assets</span> per week internally."
+    descHtml: "Custom GPT trained on brand voice. Now generating <span class='text-brand-secondary-hover font-bold'>40+ marketing assets</span> per week internally."
   },
   {
     type: "LIVE CLIENT PROJECT",
@@ -22,7 +22,7 @@ export const studentProjects: StudentProject[] = [
     author: "Arjun M.",
     company: "BookMyScans",
     tags: ["n8n", "WhatsApp Business API", "Google Sheets"],
-    descHtml: "Automated lead-to-WhatsApp pipeline. Cut response time from <span class='text-blue-600 font-bold'>4 hours to 90 seconds</span>."
+    descHtml: "Automated lead-to-WhatsApp pipeline. Cut response time from <span class='text-brand-secondary-hover font-bold'>4 hours to 90 seconds</span>."
   },
   {
     type: "LIVE CLIENT PROJECT",
@@ -30,7 +30,7 @@ export const studentProjects: StudentProject[] = [
     author: "Sneha K.",
     company: "Decfort",
     tags: ["Meta Ads", "GA4", "Looker Studio"],
-    descHtml: "Meta Advantage+ campaign at ₹2L monthly spend. Generated <span class='text-blue-600 font-bold'>312 qualified leads at ₹640 CPL</span>."
+    descHtml: "Meta Advantage+ campaign at ₹2L monthly spend. Generated <span class='text-brand-secondary-hover font-bold'>312 qualified leads at ₹640 CPL</span>."
   },
   {
     type: "LIVE CLIENT PROJECT",
@@ -38,7 +38,7 @@ export const studentProjects: StudentProject[] = [
     author: "Rahul V.",
     company: "Amazon",
     tags: ["Ahrefs", "GSC", "AI-assisted content briefs"],
-    descHtml: "Moved <span class='text-blue-600 font-bold'>8 commercial keywords</span> from page 3 to page 1 in 45 days."
+    descHtml: "Moved <span class='text-brand-secondary-hover font-bold'>8 commercial keywords</span> from page 3 to page 1 in 45 days."
   },
   {
     type: "LIVE CLIENT PROJECT",
@@ -46,7 +46,7 @@ export const studentProjects: StudentProject[] = [
     author: "Anjali D.",
     company: "Razorpay",
     tags: ["Webflow", "GA4", "Hotjar"],
-    descHtml: "Built and shipped 4 conversion-optimized pages with A/B tests. Conversion rate improved <span class='text-blue-600 font-bold'>from 1.2% to 4.5%</span>."
+    descHtml: "Built and shipped 4 conversion-optimized pages with A/B tests. Conversion rate improved <span class='text-brand-secondary-hover font-bold'>from 1.2% to 4.5%</span>."
   },
   {
     type: "LIVE CLIENT PROJECT",
@@ -54,6 +54,6 @@ export const studentProjects: StudentProject[] = [
     author: "Karthik P.",
     company: "Ola",
     tags: ["Claude API", "Make.com", "Intercom"],
-    descHtml: "Claude-powered chatbot handling <span class='text-blue-600 font-bold'>60% of Tier 1 support queries</span> automatically."
+    descHtml: "Claude-powered chatbot handling <span class='text-brand-secondary-hover font-bold'>60% of Tier 1 support queries</span> automatically."
   }
 ];

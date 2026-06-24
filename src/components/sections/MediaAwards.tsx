@@ -9,36 +9,36 @@ export default function MediaAwards() {
       title: "Financial Awareness Programs",
       desc: "Featured in major financial awareness programs and public literacy campaigns spreading structured trading knowledge.",
       icon: Tv,
-      color: "text-brand-cyan",
-      bgGlow: "bg-brand-cyan/10",
-      border: "border-brand-cyan/20",
+      color: "text-brand-secondary",
+      bgGlow: "bg-brand-secondary/10",
+      border: "border-brand-secondary/20",
       span: "lg:col-span-4"
     },
     {
       title: "Industry Recognition",
       desc: "Commended by industry leaders and networks for delivering outstanding training quality, options strategies, and risk management pedagogy.",
       icon: Award,
-      color: "text-brand-orange",
-      bgGlow: "bg-brand-orange/10",
-      border: "border-brand-orange/20",
+      color: "text-brand-primary",
+      bgGlow: "bg-brand-primary/10",
+      border: "border-brand-primary/20",
       span: "lg:col-span-8"
     },
     {
       title: "Educational Workshops",
       desc: "Over 100+ high-impact stock market seminars and interactive workshops conducted across leading colleges, institutions, and corporate teams.",
       icon: Users,
-      color: "text-brand-cyan",
-      bgGlow: "bg-brand-cyan/10",
-      border: "border-brand-cyan/20",
+      color: "text-brand-secondary",
+      bgGlow: "bg-brand-secondary/10",
+      border: "border-brand-secondary/20",
       span: "lg:col-span-8"
     },
     {
       title: "Investor Awareness Initiatives",
       desc: "Dedicated to educating retail investors on market realities, systematic investment planning, and protecting capital from high-risk exposure.",
       icon: TrendingUp,
-      color: "text-brand-orange",
-      bgGlow: "bg-brand-orange/10",
-      border: "border-brand-orange/20",
+      color: "text-brand-primary",
+      bgGlow: "bg-brand-primary/10",
+      border: "border-brand-primary/20",
       span: "lg:col-span-4"
     }
   ];
@@ -59,12 +59,12 @@ export default function MediaAwards() {
           variants={fadeIn}
           className="text-center mb-16 sm:mb-20"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-orange/10 border border-brand-orange/30 text-brand-orange font-extrabold text-xs tracking-widest uppercase mb-4">
-            <Sparkles className="w-3.5 h-3.5 text-brand-orange animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-primary/10 border border-brand-primary/30 text-brand-primary font-extrabold text-xs tracking-widest uppercase mb-4">
+            <Sparkles className="w-3.5 h-3.5 text-brand-primary animate-pulse" />
             Media & Awards
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-6 max-w-4xl mx-auto leading-tight">
-            Recognized for <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-brand-cyan">Financial Education Excellence</span>
+            Recognized for <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-secondary">Financial Education Excellence</span>
           </h2>
         </motion.div>
 
@@ -91,7 +91,7 @@ export default function MediaAwards() {
                   <div className={`p-4 rounded-2xl bg-white/5 ${item.color} w-fit mb-6 transition-transform duration-500 group-hover:scale-110`}>
                     <IconComponent className="w-7 h-7" />
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-extrabold text-white mb-3 tracking-tight group-hover:text-brand-orange transition-colors duration-300">
+                  <h3 className="text-xl sm:text-2xl font-extrabold text-white mb-3 tracking-tight group-hover:text-brand-primary transition-colors duration-300">
                     {item.title}
                   </h3>
                   <p className="text-slate-400 text-sm sm:text-base font-semibold leading-relaxed">
@@ -105,13 +105,13 @@ export default function MediaAwards() {
           {/* Full Width Alumni Achievement Banner Card */}
           <motion.div 
             variants={scaleUp}
-            className="lg:col-span-12 relative rounded-3xl p-8 bg-gradient-to-r from-brand-bg-card via-brand-bg-deep to-brand-bg-card border border-brand-orange/20 overflow-hidden group transition-all duration-500 hover:border-brand-orange/40 hover:shadow-[0_12px_40px_rgba(249,115,22,0.1)] flex flex-col md:flex-row items-center justify-between gap-8"
+            className="lg:col-span-12 relative rounded-3xl p-8 bg-gradient-to-r from-brand-bg-card via-brand-bg-deep to-brand-bg-card border border-brand-primary/20 overflow-hidden group transition-all duration-500 hover:border-brand-primary/40 hover:shadow-[0_12px_40px_rgba(249,115,22,0.1)] flex flex-col md:flex-row items-center justify-between gap-8"
           >
             {/* Ambient gold glow */}
-            <div className="absolute inset-0 bg-radial-gradient from-brand-orange/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+            <div className="absolute inset-0 bg-radial-gradient from-brand-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
 
             <div className="flex flex-col md:flex-row items-center gap-6 text-center md:text-left relative z-10">
-              <div className="p-5 rounded-2xl bg-brand-orange/10 text-brand-orange shadow-[0_0_15px_rgba(249,115,22,0.2)]">
+              <div className="p-5 rounded-2xl bg-brand-primary/10 text-brand-primary shadow-[0_0_15px_rgba(249,115,22,0.2)]">
                 <Trophy className="w-10 h-10 animate-bounce-slow" />
               </div>
               <div className="max-w-2xl">
@@ -125,7 +125,7 @@ export default function MediaAwards() {
             </div>
 
             <div className="shrink-0 relative z-10 bg-white/5 border border-white/10 px-6 py-4 rounded-2xl backdrop-blur-md text-center">
-              <div className="text-brand-orange text-3xl font-black mb-1">100%</div>
+              <div className="text-brand-primary text-3xl font-black mb-1">100%</div>
               <div className="text-slate-400 text-xs font-bold uppercase tracking-wider">Practical Pedagogy</div>
             </div>
           </motion.div>
@@ -138,7 +138,7 @@ export default function MediaAwards() {
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeIn}
-          className="mt-16 sm:mt-20 relative rounded-2xl p-6 bg-gradient-to-r from-brand-orange/10 to-brand-cyan/10 border border-white/5 backdrop-blur-xl text-center shadow-lg"
+          className="mt-16 sm:mt-20 relative rounded-2xl p-6 bg-gradient-to-r from-brand-primary/10 to-brand-secondary/10 border border-white/5 backdrop-blur-xl text-center shadow-lg"
         >
           <p className="text-slate-200 text-lg sm:text-xl font-bold tracking-wide italic">
             "Building a financially aware and educated investment community."

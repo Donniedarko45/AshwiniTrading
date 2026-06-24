@@ -8,20 +8,22 @@
 @theme {
     --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
     
-    /* ─── Primary: Brand Gold ─── */
+    /* ─── Core semantic palette ─── */
     --color-primary: #e3c974;
-    --color-primary-foreground: #0F172A;
-    
-    /* ─── Secondary: Brand Cyan ─── */
+    --color-primary-foreground: #0B0E1A;
     --color-secondary: #74d1f5;
-    --color-secondary-foreground: #0F172A;
-
-    /* ─── Accent: Muted light surface ─── */
-    --color-accent: #F8FAFC;
-    --color-accent-foreground: #0F172A;
+    --color-secondary-foreground: #0B0E1A;
+    --color-accent: #15244C;
+    --color-accent-foreground: #FFFFFF;
+    --color-success: #047857;
+    --color-success-foreground: #FFFFFF;
+    --color-warning: #B45309;
+    --color-warning-foreground: #FFFFFF;
+    --color-error: #B91C1C;
+    --color-error-foreground: #FFFFFF;
 
     /* ─── Backgrounds ─── */
-    --color-background: #F8FAFC;
+    --color-background: #FAFBFD;
     --color-foreground: #0F172A;
     
     /* ─── Card (light context) ─── */
@@ -34,15 +36,15 @@
 
     /* ─── Muted ─── */
     --color-muted: #F1F5F9;
-    --color-muted-foreground: #64748B;
+    --color-muted-foreground: #475569;
     
     /* ─── Destructive / Error ─── */
-    --color-destructive: #EF4444;
+    --color-destructive: #B91C1C;
     --color-destructive-foreground: #FFFFFF;
     
     /* ─── Borders & Inputs ─── */
-    --color-border: #F1F5F9;
-    --color-input: #E2E8F0;
+    --color-border: #DDE5F0;
+    --color-input: #D7DEE8;
     --color-ring: #e3c974;
     
     --color-surface: #F8FAFC;
@@ -59,45 +61,62 @@
     --color-brand-bg-card-dark: #080B18;
     --color-brand-glow: #15244C;
     
-    /* ─── Brand Gold (Primary Accent) ─── */
-    --color-brand-gold: #e3c974;
-    --color-brand-gold-light: #ead278;
-    --color-brand-gold-hover: #c29535;
-    --color-brand-gold-grad-start: #ead278;
-    --color-brand-gold-grad-end: #c29535;
+    /* ─── Brand Primary: gold ─── */
+    --color-brand-primary: #e3c974;
+    --color-brand-primary-light: #ead278;
+    --color-brand-primary-soft: #FFF6D8;
+    --color-brand-primary-hover: #c29535;
+    --color-brand-primary-grad-start: #ead278;
+    --color-brand-primary-grad-end: #c29535;
+    --color-brand-primary-foreground: #0B0E1A;
 
-    /* ─── Legacy aliases (brand-orange → brand-gold) ─── */
-    --color-brand-orange-light: #ead278;
-    --color-brand-orange: #e3c974;
-    --color-brand-orange-hover: #c29535;
-    --color-brand-orange-grad-start: #ead278;
-    --color-brand-orange-grad-end: #c29535;
-    
-    /* ─── Brand Cyan (Secondary Accent) ─── */
-    --color-brand-cyan: #74d1f5;
-    --color-brand-cyan-light: #a0e0f8;
-    --color-brand-cyan-hover: #4bb8e0;
+    /* ─── Brand Secondary: cyan ─── */
+    --color-brand-secondary: #74d1f5;
+    --color-brand-secondary-light: #a0e0f8;
+    --color-brand-secondary-soft: #EAF8FE;
+    --color-brand-secondary-hover: #319FCF;
+    --color-brand-secondary-foreground: #0B0E1A;
 
-    /* ─── Semantic Status Colors ─── */
-    --color-brand-success: #10B981;
-    --color-brand-success-light: #16A34A;
-    --color-brand-warning: #F59E0B;
-    --color-brand-error: #EF4444;
+    /* ─── Brand accent and status colors ─── */
+    --color-brand-accent: #15244C;
+    --color-brand-accent-soft: #E9EFFB;
+    --color-brand-success: #047857;
+    --color-brand-success-light: #10B981;
+    --color-brand-success-soft: #ECFDF5;
+    --color-brand-warning: #B45309;
+    --color-brand-warning-light: #F59E0B;
+    --color-brand-warning-soft: #FFFBEB;
+    --color-brand-error: #B91C1C;
+    --color-brand-error-light: #EF4444;
+    --color-brand-error-soft: #FEF2F2;
 
-    /* ─── Legacy aliases ─── */
-    --color-brand-emerald: #10B981;
-    --color-brand-emerald-light: #16A34A;
-    --color-brand-purple: #74d1f5;
-    --color-brand-blue: #3b82f6;
-    --color-brand-indigo: #1d4ed8;
+    /* ─── Legacy aliases retained for compatibility ─── */
+    --color-brand-gold: var(--color-brand-primary);
+    --color-brand-gold-light: var(--color-brand-primary-light);
+    --color-brand-gold-hover: var(--color-brand-primary-hover);
+    --color-brand-gold-grad-start: var(--color-brand-primary-grad-start);
+    --color-brand-gold-grad-end: var(--color-brand-primary-grad-end);
+    --color-brand-orange-light: var(--color-brand-primary-light);
+    --color-brand-orange: var(--color-brand-primary);
+    --color-brand-orange-hover: var(--color-brand-primary-hover);
+    --color-brand-orange-grad-start: var(--color-brand-primary-grad-start);
+    --color-brand-orange-grad-end: var(--color-brand-primary-grad-end);
+    --color-brand-cyan: var(--color-brand-secondary);
+    --color-brand-cyan-light: var(--color-brand-secondary-light);
+    --color-brand-cyan-hover: var(--color-brand-secondary-hover);
+    --color-brand-emerald: var(--color-brand-success);
+    --color-brand-emerald-light: var(--color-brand-success-light);
+    --color-brand-purple: var(--color-brand-secondary);
+    --color-brand-blue: var(--color-brand-secondary-hover);
+    --color-brand-indigo: var(--color-brand-accent);
 
     /* ─── Light Section Tokens ─── */
     --color-brand-light-bg: #FAFBFD;
     --color-brand-light-card: #FFFFFF;
     --color-brand-light-heading: #0F172A;
-    --color-brand-light-body: #475569;
+    --color-brand-light-body: #334155;
     --color-brand-light-muted: #64748B;
-    --color-brand-light-border: #E2E8F0;
+    --color-brand-light-border: #DDE5F0;
     --color-brand-light-surface: #F8FAFC;
 
     /* ─── Star/Rating Color ─── */
@@ -105,7 +124,7 @@
 
     /* ─── Third-Party Brand Colors (external, not customizable) ─── */
     --color-ext-whatsapp: #25D366;
-    --color-ext-whatsapp-hover: #22c35e;
+    --color-ext-whatsapp-hover: #1FB85A;
     --color-ext-telegram: #229ED9;
 
     /* ─── Radii ─── */
@@ -132,6 +151,21 @@
     --radius: 0.75rem; 
 }
 
+.dark {
+    --color-background: var(--color-brand-bg-dark);
+    --color-foreground: #F8FAFC;
+    --color-card: var(--color-brand-bg-card);
+    --color-card-foreground: #F8FAFC;
+    --color-popover: var(--color-brand-bg-card);
+    --color-popover-foreground: #F8FAFC;
+    --color-muted: rgba(255, 255, 255, 0.08);
+    --color-muted-foreground: #CBD5E1;
+    --color-border: rgba(255, 255, 255, 0.12);
+    --color-input: rgba(255, 255, 255, 0.14);
+    --color-accent: var(--color-brand-accent);
+    --color-accent-foreground: #FFFFFF;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -143,12 +177,45 @@
     @apply font-sans scroll-smooth scroll-pt-20;
     -webkit-tap-highlight-color: transparent;
   }
+  a, button, input, select, textarea {
+    @apply transition-colors duration-250;
+  }
+  ::selection {
+    background: color-mix(in srgb, var(--color-brand-primary) 35%, transparent);
+    color: var(--color-brand-primary-foreground);
+  }
+}
+
+@layer components {
+  .surface-card-light {
+    background: var(--color-brand-light-card);
+    border: 1px solid var(--color-brand-light-border);
+    box-shadow: 0 16px 40px -24px rgba(15, 23, 42, 0.28);
+  }
+
+  .surface-card-dark {
+    background: color-mix(in srgb, var(--color-brand-bg-card) 70%, transparent);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 24px 64px -32px rgba(0, 0, 0, 0.7);
+  }
+
+  .badge-primary {
+    background: color-mix(in srgb, var(--color-brand-primary) 12%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-brand-primary) 30%, transparent);
+    color: var(--color-brand-primary);
+  }
+
+  .badge-secondary {
+    background: color-mix(in srgb, var(--color-brand-secondary) 12%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-brand-secondary) 28%, transparent);
+    color: var(--color-brand-secondary);
+  }
 }
 
 @layer utilities {
   /* ─── Background Utilities ─── */
   .hero-gradient {
-    background: radial-gradient(circle at top right, #EFF6FF 0%, transparent 50%), radial-gradient(circle at bottom left, #F8FAFC 0%, transparent 50%);
+    background: radial-gradient(circle at top right, var(--color-brand-secondary-soft) 0%, transparent 50%), radial-gradient(circle at bottom left, var(--color-brand-light-surface) 0%, transparent 50%);
   }
 
   /* ─── Shadow Utilities ─── */
@@ -204,18 +271,24 @@
 
   /* ─── CTA Gradient Utilities ─── */
   .bg-cta-gold {
-    background: linear-gradient(to right, var(--color-brand-gold-grad-start), var(--color-brand-gold-grad-end));
+    background: linear-gradient(to right, var(--color-brand-primary-grad-start), var(--color-brand-primary-grad-end));
   }
   .bg-cta-gold:hover {
     filter: brightness(1.1);
   }
   .bg-cta-cyan {
-    background: linear-gradient(to right, var(--color-brand-cyan), var(--color-brand-blue));
+    background: linear-gradient(to right, var(--color-brand-secondary-light), var(--color-brand-secondary-hover));
+  }
+  .bg-cta-primary {
+    background: linear-gradient(to right, var(--color-brand-primary-grad-start), var(--color-brand-primary-grad-end));
+  }
+  .bg-cta-secondary {
+    background: linear-gradient(to right, var(--color-brand-secondary-light), var(--color-brand-secondary));
   }
 
   /* ─── Brand Text Gradient ─── */
   .text-gradient-brand {
-    background: linear-gradient(to right, var(--color-brand-gold), var(--color-brand-cyan), var(--color-brand-cyan-light));
+    background: linear-gradient(to right, var(--color-brand-primary), var(--color-brand-secondary), var(--color-brand-secondary-light));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -226,6 +299,6 @@
     outline: none;
   }
   .focus-ring-brand:focus-visible {
-    box-shadow: 0 0 0 2px var(--color-brand-bg-dark), 0 0 0 4px var(--color-brand-gold);
+    box-shadow: 0 0 0 2px var(--color-brand-bg-dark), 0 0 0 4px var(--color-brand-primary);
   }
 }

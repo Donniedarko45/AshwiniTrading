@@ -32,7 +32,7 @@ export function SectionHeader({
     >
       {badge && (
         <div className={`font-extrabold text-xs sm:text-sm tracking-widest uppercase mb-4 ${
-          isLight ? 'text-brand-orange' : 'text-brand-cyan'
+          isLight ? 'text-brand-primary' : 'text-brand-secondary'
         }`}>
           {badge}
         </div>

@@ -143,8 +143,8 @@ export default function CollegeCollaboration() {
           variants={fadeIn}
           className="text-center max-w-4xl mx-auto mb-16"
         >
-          <div className="inline-flex items-center gap-2 bg-brand-orange/10 border border-brand-orange/20 rounded-full px-4 py-1.5 mb-6 text-brand-orange">
-            <span className="w-2 h-2 rounded-full bg-brand-orange animate-pulse" />
+          <div className="inline-flex items-center gap-2 bg-brand-primary/10 border border-brand-primary/20 rounded-full px-4 py-1.5 mb-6 text-brand-primary">
+            <span className="w-2 h-2 rounded-full bg-brand-primary animate-pulse" />
             <span className="text-xs font-bold uppercase tracking-widest">
               CAMPUS COLLABORATION
             </span>
@@ -152,7 +152,7 @@ export default function CollegeCollaboration() {
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight mb-6 leading-[1.1]">
             Partner With Us to Empower <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-brand-cyan">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-secondary">
               Future Finance Professionals
             </span>
           </h1>
@@ -170,7 +170,7 @@ export default function CollegeCollaboration() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-gradient-to-r from-brand-orange-grad-start to-brand-orange-grad-end text-slate-950 text-base font-black uppercase tracking-wider rounded-xl border-0 shadow-lg shadow-brand-orange/15 cursor-pointer"
+                className="px-8 py-4 bg-gradient-to-r from-brand-primary-grad-start to-brand-primary-grad-end text-slate-950 text-base font-black uppercase tracking-wider rounded-xl border-0 shadow-lg shadow-brand-primary/15 cursor-pointer"
               >
                 Collaborate Now
               </motion.button>
@@ -181,7 +181,7 @@ export default function CollegeCollaboration() {
                 whileTap={{ scale: 0.95 }}
                 className="px-8 py-4 bg-white/5 hover:bg-white/10 text-white text-base font-bold uppercase tracking-wider rounded-xl border border-white/10 cursor-pointer flex items-center gap-2 transition-colors"
               >
-                <Phone className="w-5 h-5 text-brand-orange" />
+                <Phone className="w-5 h-5 text-brand-primary" />
                 Call Advisor
               </motion.button>
             </a>
@@ -197,7 +197,7 @@ export default function CollegeCollaboration() {
             variants={fadeIn}
             className="mb-12"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-cyan/10 border border-brand-cyan/20 text-brand-cyan text-xs font-bold tracking-widest uppercase mb-4">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-secondary/10 border border-brand-secondary/20 text-brand-secondary text-xs font-bold tracking-widest uppercase mb-4">
               BENEFITS
             </div>
             <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4 text-white">
@@ -224,9 +224,9 @@ export default function CollegeCollaboration() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className="bg-brand-bg-card/45 border border-white/5 rounded-2xl p-5 hover:border-brand-orange/30 transition-all duration-300"
+                className="bg-brand-bg-card/45 border border-white/5 rounded-2xl p-5 hover:border-brand-primary/30 transition-all duration-300"
               >
-                <div className="w-8 h-8 rounded-lg bg-brand-orange/10 border border-brand-orange/20 flex items-center justify-center text-brand-orange mb-4">
+                <div className="w-8 h-8 rounded-lg bg-brand-primary/10 border border-brand-primary/20 flex items-center justify-center text-brand-primary mb-4">
                   <Check className="w-4 h-4 stroke-[3px]" />
                 </div>
                 <p className="font-bold text-[14px] text-slate-200 leading-snug">{item}</p>
@@ -244,7 +244,7 @@ export default function CollegeCollaboration() {
             variants={fadeIn}
             className="text-center mb-16"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-orange/10 border border-brand-orange/20 text-brand-orange text-xs font-bold tracking-widest uppercase mb-4">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-primary/10 border border-brand-primary/20 text-brand-primary text-xs font-bold tracking-widest uppercase mb-4">
               OUR PROGRAMS
             </div>
             <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white">
@@ -265,17 +265,17 @@ export default function CollegeCollaboration() {
                 <motion.div 
                   key={idx}
                   variants={scaleUp}
-                  className="bg-brand-bg-card/40 rounded-[28px] p-8 border border-white/5 hover:border-brand-orange/20 hover:-translate-y-1 transition-all duration-300 relative group overflow-hidden"
+                  className="bg-brand-bg-card/40 rounded-[28px] p-8 border border-white/5 hover:border-brand-primary/20 hover:-translate-y-1 transition-all duration-300 relative group overflow-hidden"
                 >
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-brand-orange/5 rounded-full blur-2xl group-hover:bg-brand-orange/10 transition-colors pointer-events-none" />
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-brand-primary/5 rounded-full blur-2xl group-hover:bg-brand-primary/10 transition-colors pointer-events-none" />
                   
                   <div className={`w-14 h-14 rounded-2xl border flex items-center justify-center mb-6 shadow-inner group-hover:scale-110 transition-transform duration-300 ${
-                    prog.color === 'gold' ? 'bg-brand-orange/10 border-brand-orange/20 text-brand-orange' : 'bg-brand-cyan/10 border-brand-cyan/20 text-brand-cyan'
+                    prog.color === 'gold' ? 'bg-brand-primary/10 border-brand-primary/20 text-brand-primary' : 'bg-brand-secondary/10 border-brand-secondary/20 text-brand-secondary'
                   }`}>
                     <Icon className="w-7 h-7" />
                   </div>
                   
-                  <h3 className="text-xl font-bold text-white mb-4 tracking-tight group-hover:text-brand-orange-light transition-colors">
+                  <h3 className="text-xl font-bold text-white mb-4 tracking-tight group-hover:text-brand-primary-light transition-colors">
                     {prog.title}
                   </h3>
                   
@@ -293,13 +293,13 @@ export default function CollegeCollaboration() {
           
           {/* Benefits for Students */}
           <motion.div 
-            className="bg-brand-bg-card/30 border border-white/5 rounded-[32px] p-8 md:p-10 text-left hover:border-brand-orange/30 transition-colors"
+            className="bg-brand-bg-card/30 border border-white/5 rounded-[32px] p-8 md:p-10 text-left hover:border-brand-primary/30 transition-colors"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <h3 className="text-2xl font-black text-brand-orange mb-4 tracking-tight flex items-center gap-3">
+            <h3 className="text-2xl font-black text-brand-primary mb-4 tracking-tight flex items-center gap-3">
               <GraduationCap className="w-6 h-6" />
               Benefits for Students
             </h3>
@@ -315,7 +315,7 @@ export default function CollegeCollaboration() {
                 'Enhanced Employability'
               ].map((item, idx) => (
                 <div key={idx} className="flex items-center gap-3 p-3 bg-white/5 border border-white/5 rounded-xl">
-                  <span className="flex-shrink-0 w-5 h-5 rounded-full bg-brand-orange/20 text-brand-orange flex items-center justify-center">
+                  <span className="flex-shrink-0 w-5 h-5 rounded-full bg-brand-primary/20 text-brand-primary flex items-center justify-center">
                     <Check className="w-3.5 h-3.5 stroke-[3.5px]" />
                   </span>
                   <span className="text-slate-200 text-[14px] font-bold leading-tight">{item}</span>
@@ -326,13 +326,13 @@ export default function CollegeCollaboration() {
 
           {/* Benefits for Educational Institutions */}
           <motion.div 
-            className="bg-brand-bg-card/30 border border-white/5 rounded-[32px] p-8 md:p-10 text-left hover:border-brand-cyan/30 transition-colors"
+            className="bg-brand-bg-card/30 border border-white/5 rounded-[32px] p-8 md:p-10 text-left hover:border-brand-secondary/30 transition-colors"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <h3 className="text-2xl font-black text-brand-cyan mb-4 tracking-tight flex items-center gap-3">
+            <h3 className="text-2xl font-black text-brand-secondary mb-4 tracking-tight flex items-center gap-3">
               <Building className="w-6 h-6" />
               Benefits for Educational Institutions
             </h3>
@@ -348,7 +348,7 @@ export default function CollegeCollaboration() {
                 'Stronger Industry-Academia Connect'
               ].map((item, idx) => (
                 <div key={idx} className="flex items-center gap-3 p-3 bg-white/5 border border-white/5 rounded-xl">
-                  <span className="flex-shrink-0 w-5 h-5 rounded-full bg-brand-cyan/20 text-brand-cyan flex items-center justify-center">
+                  <span className="flex-shrink-0 w-5 h-5 rounded-full bg-brand-secondary/20 text-brand-secondary flex items-center justify-center">
                     <Check className="w-3.5 h-3.5 stroke-[3.5px]" />
                   </span>
                   <span className="text-slate-200 text-[14px] font-bold leading-tight">{item}</span>
@@ -388,7 +388,7 @@ export default function CollegeCollaboration() {
                 key={idx}
                 variants={scaleUp}
                 onClick={() => openLightbox(idx)}
-                className="group cursor-pointer rounded-[24px] overflow-hidden border border-white/10 hover:border-brand-orange/30 transition-all duration-300 bg-brand-bg-card relative aspect-[3/2] shadow-lg"
+                className="group cursor-pointer rounded-[24px] overflow-hidden border border-white/10 hover:border-brand-primary/30 transition-all duration-300 bg-brand-bg-card relative aspect-[3/2] shadow-lg"
               >
                 <img 
                   src={img.url} 
@@ -402,7 +402,7 @@ export default function CollegeCollaboration() {
                   </span>
                 </div>
                 <div className="absolute top-3 right-3 bg-black/60 backdrop-blur-md border border-white/20 p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
-                  <Sparkles className="w-3.5 h-3.5 text-brand-orange-light" />
+                  <Sparkles className="w-3.5 h-3.5 text-brand-primary-light" />
                 </div>
               </motion.div>
             ))}
@@ -507,13 +507,13 @@ export default function CollegeCollaboration() {
 
           {/* Areas Covered During Seminars */}
           <motion.div 
-            className="bg-brand-bg-card/40 border border-white/5 rounded-[32px] p-8 md:p-10 text-left hover:border-brand-orange/30 transition-colors"
+            className="bg-brand-bg-card/40 border border-white/5 rounded-[32px] p-8 md:p-10 text-left hover:border-brand-primary/30 transition-colors"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <h3 className="text-2xl font-black text-brand-orange mb-4 tracking-tight flex items-center gap-3">
+            <h3 className="text-2xl font-black text-brand-primary mb-4 tracking-tight flex items-center gap-3">
               <Layers className="w-6 h-6" />
               Areas Covered During Seminars
             </h3>
@@ -530,7 +530,7 @@ export default function CollegeCollaboration() {
                 'Future Industry Skills Required'
               ].map((item, idx) => (
                 <div key={idx} className="flex items-start gap-2.5 p-3 bg-white/5 border border-white/5 rounded-xl">
-                  <span className="flex-shrink-0 w-5 h-5 rounded-full bg-brand-orange/15 text-brand-orange flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">
+                  <span className="flex-shrink-0 w-5 h-5 rounded-full bg-brand-primary/15 text-brand-primary flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">
                     {idx + 1}
                   </span>
                   <span className="text-slate-200 text-[13px] font-bold leading-tight mt-0.5">{item}</span>
@@ -551,10 +551,10 @@ export default function CollegeCollaboration() {
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <div className="absolute inset-0 bg-brand-orange/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0 bg-brand-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <div className="flex items-center gap-4 mb-6">
-              <div className="bg-brand-orange/10 p-3.5 rounded-2xl border border-brand-orange/20">
-                <Building className="w-6 h-6 text-brand-orange-light" />
+              <div className="bg-brand-primary/10 p-3.5 rounded-2xl border border-brand-primary/20">
+                <Building className="w-6 h-6 text-brand-primary-light" />
               </div>
               <div>
                 <span className="text-[11px] font-extrabold uppercase tracking-widest text-slate-400">Featured Collaboration</span>
@@ -580,13 +580,13 @@ export default function CollegeCollaboration() {
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <div className="absolute -top-12 -left-6 text-8xl text-brand-orange/10 font-serif select-none pointer-events-none">“</div>
-            <div className="relative glass-card rounded-[32px] p-8 md:p-10 border border-brand-orange/10 bg-brand-bg-card/30">
+            <div className="absolute -top-12 -left-6 text-8xl text-brand-primary/10 font-serif select-none pointer-events-none">“</div>
+            <div className="relative glass-card rounded-[32px] p-8 md:p-10 border border-brand-primary/10 bg-brand-bg-card/30">
               <p className="text-lg md:text-xl font-semibold text-slate-200 leading-relaxed italic mb-8">
                 "{founderQuote.text}"
               </p>
               <div className="flex items-center gap-4">
-                <div className="w-14 h-14 rounded-full overflow-hidden border border-brand-orange/30 bg-brand-bg-card">
+                <div className="w-14 h-14 rounded-full overflow-hidden border border-brand-primary/30 bg-brand-bg-card">
                   {/* Preserved founder photo */}
                   <img 
                     src="/assets/Ashwini SD.png" 
@@ -634,7 +634,7 @@ export default function CollegeCollaboration() {
                 className="glass-card rounded-[28px] p-8 border border-white/5 flex flex-col justify-between"
               >
                 <div>
-                  <div className="flex gap-1.5 mb-5 text-amber-400">
+                  <div className="flex gap-1.5 mb-5 text-brand-primary">
                     {[...Array(review.rating)].map((_, i) => (
                       <Star key={i} className="w-4 h-4 fill-current" />
                     ))}
@@ -668,11 +668,11 @@ export default function CollegeCollaboration() {
             viewport={{ once: true }}
             variants={scaleUp}
           >
-            <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-brand-orange to-brand-cyan" />
+            <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-brand-primary to-brand-secondary" />
             
             <div className="p-8 md:p-12 relative z-10">
               <div className="text-center mb-10">
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-orange/10 border border-brand-orange/20 text-brand-orange text-xs font-bold tracking-widest uppercase mb-4">
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-primary/10 border border-brand-primary/20 text-brand-primary text-xs font-bold tracking-widest uppercase mb-4">
                   CAMPUS INVITATION
                 </div>
                 <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 text-white">
@@ -862,7 +862,7 @@ export default function CollegeCollaboration() {
                       whileTap={{ scale: 0.98 }}
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full py-4.5 bg-gradient-to-r from-brand-orange-grad-start to-brand-orange-grad-end text-slate-950 text-base font-black uppercase tracking-wider rounded-xl border-0 shadow-lg shadow-brand-orange/15 cursor-pointer disabled:opacity-50 flex items-center justify-center gap-2 transition-all"
+                      className="w-full py-4.5 bg-gradient-to-r from-brand-primary-grad-start to-brand-primary-grad-end text-slate-950 text-base font-black uppercase tracking-wider rounded-xl border-0 shadow-lg shadow-brand-primary/15 cursor-pointer disabled:opacity-50 flex items-center justify-center gap-2 transition-all"
                     >
                       {isSubmitting ? (
                         <>
@@ -875,13 +875,13 @@ export default function CollegeCollaboration() {
                     </motion.button>
                     
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-x-6 gap-y-2 text-slate-400 font-bold text-xs sm:text-sm tracking-wider uppercase mt-4 border-t border-white/5 pt-4">
-                      <a href="tel:9845961990" className="flex items-center gap-2 hover:text-brand-orange transition-colors">
-                        <Phone className="w-4 h-4 text-brand-orange" />
+                      <a href="tel:9845961990" className="flex items-center gap-2 hover:text-brand-primary transition-colors">
+                        <Phone className="w-4 h-4 text-brand-primary" />
                         Contact: 9845961990
                       </a>
                       <span className="hidden sm:inline opacity-30">•</span>
                       <span className="flex items-center gap-2">
-                        <Building className="w-4 h-4 text-brand-cyan" />
+                        <Building className="w-4 h-4 text-brand-secondary" />
                         Ashwini Trading Academy
                       </span>
                     </div>

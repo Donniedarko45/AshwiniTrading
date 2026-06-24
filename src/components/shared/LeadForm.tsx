@@ -44,10 +44,10 @@ export function LeadForm({
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         className={`flex flex-col items-center justify-center text-center p-8 rounded-2xl ${
-          isLight ? 'bg-emerald-50 text-emerald-900 border border-emerald-200' : 'bg-emerald-950/30 text-emerald-100 border border-emerald-800'
+          isLight ? 'bg-brand-success-soft text-brand-success border border-brand-success/25' : 'bg-brand-success/10 text-brand-success-light border border-brand-success/30'
         }`}
       >
-        <CheckCircle2 className="w-12 h-12 text-emerald-500 mb-4 animate-bounce" />
+        <CheckCircle2 className="w-12 h-12 text-brand-success mb-4 animate-bounce" />
         <h4 className="text-xl font-extrabold mb-2">Application Received!</h4>
         <p className="text-sm font-medium opacity-90 max-w-sm mb-6">
           Thank you for applying. One of our career advisors will call you back within 15 minutes to verify your details and block your seat.
@@ -55,7 +55,7 @@ export function LeadForm({
         <Button
           onClick={() => setIsSuccess(false)}
           variant="outline"
-          className={isLight ? 'border-emerald-300 hover:bg-emerald-100' : 'border-emerald-700 hover:bg-emerald-900 text-white'}
+          className={isLight ? 'border-brand-success/30 hover:bg-brand-success/10' : 'border-brand-success/30 hover:bg-brand-success/20 text-white'}
         >
           Submit Another Request
         </Button>
@@ -87,7 +87,7 @@ export function LeadForm({
               className={`h-14 bg-white text-base rounded-xl placeholder:text-slate-400 focus-visible:ring-ring/50 focus-visible:border-ring border-slate-200 text-slate-900`}
             />
             {errors.name && (
-              <span id="name-bar-error" className="text-xs font-bold text-red-500 mt-1 block">
+              <span id="name-bar-error" className="text-xs font-bold text-brand-error mt-1 block">
                 {errors.name}
               </span>
             )}
@@ -120,7 +120,7 @@ export function LeadForm({
               />
             </div>
             {errors.phone && (
-              <span id="phone-bar-error" className="text-xs font-bold text-red-500 mt-1 block">
+              <span id="phone-bar-error" className="text-xs font-bold text-brand-error mt-1 block">
                 {errors.phone}
               </span>
             )}
@@ -147,8 +147,8 @@ export function LeadForm({
             </Button>
           </div>
         </div>
-        <div className={`text-center text-[12px] font-bold mt-4 tracking-wide flex items-center justify-center gap-1.5 ${isLight ? 'text-slate-500' : 'text-brand-orange-light/95'}`}>
-          <span className="text-brand-orange text-sm">★</span>
+        <div className={`text-center text-[12px] font-bold mt-4 tracking-wide flex items-center justify-center gap-1.5 ${isLight ? 'text-slate-500' : 'text-brand-primary-light/95'}`}>
+          <span className="text-brand-primary text-sm">★</span>
           <span>4.9/5 Rated on CourseReport & Google Reviews (1,240+ Verified Student Reviews)</span>
         </div>
       </form>
@@ -178,7 +178,7 @@ export function LeadForm({
           }`}
         />
         {errors.name && (
-          <span id="name-card-error" className="text-xs font-bold text-red-500 mt-1 block">
+          <span id="name-card-error" className="text-xs font-bold text-brand-error mt-1 block">
             {errors.name}
           </span>
         )}
@@ -215,7 +215,7 @@ export function LeadForm({
           />
         </div>
         {errors.phone && (
-          <span id="phone-card-error" className="text-xs font-bold text-red-500 mt-1 block">
+          <span id="phone-card-error" className="text-xs font-bold text-brand-error mt-1 block">
             {errors.phone}
           </span>
         )}
@@ -257,7 +257,7 @@ export function LeadForm({
         disabled={isSubmitting}
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
-        className="w-full h-14 flex items-center justify-center bg-gradient-to-r from-brand-orange-grad-start to-brand-orange-grad-end hover:brightness-110 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50 text-slate-950 font-extrabold text-base sm:text-lg tracking-wide rounded-xl shadow-lg shadow-brand-orange/15 mt-6 border-0 transition-all duration-250 ease-out uppercase disabled:opacity-75 disabled:pointer-events-none gap-2"
+        className="w-full h-14 flex items-center justify-center bg-gradient-to-r from-brand-primary-grad-start to-brand-primary-grad-end hover:brightness-110 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50 text-slate-950 font-extrabold text-base sm:text-lg tracking-wide rounded-xl shadow-lg shadow-brand-primary/15 mt-6 border-0 transition-all duration-250 ease-out uppercase disabled:opacity-75 disabled:pointer-events-none gap-2"
       >
         {isSubmitting ? (
           <>
@@ -271,8 +271,8 @@ export function LeadForm({
           </>
         )}
       </motion.button>
-      <div className={`text-center text-[12px] font-bold mt-4 tracking-wide flex items-center justify-center gap-1.5 ${isLight ? 'text-slate-500' : 'text-brand-orange-light/95'}`}>
-        <span className="text-brand-orange text-sm">★</span>
+      <div className={`text-center text-[12px] font-bold mt-4 tracking-wide flex items-center justify-center gap-1.5 ${isLight ? 'text-slate-500' : 'text-brand-primary-light/95'}`}>
+        <span className="text-brand-primary text-sm">★</span>
         <span>4.9/5 Rated on CourseReport & Google Reviews</span>
       </div>
     </form>
@@ -288,7 +288,7 @@ export function LeadForm({
       isLight ? 'bg-white border border-slate-100' : 'bg-white/5 backdrop-blur-2xl border border-white/10'
     }`}>
       {/* Top indicator stripe */}
-      <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-brand-orange to-brand-cyan" />
+      <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-brand-primary to-brand-secondary" />
       {formContent}
     </div>
   );

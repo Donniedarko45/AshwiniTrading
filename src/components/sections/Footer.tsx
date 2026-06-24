@@ -21,10 +21,10 @@ export default function Footer() {
           <div className="md:col-span-3 text-left">
             <h4 className="text-slate-400 text-[11px] font-extrabold tracking-widest uppercase mb-6">Courses</h4>
             <ul className="space-y-4 text-white text-sm font-semibold">
-              <li><a href="#" className="hover:text-brand-orange transition-colors">Advanced Trading Strategies (Duration: 15 Days)</a></li>
-              <li><a href="#" className="hover:text-brand-orange transition-colors">Certified Trading Program (Duration: 60 Days)</a></li>
-              <li><a href="#" className="hover:text-brand-orange transition-colors">Technical Analysis Mastery (Duration: 25 Days)</a></li>
-              <li><a href="#" className="hover:text-brand-orange transition-colors">Free Stock Market Workshop</a></li>
+              <li><a href="#" className="hover:text-brand-primary transition-colors">Advanced Trading Strategies (Duration: 15 Days)</a></li>
+              <li><a href="#" className="hover:text-brand-primary transition-colors">Certified Trading Program (Duration: 60 Days)</a></li>
+              <li><a href="#" className="hover:text-brand-primary transition-colors">Technical Analysis Mastery (Duration: 25 Days)</a></li>
+              <li><a href="#" className="hover:text-brand-primary transition-colors">Free Stock Market Workshop</a></li>
             </ul>
           </div>
 
@@ -33,15 +33,15 @@ export default function Footer() {
             <h4 className="text-slate-400 text-[11px] font-extrabold tracking-widest uppercase mb-6">Contact</h4>
             <ul className="space-y-4 text-white text-sm font-semibold">
               <li className="flex items-center gap-3">
-                <Phone className="w-4 h-4 text-brand-orange shrink-0" />
-                <a href="tel:+919845961990" className="hover:text-brand-orange transition-colors">+91 9845961990</a>
+                <Phone className="w-4 h-4 text-brand-primary shrink-0" />
+                <a href="tel:+919845961990" className="hover:text-brand-primary transition-colors">+91 9845961990</a>
               </li>
               <li className="flex items-center gap-3">
-                <Mail className="w-4 h-4 text-brand-orange shrink-0" />
-                <a href="mailto:info@ashwinitradingacademy.com" className="hover:text-brand-orange transition-colors">info@ashwinitradingacademy.com</a>
+                <Mail className="w-4 h-4 text-brand-primary shrink-0" />
+                <a href="mailto:info@ashwinitradingacademy.com" className="hover:text-brand-primary transition-colors">info@ashwinitradingacademy.com</a>
               </li>
               <li className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 text-brand-orange shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-brand-primary shrink-0 mt-0.5" />
                 <span className="leading-relaxed text-white">545, 2nd Floor, CMH Road, Stage 1, Indiranagar, Bengaluru, Karnataka 560038</span>
               </li>
             </ul>

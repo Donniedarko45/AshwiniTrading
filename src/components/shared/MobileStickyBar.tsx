@@ -49,7 +49,7 @@ export default function MobileStickyBar() {
             finalCta.scrollIntoView({ behavior: 'smooth' });
           }
         }}
-        className="flex-1 h-12 flex items-center justify-center bg-gradient-to-r from-brand-orange-grad-start to-brand-orange-grad-end hover:brightness-110 text-slate-950 font-extrabold text-sm sm:text-base tracking-wider rounded-xl uppercase transition-all shadow-lg shadow-brand-orange/15 touch-target"
+        className="flex-1 h-12 flex items-center justify-center bg-gradient-to-r from-brand-primary-grad-start to-brand-primary-grad-end hover:brightness-110 text-slate-950 font-extrabold text-sm sm:text-base tracking-wider rounded-xl uppercase transition-all shadow-lg shadow-brand-primary/15 touch-target"
       >
         Apply Now
       </button>

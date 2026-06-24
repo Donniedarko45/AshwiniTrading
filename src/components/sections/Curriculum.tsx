@@ -5,7 +5,7 @@ import { workshopCourses } from '@/data/curriculum';
 
 export default function Curriculum() {
   return (
-    <section id="curriculum" className="bg-[#FAFBFD] py-16 md:py-28 px-5 sm:px-6 md:px-12 border-t border-slate-100">
+    <section id="curriculum" className="bg-brand-light-bg py-16 md:py-28 px-5 sm:px-6 md:px-12 border-t border-brand-light-border">
       <div className="max-w-7xl mx-auto">
         <motion.div 
           initial="hidden"
@@ -14,9 +14,9 @@ export default function Curriculum() {
           variants={fadeIn}
           className="text-center mb-16 sm:mb-20"
         >
-          <div className="text-brand-orange font-extrabold text-sm tracking-widest uppercase mb-4">OUR WORKSHOPS & PROGRAMS</div>
+          <div className="text-brand-primary font-extrabold text-sm tracking-widest uppercase mb-4">OUR WORKSHOPS & PROGRAMS</div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-brand-light-heading tracking-tight mb-6 max-w-4xl mx-auto leading-tight">
-            Learn AI-Powered <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-brand-cyan">Trading & Analysis</span>
+            Learn AI-Powered <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-secondary">Trading & Analysis</span>
           </h2>
           <p className="text-brand-light-body text-lg sm:text-xl font-medium max-w-3xl mx-auto leading-relaxed">
             Gain a professional edge. Master fundamental analysis, technical chart reading, and derivatives strategies using AI tools.
@@ -37,13 +37,13 @@ export default function Curriculum() {
                 key={course.id}
                 variants={scaleUp} 
                 className={`border rounded-[32px] p-6 sm:p-8 flex flex-col hover:shadow-xl transition-all duration-300 h-full group bg-white ${
-                  isPremium ? 'border-brand-orange shadow-md ring-2 ring-brand-orange/10' : 'border-slate-100 shadow-sm'
+                  isPremium ? 'border-brand-primary shadow-md ring-2 ring-brand-primary/10' : 'border-slate-100 shadow-sm'
                 }`}
               >
                 {/* Badges & Meta Info */}
                 <div className="flex justify-between items-center mb-6">
                   <span className={`text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider ${
-                    isPremium ? 'bg-brand-orange/10 text-brand-orange-hover' : 'bg-brand-cyan/10 text-brand-cyan-hover'
+                    isPremium ? 'bg-brand-primary/10 text-brand-primary-hover' : 'bg-brand-secondary/10 text-brand-secondary-hover'
                   }`}>
                     {course.badge}
                   </span>
@@ -51,7 +51,7 @@ export default function Curriculum() {
                 </div>
 
                 <h3 className={`text-xl sm:text-2xl font-extrabold text-brand-light-heading mb-4 leading-snug tracking-tight transition-colors ${
-                  isPremium ? 'group-hover:text-brand-orange' : 'group-hover:text-brand-cyan'
+                  isPremium ? 'group-hover:text-brand-primary' : 'group-hover:text-brand-secondary'
                 }`}>
                   {course.title}
                 </h3>
@@ -90,7 +90,7 @@ export default function Curriculum() {
                       whileTap={{ scale: 0.98 }} 
                       className={`w-full font-bold py-4 rounded-xl transition-all flex justify-center items-center gap-2 uppercase cursor-pointer text-sm ${
                         isPremium 
-                          ? 'bg-gradient-to-r from-brand-orange-grad-start to-brand-orange-grad-end text-slate-950 hover:brightness-110 shadow-lg shadow-brand-orange/15 border-transparent' 
+                          ? 'bg-gradient-to-r from-brand-primary-grad-start to-brand-primary-grad-end text-slate-950 hover:brightness-110 shadow-lg shadow-brand-primary/15 border-transparent' 
                           : 'bg-brand-bg-dark hover:bg-slate-900 text-white border-transparent shadow-md'
                       }`}
                     >

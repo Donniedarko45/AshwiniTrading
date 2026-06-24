@@ -10,7 +10,7 @@ export default function FloatingSocials() {
         href="https://t.me/ashwinitrading"
         target="_blank"
         rel="noopener noreferrer"
-        className="w-14 h-14 rounded-full bg-[#229ED9] border-2 border-white flex items-center justify-center text-white shadow-[0_4px_15px_rgba(34,158,217,0.4)] hover:shadow-[0_6px_20px_rgba(34,158,217,0.6)] hover:scale-110 active:scale-95 transition-all duration-300 group cursor-pointer"
+        className="w-14 h-14 rounded-full bg-ext-telegram border-2 border-white flex items-center justify-center text-white shadow-lg shadow-ext-telegram/30 hover:shadow-xl hover:shadow-ext-telegram/45 hover:scale-110 active:scale-95 transition-all duration-300 group cursor-pointer focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ext-telegram/40"
         aria-label="Chat on Telegram"
       >
         <svg viewBox="0 0 24 24" className="w-7 h-7 fill-current text-white transition-transform group-hover:rotate-12">
@@ -23,7 +23,7 @@ export default function FloatingSocials() {
         href={`https://wa.me/${whatsappNumber}?text=Hi%2C%20I%20want%20to%20know%20more%20about%20Ashwini%20Trading%20Academy.`}
         target="_blank"
         rel="noopener noreferrer"
-        className="w-14 h-14 rounded-full bg-[#25D366] border-2 border-white flex items-center justify-center text-white shadow-[0_4px_15px_rgba(37,211,102,0.4)] hover:shadow-[0_6px_20px_rgba(37,211,102,0.6)] hover:scale-110 active:scale-95 transition-all duration-300 group cursor-pointer"
+        className="w-14 h-14 rounded-full bg-ext-whatsapp border-2 border-white flex items-center justify-center text-white shadow-lg shadow-ext-whatsapp/30 hover:bg-ext-whatsapp-hover hover:shadow-xl hover:shadow-ext-whatsapp/45 hover:scale-110 active:scale-95 transition-all duration-300 group cursor-pointer focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ext-whatsapp/40"
         aria-label="Chat on WhatsApp"
       >
         <svg viewBox="0 0 24 24" className="w-7 h-7 fill-current text-white transition-transform group-hover:scale-105">

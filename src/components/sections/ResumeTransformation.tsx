@@ -7,20 +7,20 @@ export default function ResumeTransformation() {
   const aiStack = ['Custom GPTs', 'Prompt engineering for performance', 'AI-driven attribution modeling'];
 
   const resumeProjects = [
-    "Reduced CPA from <strong class='text-brand-blue'>₹1,200 → ₹380</strong> for BookMyScans, 6-week Google Ads campaign",
-    "Built lead-gen funnel generating <strong class='text-brand-blue'>312 leads at ₹640 CPL</strong> for Decfort",
-    "Programmatic SEO build: <strong class='text-brand-blue'>400+ pages, 18K organic visits/month</strong>",
-    "Email lifecycle automation in Klaviyo: <strong class='text-brand-blue'>42% open rate, 8% CTR</strong>",
-    "AI ad creative pipeline (GPT-4 + Midjourney): <strong class='text-brand-blue'>200+ variants shipped/week</strong>",
-    "Marketing automation with n8n: <strong class='text-brand-blue'>12 workflows live</strong> for EY",
-    "Live Looker Studio dashboard for Razorpay across <strong class='text-brand-blue'>5 channels</strong>",
-    "WhatsApp campaign on Gupshup: <strong class='text-brand-blue'>28% reply rate, ₹47 CPL</strong>"
+    "Reduced CPA from <strong class='text-brand-secondary'>₹1,200 → ₹380</strong> for BookMyScans, 6-week Google Ads campaign",
+    "Built lead-gen funnel generating <strong class='text-brand-secondary'>312 leads at ₹640 CPL</strong> for Decfort",
+    "Programmatic SEO build: <strong class='text-brand-secondary'>400+ pages, 18K organic visits/month</strong>",
+    "Email lifecycle automation in Klaviyo: <strong class='text-brand-secondary'>42% open rate, 8% CTR</strong>",
+    "AI ad creative pipeline (GPT-4 + Midjourney): <strong class='text-brand-secondary'>200+ variants shipped/week</strong>",
+    "Marketing automation with n8n: <strong class='text-brand-secondary'>12 workflows live</strong> for EY",
+    "Live Looker Studio dashboard for Razorpay across <strong class='text-brand-secondary'>5 channels</strong>",
+    "WhatsApp campaign on Gupshup: <strong class='text-brand-secondary'>28% reply rate, ₹47 CPL</strong>"
   ];
 
   return (
     <section className="py-16 md:py-24 bg-slate-50 px-5 sm:px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="text-brand-blue font-bold tracking-widest text-sm uppercase mb-4">
+        <div className="text-brand-secondary font-bold tracking-widest text-sm uppercase mb-4">
           RESUME TRANSFORMATION
         </div>
         <h2 className="text-3xl sm:text-4xl md:text-[56px] font-extrabold text-slate-900 tracking-tight leading-[1.1] mb-10 md:mb-16 max-w-4xl">
@@ -30,7 +30,7 @@ export default function ResumeTransformation() {
         <div className="flex flex-col lg:flex-row items-stretch gap-6 lg:gap-10 mb-10 sm:mb-16">
           
           {/* Day 1 Resume */}
-          <div className="flex-1 bg-[#F8F9FA] rounded-[32px] p-5 sm:p-8 md:p-12 border border-slate-200 font-mono text-sm text-slate-500 w-full relative">
+          <div className="flex-1 bg-brand-light-surface rounded-[32px] p-5 sm:p-8 md:p-12 border border-brand-light-border font-mono text-sm text-slate-500 w-full relative">
             <div className="absolute top-8 right-8 text-right">
               <div className="bg-slate-200 text-slate-600 px-3 py-1 rounded-full text-xs font-bold w-max ml-auto mb-1">DAY 1</div>
               <div className="text-xs">Fresh Graduate</div>
@@ -87,38 +87,38 @@ export default function ResumeTransformation() {
             </div>
           </div>
 
-          <div className="hidden lg:flex shrink-0 w-12 h-12 rounded-full bg-blue-100 items-center justify-center text-brand-blue self-center z-10">
+          <div className="hidden lg:flex shrink-0 w-12 h-12 rounded-full bg-brand-secondary-soft items-center justify-center text-brand-secondary self-center z-10">
             <ArrowRight className="w-6 h-6" />
           </div>
 
           {/* Day 121 Resume */}
-          <div className="flex-1 bg-white rounded-[32px] p-5 sm:p-8 md:p-12 border-2 border-blue-500 shadow-[0_20px_50px_-12px_rgba(37,99,235,0.15)] font-sans w-full relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-bl-[100px] -z-10" />
+          <div className="flex-1 bg-white rounded-[32px] p-5 sm:p-8 md:p-12 border-2 border-brand-secondary shadow-2xl shadow-brand-secondary/15 font-sans w-full relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-brand-secondary-soft rounded-bl-[100px] -z-10" />
             
-            <div className="flex justify-between items-end border-b-4 border-blue-500 pb-4 mb-6">
+            <div className="flex justify-between items-end border-b-4 border-brand-secondary pb-4 mb-6">
               <div>
-                <div className="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-bold w-max mb-3">DAY 121</div>
+                <div className="bg-brand-secondary-hover text-white px-3 py-1 rounded-full text-xs font-bold w-max mb-3">DAY 121</div>
                 <h3 className="text-2xl font-black text-slate-900">
                   [Your Name]
                 </h3>
               </div>
-              <div className="text-brand-blue font-bold text-sm tracking-tight text-right mb-1">
+              <div className="text-brand-secondary font-bold text-sm tracking-tight text-right mb-1">
                 AI-native performance marketer
               </div>
             </div>
 
             <div className="space-y-6">
               <div>
-                <div className="uppercase tracking-widest text-brand-blue text-[11px] font-bold mb-2">Education</div>
+                <div className="uppercase tracking-widest text-brand-secondary text-[11px] font-bold mb-2">Education</div>
                 <p className="font-semibold text-slate-800 text-sm">BBA + <span className="font-bold">Post Graduate Program in Digital Marketing & Analytics</span>, Ashwini Trading Academy</p>
               </div>
 
               <div>
-                <div className="uppercase tracking-widest text-brand-blue text-[11px] font-bold mb-3">Live Projects</div>
+                <div className="uppercase tracking-widest text-brand-secondary text-[11px] font-bold mb-3">Live Projects</div>
                 <div className="space-y-3 text-sm">
                   {resumeProjects.map((html, idx) => (
                     <div key={idx} className="flex gap-3 items-start animate-in fade-in slide-in-from-bottom-2 duration-300">
-                      <div className="min-w-6 h-6 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center text-[10px] font-bold mt-0.5">
+                      <div className="min-w-6 h-6 rounded-full bg-brand-secondary-soft text-brand-secondary-hover flex items-center justify-center text-[10px] font-bold mt-0.5">
                         {String(idx + 1).padStart(2, '0')}
                       </div>
                       <span className="text-slate-700 leading-snug" dangerouslySetInnerHTML={{ __html: html }} />
@@ -128,28 +128,28 @@ export default function ResumeTransformation() {
               </div>
 
               <div>
-                <div className="uppercase tracking-widest text-brand-blue text-[11px] font-bold mb-2">Tools</div>
+                <div className="uppercase tracking-widest text-brand-secondary text-[11px] font-bold mb-2">Tools</div>
                 <div className="flex flex-wrap gap-2">
                   {tools.map(tool => (
-                    <span key={tool} className="bg-blue-50 text-blue-700 px-2.5 py-1 rounded-md text-[11px] font-semibold">{tool}</span>
+                    <span key={tool} className="bg-brand-secondary-soft text-brand-secondary-hover px-2.5 py-1 rounded-md text-[11px] font-semibold">{tool}</span>
                   ))}
                 </div>
               </div>
 
               <div>
-                <div className="uppercase tracking-widest text-brand-blue text-[11px] font-bold mb-2">Certifications</div>
+                <div className="uppercase tracking-widest text-brand-secondary text-[11px] font-bold mb-2">Certifications</div>
                 <div className="flex flex-wrap gap-2">
                   {certifications.map(cert => (
-                    <span key={cert} className="bg-emerald-50 text-emerald-700 px-2.5 py-1 rounded-md text-[11px] font-semibold">{cert}</span>
+                    <span key={cert} className="bg-brand-success-soft text-brand-success px-2.5 py-1 rounded-md text-[11px] font-semibold">{cert}</span>
                   ))}
                 </div>
               </div>
 
               <div>
-                <div className="uppercase tracking-widest text-brand-blue text-[11px] font-bold mb-2">AI Stack</div>
+                <div className="uppercase tracking-widest text-brand-secondary text-[11px] font-bold mb-2">AI Stack</div>
                 <div className="flex flex-wrap gap-2">
                   {aiStack.map(ai => (
-                    <span key={ai} className="bg-purple-50 text-purple-700 px-2.5 py-1 rounded-md text-[11px] font-semibold">{ai}</span>
+                    <span key={ai} className="bg-brand-accent-soft text-brand-accent px-2.5 py-1 rounded-md text-[11px] font-semibold">{ai}</span>
                   ))}
                 </div>
               </div>

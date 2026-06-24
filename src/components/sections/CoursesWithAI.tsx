@@ -23,12 +23,12 @@ export default function CoursesWithAI() {
         'Investment Decision Framework'
       ],
       ctaText: 'Master Fundamental Analysis',
-      gradient: 'from-brand-orange/20 to-transparent',
-      borderColor: 'group-hover:border-brand-orange/40',
-      glowColor: 'bg-brand-orange/10',
-      badgeClass: 'bg-brand-orange/10 text-brand-orange border-brand-orange/20',
-      iconClass: 'bg-brand-orange/10 text-brand-orange',
-      btnClass: 'bg-gradient-to-r from-brand-orange-grad-start to-brand-orange-grad-end text-slate-950 hover:brightness-110 shadow-lg shadow-brand-orange/15'
+      gradient: 'from-brand-primary/20 to-transparent',
+      borderColor: 'group-hover:border-brand-primary/40',
+      glowColor: 'bg-brand-primary/10',
+      badgeClass: 'bg-brand-primary/10 text-brand-primary border-brand-primary/20',
+      iconClass: 'bg-brand-primary/10 text-brand-primary',
+      btnClass: 'bg-gradient-to-r from-brand-primary-grad-start to-brand-primary-grad-end text-slate-950 hover:brightness-110 shadow-lg shadow-brand-primary/15'
     },
     {
       id: 'technical-ai',
@@ -48,12 +48,12 @@ export default function CoursesWithAI() {
         'Risk & Reward Management'
       ],
       ctaText: 'Master Technical Analysis',
-      gradient: 'from-brand-cyan/20 to-transparent',
-      borderColor: 'group-hover:border-brand-cyan/40',
-      glowColor: 'bg-brand-cyan/10',
-      badgeClass: 'bg-brand-cyan/10 text-brand-cyan border-brand-cyan/20',
-      iconClass: 'bg-brand-cyan/10 text-brand-cyan',
-      btnClass: 'bg-gradient-to-r from-brand-cyan-light to-brand-cyan text-slate-950 hover:brightness-110 shadow-lg shadow-brand-cyan/15'
+      gradient: 'from-brand-secondary/20 to-transparent',
+      borderColor: 'group-hover:border-brand-secondary/40',
+      glowColor: 'bg-brand-secondary/10',
+      badgeClass: 'bg-brand-secondary/10 text-brand-secondary border-brand-secondary/20',
+      iconClass: 'bg-brand-secondary/10 text-brand-secondary',
+      btnClass: 'bg-gradient-to-r from-brand-secondary-light to-brand-secondary text-slate-950 hover:brightness-110 shadow-lg shadow-brand-secondary/15'
     }
   ];
 
@@ -81,7 +81,7 @@ export default function CoursesWithAI() {
           </div>
           <h2 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight leading-none mb-6">
             Explore Stock Market <br className="hidden sm:inline" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-brand-cyan to-white">Courses with AI</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary via-brand-secondary to-white">Courses with AI</span>
           </h2>
           <p className="text-slate-400 text-base sm:text-lg font-medium max-w-2xl mx-auto leading-relaxed">
             Gain a competitive edge by learning proven fundamental and technical trading strategies combined with cutting-edge AI analysis tools.

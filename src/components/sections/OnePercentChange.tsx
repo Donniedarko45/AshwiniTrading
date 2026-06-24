@@ -46,10 +46,10 @@ export default function OnePercentChange() {
   const totalContribution = contributionPerStudent * studentCount;
 
   return (
-    <div className="bg-[#110B29] min-h-screen text-white overflow-hidden relative pb-20 pt-24">
+    <div className="bg-brand-bg-dark min-h-screen text-white overflow-hidden relative pb-20 pt-24">
       {/* Decorative background glows */}
       <div className="absolute top-24 left-1/3 w-[500px] h-[500px] bg-brand-glow/30 rounded-full blur-[150px] pointer-events-none" />
-      <div className="absolute bottom-32 right-1/4 w-[600px] h-[600px] bg-[#43126c]/30 rounded-full blur-[180px] pointer-events-none" />
+      <div className="absolute bottom-32 right-1/4 w-[600px] h-[600px] bg-brand-accent/30 rounded-full blur-[180px] pointer-events-none" />
 
       <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         
@@ -73,16 +73,16 @@ export default function OnePercentChange() {
           variants={fadeIn}
           className="text-center max-w-4xl mx-auto mb-16"
         >
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-pink-500/10 to-brand-orange/10 border border-brand-orange/30 rounded-full px-4 py-1.5 mb-6">
-            <span className="w-2 h-2 rounded-full bg-brand-orange animate-pulse" />
-            <span className="text-xs font-bold text-brand-orange-light uppercase tracking-widest">
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-brand-secondary/10 to-brand-primary/10 border border-brand-primary/30 rounded-full px-4 py-1.5 mb-6">
+            <span className="w-2 h-2 rounded-full bg-brand-primary animate-pulse" />
+            <span className="text-xs font-bold text-brand-primary-light uppercase tracking-widest">
               Social Impact & Purpose
             </span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
             1% Change <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-pink-500">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-secondary">
               Makes a Difference
             </span>
           </h1>
@@ -96,7 +96,7 @@ export default function OnePercentChange() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-gradient-to-r from-brand-orange-grad-start to-brand-orange-grad-end text-white text-base font-bold uppercase tracking-wider rounded-xl border-0 shadow-lg shadow-orange-500/20 cursor-pointer"
+                className="px-8 py-4 bg-gradient-to-r from-brand-primary-grad-start to-brand-primary-grad-end text-white text-base font-bold uppercase tracking-wider rounded-xl border-0 shadow-lg shadow-brand-primary/20 cursor-pointer"
               >
                 See the Impact
               </motion.button>
@@ -107,7 +107,7 @@ export default function OnePercentChange() {
                 whileTap={{ scale: 0.95 }}
                 className="px-8 py-4 bg-white/5 hover:bg-white/10 text-white text-base font-bold uppercase tracking-wider rounded-xl border border-white/10 cursor-pointer flex items-center gap-2 transition-colors"
               >
-                <Phone className="w-5 h-5 text-brand-emerald" />
+                <Phone className="w-5 h-5 text-brand-success" />
                 Speak to Team
               </motion.button>
             </a>
@@ -144,15 +144,15 @@ export default function OnePercentChange() {
                 <motion.div 
                   key={idx}
                   variants={scaleUp}
-                  className="glass-card rounded-[28px] p-8 border border-white/5 hover:border-brand-orange/20 hover:-translate-y-1 transition-all duration-300 relative group overflow-hidden"
+                  className="glass-card rounded-[28px] p-8 border border-white/5 hover:border-brand-primary/20 hover:-translate-y-1 transition-all duration-300 relative group overflow-hidden"
                 >
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-brand-orange/5 rounded-full blur-2xl group-hover:bg-brand-orange/10 transition-colors pointer-events-none" />
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-brand-primary/5 rounded-full blur-2xl group-hover:bg-brand-primary/10 transition-colors pointer-events-none" />
                   
-                  <div className="w-14 h-14 rounded-2xl bg-brand-orange/10 border border-brand-orange/20 flex items-center justify-center mb-6 shadow-inner group-hover:scale-110 transition-transform duration-300">
-                    <Icon className="w-7 h-7 text-brand-orange-light" />
+                  <div className="w-14 h-14 rounded-2xl bg-brand-primary/10 border border-brand-primary/20 flex items-center justify-center mb-6 shadow-inner group-hover:scale-110 transition-transform duration-300">
+                    <Icon className="w-7 h-7 text-brand-primary-light" />
                   </div>
                   
-                  <h3 className="text-xl font-bold text-white mb-4 tracking-tight group-hover:text-brand-orange-light transition-colors">
+                  <h3 className="text-xl font-bold text-white mb-4 tracking-tight group-hover:text-brand-primary-light transition-colors">
                     {pillar.title}
                   </h3>
                   
@@ -210,7 +210,7 @@ export default function OnePercentChange() {
                           onClick={() => setSelectedCourseId(course.id)}
                           className={`flex-shrink-0 text-left px-5 py-4 rounded-2xl border transition-all duration-300 cursor-pointer ${
                             isSelected 
-                              ? 'bg-gradient-to-br from-brand-orange/20 to-pink-500/10 border-brand-orange shadow-lg shadow-orange-500/10 scale-[1.02]' 
+                              ? 'bg-gradient-to-br from-brand-primary/20 to-brand-secondary/10 border-brand-primary shadow-lg shadow-brand-primary/10 scale-[1.02]' 
                               : 'bg-white/5 border-white/5 hover:bg-white/10 hover:border-white/10'
                           }`}
                         >
@@ -220,7 +220,7 @@ export default function OnePercentChange() {
                           <div className="text-sm font-extrabold text-white line-clamp-1 mb-2 max-w-[160px]">
                             {course.title}
                           </div>
-                          <div className="text-base font-black text-brand-orange-light">
+                          <div className="text-base font-black text-brand-primary-light">
                             {course.fee}
                           </div>
                         </button>
@@ -235,7 +235,7 @@ export default function OnePercentChange() {
                     <label htmlFor="student-slider" className="block text-xs font-bold text-slate-300 uppercase tracking-widest">
                       2. Number of Enrolled Students
                     </label>
-                    <span className="bg-brand-orange/10 border border-brand-orange/20 px-3.5 py-1 rounded-xl text-brand-orange-light text-base font-extrabold">
+                    <span className="bg-brand-primary/10 border border-brand-primary/20 px-3.5 py-1 rounded-xl text-brand-primary-light text-base font-extrabold">
                       {studentCount} Students
                     </span>
                   </div>
@@ -249,7 +249,7 @@ export default function OnePercentChange() {
                       step="10"
                       value={studentCount}
                       onChange={(e) => setStudentCount(parseInt(e.target.value))}
-                      className="w-full h-2 bg-white/5 border border-white/10 rounded-lg appearance-none cursor-pointer accent-brand-orange focus:outline-none"
+                      className="w-full h-2 bg-white/5 border border-white/10 rounded-lg appearance-none cursor-pointer accent-brand-primary focus:outline-none"
                     />
                     <div className="flex justify-between text-[10px] text-slate-500 font-bold tracking-wider mt-2">
                       <span>10 STUDENTS</span>
@@ -260,18 +260,18 @@ export default function OnePercentChange() {
                 </div>
 
                 {/* Math Recap Bar */}
-                <div className="bg-[#0A0D26]/60 border border-white/5 p-5 rounded-2xl space-y-2">
+                <div className="bg-brand-bg-card-dark/60 border border-white/5 p-5 rounded-2xl space-y-2">
                   <div className="flex justify-between text-sm font-semibold text-slate-400">
                     <span>Course Fee:</span>
                     <span className="text-white font-bold">{selectedCourse.fee}</span>
                   </div>
                   <div className="flex justify-between text-sm font-semibold text-slate-400">
                     <span>1% Contribution per Student:</span>
-                    <span className="text-brand-orange-light font-bold">₹{contributionPerStudent}</span>
+                    <span className="text-brand-primary-light font-bold">₹{contributionPerStudent}</span>
                   </div>
                   <div className="border-t border-white/5 pt-3 flex justify-between items-center">
                     <span className="text-sm font-bold text-white uppercase tracking-wider">Total Fund Generated:</span>
-                    <span className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-yellow-400">
+                    <span className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-primary-light">
                       ₹{totalContribution.toLocaleString('en-IN')}
                     </span>
                   </div>
@@ -294,27 +294,27 @@ export default function OnePercentChange() {
                       <motion.div
                         key={idx}
                         layout
-                        className="bg-[#0A0D26]/40 border border-white/5 hover:border-white/10 rounded-2xl p-5 relative overflow-hidden group transition-all duration-300"
+                        className="bg-brand-bg-card-dark/40 border border-white/5 hover:border-white/10 rounded-2xl p-5 relative overflow-hidden group transition-all duration-300"
                       >
-                        <div className="absolute top-0 right-0 w-24 h-24 bg-white/5 rounded-full blur-xl group-hover:bg-brand-orange/5 transition-colors pointer-events-none" />
+                        <div className="absolute top-0 right-0 w-24 h-24 bg-white/5 rounded-full blur-xl group-hover:bg-brand-primary/5 transition-colors pointer-events-none" />
                         
                         <div className="flex items-start justify-between mb-3">
                           <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
-                            <Icon className="w-5 h-5 text-slate-300 group-hover:text-brand-orange-light transition-colors" />
+                            <Icon className="w-5 h-5 text-slate-300 group-hover:text-brand-primary-light transition-colors" />
                           </div>
                           
                           {/* Pulsing glow indicator if count > 0 */}
                           {count > 0 ? (
                             <span className="flex h-2 w-2 relative">
-                              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-emerald opacity-75"></span>
-                              <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-emerald"></span>
+                              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-success opacity-75"></span>
+                              <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-success"></span>
                             </span>
                           ) : (
                             <span className="w-2 h-2 rounded-full bg-slate-700" />
                           )}
                         </div>
 
-                        <div className="text-2xl font-black text-white group-hover:text-brand-orange-light transition-colors mb-1">
+                        <div className="text-2xl font-black text-white group-hover:text-brand-primary-light transition-colors mb-1">
                           {count > 0 ? `${count.toLocaleString('en-IN')} ${eq.unit}` : `0 ${eq.unit}`}
                         </div>
 
@@ -370,8 +370,8 @@ export default function OnePercentChange() {
                 variants={scaleUp}
                 className="glass-card rounded-2xl p-6 border border-white/5 flex gap-4 items-start"
               >
-                <div className="bg-brand-emerald/10 p-2 rounded-xl border border-brand-emerald/20 flex-shrink-0 mt-0.5">
-                  <CheckCircle2 className="w-5 h-5 text-brand-emerald" />
+                <div className="bg-brand-success/10 p-2 rounded-xl border border-brand-success/20 flex-shrink-0 mt-0.5">
+                  <CheckCircle2 className="w-5 h-5 text-brand-success" />
                 </div>
                 <div>
                   <h3 className="font-bold text-white text-base mb-1.5 tracking-tight">
@@ -395,11 +395,11 @@ export default function OnePercentChange() {
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <div className="absolute -top-12 -left-6 text-8xl text-brand-orange/10 font-serif select-none pointer-events-none">“</div>
-            <div className="relative glass-card rounded-[32px] p-8 md:p-10 border border-brand-orange/10 bg-brand-bg-card/30">
+            <div className="absolute -top-12 -left-6 text-8xl text-brand-primary/10 font-serif select-none pointer-events-none">“</div>
+            <div className="relative glass-card rounded-[32px] p-8 md:p-10 border border-brand-primary/10 bg-brand-bg-card/30">
               
               <div className="flex items-center gap-3 mb-6">
-                <Quote className="w-6 h-6 text-brand-orange-light shrink-0" />
+                <Quote className="w-6 h-6 text-brand-primary-light shrink-0" />
                 <span className="text-xs font-extrabold uppercase tracking-widest text-slate-400">Personal Pledge</span>
               </div>
 
@@ -408,7 +408,7 @@ export default function OnePercentChange() {
               </p>
 
               <div className="flex items-center gap-4">
-                <div className="w-14 h-14 rounded-full overflow-hidden border border-brand-orange/30 bg-brand-bg-card">
+                <div className="w-14 h-14 rounded-full overflow-hidden border border-brand-primary/30 bg-brand-bg-card">
                   <img 
                     src="/assets/Ashwini SD.png" 
                     alt="Ashwini SD" 
@@ -427,13 +427,13 @@ export default function OnePercentChange() {
 
         {/* Final CTA Card */}
         <motion.div 
-          className="glass-card rounded-[32px] border border-white/10 bg-gradient-to-r from-[#1E1145] to-[#120B2E] p-8 md:p-12 text-center relative overflow-hidden max-w-5xl mx-auto"
+          className="glass-card rounded-[32px] border border-white/10 bg-gradient-to-r from-brand-bg-card to-brand-bg-deep p-8 md:p-12 text-center relative overflow-hidden max-w-5xl mx-auto"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={scaleUp}
         >
-          <div className="absolute top-0 right-0 w-64 h-64 bg-brand-orange/5 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute top-0 right-0 w-64 h-64 bg-brand-primary/5 rounded-full blur-3xl pointer-events-none" />
           
           <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">
             Be the Change. Learn & Empower.
@@ -448,7 +448,7 @@ export default function OnePercentChange() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-gradient-to-r from-brand-orange-grad-start to-brand-orange-grad-end text-white text-base font-bold uppercase tracking-wider rounded-xl border-0 shadow-lg shadow-orange-500/20 cursor-pointer"
+                className="px-8 py-4 bg-gradient-to-r from-brand-primary-grad-start to-brand-primary-grad-end text-white text-base font-bold uppercase tracking-wider rounded-xl border-0 shadow-lg shadow-brand-primary/20 cursor-pointer"
               >
                 Explore Courses
               </motion.button>

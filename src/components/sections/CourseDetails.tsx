@@ -86,8 +86,8 @@ export default function CourseDetails() {
         >
           <span className={`text-xs font-bold px-3.5 py-1.5 rounded-full uppercase tracking-wider border ${
             isPremium 
-              ? 'bg-brand-orange/10 text-brand-orange border-brand-orange/20' 
-              : 'bg-brand-cyan/10 text-brand-cyan border-brand-cyan/20'
+              ? 'bg-brand-primary/10 text-brand-primary border-brand-primary/20' 
+              : 'bg-brand-secondary/10 text-brand-secondary border-brand-secondary/20'
           }`}>
             {course.badge}
           </span>
@@ -106,7 +106,7 @@ export default function CourseDetails() {
             </div>
             <div>
               <div className="text-brand-light-muted font-bold text-xs tracking-widest uppercase mb-1">Program Fee</div>
-              <div className={`font-extrabold text-lg ${isPremium ? 'text-brand-orange' : 'text-brand-cyan'}`}>
+              <div className={`font-extrabold text-lg ${isPremium ? 'text-brand-primary' : 'text-brand-secondary'}`}>
                 {course.fee} <span className="text-xs text-brand-light-muted font-bold">Incl. GST</span>
               </div>
             </div>
@@ -124,7 +124,7 @@ export default function CourseDetails() {
             <div className="grid sm:grid-cols-2 gap-3.5">
               {course.idealAudience.map((audience, idx) => (
                 <div key={idx} className="flex items-center gap-3">
-                  <span className="flex-shrink-0 w-5 h-5 rounded-full bg-brand-cyan/10 text-brand-cyan flex items-center justify-center">
+                  <span className="flex-shrink-0 w-5 h-5 rounded-full bg-brand-secondary/10 text-brand-secondary flex items-center justify-center">
                     <svg className="w-3 h-3 fill-current" viewBox="0 0 24 24">
                       <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
                     </svg>
@@ -146,16 +146,16 @@ export default function CourseDetails() {
                 <div 
                   key={idx} 
                   className={`border rounded-2xl overflow-hidden transition-all duration-300 ${
-                    isExpanded ? 'border-brand-orange shadow-sm' : 'border-brand-light-border hover:border-brand-orange/30'
+                    isExpanded ? 'border-brand-primary shadow-sm' : 'border-brand-light-border hover:border-brand-primary/30'
                   }`}
                 >
                   <button 
                     onClick={() => toggleModule(idx)}
                     className="w-full text-left p-5 flex justify-between items-center bg-brand-light-card hover:bg-brand-light-surface/50 transition-colors border-0 cursor-pointer font-sans"
                   >
-                    <span className="font-extrabold text-brand-light-heading text-base md:text-[17px] pr-4 hover:text-brand-orange transition-colors">{mod.title}</span>
+                    <span className="font-extrabold text-brand-light-heading text-base md:text-[17px] pr-4 hover:text-brand-primary transition-colors">{mod.title}</span>
                     <span className={`flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center transition-transform duration-300 ${
-                      isExpanded ? 'bg-brand-orange/10 text-brand-orange rotate-180' : 'bg-brand-light-surface text-brand-light-muted'
+                      isExpanded ? 'bg-brand-primary/10 text-brand-primary rotate-180' : 'bg-brand-light-surface text-brand-light-muted'
                     }`}>
                       <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
@@ -176,7 +176,7 @@ export default function CourseDetails() {
                             <ul className="space-y-3.5">
                               {mod.points.map((pt, pIdx) => (
                                 <li key={pIdx} className="flex gap-3 items-start">
-                                  <span className="w-1.5 h-1.5 rounded-full bg-brand-cyan mt-2 flex-shrink-0" />
+                                  <span className="w-1.5 h-1.5 rounded-full bg-brand-secondary mt-2 flex-shrink-0" />
                                   <span className="text-brand-light-body text-sm font-medium leading-relaxed">{pt}</span>
                                 </li>
                               ))}
@@ -196,9 +196,9 @@ export default function CourseDetails() {
 
         {/* Live Market Application */}
         {course.liveApplication && (
-          <div className="mb-12 bg-brand-cyan/5 border border-brand-cyan/20 rounded-[28px] p-6 sm:p-8">
+          <div className="mb-12 bg-brand-secondary/5 border border-brand-secondary/20 rounded-[28px] p-6 sm:p-8">
             <h3 className="text-lg font-extrabold text-brand-light-heading mb-4 flex items-center gap-2">
-              <svg className="w-5 h-5 text-brand-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-5 h-5 text-brand-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
               Live Market Application Included
@@ -206,7 +206,7 @@ export default function CourseDetails() {
             <ul className="grid sm:grid-cols-2 gap-3.5">
               {course.liveApplication.map((app, idx) => (
                 <li key={idx} className="flex gap-2.5 items-center">
-                  <span className="w-1.5 h-1.5 rounded-full bg-brand-cyan flex-shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-brand-secondary flex-shrink-0" />
                   <span className="text-brand-light-body font-semibold text-sm">{app}</span>
                 </li>
               ))}
@@ -241,7 +241,7 @@ export default function CourseDetails() {
             <div className="grid sm:grid-cols-2 gap-4">
               {course.outcomes.map((outcome, idx) => (
                 <div key={idx} className="border border-brand-light-border rounded-xl p-4 bg-brand-light-card shadow-sm flex items-start gap-3">
-                  <span className="w-6 h-6 rounded-full bg-brand-cyan/10 text-brand-cyan flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">
+                  <span className="w-6 h-6 rounded-full bg-brand-secondary/10 text-brand-secondary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">
                     {idx + 1}
                   </span>
                   <span className="text-brand-light-body font-semibold text-sm">{outcome}</span>
@@ -253,7 +253,7 @@ export default function CourseDetails() {
 
         {/* Enroll CTA Box */}
         <div className="bg-brand-bg-card rounded-[32px] p-6 sm:p-10 text-center text-white relative overflow-hidden shadow-2xl">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-brand-cyan/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute top-0 right-0 w-64 h-64 bg-brand-secondary/10 rounded-full blur-3xl pointer-events-none" />
           <h3 className="text-2xl sm:text-3xl font-extrabold mb-4 tracking-tight">Reserve Your Seat Today</h3>
           <p className="text-slate-300 text-sm sm:text-base max-w-lg mx-auto mb-8 leading-relaxed">
             Limited slots per batch to ensure interactive teaching and live Q&A. Apply now to speak with a mentor.

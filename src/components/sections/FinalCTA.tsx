@@ -27,12 +27,12 @@ export default function FinalCTA() {
 
           <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-[72px] font-extrabold mb-6 leading-[1.1] sm:leading-[1.05] tracking-tighter text-white">
             Compared. Convinced.<br />
-            <span className="text-brand-cyan">Now is the move.</span>
+            <span className="text-brand-secondary">Now is the move.</span>
           </h2>
           
           <p className="text-base sm:text-lg text-slate-300 mb-10 sm:mb-12 font-semibold flex flex-col sm:flex-row flex-wrap justify-center items-center gap-3">
             <span className="text-white/90">Bangalore's next batch</span>
-            <span className="bg-brand-orange/10 text-brand-orange px-3.5 py-1.5 rounded-full border border-brand-orange/20 text-xs sm:text-sm font-bold tracking-wide">Starts in 12 Days</span>
+            <span className="bg-brand-primary/10 text-brand-primary px-3.5 py-1.5 rounded-full border border-brand-primary/20 text-xs sm:text-sm font-bold tracking-wide">Starts in 12 Days</span>
             <span className="hidden sm:inline text-white/30">•</span>
             <span className="bg-brand-success/10 text-brand-success px-3.5 py-1.5 rounded-full border border-brand-success/20 text-xs sm:text-sm font-bold tracking-wide">Only 3 Seats Remaining for July Cohort</span>
           </p>

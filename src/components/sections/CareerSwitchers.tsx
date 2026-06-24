@@ -6,11 +6,11 @@ export default function CareerSwitchers() {
   return (
     <section className="py-16 md:py-24 bg-white px-5 sm:px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="text-brand-blue font-bold tracking-widest text-sm uppercase mb-4">
+        <div className="text-brand-secondary font-bold tracking-widest text-sm uppercase mb-4">
           CAREER SWITCHERS
         </div>
         <h2 className="text-3xl sm:text-4xl md:text-[56px] font-extrabold text-slate-900 tracking-tight leading-[1.1] mb-6 max-w-4xl">
-          Switching from a non-marketing job? You're not alone – <span className="text-brand-blue">41%</span> of our students are.
+          Switching from a non-marketing job? You're not alone – <span className="text-brand-secondary">41%</span> of our students are.
         </h2>
         <p className="text-base sm:text-lg text-slate-600 mb-10 sm:mb-16 max-w-3xl">
           In our last 4 batches, 41% of students came from non-marketing backgrounds - IT, BPO, sales, finance, even teaching.
@@ -47,7 +47,7 @@ export default function CareerSwitchers() {
                 <div>
                   <div className="text-[10px] font-bold text-slate-500 tracking-widest uppercase mb-1">TO</div>
                   <div className="font-bold text-slate-900 mb-0.5">{person.toTitle}</div>
-                  <div className="text-brand-emerald-light font-bold">{person.toSalary}</div>
+                  <div className="text-brand-success-light font-bold">{person.toSalary}</div>
                 </div>
               </div>
 

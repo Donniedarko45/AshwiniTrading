@@ -39,10 +39,10 @@ export default function Hero() {
             variants={fadeIn} 
             className="text-3xl sm:text-5xl md:text-6xl lg:text-[68px] font-extrabold leading-[1.05] sm:leading-[0.95] tracking-tighter mb-6 font-sans"
           >
-            <span className="text-transparent bg-clip-text bg-gradient-to-br from-brand-orange-light to-brand-orange block mb-2">MASTER</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-br from-brand-primary-light to-brand-primary block mb-2">MASTER</span>
             <span className="block text-white mb-2 leading-none">THE STOCK MARKET</span>
             <span className="block text-white mb-2 leading-none">WITH INDIA'S MOST</span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-brand-cyan block mt-1">PRACTICAL TRADING ACADEMY</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-secondary block mt-1">PRACTICAL TRADING ACADEMY</span>
           </motion.h1>
 
           <motion.p 
@@ -61,8 +61,8 @@ export default function Hero() {
                 key={i} 
                 className="flex items-center gap-3 bg-white/5 border border-white/10 rounded-full px-5 py-3.5 shadow-sm backdrop-blur-md transition-colors hover:bg-white/10"
               >
-                <div className="shrink-0 flex items-center justify-center w-5 h-5 rounded-full border border-brand-emerald">
-                  <Check className="w-3 h-3 text-brand-emerald" strokeWidth={3} />
+                <div className="shrink-0 flex items-center justify-center w-5 h-5 rounded-full border border-brand-success">
+                  <Check className="w-3 h-3 text-brand-success" strokeWidth={3} />
                 </div>
                 <span className="text-slate-100 font-semibold tracking-tight">{feature}</span>
               </div>
@@ -83,10 +83,10 @@ export default function Hero() {
               
               <h3 className="text-2xl md:text-3xl font-extrabold text-white mb-2 tracking-tight">Apply for the Next Batch</h3>
               
-              <div className="text-brand-orange font-bold mb-8 text-base md:text-lg tracking-tight flex items-center gap-2">
+              <div className="text-brand-primary font-bold mb-8 text-base md:text-lg tracking-tight flex items-center gap-2">
                 <span className="relative flex h-2.5 w-2.5">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-orange opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand-orange"></span>
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-primary opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand-primary"></span>
                 </span>
                 <span>Batch Capped at 24 · 7 Seats Left</span>
               </div>
@@ -109,12 +109,12 @@ export default function Hero() {
             <div className="flex-1 flex flex-col items-center justify-center relative bg-gradient-to-b from-brand-bg-card to-transparent border border-white/5 rounded-xl p-4 min-h-[100px] backdrop-blur-sm">
               {/* Wreath icons */}
               <div className="absolute inset-0 flex items-center justify-center opacity-40 pointer-events-none">
-                 <svg width="100%" height="100%" viewBox="0 0 120 120" fill="none" className="text-brand-orange absolute transform scale-125">
+                 <svg width="100%" height="100%" viewBox="0 0 120 120" fill="none" className="text-brand-primary absolute transform scale-125">
                    <path d="M20 60 C20 40 30 25 45 15 C35 30 35 50 40 65 C25 55 15 70 25 85 C15 75 10 50 20 60" fill="currentColor"/>
                    <path d="M100 60 C100 40 90 25 75 15 C85 30 85 50 80 65 C95 55 105 70 95 85 C105 75 110 50 100 60" fill="currentColor"/>
                  </svg>
               </div>
-              <div className="text-brand-orange font-bold text-center text-[12px] leading-tight z-10 tracking-widest uppercase">
+              <div className="text-brand-primary font-bold text-center text-[12px] leading-tight z-10 tracking-widest uppercase">
                 TOP 10<br/>STOCK<br/>MARKET<br/>ACADEMY IN<br/>INDIA
               </div>
             </div>
@@ -125,7 +125,7 @@ export default function Hero() {
               </div>
               <div className="flex items-center justify-center gap-1">
                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} className={`w-5 h-5 text-brand-orange ${i === 2 ? 'transform -translate-y-1 w-6 h-6' : ''}`} fill="currentColor" viewBox="0 0 20 20">
+                    <svg key={i} className={`w-5 h-5 text-brand-primary ${i === 2 ? 'transform -translate-y-1 w-6 h-6' : ''}`} fill="currentColor" viewBox="0 0 20 20">
                       <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
                     </svg>
                  ))}

@@ -5,33 +5,33 @@ import { coursesData } from '@/data/courses';
 
 const themeStyles = {
   blue: {
-    container: 'bg-brand-light-bg border-slate-200 hover:border-brand-cyan/30',
-    badge: 'bg-brand-cyan/10 text-brand-cyan-hover border-brand-cyan/20',
-    bullet: 'bg-brand-cyan',
+    container: 'bg-brand-light-bg border-slate-200 hover:border-brand-secondary/30',
+    badge: 'bg-brand-secondary/10 text-brand-secondary-hover border-brand-secondary/20',
+    bullet: 'bg-brand-secondary',
     extraItem: 'bg-white border-slate-200',
-    extraIcon: 'bg-brand-cyan/10 text-brand-cyan-hover',
+    extraIcon: 'bg-brand-secondary/10 text-brand-secondary-hover',
     emiText: 'text-slate-900',
-    batchBg: 'bg-brand-cyan/10 border-brand-cyan/20 text-slate-800',
+    batchBg: 'bg-brand-secondary/10 border-brand-secondary/20 text-slate-800',
     primaryButton: 'bg-brand-bg-dark hover:bg-slate-900 text-white shadow-md'
   },
   indigo: {
-    container: 'bg-white border-[3px] border-brand-orange shadow-[0_30px_60px_-15px_rgba(227,201,116,0.25)] lg:scale-100 z-10',
-    badge: 'bg-brand-orange/10 text-brand-orange-hover border-brand-orange/20',
-    bullet: 'bg-brand-orange',
-    extraItem: 'bg-brand-orange/5 border-brand-orange/10',
-    extraIcon: 'bg-brand-orange/10 text-brand-orange',
-    emiText: 'text-brand-orange-hover',
-    batchBg: 'bg-brand-orange/10 border-brand-orange/20 text-slate-800',
-    primaryButton: 'bg-gradient-to-r from-brand-orange-grad-start to-brand-orange-grad-end text-slate-950 hover:brightness-110 shadow-lg shadow-brand-orange/15'
+    container: 'bg-white border-[3px] border-brand-primary shadow-[0_30px_60px_-15px_rgba(227,201,116,0.25)] lg:scale-100 z-10',
+    badge: 'bg-brand-primary/10 text-brand-primary-hover border-brand-primary/20',
+    bullet: 'bg-brand-primary',
+    extraItem: 'bg-brand-primary/5 border-brand-primary/10',
+    extraIcon: 'bg-brand-primary/10 text-brand-primary',
+    emiText: 'text-brand-primary-hover',
+    batchBg: 'bg-brand-primary/10 border-brand-primary/20 text-slate-800',
+    primaryButton: 'bg-gradient-to-r from-brand-primary-grad-start to-brand-primary-grad-end text-slate-950 hover:brightness-110 shadow-lg shadow-brand-primary/15'
   },
   orange: {
-    container: 'bg-brand-light-bg border-slate-200 hover:border-brand-orange/30 shadow-md',
-    badge: 'bg-brand-orange/10 text-brand-orange-hover border-brand-orange/20',
-    bullet: 'bg-brand-orange',
-    extraItem: 'bg-white border-brand-orange/10',
-    extraIcon: 'bg-brand-orange/10 text-brand-orange',
-    emiText: 'text-brand-orange-hover',
-    batchBg: 'bg-brand-orange/10 border-brand-orange/20 text-slate-800',
+    container: 'bg-brand-light-bg border-slate-200 hover:border-brand-primary/30 shadow-md',
+    badge: 'bg-brand-primary/10 text-brand-primary-hover border-brand-primary/20',
+    bullet: 'bg-brand-primary',
+    extraItem: 'bg-white border-brand-primary/10',
+    extraIcon: 'bg-brand-primary/10 text-brand-primary',
+    emiText: 'text-brand-primary-hover',
+    batchBg: 'bg-brand-primary/10 border-brand-primary/20 text-slate-800',
     primaryButton: 'bg-brand-bg-dark hover:bg-slate-900 text-white shadow-md'
   }
 };
@@ -65,9 +65,9 @@ export default function AllCourses() {
           variants={fadeIn}
           className="mb-16"
         >
-          <div className="text-brand-orange font-extrabold text-sm tracking-widest uppercase mb-4">OUR CURRICULUM</div>
+          <div className="text-brand-primary font-extrabold text-sm tracking-widest uppercase mb-4">OUR CURRICULUM</div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-brand-light-heading tracking-tight mb-6 max-w-4xl mx-auto leading-tight">
-            Explore All <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-brand-cyan">Trading Programs</span>
+            Explore All <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-secondary">Trading Programs</span>
           </h1>
           <p className="text-brand-light-body text-lg sm:text-xl font-semibold max-w-2xl mx-auto">
             From stock market basics to advanced quantitative options trading. Choose the track that fits your goals.
@@ -91,7 +91,7 @@ export default function AllCourses() {
                 {/* Badges */}
                 <div className="flex flex-wrap gap-3 mb-6">
                   {course.badgeType === 'popular' && (
-                    <div className="bg-brand-cyan text-slate-950 text-xs font-bold px-4 py-1.5 rounded-full w-fit uppercase tracking-widest flex items-center gap-1.5 shadow-sm">
+                    <div className="bg-brand-secondary text-slate-950 text-xs font-bold px-4 py-1.5 rounded-full w-fit uppercase tracking-widest flex items-center gap-1.5 shadow-sm">
                       <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
                         <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                       </svg> 
@@ -99,7 +99,7 @@ export default function AllCourses() {
                     </div>
                   )}
                   {course.badgeType === 'flagship' && (
-                    <div className="bg-brand-orange text-slate-950 text-xs font-bold px-4 py-1.5 rounded-full w-fit uppercase tracking-widest flex items-center gap-1.5 shadow-sm">
+                    <div className="bg-brand-primary text-slate-950 text-xs font-bold px-4 py-1.5 rounded-full w-fit uppercase tracking-widest flex items-center gap-1.5 shadow-sm">
                       ★ Flagship Program
                     </div>
                   )}
@@ -149,8 +149,8 @@ export default function AllCourses() {
                     )}
                     
                     {course.bonus && (
-                      <li className={`flex items-start gap-3 mt-3 text-[14px] font-medium text-slate-700 p-3 rounded-xl border shadow-sm bg-emerald-50/50 border-emerald-100`}>
-                        <span className={`rounded-full p-1 mt-0.5 shrink-0 bg-emerald-100 text-emerald-600`}>
+                      <li className={`flex items-start gap-3 mt-3 text-[14px] font-medium text-slate-700 p-3 rounded-xl border shadow-sm bg-brand-success-soft border-brand-success/20`}>
+                        <span className={`rounded-full p-1 mt-0.5 shrink-0 bg-brand-success/10 text-brand-success`}>
                           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5a2 2 0 10-2 2h2zm0 0H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2h-8z" />
                           </svg>

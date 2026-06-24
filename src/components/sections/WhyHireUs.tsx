@@ -6,17 +6,17 @@ import { staggerContainer, fadeIn, scaleUp } from '@/lib/animations';
 export default function WhyHireUs() {
   const reasons = [
     {
-      icon: <CheckCircle2 className="w-6 h-6 text-purple-600" />,
+      icon: <CheckCircle2 className="w-6 h-6 text-brand-accent" />,
       title: "Zero Ramp-up Time",
       desc: "Our graduates have already run ₹50K+ in live ad spend and built dashboards. They ship on day one."
     },
     {
-      icon: <TrendingUp className="w-6 h-6 text-blue-600" />,
+      icon: <TrendingUp className="w-6 h-6 text-brand-secondary-hover" />,
       title: "AI-Native Workflows",
       desc: "They don't just write copy; they automate content velocity using GPT-4, n8n, and Midjourney pipelines."
     },
     {
-      icon: <Zap className="w-6 h-6 text-orange-600" />,
+      icon: <Zap className="w-6 h-6 text-brand-primary-hover" />,
       title: "ROI Obsessed",
       desc: "Trained to focus on CPA, LTV, and CAC. They speak the language of founders and revenue leaders."
     }
@@ -33,7 +33,7 @@ export default function WhyHireUs() {
           className="text-center max-w-4xl mx-auto mb-20"
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#111827] tracking-tight leading-[1.1] mb-6">
-            Why <span className="text-brand-blue">500+</span> Bangalore companies pick our graduates <span className="underline decoration-blue-200 underline-offset-4">first.</span>
+            Why <span className="text-brand-secondary">500+</span> Bangalore companies pick our graduates <span className="underline decoration-brand-secondary/30 underline-offset-4">first.</span>
           </h2>
           <p className="text-slate-600 text-lg md:text-xl font-medium">
             Three reasons hiring managers told us they keep coming back:

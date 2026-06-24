@@ -45,7 +45,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-brand-bg-dark font-sans selection:bg-brand-orange/30 text-white">
+    <div className="min-h-screen bg-brand-bg-dark font-sans selection:bg-brand-primary/30 text-white">
       <Navbar />
       <main>
         {currentView === 'landing' && (
