@@ -1,83 +1,120 @@
 import React, { useState } from 'react';
+import { Award, BookOpen, ShieldCheck, Trophy, ZoomIn, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Award, CheckCircle, ZoomIn, X } from 'lucide-react';
-import { fadeIn } from '@/lib/animations';
+import { fadeIn, staggerContainer } from '@/lib/animations';
 
 export default function Certifications() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const certifications = [
+    {
+      series: "NISM Series V-A",
+      title: "Mutual Fund Distributors",
+      desc: "Certification Examination",
+      gradient: "from-blue-500/20 via-indigo-500/10 to-transparent",
+      border: "border-blue-500/30",
+      iconColor: "text-blue-400"
+    },
+    {
+      series: "NISM Series VIII",
+      title: "Equity Derivatives",
+      desc: "Certification Examination",
+      gradient: "from-brand-purple/20 via-indigo-500/10 to-transparent",
+      border: "border-brand-purple/30",
+      iconColor: "text-purple-400"
+    },
+    {
+      series: "NISM Series XV",
+      title: "Research Analyst",
+      desc: "Certification Examination",
+      gradient: "from-brand-orange/20 via-indigo-500/10 to-transparent",
+      border: "border-brand-orange/30",
+      iconColor: "text-brand-orange"
+    }
+  ];
+
   return (
-    <section id="certifications" className="relative bg-[#0F0A24] py-24 md:py-32 px-5 sm:px-6 md:px-12 overflow-hidden border-b border-white/5">
+    <section id="certifications" className="relative bg-[#0B0A11] py-24 md:py-32 px-5 sm:px-6 md:px-12 overflow-hidden border-b border-white/5">
       {/* Background Decorative Glows */}
-      <div className="absolute top-1/4 left-1/10 w-[400px] h-[400px] bg-yellow-500/10 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/10 w-[500px] h-[500px] bg-indigo-500/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/4 left-[-10%] w-[500px] h-[500px] bg-brand-glow/15 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-[-10%] w-[600px] h-[600px] bg-[#1d1b4b]/20 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
-          {/* Left Text Column */}
+          {/* Column 1: NISM Certifications (lg:col-span-7) */}
           <motion.div 
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            variants={staggerContainer}
             className="lg:col-span-7 text-left"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-500/10 border border-yellow-500/30 text-yellow-500 font-extrabold text-xs tracking-widest uppercase mb-6">
-              <Award className="w-4 h-4 text-yellow-500 animate-spin-slow" />
-              Award & Recognition
-            </div>
+            <motion.div 
+              variants={fadeIn}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-orange/10 border border-brand-orange/30 text-brand-orange font-extrabold text-xs tracking-widest uppercase mb-6"
+            >
+              <Award className="w-4 h-4 text-brand-orange animate-pulse" />
+              NISM Certification Training Included
+            </motion.div>
             
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-[1.1] mb-6">
-              Recognized as the <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-amber-500">Best Stock Trading Academy</span> in Bangalore
-            </h2>
+            <motion.h2 
+              variants={fadeIn}
+              className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-[1.1] mb-6"
+            >
+              Build Knowledge. <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-brand-purple to-brand-blue">Earn Certifications.</span> Create Opportunities.
+            </motion.h2>
             
-            <p className="text-slate-300 text-base sm:text-lg font-medium leading-relaxed mb-8">
-              We are deeply honored to receive the prestigious <strong className="text-white">Udyog Yogdaan Puraskar</strong> in Bengaluru. This award recognizes our commitment to delivering top-tier trading mentorship, options trading expertise, and practical stock market education.
-            </p>
+            <motion.p 
+              variants={fadeIn}
+              className="text-slate-300 text-base sm:text-lg font-medium leading-relaxed mb-8 max-w-2xl"
+            >
+              To enhance employability and industry readiness, students will receive dedicated preparation and guidance for highly valued regulatory certifications:
+            </motion.p>
 
-            {/* Benefit Bullets */}
-            <div className="space-y-5 mb-8">
-              <div className="flex items-start gap-4">
-                <div className="p-1 rounded-full bg-yellow-500/20 text-yellow-400 mt-1 shrink-0">
-                  <CheckCircle className="w-5 h-5" />
+            {/* Certifications Cards Stack */}
+            <motion.div variants={fadeIn} className="space-y-4 mb-6">
+              {certifications.map((cert, index) => (
+                <div 
+                  key={index}
+                  className={`relative p-5 rounded-2xl bg-gradient-to-r ${cert.gradient} border ${cert.border} backdrop-blur-md flex items-center gap-5 transition-transform hover:translate-x-2 duration-300`}
+                >
+                  <div className={`p-3 rounded-xl bg-white/5 ${cert.iconColor} shrink-0`}>
+                    <BookOpen className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <span className="text-xs font-black tracking-widest uppercase text-slate-400 block mb-1">{cert.series}</span>
+                    <h4 className="text-white font-extrabold text-base sm:text-lg tracking-tight leading-tight">{cert.title}</h4>
+                    <p className="text-slate-400 text-xs font-semibold mt-0.5">{cert.desc}</p>
+                  </div>
+                  <div className="ml-auto pr-2">
+                    <ShieldCheck className={`w-6.5 h-6.5 ${cert.iconColor} opacity-80`} />
+                  </div>
                 </div>
-                <div>
-                  <h4 className="font-bold text-white text-base">Elite Industry Benchmark</h4>
-                  <p className="text-slate-400 text-sm mt-0.5">Awarded for our structured, practical-first pedagogy in financial markets education.</p>
-                </div>
-              </div>
+              ))}
+            </motion.div>
 
-              <div className="flex items-start gap-4">
-                <div className="p-1 rounded-full bg-yellow-500/20 text-yellow-400 mt-1 shrink-0">
-                  <CheckCircle className="w-5 h-5" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-white text-base">SEBI Registered Mentorship</h4>
-                  <p className="text-slate-400 text-sm mt-0.5">Guided by research analysts who adhere to strict risk management and execution processes.</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="p-1 rounded-full bg-yellow-500/20 text-yellow-400 mt-1 shrink-0">
-                  <CheckCircle className="w-5 h-5" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-white text-base">10,000+ Learners Empowered</h4>
-                  <p className="text-slate-400 text-sm mt-0.5">A trusted network of students, corporate professionals, and full-time traders across India.</p>
-                </div>
-              </div>
-            </div>
+            <motion.p 
+              variants={fadeIn}
+              className="text-slate-400 text-sm font-semibold leading-relaxed max-w-2xl border-l-2 border-brand-purple/40 pl-4 py-1"
+            >
+              Our structured training helps students understand the concepts, examination patterns, and practical applications required to successfully clear these certifications on their first attempt.
+            </motion.p>
           </motion.div>
 
-          {/* Right Certificate Card Column */}
+          {/* Column 2: Award & Recognition Certificate (lg:col-span-5) */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="lg:col-span-5 flex justify-center"
+            className="lg:col-span-5 flex flex-col items-center justify-center h-full"
           >
+            <div className="text-left w-full max-w-[360px] sm:max-w-[400px] mb-4 lg:hidden">
+              <div className="text-xs font-bold text-yellow-500 tracking-wider uppercase mb-1">Award & Recognition</div>
+              <h4 className="text-white font-bold text-xl">Udyog Yogdaan Puraskar</h4>
+            </div>
+
             <div 
               onClick={() => setIsOpen(true)}
               className="relative w-full max-w-[360px] sm:max-w-[400px] aspect-[3/4.2] rounded-[24px] p-2 bg-gradient-to-br from-yellow-500/30 via-slate-800 to-indigo-900/40 border border-yellow-500/20 shadow-[0_0_50px_rgba(234,179,8,0.15)] group cursor-pointer overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_60px_rgba(234,179,8,0.25)] hover:border-yellow-400/40"
@@ -105,12 +142,20 @@ export default function Certifications() {
                 </div>
               </div>
             </div>
+
+            <div className="hidden lg:block text-center w-full max-w-[360px] sm:max-w-[400px] mt-6 px-2">
+              <div className="text-[10px] font-black text-yellow-500/90 tracking-widest uppercase mb-1 flex items-center justify-center gap-1.5">
+                <Trophy className="w-4.5 h-4.5 text-yellow-500" />
+                Awarded Academy
+              </div>
+              <h4 className="text-white font-extrabold text-base leading-snug">Udyog Yogdaan Puraskar for Best Trading Academy</h4>
+            </div>
           </motion.div>
 
         </div>
       </div>
 
-      {/* Lightbox / Modal Modal */}
+      {/* Lightbox / Modal */}
       <AnimatePresence>
         {isOpen && (
           <motion.div

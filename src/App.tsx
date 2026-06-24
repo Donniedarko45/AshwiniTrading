@@ -9,10 +9,9 @@ import { LazySection } from '@/components/shared/LazySection';
 const AllCourses = React.lazy(() => import('@/components/sections/AllCourses'));
 const CourseDetails = React.lazy(() => import('@/components/sections/CourseDetails'));
 const CollegeCollaboration = React.lazy(() => import('@/components/sections/CollegeCollaboration'));
-const OnePercentChange = React.lazy(() => import('@/components/sections/OnePercentChange'));
 
 export default function App() {
-  const [currentView, setCurrentView] = useState<'landing' | 'courses' | 'details' | 'collaboration' | 'one-change'>('landing');
+  const [currentView, setCurrentView] = useState<'landing' | 'courses' | 'details' | 'collaboration'>('landing');
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -25,9 +24,6 @@ export default function App() {
         window.scrollTo(0, 0);
       } else if (hash === '#/college-collaboration') {
         setCurrentView('collaboration');
-        window.scrollTo(0, 0);
-      } else if (hash === '#/1-change' || hash === '#/1-percent-change') {
-        setCurrentView('one-change');
         window.scrollTo(0, 0);
       } else {
         setCurrentView('landing');
@@ -77,11 +73,7 @@ export default function App() {
             <CollegeCollaboration />
           </Suspense>
         )}
-        {currentView === 'one-change' && (
-          <Suspense fallback={<div className="w-full min-h-[60vh] bg-[#110B29] flex items-center justify-center text-white">Loading...</div>}>
-            <OnePercentChange />
-          </Suspense>
-        )}
+        {/* 1% Change section removed */}
       </main>
 
       {/* Footer is always at the bottom, so lazy load it as well */}
