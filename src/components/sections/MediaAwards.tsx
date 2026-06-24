@@ -44,10 +44,10 @@ export default function MediaAwards() {
   ];
 
   return (
-    <section id="media-awards" className="relative bg-[#09080F] py-24 md:py-32 px-5 sm:px-6 md:px-12 overflow-hidden border-b border-white/5">
+    <section id="media-awards" className="relative bg-brand-bg-dark py-24 md:py-32 px-5 sm:px-6 md:px-12 overflow-hidden border-b border-white/5">
       {/* Glow Effects */}
       <div className="absolute top-1/3 right-[-10%] w-[500px] h-[500px] bg-brand-glow/10 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-1/4 left-[-10%] w-[600px] h-[600px] bg-indigo-950/20 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-1/4 left-[-10%] w-[600px] h-[600px] bg-brand-glow/20 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         
@@ -82,7 +82,7 @@ export default function MediaAwards() {
               <motion.div 
                 key={idx}
                 variants={scaleUp}
-                className={`${item.span} relative rounded-3xl p-6 sm:p-8 bg-[#110B24]/40 border ${item.border} backdrop-blur-xl flex flex-col justify-between group transition-all duration-500 hover:-translate-y-1 hover:bg-[#110B24]/60 hover:shadow-[0_10px_30px_-15px_rgba(0,0,0,0.5)]`}
+                className={`${item.span} relative rounded-3xl p-6 sm:p-8 bg-brand-bg-card/40 border ${item.border} backdrop-blur-xl flex flex-col justify-between group transition-all duration-500 hover:-translate-y-1 hover:bg-brand-bg-card/60 hover:shadow-[0_10px_30px_-15px_rgba(0,0,0,0.5)]`}
               >
                 {/* Background Glow */}
                 <div className={`absolute top-4 right-4 w-24 h-24 rounded-full ${item.bgGlow} blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`} />
@@ -105,7 +105,7 @@ export default function MediaAwards() {
           {/* Full Width Alumni Achievement Banner Card */}
           <motion.div 
             variants={scaleUp}
-            className="lg:col-span-12 relative rounded-3xl p-8 bg-gradient-to-r from-[#171035] via-[#110B24] to-[#171035] border border-brand-orange/20 overflow-hidden group transition-all duration-500 hover:border-brand-orange/40 hover:shadow-[0_12px_40px_rgba(249,115,22,0.1)] flex flex-col md:flex-row items-center justify-between gap-8"
+            className="lg:col-span-12 relative rounded-3xl p-8 bg-gradient-to-r from-brand-bg-card via-brand-bg-deep to-brand-bg-card border border-brand-orange/20 overflow-hidden group transition-all duration-500 hover:border-brand-orange/40 hover:shadow-[0_12px_40px_rgba(249,115,22,0.1)] flex flex-col md:flex-row items-center justify-between gap-8"
           >
             {/* Ambient gold glow */}
             <div className="absolute inset-0 bg-radial-gradient from-brand-orange/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />

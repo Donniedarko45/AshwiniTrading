@@ -34,10 +34,10 @@ export default function Certifications() {
   ];
 
   return (
-    <section id="certifications" className="relative bg-[#0B0A11] py-24 md:py-32 px-5 sm:px-6 md:px-12 overflow-hidden border-b border-white/5">
+    <section id="certifications" className="relative bg-brand-bg-dark py-24 md:py-32 px-5 sm:px-6 md:px-12 overflow-hidden border-b border-white/5">
       {/* Background Decorative Glows */}
       <div className="absolute top-1/4 left-[-10%] w-[500px] h-[500px] bg-brand-glow/15 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-[-10%] w-[600px] h-[600px] bg-[#1d1b4b]/20 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-[-10%] w-[600px] h-[600px] bg-brand-glow/20 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">

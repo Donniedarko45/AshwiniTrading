@@ -147,8 +147,8 @@ export function LeadForm({
             </Button>
           </div>
         </div>
-        <div className={`text-center text-[12px] font-bold mt-4 tracking-wide flex items-center justify-center gap-1.5 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
-          <span className="text-[#FFB800] text-sm">★</span>
+        <div className={`text-center text-[12px] font-bold mt-4 tracking-wide flex items-center justify-center gap-1.5 ${isLight ? 'text-slate-500' : 'text-brand-orange-light/95'}`}>
+          <span className="text-brand-orange text-sm">★</span>
           <span>4.9/5 Rated on CourseReport & Google Reviews (1,240+ Verified Student Reviews)</span>
         </div>
       </form>
@@ -271,8 +271,8 @@ export function LeadForm({
           </>
         )}
       </motion.button>
-      <div className={`text-center text-[12px] font-bold mt-4 tracking-wide flex items-center justify-center gap-1.5 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
-        <span className="text-[#FFB800] text-sm">★</span>
+      <div className={`text-center text-[12px] font-bold mt-4 tracking-wide flex items-center justify-center gap-1.5 ${isLight ? 'text-slate-500' : 'text-brand-orange-light/95'}`}>
+        <span className="text-brand-orange text-sm">★</span>
         <span>4.9/5 Rated on CourseReport & Google Reviews</span>
       </div>
     </form>

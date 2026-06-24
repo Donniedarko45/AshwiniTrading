@@ -1,65 +1,65 @@
 import React from 'react';
-import { BookOpen, TrendingUp, ShieldCheck, FileText, Briefcase, Cpu, CheckCircle2, Calendar } from 'lucide-react';
+import { BookOpen, TrendingUp, ShieldCheck, FileText, Briefcase, Cpu, Calendar } from 'lucide-react';
 import { motion } from 'motion/react';
 import { fadeIn, staggerContainer, scaleUp } from '@/lib/animations';
 
 export default function Achieve90Days() {
   const achievements = [
     {
+      num: "01",
       title: "Understand Stock Market Fundamentals",
       desc: "Learn how stock markets work, how companies create value, and how investors build wealth from the ground up.",
       icon: BookOpen,
-      color: "text-blue-400",
-      glow: "bg-blue-500/10",
-      border: "border-blue-500/25 group-hover:border-blue-400/40"
+      accentColor: "text-brand-cyan",
+      glowColor: "bg-brand-cyan/10"
     },
     {
+      num: "02",
       title: "Read Charts Like a Professional",
       desc: "Identify trends, support, resistance levels, breakouts, and learn to gauge real-time market momentum.",
       icon: TrendingUp,
-      color: "text-purple-400",
-      glow: "bg-purple-500/10",
-      border: "border-brand-purple/25 group-hover:border-brand-purple/40"
+      accentColor: "text-brand-orange",
+      glowColor: "bg-brand-orange/10"
     },
     {
+      num: "03",
       title: "Learn Risk Management",
       desc: "Protect your capital using proven money management techniques, strict position sizing, and stop-loss execution.",
       icon: ShieldCheck,
-      color: "text-emerald-400",
-      glow: "bg-emerald-500/10",
-      border: "border-emerald-500/25 group-hover:border-emerald-400/40"
+      accentColor: "text-brand-cyan",
+      glowColor: "bg-brand-cyan/10"
     },
     {
+      num: "04",
       title: "Build Your Own Trading & Investment Plan",
       desc: "Create a structured, rule-based approach tailored to your specific financial goals and risk tolerance profile.",
       icon: FileText,
-      color: "text-brand-orange",
-      glow: "bg-brand-orange/10",
-      border: "border-brand-orange/25 group-hover:border-brand-orange/40"
+      accentColor: "text-brand-orange",
+      glowColor: "bg-brand-orange/10"
     },
     {
+      num: "05",
       title: "Understand Mutual Funds & Portfolio Building",
       desc: "Learn the mechanics of diversification, SIPs, tactical asset allocation, and long-term compounding wealth creation.",
       icon: Briefcase,
-      color: "text-pink-400",
-      glow: "bg-pink-500/10",
-      border: "border-pink-500/25 group-hover:border-pink-400/40"
+      accentColor: "text-brand-cyan",
+      glowColor: "bg-brand-cyan/10"
     },
     {
+      num: "06",
       title: "Use AI for Market Research",
       desc: "Leverage modern AI tools and automated screening systems to analyze companies, sectors, and market trends faster.",
       icon: Cpu,
-      color: "text-cyan-400",
-      glow: "bg-cyan-500/10",
-      border: "border-cyan-500/25 group-hover:border-cyan-400/40"
+      accentColor: "text-brand-orange",
+      glowColor: "bg-brand-orange/10"
     }
   ];
 
   return (
-    <section id="achievements" className="relative bg-[#0B0A11] py-24 md:py-32 px-5 sm:px-6 md:px-12 overflow-hidden border-b border-white/5">
+    <section id="achievements" className="relative bg-brand-bg-dark py-24 md:py-32 px-5 sm:px-6 md:px-12 overflow-hidden border-b border-white/5">
       {/* Glow Effects */}
       <div className="absolute top-1/4 left-[-10%] w-[500px] h-[500px] bg-brand-glow/10 rounded-full blur-[130px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-[-10%] w-[500px] h-[500px] bg-indigo-950/20 rounded-full blur-[130px] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-[-10%] w-[500px] h-[500px] bg-brand-glow/20 rounded-full blur-[130px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         
@@ -97,30 +97,29 @@ export default function Achieve90Days() {
               <motion.div 
                 key={idx}
                 variants={scaleUp}
-                className={`relative rounded-3xl p-6 sm:p-8 bg-[#110B24]/40 border ${item.border} backdrop-blur-xl flex flex-col justify-between group transition-all duration-500 hover:-translate-y-1.5 hover:bg-[#110B24]/60 hover:shadow-[0_12px_40px_-15px_rgba(0,0,0,0.6)]`}
+                className="relative rounded-3xl p-8 bg-brand-bg-card/40 border border-white/5 backdrop-blur-xl flex flex-col justify-between group transition-all duration-500 hover:-translate-y-1.5 hover:border-brand-orange/30 hover:shadow-[0_12px_40px_-15px_rgba(0,0,0,0.6)]"
               >
                 {/* Background glow circle */}
-                <div className={`absolute top-4 right-4 w-20 h-20 rounded-full ${item.glow} blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`} />
+                <div className={`absolute top-6 right-6 w-24 h-24 rounded-full ${item.glowColor} blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`} />
 
-                <div className="h-full flex flex-col justify-between">
+                <div className="h-full flex flex-col justify-between relative z-10">
                   <div>
-                    {/* Icon and check header */}
-                    <div className="flex items-center justify-between mb-6">
-                      <div className="flex items-center gap-2.5">
-                        <CheckCircle2 className="w-5.5 h-5.5 text-emerald-400 shrink-0" strokeWidth={2.5} />
-                        <span className="text-emerald-400 font-extrabold text-xs tracking-widest uppercase">Verified Goal</span>
-                      </div>
-                      <div className={`p-2.5 rounded-xl bg-white/5 ${item.color} transition-transform duration-500 group-hover:scale-110`}>
-                        <IconComponent className="w-5.5 h-5.5" />
+                    {/* Number & Icon Header */}
+                    <div className="flex items-center justify-between mb-8">
+                      <span className="text-3xl font-black text-white/15 group-hover:text-brand-orange/80 transition-colors duration-300 tracking-tighter select-none font-mono">
+                        {item.num}
+                      </span>
+                      <div className={`p-3 rounded-2xl bg-white/5 ${item.accentColor} transition-transform duration-500 group-hover:scale-110`}>
+                        <IconComponent className="w-6 h-6" />
                       </div>
                     </div>
 
-                    <h3 className="text-lg sm:text-xl font-extrabold text-white mb-3 tracking-tight leading-snug group-hover:text-brand-orange transition-colors duration-300">
+                    <h3 className="text-xl font-extrabold text-white mb-4 tracking-tight leading-snug group-hover:text-brand-orange transition-colors duration-300">
                       {item.title}
                     </h3>
                   </div>
 
-                  <p className="text-slate-400 text-sm sm:text-[14.5px] font-semibold leading-relaxed mt-1">
+                  <p className="text-slate-400 text-sm sm:text-[15px] font-semibold leading-relaxed mt-2">
                     {item.desc}
                   </p>
                 </div>

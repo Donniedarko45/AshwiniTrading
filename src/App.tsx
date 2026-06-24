@@ -4,6 +4,8 @@ import Hero from '@/components/sections/Hero';
 import MobileStickyBar from '@/components/shared/MobileStickyBar';
 import FloatingSocials from '@/components/shared/FloatingSocials';
 import { LazySection } from '@/components/shared/LazySection';
+import JoinUs from '@/components/sections/JoinUs';
+import ReviewsPage from '@/components/sections/ReviewsPage';
 
 // Lazy load full page routes to load immediately on navigation (without intersection observer)
 const AllCourses = React.lazy(() => import('@/components/sections/AllCourses'));
@@ -11,7 +13,7 @@ const CourseDetails = React.lazy(() => import('@/components/sections/CourseDetai
 const CollegeCollaboration = React.lazy(() => import('@/components/sections/CollegeCollaboration'));
 
 export default function App() {
-  const [currentView, setCurrentView] = useState<'landing' | 'courses' | 'details' | 'collaboration'>('landing');
+  const [currentView, setCurrentView] = useState<'landing' | 'courses' | 'details' | 'collaboration' | 'join' | 'reviews'>('landing');
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -24,6 +26,12 @@ export default function App() {
         window.scrollTo(0, 0);
       } else if (hash === '#/college-collaboration') {
         setCurrentView('collaboration');
+        window.scrollTo(0, 0);
+      } else if (hash === '#/join-us') {
+        setCurrentView('join');
+        window.scrollTo(0, 0);
+      } else if (hash === '#/reviews') {
+        setCurrentView('reviews');
         window.scrollTo(0, 0);
       } else {
         setCurrentView('landing');
@@ -46,10 +54,9 @@ export default function App() {
             <Hero />
 
             {/* Below the fold (lazy loaded on proximity scroll) */}
-            <LazySection importFunc={() => import('@/components/sections/Alumni')} />
-            <LazySection importFunc={() => import('@/components/sections/Placements')} />
             <LazySection importFunc={() => import('@/components/sections/Achieve90Days')} />
             <LazySection importFunc={() => import('@/components/sections/Reviews')} />
+            <LazySection importFunc={() => import('@/components/sections/CoursesWithAI')} />
             <LazySection importFunc={() => import('@/components/sections/CourseTracks')} />
             <LazySection importFunc={() => import('@/components/sections/Curriculum')} />
             <LazySection importFunc={() => import('@/components/sections/Certifications')} />
@@ -58,6 +65,8 @@ export default function App() {
             <LazySection importFunc={() => import('@/components/sections/FinalCTA')} />
           </>
         )}
+        {currentView === 'join' && <JoinUs />}
+        {currentView === 'reviews' && <ReviewsPage />}
         {currentView === 'courses' && (
           <Suspense fallback={<div className="w-full min-h-[60vh] bg-[#110B29] flex items-center justify-center text-white">Loading Courses...</div>}>
             <AllCourses />

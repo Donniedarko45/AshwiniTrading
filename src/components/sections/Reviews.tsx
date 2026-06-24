@@ -1,29 +1,21 @@
-import React, { useState } from 'react';
-import { googleReviews } from '@/data/reviews';
+import React from 'react';
+import { academyReviews } from '@/data/reviews';
 import { LeadForm } from '@/components/shared/LeadForm';
 
 export default function Reviews() {
-  const [expandedReviews, setExpandedReviews] = useState<Record<number, boolean>>({});
-
-  const toggleExpand = (idx: number) => {
-    setExpandedReviews((prev) => ({
-      ...prev,
-      [idx]: !prev[idx],
-    }));
-  };
-
   return (
     <section 
       id="reviews" 
-      className="bg-[#F2F7FF] py-24 relative" 
+      className="bg-[#F2F7FF] py-24 relative border-b border-slate-100" 
       style={{
         backgroundImage: 'linear-gradient(to right, #e2e8f0 1px, transparent 1px), linear-gradient(to bottom, #e2e8f0 1px, transparent 1px)',
         backgroundSize: '40px 40px'
       }}
     >
       <div className="max-w-7xl mx-auto px-6 relative z-10">
+        
         {/* Header Block */}
-        <div className="max-w-3xl mb-16">
+        <div className="max-w-3xl mb-20 text-left">
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.1] mb-6">
             Hear From <span className="text-brand-blue">Our Students</span>
           </h2>
@@ -32,93 +24,45 @@ export default function Reviews() {
           </p>
         </div>
 
-        {/* Reviews Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {googleReviews.map((review, i) => {
-            const isLong = !!review.fullText;
-            const isExpanded = !!expandedReviews[i];
-            const textToShow = isLong && isExpanded ? review.fullText : review.text;
-
+        {/* Reviews Grid - 2x2 layout matching screenshot */}
+        <div className="grid md:grid-cols-2 gap-x-8 gap-y-14 lg:gap-x-12 lg:gap-y-16 max-w-5xl mx-auto mt-12">
+          {academyReviews.map((review, i) => {
             return (
               <div 
                 key={i} 
-                className="bg-white rounded-3xl p-6 shadow-sm border border-slate-100 hover:shadow-lg transition-all duration-300 flex flex-col items-start relative min-h-[220px]"
+                className="bg-white rounded-[28px] px-8 py-10 shadow-sm border border-slate-100 hover:shadow-md transition-all duration-300 flex flex-col items-center justify-center relative min-h-[220px]"
               >
-                {/* Google "G" Logo */}
-                <svg 
-                  className="w-5 h-5 absolute top-6 right-6 select-none pointer-events-none" 
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                  <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                  <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
-                  <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
-                </svg>
-
-                {/* User Info Header */}
-                <div className="flex items-center mb-4">
-                  {review.avatarImage ? (
-                    <img 
-                      src={review.avatarImage} 
-                      alt={review.name} 
-                      className="w-12 h-12 rounded-full object-cover shrink-0 ring-2 ring-slate-50" 
-                    />
-                  ) : (
-                    <div className={`w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-lg shrink-0 ${review.avatarColor || 'bg-slate-500'}`}>
-                      {review.avatarText || review.name.charAt(0)}
-                    </div>
-                  )}
-                  <div className="flex flex-col ml-3">
-                    <span className="font-bold text-slate-900 text-[16px] leading-tight">{review.name}</span>
-                    <span className="text-xs text-slate-400 font-medium mt-0.5">{review.date}</span>
-                  </div>
-                </div>
-
-                {/* Rating & Verification Check */}
-                <div className="flex items-center gap-1.5 mb-3.5">
-                  <div className="flex items-center gap-0.5">
-                    {[...Array(review.rating)].map((_, starIdx) => (
-                      <svg 
-                        key={starIdx} 
-                        className="w-4 h-4 text-[#FABB05] fill-current" 
-                        viewBox="0 0 20 20"
-                      >
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                {/* Floating Platform Badge */}
+                {review.platform !== 'none' && (
+                  <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-[#C83E3E] flex items-center justify-center text-white shadow-md shadow-[#C83E3E]/20 z-10">
+                    {review.platform === 'whatsapp' ? (
+                      <svg className="w-5.5 h-5.5 fill-current text-white" viewBox="0 0 24 24">
+                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.182 1.449 4.825 1.451 5.436 0 9.859-4.407 9.862-9.823.001-2.623-1.02-5.088-2.871-6.942-1.851-1.854-4.312-2.874-6.932-2.875-5.437 0-9.86 4.408-9.863 9.825-.001 1.762.461 3.483 1.337 5.016l-.99 3.618 3.708-.971zm11.367-6.416c-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.667.149-.198.298-.766.967-.939 1.165-.173.199-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.667-1.611-.913-2.206-.24-.579-.484-.501-.667-.51l-.57-.01c-.197 0-.518.074-.79.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.064 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347z" />
                       </svg>
-                    ))}
-                  </div>
-                  {review.isVerified && (
-                    <span 
-                      className="inline-flex items-center justify-center bg-[#4285F4] text-white rounded-full p-0.5"
-                      title="Verified Reviewer"
-                    >
-                      <svg className="w-2.5 h-2.5 fill-none stroke-current" strokeWidth={3.5} viewBox="0 0 24 24">
-                        <polyline points="20 6 9 17 4 12" />
+                    ) : (
+                      <svg className="w-5.5 h-5.5 fill-current text-white" viewBox="0 0 24 24">
+                        <path d="M12 2C6.477 2 2 5.582 2 10c0 1.846.797 3.518 2.135 4.805L3.105 19.33c-.157.48.332.91.77.67l3.873-2.127C9.074 18.23 10.495 18.5 12 18.5c5.523 0 10-3.582 10-8S17.523 2 12 2zm1 11H7v-2h6v2zm4-4H7V7h10v2z" />
                       </svg>
-                    </span>
-                  )}
-                </div>
+                    )}
+                  </div>
+                )}
 
-                {/* Review Text */}
-                <p className="text-slate-700 text-[14px] leading-relaxed whitespace-pre-line flex-grow">
-                  {textToShow}
-                  {isLong && (
-                    <button
-                      onClick={() => toggleExpand(i)}
-                      className="text-slate-500 hover:text-brand-blue font-semibold text-xs ml-1.5 focus:outline-none select-none transition-colors cursor-pointer inline"
-                    >
-                      {isExpanded ? 'Read less' : 'Read more'}
-                    </button>
-                  )}
-                </p>
+                {/* Review Content */}
+                <div className="w-full text-center">
+                  <h4 className="text-slate-900 font-extrabold text-xl mb-4 tracking-tight">
+                    {review.name}
+                  </h4>
+                  <p className="text-slate-600 text-sm sm:text-[15px] font-medium leading-relaxed italic">
+                    "{review.text}"
+                  </p>
+                </div>
               </div>
             );
           })}
         </div>
 
-        {/* Bottom CTA Block (adapted for stock trading) */}
-        <div className="max-w-4xl mx-auto text-center mt-16 sm:mt-32 mb-10">
+        {/* Bottom CTA Block */}
+        <div className="max-w-4xl mx-auto text-center mt-24 sm:mt-32 mb-10">
           <h2 className="text-3xl sm:text-4xl md:text-[44px] font-extrabold text-slate-900 mb-4 tracking-tight">
             You could be our next <span className="text-brand-purple underline decoration-[5px] underline-offset-4">success story</span>.
           </h2>

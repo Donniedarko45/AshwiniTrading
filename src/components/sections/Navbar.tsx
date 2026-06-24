@@ -86,6 +86,15 @@ export default function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             className="hidden lg:flex items-center gap-4"
           >
+            <motion.a 
+              href="#/join-us"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-5 py-2.5 rounded-full bg-gradient-to-r from-brand-orange-grad-start to-brand-orange-grad-end text-slate-950 text-sm font-black tracking-wide hover:brightness-110 transition-all shadow-md shadow-[#e3c974]/10 cursor-pointer inline-flex items-center justify-center"
+            >
+              Join Us
+            </motion.a>
+
             <motion.button 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -200,6 +209,14 @@ export default function Navbar() {
                 WhatsApp Us
               </a>
               
+              <a
+                href="#/join-us"
+                onClick={closeMenu}
+                className="flex items-center justify-center w-full py-4 rounded-xl bg-gradient-to-r from-brand-orange-grad-start to-brand-orange-grad-end text-slate-950 text-base font-black tracking-wide hover:brightness-110 transition-all shadow-md shadow-[#e3c974]/10 text-center"
+              >
+                Join Us
+              </a>
+
               <button
                 onClick={() => {
                   closeMenu();
