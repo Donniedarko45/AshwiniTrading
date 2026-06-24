@@ -62,8 +62,9 @@ export default function Footer() {
 
             {/* Legal / Policy Links */}
             <div className="flex flex-wrap gap-x-6 gap-y-2">
+              <a href="#/college-collaboration" className="hover:text-white transition-colors">College Collaboration</a>
+              <a href="#/1-change" className="hover:text-white transition-colors">1% Change</a>
               <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-white transition-colors">Contact Us</a>
               <a href="#" className="hover:text-white transition-colors">Refund Policy</a>
               <a href="#" className="hover:text-white transition-colors">Terms and Conditions</a>
             </div>

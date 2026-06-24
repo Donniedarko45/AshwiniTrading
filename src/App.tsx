@@ -8,9 +8,10 @@ import { LazySection } from '@/components/shared/LazySection';
 const AllCourses = React.lazy(() => import('@/components/sections/AllCourses'));
 const CourseDetails = React.lazy(() => import('@/components/sections/CourseDetails'));
 const CollegeCollaboration = React.lazy(() => import('@/components/sections/CollegeCollaboration'));
+const OnePercentChange = React.lazy(() => import('@/components/sections/OnePercentChange'));
 
 export default function App() {
-  const [currentView, setCurrentView] = useState<'landing' | 'courses' | 'details' | 'collaboration'>('landing');
+  const [currentView, setCurrentView] = useState<'landing' | 'courses' | 'details' | 'collaboration' | 'one-change'>('landing');
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -23,6 +24,9 @@ export default function App() {
         window.scrollTo(0, 0);
       } else if (hash === '#/college-collaboration') {
         setCurrentView('collaboration');
+        window.scrollTo(0, 0);
+      } else if (hash === '#/1-change' || hash === '#/1-percent-change') {
+        setCurrentView('one-change');
         window.scrollTo(0, 0);
       } else {
         setCurrentView('landing');
@@ -54,12 +58,7 @@ export default function App() {
             <LazySection importFunc={() => import('@/components/sections/CourseTracks')} />
             <LazySection importFunc={() => import('@/components/sections/Curriculum')} />
             <LazySection importFunc={() => import('@/components/sections/Certifications')} />
-            <LazySection importFunc={() => import('@/components/sections/Projects')} />
-            <LazySection importFunc={() => import('@/components/sections/InterviewReadiness')} />
-            <LazySection importFunc={() => import('@/components/sections/ResumeTransformation')} />
-            <LazySection importFunc={() => import('@/components/sections/ResumeCTA')} />
             <LazySection importFunc={() => import('@/components/sections/DayInLife')} />
-            <LazySection importFunc={() => import('@/components/sections/CareerSwitchers')} />
             <LazySection importFunc={() => import('@/components/sections/Comparison')} />
             <LazySection importFunc={() => import('@/components/sections/HonestFAQ')} />
             <LazySection importFunc={() => import('@/components/sections/FinalCTA')} />
@@ -78,6 +77,11 @@ export default function App() {
         {currentView === 'collaboration' && (
           <Suspense fallback={<div className="w-full min-h-[60vh] bg-[#110B29] flex items-center justify-center text-white">Loading...</div>}>
             <CollegeCollaboration />
+          </Suspense>
+        )}
+        {currentView === 'one-change' && (
+          <Suspense fallback={<div className="w-full min-h-[60vh] bg-[#110B29] flex items-center justify-center text-white">Loading...</div>}>
+            <OnePercentChange />
           </Suspense>
         )}
       </main>

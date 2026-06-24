@@ -45,17 +45,21 @@ export default function Navbar() {
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="flex items-center gap-3 group cursor-pointer"
           >
-            <img
-              src="/logo.png"
-              alt="Ashwini Trading Academy – SEBI Registered RA"
-              className="h-14 w-14 object-contain flex-shrink-0 transition-transform group-hover:scale-105 drop-shadow-lg"
-            />
-            <div className="text-white flex flex-col leading-tight">
-              <span className="text-[17px] font-extrabold tracking-tight">Ashwini Trading</span>
-              <span className="text-sm font-semibold tracking-wide text-slate-300">Academy</span>
-            </div>
+            <a 
+              href="#"
+              className="flex items-center gap-3 group cursor-pointer"
+            >
+              <img
+                src="/logo.png"
+                alt="Ashwini Trading Academy – SEBI Registered RA"
+                className="h-14 w-14 object-contain flex-shrink-0 transition-transform group-hover:scale-105 drop-shadow-lg"
+              />
+              <div className="text-white flex flex-col leading-tight text-left">
+                <span className="text-[17px] font-extrabold tracking-tight">Ashwini Trading</span>
+                <span className="text-sm font-semibold tracking-wide text-slate-300">Academy</span>
+              </div>
+            </a>
           </motion.div>
 
           {/* Nav Links */}

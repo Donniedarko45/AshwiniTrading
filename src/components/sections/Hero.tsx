@@ -80,8 +80,6 @@ export default function Hero() {
           <div className="relative">
             {/* Lead Form Redesigned Glassmorphic Card */}
             <div className="bg-brand-bg-card/70 backdrop-blur-2xl rounded-[28px] p-8 md:p-10 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.6)] border border-white/10 relative overflow-hidden">
-              {/* Top gradient indicator stripe */}
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-orange via-brand-purple to-brand-blue" />
               
               <h3 className="text-2xl md:text-3xl font-extrabold text-white mb-2 tracking-tight">Apply for the Next Batch</h3>
               
