@@ -47,7 +47,7 @@ export function LazySection({
     const LazyComponent = componentRef.current;
     
     return (
-      <Suspense fallback={fallback || <div className="w-full min-h-[400px] bg-[#0B0A11]" />}>
+      <Suspense fallback={fallback || <div className="w-full min-h-[400px] bg-brand-bg-dark" />}>
         <LazyComponent />
       </Suspense>
     );

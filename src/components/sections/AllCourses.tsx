@@ -5,34 +5,34 @@ import { coursesData } from '@/data/courses';
 
 const themeStyles = {
   blue: {
-    container: 'bg-slate-50 border-slate-200 hover:border-blue-200',
-    badge: 'bg-blue-100 text-blue-700 border-blue-200',
-    bullet: 'bg-blue-500',
+    container: 'bg-brand-light-bg border-slate-200 hover:border-brand-cyan/30',
+    badge: 'bg-brand-cyan/10 text-brand-cyan-hover border-brand-cyan/20',
+    bullet: 'bg-brand-cyan',
     extraItem: 'bg-white border-slate-200',
-    extraIcon: 'bg-blue-50 text-blue-600',
+    extraIcon: 'bg-brand-cyan/10 text-brand-cyan-hover',
     emiText: 'text-slate-900',
-    batchBg: 'bg-blue-50 border-blue-100 text-blue-900',
-    primaryButton: 'bg-[#111827] hover:bg-black text-white'
+    batchBg: 'bg-brand-cyan/10 border-brand-cyan/20 text-slate-800',
+    primaryButton: 'bg-brand-bg-dark hover:bg-slate-900 text-white shadow-md'
   },
   indigo: {
-    container: 'bg-white border-[3px] border-blue-600 shadow-[0_30px_60px_-15px_rgba(37,99,235,0.25)] lg:scale-100 z-10',
-    badge: 'bg-indigo-50 text-indigo-700 border-indigo-200',
-    bullet: 'bg-blue-600',
-    extraItem: 'bg-indigo-50 border-indigo-100',
-    extraIcon: 'bg-indigo-100 text-indigo-600',
-    emiText: 'text-blue-700',
-    batchBg: 'bg-blue-50 border-blue-200 text-blue-900',
-    primaryButton: 'bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-600/30'
+    container: 'bg-white border-[3px] border-brand-orange shadow-[0_30px_60px_-15px_rgba(227,201,116,0.25)] lg:scale-100 z-10',
+    badge: 'bg-brand-orange/10 text-brand-orange-hover border-brand-orange/20',
+    bullet: 'bg-brand-orange',
+    extraItem: 'bg-brand-orange/5 border-brand-orange/10',
+    extraIcon: 'bg-brand-orange/10 text-brand-orange',
+    emiText: 'text-brand-orange-hover',
+    batchBg: 'bg-brand-orange/10 border-brand-orange/20 text-slate-800',
+    primaryButton: 'bg-gradient-to-r from-brand-orange-grad-start to-brand-orange-grad-end text-slate-950 hover:brightness-110 shadow-lg shadow-brand-orange/15'
   },
   orange: {
-    container: 'bg-orange-50/50 border-orange-200 hover:border-orange-300 shadow-md',
-    badge: 'bg-white text-orange-800 border-orange-200',
-    bullet: 'bg-orange-500',
-    extraItem: 'bg-white border-orange-100',
-    extraIcon: 'bg-orange-100 text-orange-600',
-    emiText: 'text-orange-700',
-    batchBg: 'bg-orange-100/50 border-orange-200 text-orange-900',
-    primaryButton: 'bg-[#111827] hover:bg-black text-white'
+    container: 'bg-brand-light-bg border-slate-200 hover:border-brand-orange/30 shadow-md',
+    badge: 'bg-brand-orange/10 text-brand-orange-hover border-brand-orange/20',
+    bullet: 'bg-brand-orange',
+    extraItem: 'bg-white border-brand-orange/10',
+    extraIcon: 'bg-brand-orange/10 text-brand-orange',
+    emiText: 'text-brand-orange-hover',
+    batchBg: 'bg-brand-orange/10 border-brand-orange/20 text-slate-800',
+    primaryButton: 'bg-brand-bg-dark hover:bg-slate-900 text-white shadow-md'
   }
 };
 
@@ -42,7 +42,7 @@ export default function AllCourses() {
   }, []);
 
   return (
-    <section className="py-24 px-5 sm:px-6 md:px-12 bg-white text-center">
+    <section className="py-24 px-5 sm:px-6 md:px-12 bg-brand-light-bg text-center">
       <div className="max-w-7xl mx-auto">
         {/* Back Button */}
         <div className="flex justify-start mb-8">
@@ -65,11 +65,11 @@ export default function AllCourses() {
           variants={fadeIn}
           className="mb-16"
         >
-          <div className="text-brand-blue font-extrabold text-sm tracking-widest uppercase mb-4">OUR CURRICULUM</div>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-[#111827] tracking-tight mb-6 max-w-4xl mx-auto leading-tight">
-            Explore All <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Trading Programs</span>
+          <div className="text-brand-orange font-extrabold text-sm tracking-widest uppercase mb-4">OUR CURRICULUM</div>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-brand-light-heading tracking-tight mb-6 max-w-4xl mx-auto leading-tight">
+            Explore All <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-brand-cyan">Trading Programs</span>
           </h1>
-          <p className="text-slate-600 text-lg sm:text-xl font-semibold max-w-2xl mx-auto">
+          <p className="text-brand-light-body text-lg sm:text-xl font-semibold max-w-2xl mx-auto">
             From stock market basics to advanced quantitative options trading. Choose the track that fits your goals.
           </p>
         </motion.div>
@@ -91,7 +91,7 @@ export default function AllCourses() {
                 {/* Badges */}
                 <div className="flex flex-wrap gap-3 mb-6">
                   {course.badgeType === 'popular' && (
-                    <div className="bg-blue-600 text-white text-xs font-bold px-4 py-1.5 rounded-full w-fit uppercase tracking-widest flex items-center gap-1.5 shadow-sm">
+                    <div className="bg-brand-cyan text-slate-950 text-xs font-bold px-4 py-1.5 rounded-full w-fit uppercase tracking-widest flex items-center gap-1.5 shadow-sm">
                       <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
                         <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                       </svg> 
@@ -99,7 +99,7 @@ export default function AllCourses() {
                     </div>
                   )}
                   {course.badgeType === 'flagship' && (
-                    <div className="bg-orange-500 text-white text-xs font-bold px-4 py-1.5 rounded-full w-fit uppercase tracking-widest flex items-center gap-1.5 shadow-sm">
+                    <div className="bg-brand-orange text-slate-950 text-xs font-bold px-4 py-1.5 rounded-full w-fit uppercase tracking-widest flex items-center gap-1.5 shadow-sm">
                       ★ Flagship Program
                     </div>
                   )}
@@ -108,7 +108,7 @@ export default function AllCourses() {
                   </div>
                 </div>
 
-                <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 mb-6 leading-snug tracking-tight">
+                <h3 className="text-xl sm:text-2xl font-extrabold text-brand-light-heading mb-6 leading-snug tracking-tight">
                   {course.title}
                 </h3>
                 
@@ -177,7 +177,7 @@ export default function AllCourses() {
                     <div className="font-bold text-base">{course.nextBatch}</div>
                     {course.remainingSeatsText && (
                       <div className="inline-flex items-center gap-2 bg-white rounded-lg px-2.5 py-1.5 text-xs font-bold text-slate-700 shadow-sm border border-slate-200 mt-2">
-                        <div className="w-2 h-2 rounded-full bg-brand-emerald animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.5)]"/>
+                        <div className="w-2.5 h-2.5 rounded-full bg-brand-success animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.5)]"/>
                         {course.remainingSeatsText}
                       </div>
                     )}

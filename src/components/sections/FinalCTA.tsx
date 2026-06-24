@@ -10,7 +10,7 @@ export default function FinalCTA() {
       {/* Decorative elements */}
       <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '24px 24px' }} aria-hidden="true" />
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-glow/20 rounded-full blur-[140px] -translate-y-1/2 translate-x-1/3" />
-      <div className="absolute bottom-0 left-0 w-[800px] h-[800px] bg-brand-blue/10 rounded-full blur-[140px] translate-y-1/2 -translate-x-1/3" />
+      <div className="absolute bottom-0 left-0 w-[800px] h-[800px] bg-brand-glow/20 rounded-full blur-[140px] translate-y-1/2 -translate-x-1/3" />
 
       <div className="max-w-4xl mx-auto relative z-10 text-center">
         
@@ -27,14 +27,14 @@ export default function FinalCTA() {
 
           <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-[72px] font-extrabold mb-6 leading-[1.1] sm:leading-[1.05] tracking-tighter text-white">
             Compared. Convinced.<br />
-            <span className="text-brand-purple">Now is the move.</span>
+            <span className="text-brand-cyan">Now is the move.</span>
           </h2>
           
           <p className="text-base sm:text-lg text-slate-300 mb-10 sm:mb-12 font-semibold flex flex-col sm:flex-row flex-wrap justify-center items-center gap-3">
             <span className="text-white/90">Bangalore's next batch</span>
             <span className="bg-brand-orange/10 text-brand-orange px-3.5 py-1.5 rounded-full border border-brand-orange/20 text-xs sm:text-sm font-bold tracking-wide">Starts in 12 Days</span>
             <span className="hidden sm:inline text-white/30">•</span>
-            <span className="bg-brand-emerald/10 text-brand-emerald px-3.5 py-1.5 rounded-full border border-brand-emerald/20 text-xs sm:text-sm font-bold tracking-wide">Only 3 Seats Remaining for July Cohort</span>
+            <span className="bg-brand-success/10 text-brand-success px-3.5 py-1.5 rounded-full border border-brand-success/20 text-xs sm:text-sm font-bold tracking-wide">Only 3 Seats Remaining for July Cohort</span>
           </p>
         </motion.div>
         

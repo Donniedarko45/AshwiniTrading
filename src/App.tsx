@@ -45,7 +45,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#110B29] font-sans selection:bg-orange-500/30 text-white">
+    <div className="min-h-screen bg-brand-bg-dark font-sans selection:bg-brand-orange/30 text-white">
       <Navbar />
       <main>
         {currentView === 'landing' && (
@@ -68,17 +68,17 @@ export default function App() {
         {currentView === 'join' && <JoinUs />}
         {currentView === 'reviews' && <ReviewsPage />}
         {currentView === 'courses' && (
-          <Suspense fallback={<div className="w-full min-h-[60vh] bg-[#110B29] flex items-center justify-center text-white">Loading Courses...</div>}>
+          <Suspense fallback={<div className="w-full min-h-[60vh] bg-brand-bg-dark flex items-center justify-center text-white">Loading Courses...</div>}>
             <AllCourses />
           </Suspense>
         )}
         {currentView === 'details' && (
-          <Suspense fallback={<div className="w-full min-h-[60vh] bg-[#110B29] flex items-center justify-center text-white">Loading Syllabus...</div>}>
+          <Suspense fallback={<div className="w-full min-h-[60vh] bg-brand-bg-dark flex items-center justify-center text-white">Loading Syllabus...</div>}>
             <CourseDetails />
           </Suspense>
         )}
         {currentView === 'collaboration' && (
-          <Suspense fallback={<div className="w-full min-h-[60vh] bg-[#110B29] flex items-center justify-center text-white">Loading...</div>}>
+          <Suspense fallback={<div className="w-full min-h-[60vh] bg-brand-bg-dark flex items-center justify-center text-white">Loading...</div>}>
             <CollegeCollaboration />
           </Suspense>
         )}

@@ -43,7 +43,7 @@ export default function ReviewsPage() {
       
       {/* Background Glows */}
       <div className="absolute top-10 left-[-10%] w-[600px] h-[600px] bg-brand-glow/15 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-20 right-[-10%] w-[600px] h-[600px] bg-brand-blue/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-20 right-[-10%] w-[600px] h-[600px] bg-brand-glow/10 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
@@ -67,10 +67,10 @@ export default function ReviewsPage() {
           variants={fadeIn}
           className="text-center max-w-4xl mx-auto mb-20"
         >
-          <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#e3c974]/10 border border-[#e3c974]/20 text-[#e3c974] text-xs font-bold tracking-widest uppercase mb-6">
+          <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-brand-orange/10 border border-brand-orange/20 text-brand-orange text-xs font-bold tracking-widest uppercase mb-6">
             <div className="flex items-center gap-0.5 mr-1">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-3.5 h-3.5 fill-current text-[#e3c974]" />
+                <Star key={i} className="w-3.5 h-3.5 fill-current text-brand-orange" />
               ))}
             </div>
             Rated by Our Students
@@ -78,7 +78,7 @@ export default function ReviewsPage() {
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight mb-6 leading-[1.1]">
             Student Reviews & <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#e3c974] via-[#74d1f5] to-white">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-brand-cyan to-white">
               Success Stories
             </span>
           </h1>
@@ -95,7 +95,7 @@ export default function ReviewsPage() {
         {/* Section 1: What Our Students Say (Testimonials) */}
         <div className="mb-24">
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#74d1f5]/10 border border-[#74d1f5]/20 text-[#74d1f5] text-xs font-bold tracking-widest uppercase mb-4">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-cyan/10 border border-brand-cyan/20 text-brand-cyan text-xs font-bold tracking-widest uppercase mb-4">
               TESTIMONIALS
             </div>
             <h2 className="text-3xl md:text-4xl font-extrabold text-white">What Our Students Say</h2>
@@ -109,10 +109,10 @@ export default function ReviewsPage() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className="bg-brand-bg-card/45 border border-white/5 rounded-3xl p-8 hover:border-[#e3c974]/20 transition-all duration-300 flex flex-col justify-between"
+                className="bg-brand-bg-card/45 border border-white/5 rounded-3xl p-8 hover:border-brand-orange/30 transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
-                  <div className="flex gap-1 mb-5 text-[#e3c974]">
+                  <div className="flex gap-1 mb-5 text-brand-orange">
                     {[...Array(test.rating)].map((_, i) => (
                       <Star key={i} className="w-4 h-4 fill-current" />
                     ))}
@@ -140,7 +140,7 @@ export default function ReviewsPage() {
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#e3c974]/10 border border-[#e3c974]/20 text-[#e3c974] text-xs font-bold tracking-widest uppercase mb-4">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-orange/10 border border-brand-orange/20 text-brand-orange text-xs font-bold tracking-widest uppercase mb-4">
               ACHIEVEMENTS
             </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-6">
@@ -161,7 +161,7 @@ export default function ReviewsPage() {
                 'Started their journey in the capital markets industry'
               ].map((point, idx) => (
                 <div key={idx} className="flex items-center gap-3 p-3 bg-white/5 border border-white/5 rounded-xl">
-                  <span className="flex-shrink-0 w-5 h-5 rounded-full bg-[#e3c974]/20 text-[#e3c974] flex items-center justify-center">
+                  <span className="flex-shrink-0 w-5 h-5 rounded-full bg-brand-orange/20 text-brand-orange flex items-center justify-center">
                     <Check className="w-3.5 h-3.5 stroke-[3.5px]" />
                   </span>
                   <span className="text-slate-200 text-sm font-bold leading-tight">{point}</span>
@@ -179,7 +179,7 @@ export default function ReviewsPage() {
             variants={scaleUp}
           >
             <div className="absolute top-[-20%] right-[-10%] w-64 h-64 bg-brand-glow/20 rounded-full blur-[90px] pointer-events-none" />
-            <Trophy className="w-14 h-14 text-[#e3c974] mx-auto mb-6 animate-pulse" />
+            <Trophy className="w-14 h-14 text-brand-orange mx-auto mb-6 animate-pulse" />
             <h3 className="text-2xl font-black text-white mb-4 tracking-tight">Student Achievement Highlights</h3>
             
             <div className="grid grid-cols-2 gap-4 text-left">
@@ -190,7 +190,7 @@ export default function ReviewsPage() {
                 'Future Finance Professionals'
               ].map((item, idx) => (
                 <div key={idx} className="p-4 bg-white/5 border border-white/5 rounded-2xl flex flex-col justify-between">
-                  <span className="w-6 h-6 rounded-lg bg-[#e3c974]/15 flex items-center justify-center text-[#e3c974] font-bold text-xs shrink-0 mb-3">
+                  <span className="w-6 h-6 rounded-lg bg-brand-orange/15 flex items-center justify-center text-brand-orange font-bold text-xs shrink-0 mb-3">
                     🏆
                   </span>
                   <span className="text-slate-200 text-[13px] font-bold leading-tight">{item}</span>
@@ -209,7 +209,7 @@ export default function ReviewsPage() {
             variants={fadeIn}
             className="mb-12"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#74d1f5]/10 border border-[#74d1f5]/20 text-[#74d1f5] text-xs font-bold tracking-widest uppercase mb-4">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-cyan/10 border border-brand-cyan/20 text-brand-cyan text-xs font-bold tracking-widest uppercase mb-4">
               ADVANTAGES
             </div>
             <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4 text-white">
@@ -235,9 +235,9 @@ export default function ReviewsPage() {
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
-                  className="bg-brand-bg-card/45 border border-white/5 rounded-2xl p-5 hover:border-[#74d1f5]/30 transition-all duration-300"
+                  className="bg-brand-bg-card/45 border border-white/5 rounded-2xl p-5 hover:border-brand-cyan/30 transition-all duration-300"
                 >
-                  <div className="w-9 h-9 rounded-xl bg-[#74d1f5]/10 border border-[#74d1f5]/20 flex items-center justify-center text-[#74d1f5] mb-4">
+                  <div className="w-9 h-9 rounded-xl bg-brand-cyan/10 border border-brand-cyan/20 flex items-center justify-center text-brand-cyan mb-4">
                     <Icon className="w-5 h-5" />
                   </div>
                   <h4 className="font-bold text-[14px] text-slate-200 leading-tight">{item.title}</h4>
@@ -256,7 +256,7 @@ export default function ReviewsPage() {
             variants={fadeIn}
             className="mb-12"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#e3c974]/10 border border-[#e3c974]/20 text-[#e3c974] text-xs font-bold tracking-widest uppercase mb-4">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-orange/10 border border-brand-orange/20 text-brand-orange text-xs font-bold tracking-widest uppercase mb-4">
               EXPERIENCE
             </div>
             <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4 text-white">
@@ -277,10 +277,10 @@ export default function ReviewsPage() {
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
-                  className="bg-brand-bg-card/40 border border-white/5 rounded-3xl p-6 hover:border-[#e3c974]/20 transition-all duration-300 flex flex-col justify-between h-full group"
+                  className="bg-brand-bg-card/40 border border-white/5 rounded-3xl p-6 hover:border-brand-orange/30 transition-all duration-300 flex flex-col justify-between h-full group"
                 >
                   <div>
-                    <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 mb-5 group-hover:bg-[#e3c974]/10 group-hover:text-[#e3c974] group-hover:border-[#e3c974]/20 transition-all">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 mb-5 group-hover:bg-brand-orange/10 group-hover:text-brand-orange group-hover:border-brand-orange/20 transition-all">
                       <IconComponent className="w-5 h-5" />
                     </div>
                     <span className="text-xl mb-3 block">📸</span>
@@ -294,7 +294,7 @@ export default function ReviewsPage() {
         </div>
 
         {/* Section 5: Bottom CTA Card */}
-        <div className="bg-gradient-to-r from-brand-orange-grad-start to-brand-orange-grad-end rounded-[36px] p-8 md:p-12 text-slate-950 text-center relative overflow-hidden shadow-2xl shadow-[#e3c974]/20">
+        <div className="bg-gradient-to-r from-brand-orange-grad-start to-brand-orange-grad-end rounded-[36px] p-8 md:p-12 text-slate-950 text-center relative overflow-hidden shadow-2xl shadow-brand-orange/15">
           <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, black 1px, transparent 0)', backgroundSize: '20px 20px' }} aria-hidden="true" />
           
           <div className="relative z-10 max-w-3xl mx-auto">
@@ -311,9 +311,9 @@ export default function ReviewsPage() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <a
                 href="tel:9845961990"
-                className="flex items-center gap-3 px-8 py-4 bg-slate-950 text-[#e3c974] rounded-xl font-extrabold text-base uppercase tracking-wider hover:bg-slate-900 transition-colors shadow-xl"
+                className="flex items-center gap-3 px-8 py-4 bg-slate-950 text-brand-orange rounded-xl font-extrabold text-base uppercase tracking-wider hover:bg-slate-900 transition-colors shadow-xl"
               >
-                <Phone className="w-5 h-5 fill-[#e3c974]" />
+                <Phone className="w-5 h-5 fill-brand-orange" />
                 Call 9845961990
               </a>
               

@@ -32,14 +32,14 @@ export function SectionHeader({
     >
       {badge && (
         <div className={`font-extrabold text-xs sm:text-sm tracking-widest uppercase mb-4 ${
-          isLight ? 'text-brand-blue' : 'text-slate-300'
+          isLight ? 'text-brand-orange' : 'text-brand-cyan'
         }`}>
           {badge}
         </div>
       )}
       
       <h2 className={`text-4xl md:text-5xl lg:text-[56px] font-extrabold tracking-tight leading-[1.1] ${
-        isLight ? 'text-slate-900' : 'text-white'
+        isLight ? 'text-brand-light-heading' : 'text-white'
       }`}>
         {title}
       </h2>
@@ -48,7 +48,7 @@ export function SectionHeader({
         <p className={`text-lg md:text-xl font-medium mt-6 leading-relaxed max-w-3xl ${
           isCenter ? 'mx-auto' : ''
         } ${
-          isLight ? 'text-slate-600' : 'text-slate-300'
+          isLight ? 'text-brand-light-body' : 'text-slate-300'
         }`}>
           {description}
         </p>

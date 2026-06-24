@@ -11,23 +11,23 @@ export default function Certifications() {
       series: "NISM Series V-A",
       title: "Mutual Fund Distributors",
       desc: "Certification Examination",
-      gradient: "from-blue-500/20 via-indigo-500/10 to-transparent",
-      border: "border-blue-500/30",
-      iconColor: "text-blue-400"
+      gradient: "from-brand-cyan/20 to-transparent",
+      border: "border-brand-cyan/30",
+      iconColor: "text-brand-cyan"
     },
     {
       series: "NISM Series VIII",
       title: "Equity Derivatives",
       desc: "Certification Examination",
-      gradient: "from-brand-purple/20 via-indigo-500/10 to-transparent",
-      border: "border-brand-purple/30",
-      iconColor: "text-purple-400"
+      gradient: "from-brand-cyan/20 to-transparent",
+      border: "border-brand-cyan/30",
+      iconColor: "text-brand-cyan"
     },
     {
       series: "NISM Series XV",
       title: "Research Analyst",
       desc: "Certification Examination",
-      gradient: "from-brand-orange/20 via-indigo-500/10 to-transparent",
+      gradient: "from-brand-orange/20 to-transparent",
       border: "border-brand-orange/30",
       iconColor: "text-brand-orange"
     }
@@ -62,7 +62,7 @@ export default function Certifications() {
               variants={fadeIn}
               className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-[1.1] mb-6"
             >
-              Build Knowledge. <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-brand-purple to-brand-blue">Earn Certifications.</span> Create Opportunities.
+              Build Knowledge. <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-brand-cyan">Earn Certifications.</span> Create Opportunities.
             </motion.h2>
             
             <motion.p 
@@ -96,7 +96,7 @@ export default function Certifications() {
 
             <motion.p 
               variants={fadeIn}
-              className="text-slate-400 text-sm font-semibold leading-relaxed max-w-2xl border-l-2 border-brand-purple/40 pl-4 py-1"
+              className="text-slate-400 text-sm font-semibold leading-relaxed max-w-2xl border-l-2 border-brand-cyan/40 pl-4 py-1"
             >
               Our structured training helps students understand the concepts, examination patterns, and practical applications required to successfully clear these certifications on their first attempt.
             </motion.p>

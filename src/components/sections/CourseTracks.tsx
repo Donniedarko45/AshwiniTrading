@@ -5,34 +5,34 @@ import { coursesData } from '@/data/courses';
 
 const themeStyles = {
   blue: {
-    container: 'bg-slate-50 border-slate-200 hover:border-blue-200',
-    badge: 'bg-blue-100 text-blue-700 border-blue-200',
-    bullet: 'bg-blue-500',
+    container: 'bg-brand-light-bg border-slate-200 hover:border-brand-cyan/30',
+    badge: 'bg-brand-cyan/10 text-brand-cyan-hover border-brand-cyan/20',
+    bullet: 'bg-brand-cyan',
     extraItem: 'bg-white border-slate-200',
-    extraIcon: 'bg-blue-50 text-blue-600',
+    extraIcon: 'bg-brand-cyan/10 text-brand-cyan-hover',
     emiText: 'text-slate-900',
-    batchBg: 'bg-blue-50 border-blue-100 text-blue-900',
-    primaryButton: 'bg-[#111827] hover:bg-black text-white'
+    batchBg: 'bg-brand-cyan/10 border-brand-cyan/20 text-slate-800',
+    primaryButton: 'bg-brand-bg-dark hover:bg-slate-900 text-white shadow-md'
   },
   indigo: {
-    container: 'bg-white border-[3px] border-blue-600 shadow-[0_30px_60px_-15px_rgba(37,99,235,0.25)] lg:-translate-y-4 lg:scale-105 z-10',
-    badge: 'bg-indigo-50 text-indigo-700 border-indigo-200',
-    bullet: 'bg-blue-600',
-    extraItem: 'bg-indigo-50 border-indigo-100',
-    extraIcon: 'bg-indigo-100 text-indigo-600',
-    emiText: 'text-blue-700',
-    batchBg: 'bg-blue-50 border-blue-200 text-blue-900',
-    primaryButton: 'bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-600/30'
+    container: 'bg-white border-[3px] border-brand-orange shadow-[0_30px_60px_-15px_rgba(227,201,116,0.25)] lg:-translate-y-4 lg:scale-105 z-10',
+    badge: 'bg-brand-orange/10 text-brand-orange-hover border-brand-orange/20',
+    bullet: 'bg-brand-orange',
+    extraItem: 'bg-brand-orange/5 border-brand-orange/10',
+    extraIcon: 'bg-brand-orange/10 text-brand-orange',
+    emiText: 'text-brand-orange-hover',
+    batchBg: 'bg-brand-orange/10 border-brand-orange/20 text-slate-800',
+    primaryButton: 'bg-gradient-to-r from-brand-orange-grad-start to-brand-orange-grad-end text-slate-950 hover:brightness-110 shadow-lg shadow-brand-orange/15'
   },
   orange: {
-    container: 'bg-orange-50/50 border-orange-200 hover:border-orange-300',
-    badge: 'bg-white text-orange-800 border-orange-200',
-    bullet: 'bg-orange-500',
-    extraItem: 'bg-white border-orange-100',
-    extraIcon: 'bg-orange-100 text-orange-600',
-    emiText: 'text-orange-700',
-    batchBg: 'bg-orange-100/50 border-orange-200 text-orange-900',
-    primaryButton: 'bg-[#111827] hover:bg-black text-white'
+    container: 'bg-brand-light-bg border-slate-200 hover:border-brand-orange/30',
+    badge: 'bg-brand-orange/10 text-brand-orange-hover border-brand-orange/20',
+    bullet: 'bg-brand-orange',
+    extraItem: 'bg-white border-brand-orange/10',
+    extraIcon: 'bg-brand-orange/10 text-brand-orange',
+    emiText: 'text-brand-orange-hover',
+    batchBg: 'bg-brand-orange/10 border-brand-orange/20 text-slate-800',
+    primaryButton: 'bg-brand-bg-dark hover:bg-slate-900 text-white shadow-md'
   }
 };
 
@@ -51,9 +51,9 @@ export default function CourseTracks() {
           variants={fadeIn}
           className="mb-20"
         >
-          <div className="text-brand-blue font-extrabold text-sm tracking-widest uppercase mb-4">COURSE TRACKS</div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#111827] tracking-tight mb-8 max-w-4xl mx-auto leading-tight">
-            Choose your track – <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">stock market & trading courses</span> for every goal
+          <div className="text-brand-orange font-extrabold text-sm tracking-widest uppercase mb-4">COURSE TRACKS</div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-brand-light-heading tracking-tight mb-8 max-w-4xl mx-auto leading-tight">
+            Choose your track – <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-brand-cyan">stock market & trading courses</span> for every goal
           </h2>
         </motion.div>
 
@@ -75,7 +75,7 @@ export default function CourseTracks() {
                 {/* Badges */}
                 <div className="flex flex-wrap gap-3 mb-8">
                   {course.badgeType === 'popular' && (
-                    <div className="bg-blue-600 text-white text-xs font-bold px-4 py-1.5 rounded-full w-fit uppercase tracking-widest flex items-center gap-1.5 shadow-sm">
+                    <div className="bg-brand-cyan text-slate-950 text-xs font-bold px-4 py-1.5 rounded-full w-fit uppercase tracking-widest flex items-center gap-1.5 shadow-sm">
                       <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
                         <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                       </svg> 
@@ -83,7 +83,7 @@ export default function CourseTracks() {
                     </div>
                   )}
                   {course.badgeType === 'flagship' && (
-                    <div className="bg-orange-500 text-white text-xs font-bold px-4 py-1.5 rounded-full w-fit uppercase tracking-widest flex items-center gap-1.5 shadow-sm">
+                    <div className="bg-brand-orange text-slate-950 text-xs font-bold px-4 py-1.5 rounded-full w-fit uppercase tracking-widest flex items-center gap-1.5 shadow-sm">
                       ★ Flagship Program
                     </div>
                   )}
@@ -92,7 +92,7 @@ export default function CourseTracks() {
                   </div>
                 </div>
 
-                <h3 className="text-xl sm:text-2xl lg:text-[26px] font-extrabold text-slate-900 mb-6 sm:mb-8 leading-snug tracking-tight">
+                <h3 className="text-xl sm:text-2xl lg:text-[26px] font-extrabold text-brand-light-heading mb-6 sm:mb-8 leading-snug tracking-tight">
                   {course.title}
                 </h3>
                 
@@ -161,7 +161,7 @@ export default function CourseTracks() {
                     <div className="font-bold text-lg">{course.nextBatch}</div>
                     {course.remainingSeatsText && (
                       <div className="inline-flex items-center gap-2 bg-white rounded-lg px-3 py-2 text-xs font-bold text-slate-700 shadow-sm border border-slate-200 mt-2">
-                        <div className="w-2.5 h-2.5 rounded-full bg-brand-emerald animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.5)]"/>
+                        <div className="w-2.5 h-2.5 rounded-full bg-brand-success animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.5)]"/>
                         {course.remainingSeatsText}
                       </div>
                     )}
@@ -198,7 +198,7 @@ export default function CourseTracks() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-5 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-extrabold text-lg tracking-wide hover:shadow-lg hover:shadow-blue-500/20 transition-all flex items-center gap-3 border-0 uppercase cursor-pointer"
+              className="px-8 py-5 rounded-2xl bg-gradient-to-r from-brand-orange-grad-start to-brand-orange-grad-end text-slate-950 font-extrabold text-lg tracking-wide hover:brightness-110 hover:shadow-lg hover:shadow-brand-orange/15 transition-all flex items-center gap-3 border-0 uppercase cursor-pointer"
             >
               Explore All 9 Courses
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

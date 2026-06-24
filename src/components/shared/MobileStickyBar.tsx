@@ -31,7 +31,7 @@ export default function MobileStickyBar() {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 bg-[#0B0A11]/90 backdrop-blur-md border-t border-white/10 px-5 py-3 flex items-center gap-3 lg:hidden pb-safe shadow-[0_-8px_30px_rgba(0,0,0,0.4)] animate-in slide-in-from-bottom duration-300">
+    <div className="fixed bottom-0 left-0 right-0 z-50 bg-brand-bg-dark/90 backdrop-blur-md border-t border-white/10 px-5 py-3 flex items-center gap-3 lg:hidden pb-safe shadow-[0_-8px_30px_rgba(0,0,0,0.4)] animate-in slide-in-from-bottom duration-300">
       {/* Call CTA Button */}
       <a 
         href="tel:+919845961990" 
@@ -49,7 +49,7 @@ export default function MobileStickyBar() {
             finalCta.scrollIntoView({ behavior: 'smooth' });
           }
         }}
-        className="flex-1 h-12 flex items-center justify-center bg-gradient-to-r from-brand-orange-grad-start to-brand-orange-grad-end hover:from-brand-orange hover:to-brand-orange-hover text-white font-extrabold text-sm sm:text-base tracking-wider rounded-xl uppercase transition-all shadow-lg shadow-orange-500/20 touch-target"
+        className="flex-1 h-12 flex items-center justify-center bg-gradient-to-r from-brand-orange-grad-start to-brand-orange-grad-end hover:brightness-110 text-slate-950 font-extrabold text-sm sm:text-base tracking-wider rounded-xl uppercase transition-all shadow-lg shadow-brand-orange/15 touch-target"
       >
         Apply Now
       </button>

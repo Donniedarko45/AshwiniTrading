@@ -23,12 +23,12 @@ export default function CoursesWithAI() {
         'Investment Decision Framework'
       ],
       ctaText: 'Master Fundamental Analysis',
-      gradient: 'from-[#ead278]/20 to-transparent',
-      borderColor: 'group-hover:border-[#e3c974]/40',
-      glowColor: 'bg-[#e3c974]/10',
-      badgeClass: 'bg-[#e3c974]/10 text-[#e3c974] border-[#e3c974]/20',
-      iconClass: 'bg-[#e3c974]/10 text-[#e3c974]',
-      btnClass: 'bg-gradient-to-r from-[#ead278] to-[#c29535] text-slate-950 hover:brightness-110 shadow-[#e3c974]/10'
+      gradient: 'from-brand-orange/20 to-transparent',
+      borderColor: 'group-hover:border-brand-orange/40',
+      glowColor: 'bg-brand-orange/10',
+      badgeClass: 'bg-brand-orange/10 text-brand-orange border-brand-orange/20',
+      iconClass: 'bg-brand-orange/10 text-brand-orange',
+      btnClass: 'bg-gradient-to-r from-brand-orange-grad-start to-brand-orange-grad-end text-slate-950 hover:brightness-110 shadow-lg shadow-brand-orange/15'
     },
     {
       id: 'technical-ai',
@@ -48,12 +48,12 @@ export default function CoursesWithAI() {
         'Risk & Reward Management'
       ],
       ctaText: 'Master Technical Analysis',
-      gradient: 'from-[#74d1f5]/20 to-transparent',
-      borderColor: 'group-hover:border-[#74d1f5]/40',
-      glowColor: 'bg-[#74d1f5]/10',
-      badgeClass: 'bg-[#74d1f5]/10 text-[#74d1f5] border-[#74d1f5]/20',
-      iconClass: 'bg-[#74d1f5]/10 text-[#74d1f5]',
-      btnClass: 'bg-gradient-to-r from-[#74d1f5] to-[#3b82f6] text-slate-950 hover:brightness-110 shadow-[#74d1f5]/10'
+      gradient: 'from-brand-cyan/20 to-transparent',
+      borderColor: 'group-hover:border-brand-cyan/40',
+      glowColor: 'bg-brand-cyan/10',
+      badgeClass: 'bg-brand-cyan/10 text-brand-cyan border-brand-cyan/20',
+      iconClass: 'bg-brand-cyan/10 text-brand-cyan',
+      btnClass: 'bg-gradient-to-r from-brand-cyan-light to-brand-cyan text-slate-950 hover:brightness-110 shadow-lg shadow-brand-cyan/15'
     }
   ];
 
@@ -81,7 +81,7 @@ export default function CoursesWithAI() {
           </div>
           <h2 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight leading-none mb-6">
             Explore Stock Market <br className="hidden sm:inline" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#e3c974] via-[#74d1f5] to-white">Courses with AI</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-brand-cyan to-white">Courses with AI</span>
           </h2>
           <p className="text-slate-400 text-base sm:text-lg font-medium max-w-2xl mx-auto leading-relaxed">
             Gain a competitive edge by learning proven fundamental and technical trading strategies combined with cutting-edge AI analysis tools.

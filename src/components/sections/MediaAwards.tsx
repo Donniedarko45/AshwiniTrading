@@ -9,36 +9,36 @@ export default function MediaAwards() {
       title: "Financial Awareness Programs",
       desc: "Featured in major financial awareness programs and public literacy campaigns spreading structured trading knowledge.",
       icon: Tv,
-      color: "text-purple-400",
-      bgGlow: "bg-purple-500/10",
-      border: "border-purple-500/20",
+      color: "text-brand-cyan",
+      bgGlow: "bg-brand-cyan/10",
+      border: "border-brand-cyan/20",
       span: "lg:col-span-4"
     },
     {
       title: "Industry Recognition",
       desc: "Commended by industry leaders and networks for delivering outstanding training quality, options strategies, and risk management pedagogy.",
       icon: Award,
-      color: "text-amber-400",
-      bgGlow: "bg-amber-500/10",
-      border: "border-amber-500/20",
+      color: "text-brand-orange",
+      bgGlow: "bg-brand-orange/10",
+      border: "border-brand-orange/20",
       span: "lg:col-span-8"
     },
     {
       title: "Educational Workshops",
       desc: "Over 100+ high-impact stock market seminars and interactive workshops conducted across leading colleges, institutions, and corporate teams.",
       icon: Users,
-      color: "text-blue-400",
-      bgGlow: "bg-blue-500/10",
-      border: "border-blue-500/20",
+      color: "text-brand-cyan",
+      bgGlow: "bg-brand-cyan/10",
+      border: "border-brand-cyan/20",
       span: "lg:col-span-8"
     },
     {
       title: "Investor Awareness Initiatives",
       desc: "Dedicated to educating retail investors on market realities, systematic investment planning, and protecting capital from high-risk exposure.",
       icon: TrendingUp,
-      color: "text-emerald-400",
-      bgGlow: "bg-emerald-500/10",
-      border: "border-emerald-500/20",
+      color: "text-brand-orange",
+      bgGlow: "bg-brand-orange/10",
+      border: "border-brand-orange/20",
       span: "lg:col-span-4"
     }
   ];
@@ -64,7 +64,7 @@ export default function MediaAwards() {
             Media & Awards
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-6 max-w-4xl mx-auto leading-tight">
-            Recognized for <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-brand-purple to-brand-blue">Financial Education Excellence</span>
+            Recognized for <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-brand-cyan">Financial Education Excellence</span>
           </h2>
         </motion.div>
 
@@ -138,7 +138,7 @@ export default function MediaAwards() {
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeIn}
-          className="mt-16 sm:mt-20 relative rounded-2xl p-6 bg-gradient-to-r from-brand-orange/10 via-brand-purple/10 to-brand-blue/10 border border-white/5 backdrop-blur-xl text-center shadow-lg"
+          className="mt-16 sm:mt-20 relative rounded-2xl p-6 bg-gradient-to-r from-brand-orange/10 to-brand-cyan/10 border border-white/5 backdrop-blur-xl text-center shadow-lg"
         >
           <p className="text-slate-200 text-lg sm:text-xl font-bold tracking-wide italic">
             "Building a financially aware and educated investment community."

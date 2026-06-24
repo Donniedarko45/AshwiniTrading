@@ -76,7 +76,7 @@ export default function Achieve90Days() {
             90-Day Journey
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-6 max-w-4xl mx-auto leading-tight">
-            What You Will <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-brand-purple to-brand-blue">Achieve in 90 Days</span>
+            What You Will <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-brand-cyan">Achieve in 90 Days</span>
           </h2>
           <p className="text-slate-400 text-base sm:text-lg font-semibold max-w-2xl mx-auto leading-relaxed">
             From absolute beginner to a disciplined, structured market participant. Here is your roadmap to trading and investing confidence.

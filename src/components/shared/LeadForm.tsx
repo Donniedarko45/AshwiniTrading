@@ -84,7 +84,7 @@ export function LeadForm({
               onChange={handleChange}
               aria-invalid={!!errors.name}
               aria-describedby={errors.name ? "name-bar-error" : undefined}
-              className={`h-14 bg-white text-base rounded-xl placeholder:text-slate-400 focus-visible:ring-brand-orange border-slate-200 text-slate-900`}
+              className={`h-14 bg-white text-base rounded-xl placeholder:text-slate-400 focus-visible:ring-ring/50 focus-visible:border-ring border-slate-200 text-slate-900`}
             />
             {errors.name && (
               <span id="name-bar-error" className="text-xs font-bold text-red-500 mt-1 block">
@@ -116,7 +116,7 @@ export function LeadForm({
                 onChange={handleChange}
                 aria-invalid={!!errors.phone}
                 aria-describedby={errors.phone ? "phone-bar-error" : undefined}
-                className={`flex-1 h-14 bg-white text-base rounded-xl placeholder:text-slate-400 focus-visible:ring-brand-orange border-slate-200 text-slate-900`}
+                className={`flex-1 h-14 bg-white text-base rounded-xl placeholder:text-slate-400 focus-visible:ring-ring/50 focus-visible:border-ring border-slate-200 text-slate-900`}
               />
             </div>
             {errors.phone && (
@@ -131,7 +131,7 @@ export function LeadForm({
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="w-full h-14 bg-brand-orange hover:bg-brand-orange-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2 text-white border-0 font-black text-[15px] tracking-wide rounded-xl shadow-lg shadow-orange-500/20 uppercase transition-all flex items-center justify-center gap-2"
+              className="w-full h-14 text-slate-950 font-extrabold text-[15px] rounded-xl flex items-center justify-center gap-2"
             >
               {isSubmitting ? (
                 <>
@@ -173,7 +173,7 @@ export function LeadForm({
           onChange={handleChange}
           aria-invalid={!!errors.name}
           aria-describedby={errors.name ? "name-card-error" : undefined}
-          className={`h-14 text-base rounded-xl placeholder:text-slate-400 focus-visible:ring-brand-orange focus-visible:bg-white transition-all shadow-none ${
+          className={`h-14 text-base rounded-xl placeholder:text-slate-400 focus-visible:ring-ring/50 focus-visible:border-ring focus-visible:bg-white transition-all shadow-none ${
             isLight ? 'border-slate-200 bg-slate-50 text-slate-900' : 'border-white/10 bg-white/5 text-white'
           }`}
         />
@@ -209,7 +209,7 @@ export function LeadForm({
             onChange={handleChange}
             aria-invalid={!!errors.phone}
             aria-describedby={errors.phone ? "phone-card-error" : undefined}
-            className={`flex-1 h-14 text-base rounded-xl placeholder:text-slate-400 focus-visible:ring-brand-orange focus-visible:bg-white transition-all shadow-none ${
+            className={`flex-1 h-14 text-base rounded-xl placeholder:text-slate-400 focus-visible:ring-ring/50 focus-visible:border-ring focus-visible:bg-white transition-all shadow-none ${
               isLight ? 'border-slate-200 bg-slate-50 text-slate-900' : 'border-white/10 bg-white/5 text-white'
             }`}
           />
@@ -233,7 +233,7 @@ export function LeadForm({
               name="role"
               value={formData.role}
               onChange={handleChange}
-              className={`w-full appearance-none h-14 rounded-xl border px-4 text-base focus:outline-none focus:ring-2 focus:ring-brand-orange transition-all font-medium ${
+              className={`w-full appearance-none h-14 rounded-xl border px-4 text-base focus:outline-none focus:ring-2 focus:ring-ring/50 focus:border-ring transition-all font-medium ${
                 isLight ? 'border-slate-200 bg-slate-50 text-slate-700' : 'border-white/10 bg-[#161226] text-slate-300'
               }`}
             >
@@ -257,7 +257,7 @@ export function LeadForm({
         disabled={isSubmitting}
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
-        className="w-full h-14 flex items-center justify-center bg-gradient-to-r from-brand-orange-grad-start to-brand-orange-grad-end hover:from-brand-orange hover:to-brand-orange-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2 text-white font-bold text-base sm:text-lg tracking-wide rounded-xl shadow-lg shadow-orange-500/20 mt-6 border-0 transition-all uppercase disabled:opacity-75 disabled:pointer-events-none gap-2"
+        className="w-full h-14 flex items-center justify-center bg-gradient-to-r from-brand-orange-grad-start to-brand-orange-grad-end hover:brightness-110 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50 text-slate-950 font-extrabold text-base sm:text-lg tracking-wide rounded-xl shadow-lg shadow-brand-orange/15 mt-6 border-0 transition-all duration-250 ease-out uppercase disabled:opacity-75 disabled:pointer-events-none gap-2"
       >
         {isSubmitting ? (
           <>
@@ -288,7 +288,7 @@ export function LeadForm({
       isLight ? 'bg-white border border-slate-100' : 'bg-white/5 backdrop-blur-2xl border border-white/10'
     }`}>
       {/* Top indicator stripe */}
-      <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-brand-orange via-brand-purple to-brand-blue" />
+      <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-brand-orange to-brand-cyan" />
       {formContent}
     </div>
   );

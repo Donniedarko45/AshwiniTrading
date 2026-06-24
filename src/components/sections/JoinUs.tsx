@@ -76,7 +76,7 @@ export default function JoinUs() {
       
       {/* Background Glows */}
       <div className="absolute top-10 left-[-10%] w-[600px] h-[600px] bg-brand-glow/15 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-20 right-[-10%] w-[600px] h-[600px] bg-brand-blue/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-20 right-[-10%] w-[600px] h-[600px] bg-brand-glow/10 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
@@ -90,13 +90,13 @@ export default function JoinUs() {
               animate="visible"
               variants={fadeIn}
             >
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#e3c974]/10 border border-[#e3c974]/20 text-[#e3c974] text-xs font-bold tracking-widest uppercase mb-6">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-orange/10 border border-brand-orange/20 text-brand-orange text-xs font-bold tracking-widest uppercase mb-6">
                 ✨ ADMISSIONS OPEN 2026
               </div>
               
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-[1.05] text-white mb-6">
                 Build Your Future in <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#e3c974] via-[#74d1f5] to-white">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-brand-cyan to-white">
                   Capital Markets
                 </span>
               </h1>
@@ -109,7 +109,7 @@ export default function JoinUs() {
               <div className="flex flex-wrap gap-4">
                 <button
                   onClick={scrollToForm}
-                  className="px-8 py-4 rounded-xl bg-gradient-to-r from-brand-orange-grad-start to-brand-orange-grad-end text-slate-950 font-extrabold text-base uppercase tracking-wider hover:brightness-110 active:scale-95 transition-all shadow-lg shadow-[#e3c974]/10 cursor-pointer"
+                  className="px-8 py-4 rounded-xl bg-gradient-to-r from-brand-orange-grad-start to-brand-orange-grad-end text-slate-950 font-extrabold text-base uppercase tracking-wider hover:brightness-110 active:scale-95 transition-all shadow-lg shadow-brand-orange/15 cursor-pointer"
                 >
                   Enroll Now
                 </button>
@@ -137,7 +137,7 @@ export default function JoinUs() {
               className="bg-brand-bg-card/80 backdrop-blur-2xl p-6 sm:p-8 rounded-[28px] border border-white/10 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] relative overflow-hidden"
             >
               {/* Top accent gradient stripe */}
-              <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#e3c974] via-[#74d1f5] to-[#3b82f6]" />
+              <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-brand-orange to-brand-cyan" />
 
               <h2 className="text-2xl font-extrabold tracking-tight mb-2 text-white">Join the Academy</h2>
               <p className="text-slate-400 text-xs font-semibold uppercase tracking-wider mb-6">Register your seat today</p>
@@ -157,7 +157,7 @@ export default function JoinUs() {
                           placeholder="Your full name"
                           value={name}
                           onChange={(e) => setName(e.target.value)}
-                          className="w-full h-12 bg-white/5 border border-white/10 rounded-xl pl-10 pr-4 text-white text-[15px] focus:outline-none focus:ring-1 focus:ring-[#e3c974] placeholder:text-slate-500 transition-all"
+                          className="w-full h-12 bg-white/5 border border-white/10 rounded-xl pl-10 pr-4 text-white text-[15px] focus:outline-none focus:ring-1 focus:ring-ring placeholder:text-slate-500 transition-all"
                         />
                       </div>
                       {errors.name && <span className="text-xs font-bold text-red-500 block">{errors.name}</span>}
@@ -175,7 +175,7 @@ export default function JoinUs() {
                           placeholder="you@example.com"
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
-                          className="w-full h-12 bg-white/5 border border-white/10 rounded-xl pl-10 pr-4 text-white text-[15px] focus:outline-none focus:ring-1 focus:ring-[#e3c974] placeholder:text-slate-500 transition-all"
+                          className="w-full h-12 bg-white/5 border border-white/10 rounded-xl pl-10 pr-4 text-white text-[15px] focus:outline-none focus:ring-1 focus:ring-ring placeholder:text-slate-500 transition-all"
                         />
                       </div>
                       {errors.email && <span className="text-xs font-bold text-red-500 block">{errors.email}</span>}
@@ -198,7 +198,7 @@ export default function JoinUs() {
                             placeholder="10-digit mobile"
                             value={mobile}
                             onChange={(e) => setMobile(e.target.value.replace(/\D/g, ''))}
-                            className="w-full h-12 bg-white/5 border border-white/10 rounded-xl pl-10 pr-4 text-white text-[15px] focus:outline-none focus:ring-1 focus:ring-[#e3c974] placeholder:text-slate-500 transition-all"
+                            className="w-full h-12 bg-white/5 border border-white/10 rounded-xl pl-10 pr-4 text-white text-[15px] focus:outline-none focus:ring-1 focus:ring-ring placeholder:text-slate-500 transition-all"
                           />
                         </div>
                       </div>
@@ -214,7 +214,7 @@ export default function JoinUs() {
                           onClick={() => setLearningMode('online')}
                           className={`h-12 rounded-xl border flex items-center justify-center gap-2 font-bold text-sm cursor-pointer transition-all ${
                             learningMode === 'online'
-                              ? 'border-[#e3c974] bg-[#e3c974]/10 text-white shadow-md'
+                              ? 'border-brand-orange bg-brand-orange/10 text-white shadow-md'
                               : 'border-white/5 bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white'
                           }`}
                         >
@@ -227,7 +227,7 @@ export default function JoinUs() {
                           onClick={() => setLearningMode('offline')}
                           className={`h-12 rounded-xl border flex items-center justify-center gap-2 font-bold text-sm cursor-pointer transition-all ${
                             learningMode === 'offline'
-                              ? 'border-[#74d1f5] bg-[#74d1f5]/10 text-white shadow-md'
+                              ? 'border-brand-cyan bg-brand-cyan/10 text-white shadow-md'
                               : 'border-white/5 bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white'
                           }`}
                         >
@@ -251,7 +251,7 @@ export default function JoinUs() {
                         />
                         <div className={`w-6 h-6 rounded border flex items-center justify-center transition-all shrink-0 ${
                           isNotARobot 
-                            ? 'bg-[#10B981] border-[#10B981] text-white' 
+                            ? 'bg-brand-success border-brand-success text-white' 
                             : 'border-white/20 bg-white/5 hover:border-white/40'
                         }`}>
                           {isNotARobot && <Check className="w-4 h-4 stroke-[3px]" />}
@@ -267,7 +267,7 @@ export default function JoinUs() {
                       disabled={isSubmitting}
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      className="w-full h-13 flex items-center justify-center bg-gradient-to-r from-brand-orange-grad-start to-brand-orange-grad-end text-slate-950 font-black text-sm uppercase tracking-wider rounded-xl border-0 shadow-lg shadow-[#e3c974]/10 transition-all cursor-pointer disabled:opacity-50"
+                      className="w-full h-13 flex items-center justify-center bg-gradient-to-r from-brand-orange-grad-start to-brand-orange-grad-end text-slate-950 font-black text-sm uppercase tracking-wider rounded-xl border-0 shadow-lg shadow-brand-orange/15 transition-all cursor-pointer disabled:opacity-50"
                     >
                       {isSubmitting ? 'Registering...' : 'Register'}
                     </motion.button>
@@ -278,7 +278,7 @@ export default function JoinUs() {
                     animate={{ opacity: 1, scale: 1 }}
                     className="flex flex-col items-center justify-center text-center py-10"
                   >
-                    <CheckCircle2 className="w-14 h-14 text-[#10B981] mb-4 animate-bounce" />
+                    <CheckCircle2 className="w-14 h-14 text-brand-success mb-4 animate-bounce" />
                     <h3 className="text-xl font-bold text-white mb-2">Registration Complete!</h3>
                     <p className="text-slate-300 text-sm max-w-xs mb-6">
                       Thank you for choosing Ashwini Trading Academy. Our admissions representative will contact you shortly to complete your enrollment.
@@ -305,7 +305,7 @@ export default function JoinUs() {
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeIn}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#74d1f5]/10 border border-[#74d1f5]/20 text-[#74d1f5] text-xs font-bold tracking-widest uppercase mb-4">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-cyan/10 border border-brand-cyan/20 text-brand-cyan text-xs font-bold tracking-widest uppercase mb-4">
               WHY US
             </div>
             <h2 className="text-3xl sm:text-5xl font-extrabold text-white mb-6">
@@ -333,9 +333,9 @@ export default function JoinUs() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className="bg-brand-bg-card/35 border border-white/5 rounded-2xl p-5 hover:border-[#e3c974]/30 transition-all duration-300"
+                className="bg-brand-bg-card/35 border border-white/5 rounded-2xl p-5 hover:border-brand-orange/30 transition-all duration-300"
               >
-                <div className="w-8 h-8 rounded-lg bg-[#e3c974]/10 border border-[#e3c974]/20 flex items-center justify-center text-[#e3c974] mb-4">
+                <div className="w-8 h-8 rounded-lg bg-brand-orange/10 border border-brand-orange/20 flex items-center justify-center text-brand-orange mb-4">
                   <Check className="w-4 h-4 stroke-[3px]" />
                 </div>
                 <h4 className="font-bold text-[15px] text-white tracking-tight">{item}</h4>
@@ -369,11 +369,11 @@ export default function JoinUs() {
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
-                  className="bg-brand-bg-card/40 border border-white/5 rounded-3xl p-6 hover:border-[#74d1f5]/20 transition-all duration-300 flex flex-col justify-between"
+                  className="bg-brand-bg-card/40 border border-white/5 rounded-3xl p-6 hover:border-brand-cyan/30 transition-all duration-300 flex flex-col justify-between"
                 >
                   <div>
                     <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-5 ${
-                      item.color === 'gold' ? 'bg-[#e3c974]/10 text-[#e3c974]' : 'bg-[#74d1f5]/10 text-[#74d1f5]'
+                      item.color === 'gold' ? 'bg-brand-orange/10 text-brand-orange' : 'bg-brand-cyan/10 text-brand-cyan'
                     }`}>
                       <Icon className="w-5 h-5" />
                     </div>
@@ -407,7 +407,7 @@ export default function JoinUs() {
                 { title: 'Risk Management', desc: 'Develop the discipline and techniques required to manage risk effectively in financial markets.' }
               ].map((item, idx) => (
                 <div key={idx} className="flex gap-4 items-start text-left">
-                  <span className="w-6 h-6 rounded-full bg-[#e3c974]/15 flex items-center justify-center text-[#e3c974] text-xs font-bold shrink-0 mt-1">
+                  <span className="w-6 h-6 rounded-full bg-brand-orange/15 flex items-center justify-center text-brand-orange text-xs font-bold shrink-0 mt-1">
                     {idx + 1}
                   </span>
                   <div>
@@ -419,10 +419,10 @@ export default function JoinUs() {
             </div>
 
             {/* Certification Block */}
-            <div className="p-6 rounded-2xl border border-[#74d1f5]/25 bg-[#74d1f5]/5 text-left relative overflow-hidden">
-              <div className="absolute top-[-50%] right-[-10%] w-48 h-48 bg-[#74d1f5]/10 rounded-full blur-[70px]" />
+            <div className="p-6 rounded-2xl border border-brand-cyan/25 bg-brand-cyan/5 text-left relative overflow-hidden">
+              <div className="absolute top-[-50%] right-[-10%] w-48 h-48 bg-brand-cyan/10 rounded-full blur-[70px]" />
               <div className="flex flex-col sm:flex-row gap-4 items-start relative z-10">
-                <div className="p-3 bg-[#74d1f5]/10 border border-[#74d1f5]/20 rounded-xl text-[#74d1f5] shrink-0">
+                <div className="p-3 bg-brand-cyan/10 border border-brand-cyan/20 rounded-xl text-brand-cyan shrink-0">
                   <Award className="w-6 h-6" />
                 </div>
                 <div>
@@ -437,7 +437,7 @@ export default function JoinUs() {
                       'Series XV (Research Analyst)'
                     ].map((cert, cIdx) => (
                       <li key={cIdx} className="flex items-center gap-2 text-[13px] text-slate-300 font-semibold bg-white/5 border border-white/5 rounded-lg px-3 py-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#74d1f5] shrink-0" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-brand-cyan shrink-0" />
                         {cert}
                       </li>
                     ))}
@@ -452,7 +452,7 @@ export default function JoinUs() {
         {/* Section 5: Learning Methodology */}
         <div className="mb-24">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#74d1f5]/10 border border-[#74d1f5]/20 text-[#74d1f5] text-xs font-bold tracking-widest uppercase mb-4">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-cyan/10 border border-brand-cyan/20 text-brand-cyan text-xs font-bold tracking-widest uppercase mb-4">
               METHODOLOGY
             </div>
             <h2 className="text-3xl sm:text-5xl font-extrabold text-white mb-4">Our Learning Methodology</h2>
@@ -473,7 +473,7 @@ export default function JoinUs() {
               const Icon = item.icon;
               return (
                 <div key={idx} className="flex gap-4 items-start p-5 bg-brand-bg-card/25 border border-white/5 rounded-2xl">
-                  <div className="p-3 bg-[#74d1f5]/10 border border-[#74d1f5]/20 rounded-xl text-[#74d1f5] shrink-0">
+                  <div className="p-3 bg-brand-cyan/10 border border-brand-cyan/20 rounded-xl text-brand-cyan shrink-0">
                     <Icon className="w-5 h-5" />
                   </div>
                   <div>
@@ -488,7 +488,7 @@ export default function JoinUs() {
         {/* Section 6: Benefits */}
         <div className="mb-24 max-w-4xl mx-auto bg-brand-bg-card/40 border border-white/5 rounded-[36px] p-8 md:p-12 text-left">
           <div className="text-center mb-10">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#10B981]/10 border border-[#10B981]/20 text-[#10B981] text-xs font-bold tracking-widest uppercase mb-4">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-success/10 border border-brand-success/20 text-brand-success text-xs font-bold tracking-widest uppercase mb-4">
               KEY BENEFITS
             </div>
             <h2 className="text-3xl font-extrabold text-white">Benefits of Joining</h2>
@@ -507,7 +507,7 @@ export default function JoinUs() {
               'Gain practical knowledge for real-world scenarios'
             ].map((benefit, idx) => (
               <div key={idx} className="flex items-center gap-3 p-3 bg-white/5 border border-white/5 rounded-xl">
-                <span className="flex-shrink-0 w-5 h-5 rounded-full bg-[#10B981]/20 text-[#10B981] flex items-center justify-center">
+                <span className="flex-shrink-0 w-5 h-5 rounded-full bg-brand-success/20 text-brand-success flex items-center justify-center">
                   <Check className="w-3.5 h-3.5 stroke-[3.5px]" />
                 </span>
                 <span className="text-slate-200 text-sm font-bold leading-tight">{benefit}</span>
@@ -517,16 +517,16 @@ export default function JoinUs() {
         </div>
 
         {/* Section 7: Success Quote */}
-        <div className="mb-24 text-center max-w-3xl mx-auto p-8 rounded-3xl bg-brand-bg-card/20 border border-[#e3c974]/20 relative">
+        <div className="mb-24 text-center max-w-3xl mx-auto p-8 rounded-3xl bg-brand-bg-card/20 border border-brand-orange/20 relative">
           <div className="absolute top-[-15px] left-1/2 -translate-x-1/2 bg-slate-950 px-4 text-slate-500 font-serif text-3xl">“</div>
-          <h3 className="text-2xl font-black text-[#e3c974] mb-4 tracking-tight">Student Success Begins Here</h3>
+          <h3 className="text-2xl font-black text-brand-orange mb-4 tracking-tight">Student Success Begins Here</h3>
           <p className="text-slate-300 text-base leading-relaxed font-medium">
             Our mission is to empower individuals with financial knowledge, market awareness, and practical skills that contribute to informed decision-making and long-term growth. Join a learning community committed to education, discipline, and continuous improvement.
           </p>
         </div>
 
         {/* Section 8: Call to Action / Bottom Card */}
-        <div className="bg-gradient-to-r from-brand-orange-grad-start to-brand-orange-grad-end rounded-[36px] p-8 md:p-12 text-slate-950 text-center relative overflow-hidden shadow-2xl shadow-[#e3c974]/20">
+        <div className="bg-gradient-to-r from-brand-orange-grad-start to-brand-orange-grad-end rounded-[36px] p-8 md:p-12 text-slate-950 text-center relative overflow-hidden shadow-2xl shadow-brand-orange/15">
           <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, black 1px, transparent 0)', backgroundSize: '20px 20px' }} aria-hidden="true" />
           
           <div className="relative z-10 max-w-3xl mx-auto">
@@ -543,9 +543,9 @@ export default function JoinUs() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <a
                 href="tel:9845961990"
-                className="flex items-center gap-3 px-8 py-4 bg-slate-950 text-[#e3c974] rounded-xl font-extrabold text-base uppercase tracking-wider hover:bg-slate-900 transition-colors shadow-xl"
+                className="flex items-center gap-3 px-8 py-4 bg-slate-950 text-brand-orange rounded-xl font-extrabold text-base uppercase tracking-wider hover:bg-slate-900 transition-colors shadow-xl"
               >
-                <Phone className="w-5 h-5 fill-[#e3c974]" />
+                <Phone className="w-5 h-5 fill-brand-orange" />
                 Call 9845961990
               </a>
               
