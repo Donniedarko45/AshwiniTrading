@@ -177,7 +177,7 @@ export default function CourseTracks() {
                     </motion.button>
                   </a>
                   
-                  <a href={`https://wa.me/919606995525?text=Hi%2C%20I%20want%20to%20download%20the%20syllabus%20for%20${encodeURIComponent(course.title)}.`} target="_blank" rel="noopener noreferrer" className="block w-full">
+                  <a href={`https://wa.me/919845961990?text=Hi%2C%20I%20want%20to%20download%20the%20syllabus%20for%20${encodeURIComponent(course.title)}.`} target="_blank" rel="noopener noreferrer" className="block w-full">
                     <motion.button 
                       whileHover={{ scale: 1.02 }} 
                       whileTap={{ scale: 0.98 }} 

@@ -34,7 +34,7 @@ export default function MobileStickyBar() {
     <div className="fixed bottom-0 left-0 right-0 z-50 bg-[#0B0A11]/90 backdrop-blur-md border-t border-white/10 px-5 py-3 flex items-center gap-3 lg:hidden pb-safe shadow-[0_-8px_30px_rgba(0,0,0,0.4)] animate-in slide-in-from-bottom duration-300">
       {/* Call CTA Button */}
       <a 
-        href="tel:+919606995525" 
+        href="tel:+919845961990" 
         className="flex items-center justify-center w-12 h-12 rounded-xl bg-white/10 border border-white/20 text-white shrink-0 hover:bg-white/20 transition-all touch-target"
         aria-label="Call admissions advisor"
       >

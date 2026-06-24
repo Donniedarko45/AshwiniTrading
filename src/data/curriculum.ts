@@ -1,150 +1,340 @@
-export interface CurriculumPoint {
-  text: string;
-  type?: 'THEORY' | 'PRACTICAL' | 'HANDS-ON PROJECT';
+export interface WorkshopModule {
+  title: string;
+  points?: string[];
 }
 
-export interface CurriculumModule {
+export interface WorkshopCourse {
   id: string;
-  indexText: string;
   title: string;
-  durationText: string;
-  points: CurriculumPoint[];
-  isNote?: boolean;
-}
-
-export interface CourseTrackData {
-  key: string;
+  duration: string;
+  fee: string;
+  tagline: string;
+  idealAudience?: string[];
+  bonuses: string[];
+  modules: WorkshopModule[];
+  outcomes?: string[];
+  liveApplication?: string[];
   badge: string;
-  badgeColorClass: string;
-  title: string;
-  scheduleText: string;
-  modulesCountText: string;
-  modules: CurriculumModule[];
 }
 
-export const curriculumData: CourseTrackData[] = [
+export const workshopCourses: WorkshopCourse[] = [
   {
-    key: 'PCP',
-    badge: 'COURSE 1 - PCP',
-    badgeColorClass: 'text-blue-600 bg-blue-50 border-blue-200',
-    title: 'Professional Certification in Digital Marketing with AI',
-    scheduleText: '3 Months · 132 Hours · Mon–Fri Weekdays',
-    modulesCountText: '11 modules',
+    id: 'fundamental-analysis-masterclass',
+    badge: '1-Day Workshop',
+    title: 'AI Powered Fundamental Analysis Masterclass',
+    duration: '1 Day',
+    fee: '₹2,999',
+    tagline: 'Learn how smart investors use AI to find multibagger stocks, read annual reports in minutes, and estimate company intrinsic values.',
+    idealAudience: ['Investors', 'Fundamental Analysts', 'Long-term Wealth Creators'],
+    bonuses: [
+      '100 AI Prompts for Finding Multibagger Stocks'
+    ],
     modules: [
       {
-        id: 'M1',
-        indexText: '1 / 11',
-        title: 'Digital Marketing Foundation & Business Thinking',
-        durationText: '2 Sessions · 4 Hours',
+        title: 'Module 1: Find Multibagger Stocks in 10 Minutes Using AI',
         points: [
-          { text: 'Introduction to marketing, DM evolution, and the digital marketing ecosystem', type: 'THEORY' },
-          { text: 'Principles of marketing, ATL/BTL/TTL funnels, and integrated strategy' }
+          'AI Stock Screening Framework',
+          'Finding Hidden Growth Stocks',
+          'Sector Leaders Identification',
+          'Future Industry Analysis'
         ]
       },
       {
-        id: 'M2',
-        indexText: '2 / 11',
-        title: 'Website Design & Development with AI – WordPress',
-        durationText: '2 Sessions · 4 Hours',
+        title: 'Module 2: Read 200-Page Annual Reports in 15 Minutes',
         points: [
-          { text: 'WordPress website setup - domain, hosting, and site structure', type: 'PRACTICAL' },
-          { text: 'Elementor page builder - designing professional pages without code' }
+          'AI Annual Report Analysis',
+          'Promoter Quality Check',
+          'Management Commentary Analysis',
+          'Red Flags Detection'
         ]
       },
       {
-        id: 'M3',
-        indexText: '3 / 11',
-        title: 'SEO with AI – Classic + Next-Gen Search',
-        durationText: '12 Sessions · 24 Hours',
+        title: 'Module 3: AI Formula to Identify Wealth-Creating Companies',
         points: [
-          { text: 'Keyword research and strategic topic planning', type: 'THEORY' },
-          { text: 'On-page SEO - content, headings, image optimization, anchor tags', type: 'PRACTICAL' }
+          'Revenue Growth Analysis',
+          'Profit Growth Analysis',
+          'Debt Analysis',
+          'ROE & ROCE Analysis',
+          'Intrinsic Value Calculation'
+        ]
+      },
+      {
+        title: 'Module 4: AI Competitive Advantage Scanner',
+        points: [
+          'Monopoly Businesses',
+          'Market Leaders',
+          'Emerging Sector Winners',
+          'Future Growth Opportunities'
+        ]
+      },
+      {
+        title: 'Module 5: Create Professional Research Reports Using AI',
+        points: [
+          'Institutional Style Reports',
+          'Investment Thesis Creation',
+          'Target Price Estimation',
+          'Risk Analysis Framework'
+        ]
+      },
+      {
+        title: 'Module 6: Live Case Studies',
+        points: [
+          'Analyse Reliance in 5 Minutes',
+          'Analyse TCS in 5 Minutes',
+          'Analyse a Small-Cap Stock in 5 Minutes'
         ]
       }
+    ],
+    outcomes: [
+      'Screen and filter stocks using AI in minutes',
+      'Quickly extract insights and red flags from annual reports',
+      'Compute intrinsic value and margins of safety for any company',
+      'Draft institutional-quality research reports'
     ]
   },
   {
-    key: 'PGCP',
-    badge: 'COURSE 2 - PGCP',
-    badgeColorClass: 'text-purple-600 bg-purple-50 border-purple-200',
-    title: 'Post Graduate Certification in AI-Driven Digital Marketing',
-    scheduleText: '5 Months · 220 Hours · All 13 Modules + 3 Specialisations + 5 Industry Deep Dives',
-    modulesCountText: '9 modules',
+    id: 'technical-analysis-masterclass',
+    badge: '1-Day Workshop',
+    title: 'AI Powered Technical Analysis Masterclass',
+    duration: '1 Day',
+    fee: '₹2,999',
+    tagline: 'Let AI find high-probability trades, identify chart patterns, and build your automated trading system.',
+    idealAudience: ['Intraday Traders', 'Swing Traders', 'Technical Analysis Learners'],
+    bonuses: [
+      '100 Ready-to-Use AI Trading Prompts'
+    ],
     modules: [
       {
-        id: 'Note',
-        indexText: '1 / 9',
-        title: 'Modules 1–10 – Same as Course 1, But Deeper',
-        durationText: 'Expanded content, more live projects',
-        isNote: true,
+        title: 'Module 1: Let AI Find High Probability Trades for You',
         points: [
-          { text: 'Module 3 SEO: + programmatic SEO, parasite SEO, international SEO, and App Store SEO (ASO)', type: 'PRACTICAL' },
-          { text: 'Module 4 Social Media: + HeyGen AI video, Veo 3, and advanced influencer agreement frameworks', type: 'THEORY' }
+          'AI Trade Scanner',
+          'Momentum Stock Detection',
+          'Breakout Stock Identification',
+          'Swing Trading Opportunities'
         ]
       },
       {
-        id: 'M11',
-        indexText: '2 / 9',
-        title: 'Performance Marketing & E-Commerce Growth',
-        durationText: '9 Sessions · 18 Hours',
+        title: 'Module 2: AI Chart Reading Like a Professional Trader',
         points: [
-          { text: 'Performance marketing strategy - audience targeting, segmentation, and persona building with AI', type: 'PRACTICAL' },
-          { text: 'Amazon Advertising - Sponsored Products, Sponsored Brands, Sponsored Display', type: 'PRACTICAL' }
+          'Trend Identification',
+          'Support & Resistance Detection',
+          'Pattern Recognition',
+          'Market Structure Analysis'
         ]
       },
       {
-        id: 'M12',
-        indexText: '3 / 9',
-        title: 'Online Reputation Management & Brand Protection',
-        durationText: '3 Sessions · 6 Hours',
+        title: 'Module 3: AI Candlestick Secrets',
         points: [
-          { text: 'ORM fundamentals - why your online reputation is your most valuable marketing asset', type: 'THEORY' },
-          { text: 'Social listening with AI - Brand24, Mention, Google Alerts', type: 'PRACTICAL' }
+          'Bullish Patterns',
+          'Bearish Patterns',
+          'Reversal Signals',
+          'Continuation Signals'
+        ]
+      },
+      {
+        title: 'Module 4: AI Based Intraday Trading Setup',
+        points: [
+          'Opening Range Breakout',
+          'VWAP Strategy',
+          'Scalping Opportunities',
+          'Momentum Trading'
+        ]
+      },
+      {
+        title: 'Module 5: AI Based Swing Trading Framework',
+        points: [
+          '5-10 Day Swing Trades',
+          'Position Trading Setups',
+          'Breakout Strategies',
+          'Volume Confirmation'
+        ]
+      },
+      {
+        title: 'Module 6: Build Your Personal AI Trading Assistant',
+        points: [
+          'Custom Trading Prompts',
+          'Watchlist Creation',
+          'Trade Journal Automation',
+          'Daily Market Analysis'
+        ]
+      },
+      {
+        title: 'Module 7: Live Market Analysis',
+        points: [
+          'Nifty Analysis',
+          'Bank Nifty Analysis',
+          'Live Stock Selection',
+          'Real-Time Trade Planning'
         ]
       }
+    ],
+    outcomes: [
+      'Automate pattern scanning on daily and weekly charts',
+      'Plan precise entries, stop losses, and target exits with AI scanners',
+      'Create personalized trading rules and journal automated insights',
+      'Identify swing and intraday setups within live trading environments'
     ]
   },
   {
-    key: 'ELEVATE',
-    badge: 'COURSE 3 - ELEVATE™',
-    badgeColorClass: 'text-amber-600 bg-amber-50 border-amber-200',
-    title: 'Digital Marketing + AI for Business Teams',
-    scheduleText: '7 Months · 268 Hours · Months 1–5 same as PGCP; Months 6–7 add the AI for Business Teams track',
-    modulesCountText: '16 modules',
+    id: 'stock-market-accelerator',
+    badge: '1-Day Workshop',
+    title: 'AI Stock Market Accelerator',
+    duration: '1 Day',
+    fee: '₹2,999',
+    tagline: 'Learn How Smart Traders and Investors Use AI to Analyse Stocks, Find Multibaggers, Create Trading Setups and Save 10+ Hours Every Week.',
+    idealAudience: ['Beginners', 'Traders & Investors', 'Busy Professionals wanting to save time'],
+    bonuses: [
+      'AI Stock Analysis Toolkit',
+      'AI Trading Checklist',
+      'AI Multibagger Finder Framework',
+      'AI Prompt Book (Worth ₹4,999)',
+      'Workshop Certificate'
+    ],
+    modules: [
+      { title: 'Module 1: How Smart Investors Use AI' },
+      { title: 'Module 2: Find Multibagger Stocks Before Everyone Else' },
+      { title: 'Module 3: AI-Based Fundamental Analysis' },
+      { title: 'Module 4: AI-Based Technical Analysis' },
+      { title: 'Module 5: AI-Based Swing Trading' },
+      { title: 'Module 6: AI-Based Intraday Trading' },
+      { title: 'Module 7: AI-Based Portfolio Building' },
+      { title: 'Module 8: Build Your Personal AI Research Analyst' },
+      { title: 'Module 9: Live Market Analysis Using AI' },
+      { title: 'Module 10: 50 Powerful AI Prompts Every Trader Must Use' }
+    ]
+  },
+  {
+    id: 'futures-options-trader-pro',
+    badge: '10-Day Program',
+    title: 'Futures & Options Trader Pro',
+    duration: '10 Days',
+    fee: '₹24,999',
+    tagline: 'Learn the process used by disciplined traders to analyse, plan, execute and manage Futures & Options trades with confidence.',
+    idealAudience: [
+      'Traders looking to enter F&O trading',
+      'Option Buyers and Sellers',
+      'Technical Analysis Learners',
+      'Working Professionals',
+      'Individuals seeking a structured approach to derivatives trading'
+    ],
+    bonuses: [
+      'Trading Psychology for F&O Traders (Fear & Greed, Handle Loss, Consistency)',
+      'Capital Protection Framework (Daily/Weekly Loss Limits, Position Sizing)',
+      'Ready-to-Use Trading Templates (Market Prep Sheet, Trade Journal, Risk Calculator)'
+    ],
     modules: [
       {
-        id: '★',
-        indexText: 'Included',
-        title: 'Everything in PGCP – fully included',
-        durationText: 'All 5 months of PGCP, then 2 more',
-        isNote: true,
+        title: 'Module 1: Foundation of Futures & Options',
         points: [
-          { text: 'All 13 PGCP modules + 3 specialisations (SEO & AI Search, Performance Marketing, AI E-Commerce)', type: 'PRACTICAL' },
-          { text: '5 industry domain deep dives + the real-budget agency capstone', type: 'HANDS-ON PROJECT' }
+          'Understanding Derivatives Market',
+          'Futures vs Options',
+          'Market Participants',
+          'Contract Specifications',
+          'Lot Sizes, Expiry & Settlement'
         ]
       },
       {
-        id: 'B1',
-        indexText: '1 / 16',
-        title: 'AI Business Strategy Overview & Maturity Model',
-        durationText: 'Theory & Strategy',
+        title: 'Module 2: Option Chain Decoding',
         points: [
-          { text: 'AI transformation lifecycle', type: 'THEORY' },
-          { text: 'Top 20 AI business patterns', type: 'THEORY' },
-          { text: 'AI maturity assessment', type: 'THEORY' }
+          'Understanding Option Chain Structure',
+          'Open Interest Analysis',
+          'Change in Open Interest',
+          'Identifying Support & Resistance using OI',
+          'Put-Call Ratio (PCR)'
         ]
       },
       {
-        id: 'B2',
-        indexText: '2 / 16',
-        title: 'AI-Native Analytics & Business Insight Generation',
-        durationText: 'Hands-on Analytics',
+        title: 'Module 3: The Science Behind Option Premiums',
         points: [
-          { text: 'Conversational analytics', type: 'PRACTICAL' },
-          { text: 'Text-to-SQL', type: 'PRACTICAL' },
-          { text: 'Multi-source synthesis', type: 'PRACTICAL' }
+          'Intrinsic Value & Time Value',
+          'Factors Affecting Option Premium',
+          'Understanding Volatility',
+          'Time Decay Explained',
+          'Premium Behaviour Before Expiry'
+        ]
+      },
+      {
+        title: 'Module 4: Option Greeks Made Simple',
+        points: [
+          'Delta',
+          'Gamma',
+          'Theta',
+          'Vega',
+          'How Professionals Use Greeks in Trading'
+        ]
+      },
+      {
+        title: 'Module 5: High Probability Option Buying Strategies',
+        points: [
+          'Momentum Breakout Trading',
+          'Trend Following Strategies',
+          'Gap Trading Setups',
+          'Intraday Option Buying Framework',
+          'Swing Trading in Options'
+        ]
+      },
+      {
+        title: 'Module 6: Professional Option Selling Techniques',
+        points: [
+          'Why Institutions Prefer Selling',
+          'Probability-Based Trading',
+          'Income Generation Strategies',
+          'Risk-Controlled Option Selling',
+          'Capital Management Framework'
+        ]
+      },
+      {
+        title: 'Module 7: Futures Trading Mastery',
+        points: [
+          'Long & Short Futures',
+          'Trend Identification',
+          'Futures Build-Up Analysis',
+          'Open Interest Interpretation',
+          'Risk Management in Futures'
+        ]
+      },
+      {
+        title: 'Module 8: Expiry Day Trading Strategies',
+        points: [
+          'Weekly Expiry Opportunities',
+          'Expiry Premium Behaviour',
+          'Intraday Expiry Setups',
+          'Risk Management on Expiry Days',
+          'Live Trade Planning'
+        ]
+      },
+      {
+        title: 'Module 9: Advanced F&O Strategies',
+        points: [
+          'Bull Call Spread, Bear Put Spread, Bull Put Spread',
+          'Covered Call, Protective Put',
+          'Iron Condor Concept & Hedging Techniques'
+        ]
+      },
+      {
+        title: 'Module 10: Building a Professional Trading System',
+        points: [
+          'Trade Selection Process',
+          'Entry & Exit Framework',
+          'Position Sizing & Risk-to-Reward Planning',
+          'Trading Journal & Performance Tracking'
         ]
       }
+    ],
+    liveApplication: [
+      'Real-Time Option Chain Analysis',
+      'Live Trade Setup Identification',
+      'Nifty & Bank Nifty Analysis',
+      'Trade Planning Sessions',
+      'Market Preparation Framework'
+    ],
+    outcomes: [
+      'Read Option Chain like a professional',
+      'Understand Greeks and Premium Movement',
+      'Trade Futures & Options systematically',
+      'Create high-probability trade setups',
+      'Manage risk effectively',
+      'Build a structured F&O trading plan'
     ]
   }
 ];

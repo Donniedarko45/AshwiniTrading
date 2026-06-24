@@ -1,17 +1,29 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import Navbar from '@/components/sections/Navbar';
 import Hero from '@/components/sections/Hero';
 import MobileStickyBar from '@/components/shared/MobileStickyBar';
 import { LazySection } from '@/components/shared/LazySection';
 
-// Static components for above-the-fold rendering
+// Lazy load full page routes to load immediately on navigation (without intersection observer)
+const AllCourses = React.lazy(() => import('@/components/sections/AllCourses'));
+const CourseDetails = React.lazy(() => import('@/components/sections/CourseDetails'));
+const CollegeCollaboration = React.lazy(() => import('@/components/sections/CollegeCollaboration'));
+
 export default function App() {
-  const [currentView, setCurrentView] = useState<'landing' | 'courses'>('landing');
+  const [currentView, setCurrentView] = useState<'landing' | 'courses' | 'details' | 'collaboration'>('landing');
 
   useEffect(() => {
     const handleHashChange = () => {
-      if (window.location.hash === '#/all-courses') {
+      const hash = window.location.hash;
+      if (hash === '#/all-courses') {
         setCurrentView('courses');
+        window.scrollTo(0, 0);
+      } else if (hash.startsWith('#/course-details/')) {
+        setCurrentView('details');
+        window.scrollTo(0, 0);
+      } else if (hash === '#/college-collaboration') {
+        setCurrentView('collaboration');
+        window.scrollTo(0, 0);
       } else {
         setCurrentView('landing');
       }
@@ -27,7 +39,7 @@ export default function App() {
     <div className="min-h-screen bg-[#110B29] font-sans selection:bg-orange-500/30 text-white">
       <Navbar />
       <main>
-        {currentView === 'landing' ? (
+        {currentView === 'landing' && (
           <>
             {/* Above the fold (static render) */}
             <Hero />
@@ -41,7 +53,6 @@ export default function App() {
             <LazySection importFunc={() => import('@/components/sections/PlacementsCTA')} />
             <LazySection importFunc={() => import('@/components/sections/CourseTracks')} />
             <LazySection importFunc={() => import('@/components/sections/Curriculum')} />
-            <LazySection importFunc={() => import('@/components/sections/CurriculumCTA')} />
             <LazySection importFunc={() => import('@/components/sections/Certifications')} />
             <LazySection importFunc={() => import('@/components/sections/Projects')} />
             <LazySection importFunc={() => import('@/components/sections/InterviewReadiness')} />
@@ -53,8 +64,21 @@ export default function App() {
             <LazySection importFunc={() => import('@/components/sections/HonestFAQ')} />
             <LazySection importFunc={() => import('@/components/sections/FinalCTA')} />
           </>
-        ) : (
-          <LazySection importFunc={() => import('@/components/sections/AllCourses')} />
+        )}
+        {currentView === 'courses' && (
+          <Suspense fallback={<div className="w-full min-h-[60vh] bg-[#110B29] flex items-center justify-center text-white">Loading Courses...</div>}>
+            <AllCourses />
+          </Suspense>
+        )}
+        {currentView === 'details' && (
+          <Suspense fallback={<div className="w-full min-h-[60vh] bg-[#110B29] flex items-center justify-center text-white">Loading Syllabus...</div>}>
+            <CourseDetails />
+          </Suspense>
+        )}
+        {currentView === 'collaboration' && (
+          <Suspense fallback={<div className="w-full min-h-[60vh] bg-[#110B29] flex items-center justify-center text-white">Loading...</div>}>
+            <CollegeCollaboration />
+          </Suspense>
         )}
       </main>
 

@@ -31,19 +31,26 @@ export default function Hero() {
             variants={fadeIn} 
             className="text-xs sm:text-sm font-bold tracking-widest text-[#d1d5db] uppercase mb-6 sm:mb-10 pl-6 border-l-[3px] border-white/20 leading-relaxed"
           >
-            #1 DIGITAL MARKETING COURSE IN BANGALORE —<br />
-            PLACEMENT-FIRST, AI-NATIVE.
+            #1 STOCK MARKET COURSE IN BANGALORE —<br />
+            PRACTICAL, AI-POWERED.
           </motion.div>
 
           <motion.h1 
             variants={fadeIn} 
-            className="text-3xl sm:text-5xl md:text-7xl lg:text-[80px] font-extrabold leading-[1.05] sm:leading-[0.95] tracking-tighter mb-8 sm:mb-12 font-sans"
+            className="text-3xl sm:text-5xl md:text-6xl lg:text-[68px] font-extrabold leading-[1.05] sm:leading-[0.95] tracking-tighter mb-6 font-sans"
           >
-            <span className="text-transparent bg-clip-text bg-gradient-to-br from-brand-orange-light to-[#FCA048] block mb-2">LAUNCH</span>
-            <span className="block text-white mb-2 leading-none">YOUR DIGITAL</span>
-            <span className="block text-white mb-2 leading-none">MARKETING CAREER</span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-brand-purple to-[#D946EF] block mt-1">IN 90 DAYS WITH AI</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-br from-brand-orange-light to-[#FCA048] block mb-2">MASTER</span>
+            <span className="block text-white mb-2 leading-none">THE STOCK MARKET</span>
+            <span className="block text-white mb-2 leading-none">WITH INDIA'S MOST</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-brand-purple to-[#D946EF] block mt-1">PRACTICAL TRADING ACADEMY</span>
           </motion.h1>
+
+          <motion.p 
+            variants={fadeIn}
+            className="text-slate-300 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl font-medium"
+          >
+            At Ashwini Trading Academy, we don’t just teach theory we train you to understand real market movements, identify opportunities, manage risk, and make informed investment decisions using modern tools, AI-powered analysis, and practical market exposure.
+          </motion.p>
 
           <motion.div 
             variants={fadeIn} 
@@ -71,19 +78,29 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
         >
           <div className="relative">
-            {/* Lead Form Overlay Header (inside container style) */}
-            <div className="bg-white rounded-[24px] p-8 md:p-10 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.5)] border border-white/10">
-              <h3 className="text-2xl md:text-3xl font-extrabold text-[#111827] mb-2 tracking-tight">Apply for the Next Batch</h3>
-              <div className="text-brand-orange font-bold mb-8 text-xl tracking-tight">Batch Capped at 24 · 7 Seats Left</div>
+            {/* Lead Form Redesigned Glassmorphic Card */}
+            <div className="bg-brand-bg-card/70 backdrop-blur-2xl rounded-[28px] p-8 md:p-10 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.6)] border border-white/10 relative overflow-hidden">
+              {/* Top gradient indicator stripe */}
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-orange via-brand-purple to-brand-blue" />
+              
+              <h3 className="text-2xl md:text-3xl font-extrabold text-white mb-2 tracking-tight">Apply for the Next Batch</h3>
+              
+              <div className="text-brand-orange font-bold mb-8 text-base md:text-lg tracking-tight flex items-center gap-2">
+                <span className="relative flex h-2.5 w-2.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-orange opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand-orange"></span>
+                </span>
+                <span>Batch Capped at 24 · 7 Seats Left</span>
+              </div>
               
               <LeadForm 
-                layout="card" 
-                theme="light" 
+                layout="flat" 
+                theme="dark" 
                 showRoleSelect={true} 
                 buttonText="CHECK BATCH ELIGIBILITY"
               />
               
-              <div className="text-center text-sm text-slate-500 font-medium mt-4">
+              <div className="text-center text-xs text-slate-400 font-medium mt-6 tracking-wide">
                 No spam calls - ever.
               </div>
             </div>
@@ -100,7 +117,7 @@ export default function Hero() {
                  </svg>
               </div>
               <div className="text-[#FFB800] font-bold text-center text-[12px] leading-tight z-10 tracking-widest uppercase">
-                TOP 10<br/>DIGITAL<br/>MARKETING<br/>ACADEMY IN<br/>INDIA
+                TOP 10<br/>STOCK<br/>MARKET<br/>ACADEMY IN<br/>INDIA
               </div>
             </div>
             
