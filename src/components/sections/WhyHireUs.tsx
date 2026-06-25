@@ -23,7 +23,7 @@ export default function WhyHireUs() {
   ];
 
   return (
-    <section id="whyhireus" className="bg-white py-32 px-6 lg:px-8 border-t border-slate-100">
+    <section id="whyhireus" className="bg-brand-bg-dark py-32 px-6 lg:px-8 border-t border-white/5">
       <div className="max-w-7xl mx-auto">
         <motion.div 
           initial="hidden"
@@ -32,10 +32,10 @@ export default function WhyHireUs() {
           variants={fadeIn}
           className="text-center max-w-4xl mx-auto mb-20"
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#111827] tracking-tight leading-[1.1] mb-6">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.1] mb-6">
             Why <span className="text-brand-secondary">500+</span> Bangalore companies pick our graduates <span className="underline decoration-brand-secondary/30 underline-offset-4">first.</span>
           </h2>
-          <p className="text-slate-600 text-lg md:text-xl font-medium">
+          <p className="text-slate-300 text-lg md:text-xl font-medium">
             Three reasons hiring managers told us they keep coming back:
           </p>
         </motion.div>
@@ -45,7 +45,7 @@ export default function WhyHireUs() {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={scaleUp}
-          className="w-full h-[400px] md:h-[500px] bg-slate-100 rounded-[32px] overflow-hidden shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] mb-20"
+          className="w-full h-[400px] md:h-[500px] bg-brand-bg-card rounded-[32px] overflow-hidden shadow-[0_20px_50px_-12px_rgba(0,0,0,0.4)] mb-20"
         >
            <img 
               src="https://images.unsplash.com/photo-1552581234-26160f608093?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
@@ -65,13 +65,15 @@ export default function WhyHireUs() {
             <motion.div 
               key={idx} 
               variants={fadeIn}
-              className="bg-slate-50 border border-slate-200 rounded-[24px] p-8 md:p-10 hover:shadow-lg hover:border-slate-300 hover:-translate-y-1 transition-all duration-300 group"
+              className="bg-brand-bg-card border border-white/10 rounded-[24px] p-8 md:p-10 hover:shadow-lg hover:border-white/20 hover:-translate-y-1 transition-all duration-300 group"
             >
-              <div className="w-12 h-12 rounded-2xl bg-white border border-slate-200 flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform duration-300">
-                {reason.icon}
+              <div className="w-12 h-12 rounded-2xl bg-brand-bg-dark border border-white/10 flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform duration-300">
+                {idx === 0 ? (
+                  <CheckCircle2 className="w-6 h-6 text-brand-secondary" />
+                ) : reason.icon}
               </div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-4 tracking-tight">{reason.title}</h3>
-              <p className="text-slate-600 leading-relaxed font-medium">
+              <h3 className="text-2xl font-bold text-slate-100 mb-4 tracking-tight">{reason.title}</h3>
+              <p className="text-slate-300 leading-relaxed font-medium">
                 {reason.desc}
               </p>
             </motion.div>

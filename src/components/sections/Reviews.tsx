@@ -30,7 +30,7 @@ export default function Reviews() {
             return (
               <div 
                 key={i} 
-                className="bg-white rounded-[28px] px-8 py-10 shadow-sm border border-slate-100 hover:shadow-md transition-all duration-300 flex flex-col items-center justify-center relative min-h-[220px]"
+                className="bg-brand-bg-card rounded-[28px] px-8 py-10 shadow-sm border border-white/10 hover:shadow-md transition-all duration-300 flex flex-col items-center justify-center relative min-h-[220px]"
               >
                 {/* Floating Platform Badge */}
                 {review.platform !== 'none' && (
@@ -73,8 +73,8 @@ export default function Reviews() {
           <p className="text-brand-light-body font-medium mb-8 text-base sm:text-lg">
             Few seats left for the upcoming mentorship batch.
           </p>
-          <div className="inline-flex items-center gap-2 text-brand-success font-bold text-[13px] bg-white border border-brand-success/30 px-4 py-2 rounded-full mb-12 shadow-sm tracking-wide">
-            <svg className="w-4 h-4 text-brand-success" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <div className="inline-flex items-center gap-2 text-brand-success-light font-bold text-[13px] bg-brand-success/15 border border-brand-success/30 px-4 py-2 rounded-full mb-12 shadow-sm tracking-wide">
+            <svg className="w-4 h-4 text-brand-success-light" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
             </svg>
             SEBI Registered Research Analyst Mentorship
@@ -82,7 +82,7 @@ export default function Reviews() {
 
           <LeadForm 
             layout="bar" 
-            theme="light" 
+            theme="dark" 
             buttonText="DOWNLOAD SYLLABUS & REPORT" 
           />
           

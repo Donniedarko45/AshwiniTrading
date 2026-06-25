@@ -21,12 +21,12 @@ export default function InterviewReadiness() {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-white px-5 sm:px-6">
+    <section className="py-16 md:py-24 bg-brand-bg-dark px-5 sm:px-6 border-t border-white/5">
       <div className="max-w-7xl mx-auto">
         <div className="text-brand-secondary font-bold tracking-widest text-sm uppercase mb-4">
           INTERVIEW READINESS
         </div>
-        <h2 className="text-3xl sm:text-4xl md:text-[56px] font-extrabold text-slate-900 tracking-tight leading-[1.1] mb-10 md:mb-16 max-w-4xl">
+        <h2 className="text-3xl sm:text-4xl md:text-[56px] font-extrabold text-white tracking-tight leading-[1.1] mb-10 md:mb-16 max-w-4xl">
           How most freshers walk into a digital marketing interview – <span className="text-brand-secondary">and how Ashwini Trading Academy students walk in</span>
         </h2>
         
@@ -40,38 +40,38 @@ export default function InterviewReadiness() {
 
         <div className="grid md:grid-cols-2 gap-6 md:gap-8 mb-10 sm:mb-16">
           {/* Others Card */}
-          <div className="bg-white border-t-[6px] border-brand-error-light rounded-2xl p-5 sm:p-8 md:p-12 shadow-sm border border-slate-100">
+          <div className="bg-brand-bg-card border-t-[6px] border-brand-error-light rounded-2xl p-5 sm:p-8 md:p-12 shadow-xl border border-white/10">
             <h3 className="text-2xl font-bold text-brand-error mb-8">How others attend interviews</h3>
             <ul className="space-y-6">
               {othersList.map((item, idx) => (
                 <li key={idx} className="flex gap-4">
-                  <div className="mt-1 min-w-[24px] h-6 flex items-center justify-center rounded-full bg-brand-error-soft text-brand-error">
+                  <div className="mt-1 min-w-[24px] h-6 flex items-center justify-center rounded-full bg-brand-error/15 text-brand-error-light">
                     <X className="w-3.5 h-3.5" />
                   </div>
-                  <span className="text-slate-700 text-base sm:text-lg font-medium">{item}</span>
+                  <span className="text-slate-300 text-base sm:text-lg font-medium">{item}</span>
                 </li>
               ))}
             </ul>
           </div>
 
           {/* Ashwini Trading Card */}
-          <div className="bg-white border-t-[6px] border-brand-secondary rounded-2xl p-5 sm:p-8 md:p-12 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 relative overflow-hidden">
+          <div className="bg-brand-bg-card border-t-[6px] border-brand-secondary rounded-2xl p-5 sm:p-8 md:p-12 shadow-2xl border border-white/10 relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-[6px] bg-gradient-to-r from-brand-secondary via-brand-primary to-brand-accent"></div>
-            <h3 className="text-2xl font-bold text-slate-900 mb-8">How Ashwini Trading Academy students attend interviews</h3>
+            <h3 className="text-2xl font-bold text-white mb-8">How Ashwini Trading Academy students attend interviews</h3>
             <ul className="space-y-6">
               {ashwiniList.map((item, idx) => (
                 <li key={idx} className="flex gap-4">
-                  <div className="mt-1 min-w-[24px] h-6 flex items-center justify-center rounded-full bg-brand-success/10 text-brand-success">
+                  <div className="mt-1 min-w-[24px] h-6 flex items-center justify-center rounded-full bg-brand-success/15 text-brand-success-light">
                     <Check className="w-3.5 h-3.5" />
                   </div>
-                  <span className="text-slate-700 text-base sm:text-lg font-medium">{item}</span>
+                  <span className="text-slate-300 text-base sm:text-lg font-medium">{item}</span>
                 </li>
               ))}
             </ul>
           </div>
         </div>
 
-        <p className="text-center text-slate-500 text-base sm:text-xl font-medium max-w-2xl mx-auto italic">
+        <p className="text-center text-slate-400 text-base sm:text-xl font-medium max-w-2xl mx-auto italic">
           The difference isn't the certificate. It's what you can do with your phone open on the table.
         </p>
       </div>

@@ -36,8 +36,8 @@ export default function Curriculum() {
               <motion.div 
                 key={course.id}
                 variants={scaleUp} 
-                className={`border rounded-[32px] p-6 sm:p-8 flex flex-col hover:shadow-xl transition-all duration-300 h-full group bg-white ${
-                  isPremium ? 'border-brand-primary shadow-md ring-2 ring-brand-primary/10' : 'border-slate-100 shadow-sm'
+                className={`border rounded-[32px] p-6 sm:p-8 flex flex-col hover:shadow-xl transition-all duration-300 h-full group bg-brand-bg-card/50 ${
+                  isPremium ? 'border-brand-primary shadow-md ring-2 ring-brand-primary/10' : 'border-white/10 shadow-sm'
                 }`}
               >
                 {/* Badges & Meta Info */}
@@ -61,8 +61,8 @@ export default function Curriculum() {
                 </p>
 
                 {/* Summarized preview points */}
-                <div className="mb-8 bg-slate-50/50 rounded-2xl p-5 border border-slate-100">
-                  <div className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-3">Highlights Include:</div>
+                <div className="mb-8 bg-brand-bg-dark/50 rounded-2xl p-5 border border-white/5">
+                  <div className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Highlights Include:</div>
                   <ul className="space-y-3">
                     {course.modules.slice(0, 3).map((mod, idx) => (
                       <li key={idx} className="flex items-center gap-3">
@@ -91,7 +91,7 @@ export default function Curriculum() {
                       className={`w-full font-bold py-4 rounded-xl transition-all flex justify-center items-center gap-2 uppercase cursor-pointer text-sm ${
                         isPremium 
                           ? 'bg-gradient-to-r from-brand-primary-grad-start to-brand-primary-grad-end text-slate-950 hover:brightness-110 shadow-lg shadow-brand-primary/15 border-transparent' 
-                          : 'bg-brand-bg-dark hover:bg-slate-900 text-white border-transparent shadow-md'
+                          : 'bg-slate-800 hover:bg-slate-700 text-white border-transparent shadow-md'
                       }`}
                     >
                       View Full Syllabus

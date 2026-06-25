@@ -5,34 +5,34 @@ import { coursesData } from '@/data/courses';
 
 const themeStyles = {
   blue: {
-    container: 'bg-brand-light-bg border-slate-200 hover:border-brand-secondary/30',
+    container: 'bg-brand-bg-card/50 border-white/10 hover:border-brand-secondary/35',
     badge: 'bg-brand-secondary/10 text-brand-secondary-hover border-brand-secondary/20',
     bullet: 'bg-brand-secondary',
-    extraItem: 'bg-white border-slate-200',
+    extraItem: 'bg-white/5 border-white/10',
     extraIcon: 'bg-brand-secondary/10 text-brand-secondary-hover',
-    emiText: 'text-slate-900',
-    batchBg: 'bg-brand-secondary/10 border-brand-secondary/20 text-slate-800',
-    primaryButton: 'bg-brand-bg-dark hover:bg-slate-900 text-white shadow-md'
+    emiText: 'text-white',
+    batchBg: 'bg-brand-secondary/10 border-brand-secondary/20 text-slate-200',
+    primaryButton: 'bg-slate-800 hover:bg-slate-700 text-white shadow-md'
   },
   indigo: {
-    container: 'bg-white border-[3px] border-brand-primary shadow-[0_30px_60px_-15px_rgba(227,201,116,0.25)] lg:scale-100 z-10',
+    container: 'bg-brand-bg-card border-[3px] border-brand-primary shadow-2xl z-10 lg:scale-100',
     badge: 'bg-brand-primary/10 text-brand-primary-hover border-brand-primary/20',
     bullet: 'bg-brand-primary',
     extraItem: 'bg-brand-primary/5 border-brand-primary/10',
     extraIcon: 'bg-brand-primary/10 text-brand-primary',
     emiText: 'text-brand-primary-hover',
-    batchBg: 'bg-brand-primary/10 border-brand-primary/20 text-slate-800',
+    batchBg: 'bg-brand-primary/10 border-brand-primary/20 text-slate-200',
     primaryButton: 'bg-gradient-to-r from-brand-primary-grad-start to-brand-primary-grad-end text-slate-950 hover:brightness-110 shadow-lg shadow-brand-primary/15'
   },
   orange: {
-    container: 'bg-brand-light-bg border-slate-200 hover:border-brand-primary/30 shadow-md',
+    container: 'bg-brand-bg-card/50 border-white/10 hover:border-brand-primary/35 shadow-md',
     badge: 'bg-brand-primary/10 text-brand-primary-hover border-brand-primary/20',
     bullet: 'bg-brand-primary',
-    extraItem: 'bg-white border-brand-primary/10',
+    extraItem: 'bg-white/5 border-brand-primary/10',
     extraIcon: 'bg-brand-primary/10 text-brand-primary',
     emiText: 'text-brand-primary-hover',
-    batchBg: 'bg-brand-primary/10 border-brand-primary/20 text-slate-800',
-    primaryButton: 'bg-brand-bg-dark hover:bg-slate-900 text-white shadow-md'
+    batchBg: 'bg-brand-primary/10 border-brand-primary/20 text-slate-200',
+    primaryButton: 'bg-slate-800 hover:bg-slate-700 text-white shadow-md'
   }
 };
 
@@ -42,14 +42,14 @@ export default function AllCourses() {
   }, []);
 
   return (
-    <section className="py-24 px-5 sm:px-6 md:px-12 bg-brand-light-bg text-center">
+    <section className="py-24 px-5 sm:px-6 md:px-12 bg-brand-bg-dark text-center">
       <div className="max-w-7xl mx-auto">
         {/* Back Button */}
         <div className="flex justify-start mb-8">
           <a href="#">
             <motion.button
               whileHover={{ x: -4 }}
-              className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 font-bold text-sm bg-slate-100 hover:bg-slate-200 px-4 py-2.5 rounded-xl border-0 cursor-pointer transition-colors"
+              className="inline-flex items-center gap-2 text-slate-300 hover:text-white font-bold text-sm bg-white/5 hover:bg-white/10 px-5 py-3 rounded-xl border border-white/10 cursor-pointer transition-colors backdrop-blur-md"
             >
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
@@ -115,15 +115,15 @@ export default function AllCourses() {
                 <div className="space-y-4 mb-6">
                   <div className="flex gap-4">
                     <span className="w-20 text-slate-500 font-bold text-xs tracking-widest uppercase mt-0.5">Duration</span>
-                    <span className="font-semibold text-slate-900 text-[14px]">{course.duration}</span>
+                    <span className="font-semibold text-slate-200 text-[14px]">{course.duration}</span>
                   </div>
                   <div className="flex gap-4">
                     <span className="w-20 text-slate-500 font-bold text-xs tracking-widest uppercase mt-0.5">Format</span>
-                    <span className="font-semibold text-slate-900 text-[14px]">{course.format}</span>
+                    <span className="font-semibold text-slate-200 text-[14px]">{course.format}</span>
                   </div>
                   <div className="flex gap-4">
                     <span className="w-20 text-slate-500 font-bold text-xs tracking-widest uppercase mt-0.5">Schedule</span>
-                    <span className="font-semibold text-slate-900 text-[14px]">{course.schedule}</span>
+                    <span className="font-semibold text-slate-200 text-[14px]">{course.schedule}</span>
                   </div>
                 </div>
 
@@ -133,12 +133,12 @@ export default function AllCourses() {
                     {course.topics.map((topic, i) => (
                       <li key={i} className="flex items-start gap-2.5">
                         <div className={`w-1.5 h-1.5 rounded-full mt-2 shrink-0 group-hover:scale-125 transition-transform ${styles.bullet}`}/>
-                        <span className="text-slate-700 font-medium text-[14px]">{topic}</span>
+                        <span className="text-slate-300 font-medium text-[14px]">{topic}</span>
                       </li>
                     ))}
                     
                     {course.idealAudience && (
-                      <li className={`flex items-start gap-3 mt-4 text-[14px] font-medium text-slate-700 p-3 rounded-xl border shadow-sm ${styles.extraItem}`}>
+                      <li className={`flex items-start gap-3 mt-4 text-[14px] font-medium text-slate-300 p-3 rounded-xl border shadow-sm ${styles.extraItem}`}>
                         <span className={`rounded-full p-1 mt-0.5 shrink-0 ${styles.extraIcon}`}>
                           <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
                             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
@@ -149,7 +149,7 @@ export default function AllCourses() {
                     )}
                     
                     {course.bonus && (
-                      <li className={`flex items-start gap-3 mt-3 text-[14px] font-medium text-slate-700 p-3 rounded-xl border shadow-sm bg-brand-success-soft border-brand-success/20`}>
+                      <li className={`flex items-start gap-3 mt-3 text-[14px] font-medium text-slate-200 p-3 rounded-xl border shadow-sm bg-brand-success/15 border-brand-success/20`}>
                         <span className={`rounded-full p-1 mt-0.5 shrink-0 bg-brand-success/10 text-brand-success`}>
                           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5a2 2 0 10-2 2h2zm0 0H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2h-8z" />
@@ -161,13 +161,13 @@ export default function AllCourses() {
                   </ul>
                 </div>
 
-                <div className="space-y-3 pt-4 border-t border-slate-200/60">
-                  <div className="bg-white rounded-2xl p-4 border border-slate-200 shadow-sm">
-                    <div className="text-slate-500 font-bold text-xs tracking-widest uppercase mb-1">Course Fee</div>
+                <div className="space-y-3 pt-4 border-t border-white/10">
+                  <div className="bg-white/5 rounded-2xl p-4 border border-white/10 shadow-sm">
+                    <div className="text-slate-400 font-bold text-xs tracking-widest uppercase mb-1">Course Fee</div>
                     <div className={`text-2xl font-extrabold ${styles.emiText} my-0.5`}>
                       {course.fee}
                     </div>
-                    <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">
+                    <div className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">
                       One-time Investment (All Taxes Incl.)
                     </div>
                   </div>
@@ -176,7 +176,7 @@ export default function AllCourses() {
                     <div className="font-bold text-xs tracking-widest uppercase mb-1 opacity-70">Next Batch In</div>
                     <div className="font-bold text-base">{course.nextBatch}</div>
                     {course.remainingSeatsText && (
-                      <div className="inline-flex items-center gap-2 bg-white rounded-lg px-2.5 py-1.5 text-xs font-bold text-slate-700 shadow-sm border border-slate-200 mt-2">
+                      <div className="inline-flex items-center gap-2 bg-white/5 rounded-lg px-2.5 py-1.5 text-xs font-bold text-slate-300 shadow-sm border border-white/10 mt-2">
                         <div className="w-2.5 h-2.5 rounded-full bg-brand-success animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.5)]"/>
                         {course.remainingSeatsText}
                       </div>
@@ -197,7 +197,7 @@ export default function AllCourses() {
                     <motion.button 
                       whileHover={{ scale: 1.02 }} 
                       whileTap={{ scale: 0.98 }} 
-                      className="w-full bg-white border border-slate-300 text-slate-700 font-bold py-4.5 rounded-xl hover:bg-slate-50 hover:text-slate-900 transition-colors uppercase text-sm"
+                      className="w-full bg-white/5 border border-white/10 text-white font-bold py-4.5 rounded-xl hover:bg-white/10 transition-colors uppercase text-sm"
                     >
                        Get Syllabus via WhatsApp
                     </motion.button>

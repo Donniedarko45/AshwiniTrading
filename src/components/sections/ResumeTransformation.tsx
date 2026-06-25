@@ -18,87 +18,87 @@ export default function ResumeTransformation() {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-slate-50 px-5 sm:px-6">
+    <section className="py-16 md:py-24 bg-brand-bg-dark px-5 sm:px-6 border-t border-white/5">
       <div className="max-w-7xl mx-auto">
         <div className="text-brand-secondary font-bold tracking-widest text-sm uppercase mb-4">
           RESUME TRANSFORMATION
         </div>
-        <h2 className="text-3xl sm:text-4xl md:text-[56px] font-extrabold text-slate-900 tracking-tight leading-[1.1] mb-10 md:mb-16 max-w-4xl">
+        <h2 className="text-3xl sm:text-4xl md:text-[56px] font-extrabold text-white tracking-tight leading-[1.1] mb-10 md:mb-16 max-w-4xl">
           Your resume on Day 1 vs. your resume on Day 121
         </h2>
 
         <div className="flex flex-col lg:flex-row items-stretch gap-6 lg:gap-10 mb-10 sm:mb-16">
           
           {/* Day 1 Resume */}
-          <div className="flex-1 bg-brand-light-surface rounded-[32px] p-5 sm:p-8 md:p-12 border border-brand-light-border font-mono text-sm text-slate-500 w-full relative">
+          <div className="flex-1 bg-brand-bg-card/40 rounded-[32px] p-5 sm:p-8 md:p-12 border border-white/5 font-mono text-sm text-slate-400 w-full relative">
             <div className="absolute top-8 right-8 text-right">
-              <div className="bg-slate-200 text-slate-600 px-3 py-1 rounded-full text-xs font-bold w-max ml-auto mb-1">DAY 1</div>
-              <div className="text-xs">Fresh Graduate</div>
+              <div className="bg-white/5 border border-white/10 text-slate-300 px-3 py-1 rounded-full text-xs font-bold w-max ml-auto mb-1">DAY 1</div>
+              <div className="text-xs text-slate-500">Fresh Graduate</div>
             </div>
             
-            <h3 className="text-2xl font-bold text-slate-700 mb-8 font-sans">
+            <h3 className="text-2xl font-bold text-slate-300 mb-8 font-sans">
               [Your Name]
             </h3>
 
             <div className="space-y-6">
               <div>
-                <div className="uppercase tracking-widest text-xs font-bold mb-2">Objective</div>
+                <div className="uppercase tracking-widest text-xs font-bold mb-2 text-slate-500">Objective</div>
                 <p>Seeking a challenging position in a reputed organization where I can utilize my skills and contribute to the growth of the company.</p>
               </div>
               
               <div>
-                <div className="uppercase tracking-widest text-xs font-bold mb-2">Education</div>
+                <div className="uppercase tracking-widest text-xs font-bold mb-2 text-slate-500">Education</div>
                 <p>BBA, [College], 2024</p>
               </div>
 
               <div>
-                <div className="uppercase tracking-widest text-xs font-bold mb-2">Skills</div>
+                <div className="uppercase tracking-widest text-xs font-bold mb-2 text-slate-500">Skills</div>
                 <p>MS Office, Communication, Teamwork, Hard Working, Quick Learner, Time Management</p>
               </div>
 
               <div>
-                <div className="uppercase tracking-widest text-xs font-bold mb-2">Internships</div>
+                <div className="uppercase tracking-widest text-xs font-bold mb-2 text-slate-500">Internships</div>
                 <p>—</p>
               </div>
 
               <div>
-                <div className="uppercase tracking-widest text-xs font-bold mb-2">Projects</div>
+                <div className="uppercase tracking-widest text-xs font-bold mb-2 text-slate-500">Projects</div>
                 <p>—</p>
               </div>
 
               <div>
-                <div className="uppercase tracking-widest text-xs font-bold mb-2">Certifications</div>
+                <div className="uppercase tracking-widest text-xs font-bold mb-2 text-slate-500">Certifications</div>
                 <p>—</p>
               </div>
 
               <div>
-                <div className="uppercase tracking-widest text-xs font-bold mb-2">Languages</div>
+                <div className="uppercase tracking-widest text-xs font-bold mb-2 text-slate-500">Languages</div>
                 <p>English, Hindi, Kannada</p>
               </div>
 
               <div>
-                <div className="uppercase tracking-widest text-xs font-bold mb-2">Hobbies</div>
+                <div className="uppercase tracking-widest text-xs font-bold mb-2 text-slate-500">Hobbies</div>
                 <p>Reading, Listening to Music, Travelling, Cricket</p>
               </div>
             </div>
 
-            <div className="mt-16 pt-8 border-t border-slate-200 border-dashed text-center italic">
+            <div className="mt-16 pt-8 border-t border-white/5 border-dashed text-center italic text-slate-500">
               References available on request.
             </div>
           </div>
 
-          <div className="hidden lg:flex shrink-0 w-12 h-12 rounded-full bg-brand-secondary-soft items-center justify-center text-brand-secondary self-center z-10">
+          <div className="hidden lg:flex shrink-0 w-12 h-12 rounded-full bg-brand-secondary/10 items-center justify-center text-brand-secondary self-center z-10">
             <ArrowRight className="w-6 h-6" />
           </div>
 
           {/* Day 121 Resume */}
-          <div className="flex-1 bg-white rounded-[32px] p-5 sm:p-8 md:p-12 border-2 border-brand-secondary shadow-2xl shadow-brand-secondary/15 font-sans w-full relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-brand-secondary-soft rounded-bl-[100px] -z-10" />
+          <div className="flex-1 bg-brand-bg-card rounded-[32px] p-5 sm:p-8 md:p-12 border-2 border-brand-secondary/70 shadow-2xl shadow-brand-secondary/5 font-sans w-full relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-brand-secondary/10 rounded-bl-[100px] -z-10" />
             
             <div className="flex justify-between items-end border-b-4 border-brand-secondary pb-4 mb-6">
               <div>
-                <div className="bg-brand-secondary-hover text-white px-3 py-1 rounded-full text-xs font-bold w-max mb-3">DAY 121</div>
-                <h3 className="text-2xl font-black text-slate-900">
+                <div className="bg-brand-secondary-hover text-slate-950 px-3 py-1 rounded-full text-xs font-bold w-max mb-3">DAY 121</div>
+                <h3 className="text-2xl font-black text-white">
                   [Your Name]
                 </h3>
               </div>
@@ -110,7 +110,7 @@ export default function ResumeTransformation() {
             <div className="space-y-6">
               <div>
                 <div className="uppercase tracking-widest text-brand-secondary text-[11px] font-bold mb-2">Education</div>
-                <p className="font-semibold text-slate-800 text-sm">BBA + <span className="font-bold">Post Graduate Program in Digital Marketing & Analytics</span>, Ashwini Trading Academy</p>
+                <p className="font-semibold text-slate-200 text-sm">BBA + <span className="font-bold">Post Graduate Program in Digital Marketing & Analytics</span>, Ashwini Trading Academy</p>
               </div>
 
               <div>
@@ -118,10 +118,10 @@ export default function ResumeTransformation() {
                 <div className="space-y-3 text-sm">
                   {resumeProjects.map((html, idx) => (
                     <div key={idx} className="flex gap-3 items-start animate-in fade-in slide-in-from-bottom-2 duration-300">
-                      <div className="min-w-6 h-6 rounded-full bg-brand-secondary-soft text-brand-secondary-hover flex items-center justify-center text-[10px] font-bold mt-0.5">
+                      <div className="min-w-6 h-6 rounded-full bg-brand-secondary/10 text-brand-secondary flex items-center justify-center text-[10px] font-bold mt-0.5">
                         {String(idx + 1).padStart(2, '0')}
                       </div>
-                      <span className="text-slate-700 leading-snug" dangerouslySetInnerHTML={{ __html: html }} />
+                      <span className="text-slate-300 leading-snug" dangerouslySetInnerHTML={{ __html: html }} />
                     </div>
                   ))}
                 </div>
@@ -131,7 +131,7 @@ export default function ResumeTransformation() {
                 <div className="uppercase tracking-widest text-brand-secondary text-[11px] font-bold mb-2">Tools</div>
                 <div className="flex flex-wrap gap-2">
                   {tools.map(tool => (
-                    <span key={tool} className="bg-brand-secondary-soft text-brand-secondary-hover px-2.5 py-1 rounded-md text-[11px] font-semibold">{tool}</span>
+                    <span key={tool} className="bg-brand-secondary/10 text-brand-secondary px-2.5 py-1 rounded-md text-[11px] font-semibold">{tool}</span>
                   ))}
                 </div>
               </div>
@@ -140,7 +140,7 @@ export default function ResumeTransformation() {
                 <div className="uppercase tracking-widest text-brand-secondary text-[11px] font-bold mb-2">Certifications</div>
                 <div className="flex flex-wrap gap-2">
                   {certifications.map(cert => (
-                    <span key={cert} className="bg-brand-success-soft text-brand-success px-2.5 py-1 rounded-md text-[11px] font-semibold">{cert}</span>
+                    <span key={cert} className="bg-brand-success/15 text-brand-success-light px-2.5 py-1 rounded-md text-[11px] font-semibold">{cert}</span>
                   ))}
                 </div>
               </div>
@@ -149,19 +149,19 @@ export default function ResumeTransformation() {
                 <div className="uppercase tracking-widest text-brand-secondary text-[11px] font-bold mb-2">AI Stack</div>
                 <div className="flex flex-wrap gap-2">
                   {aiStack.map(ai => (
-                    <span key={ai} className="bg-brand-accent-soft text-brand-accent px-2.5 py-1 rounded-md text-[11px] font-semibold">{ai}</span>
+                    <span key={ai} className="bg-brand-accent/40 text-brand-secondary px-2.5 py-1 rounded-md text-[11px] font-semibold">{ai}</span>
                   ))}
                 </div>
               </div>
             </div>
 
-            <div className="mt-8 pt-6 border-t border-slate-100 text-slate-500 italic text-sm">
+            <div className="mt-8 pt-6 border-t border-white/10 text-slate-400 italic text-sm">
               Two dense pages of shippable work.
             </div>
           </div>
         </div>
 
-        <p className="text-center text-slate-500 text-base sm:text-xl font-medium max-w-2xl mx-auto italic">
+        <p className="text-center text-slate-400 text-base sm:text-xl font-medium max-w-2xl mx-auto italic">
           This is the difference 120 days makes. Same person – a portfolio's worth of credibility heavier.
         </p>
       </div>

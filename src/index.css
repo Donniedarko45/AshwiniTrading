@@ -23,31 +23,31 @@
     --color-error-foreground: #FFFFFF;
 
     /* ─── Backgrounds ─── */
-    --color-background: #FAFBFD;
-    --color-foreground: #0F172A;
+    --color-background: var(--color-brand-bg-dark);
+    --color-foreground: #F8FAFC;
     
-    /* ─── Card (light context) ─── */
-    --color-card: #FFFFFF;
-    --color-card-foreground: #0F172A;
+    /* ─── Card ─── */
+    --color-card: var(--color-brand-bg-card);
+    --color-card-foreground: #F8FAFC;
     
     /* ─── Popover ─── */
-    --color-popover: #FFFFFF;
-    --color-popover-foreground: #0F172A;
+    --color-popover: var(--color-brand-bg-card);
+    --color-popover-foreground: #F8FAFC;
 
     /* ─── Muted ─── */
-    --color-muted: #F1F5F9;
-    --color-muted-foreground: #475569;
+    --color-muted: rgba(255, 255, 255, 0.08);
+    --color-muted-foreground: #CBD5E1;
     
     /* ─── Destructive / Error ─── */
     --color-destructive: #B91C1C;
     --color-destructive-foreground: #FFFFFF;
     
     /* ─── Borders & Inputs ─── */
-    --color-border: #DDE5F0;
-    --color-input: #D7DEE8;
+    --color-border: rgba(255, 255, 255, 0.12);
+    --color-input: rgba(255, 255, 255, 0.14);
     --color-ring: #e3c974;
     
-    --color-surface: #F8FAFC;
+    --color-surface: var(--color-brand-bg-deep);
 
     /* ═══════════════════════════════════════════════
        BRAND DESIGN TOKENS — Single Source of Truth
@@ -79,16 +79,16 @@
 
     /* ─── Brand accent and status colors ─── */
     --color-brand-accent: #15244C;
-    --color-brand-accent-soft: #E9EFFB;
+    --color-brand-accent-soft: rgba(21, 36, 76, 0.4);
     --color-brand-success: #047857;
     --color-brand-success-light: #10B981;
-    --color-brand-success-soft: #ECFDF5;
+    --color-brand-success-soft: rgba(4, 120, 87, 0.15);
     --color-brand-warning: #B45309;
     --color-brand-warning-light: #F59E0B;
-    --color-brand-warning-soft: #FFFBEB;
+    --color-brand-warning-soft: rgba(180, 83, 9, 0.15);
     --color-brand-error: #B91C1C;
     --color-brand-error-light: #EF4444;
-    --color-brand-error-soft: #FEF2F2;
+    --color-brand-error-soft: rgba(185, 28, 28, 0.15);
 
     /* ─── Legacy aliases retained for compatibility ─── */
     --color-brand-gold: var(--color-brand-primary);
@@ -111,13 +111,13 @@
     --color-brand-indigo: var(--color-brand-accent);
 
     /* ─── Light Section Tokens ─── */
-    --color-brand-light-bg: #FAFBFD;
-    --color-brand-light-card: #FFFFFF;
-    --color-brand-light-heading: #0F172A;
-    --color-brand-light-body: #334155;
-    --color-brand-light-muted: #64748B;
-    --color-brand-light-border: #DDE5F0;
-    --color-brand-light-surface: #F8FAFC;
+    --color-brand-light-bg: var(--color-brand-bg-dark);
+    --color-brand-light-card: var(--color-brand-bg-card);
+    --color-brand-light-heading: #F8FAFC;
+    --color-brand-light-body: #CBD5E1;
+    --color-brand-light-muted: #94A3B8;
+    --color-brand-light-border: rgba(255, 255, 255, 0.1);
+    --color-brand-light-surface: var(--color-brand-bg-deep);
 
     /* ─── Star/Rating Color ─── */
     --color-brand-star: #e3c974;

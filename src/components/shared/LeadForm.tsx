@@ -15,7 +15,7 @@ export interface LeadFormProps {
 
 export function LeadForm({
   layout = 'card',
-  theme = 'light',
+  theme = 'dark',
   buttonText = 'START YOUR DM CAREER',
   showRoleSelect = false,
   onSuccess
@@ -84,7 +84,9 @@ export function LeadForm({
               onChange={handleChange}
               aria-invalid={!!errors.name}
               aria-describedby={errors.name ? "name-bar-error" : undefined}
-              className={`h-14 bg-white text-base rounded-xl placeholder:text-slate-400 focus-visible:ring-ring/50 focus-visible:border-ring border-slate-200 text-slate-900`}
+              className={`h-14 text-base rounded-xl placeholder:text-slate-400 focus-visible:ring-ring/50 focus-visible:border-ring transition-all ${
+                isLight ? 'bg-white border-slate-200 text-slate-900' : 'bg-white/5 border-white/10 text-white focus-visible:bg-slate-950/40'
+              }`}
             />
             {errors.name && (
               <span id="name-bar-error" className="text-xs font-bold text-brand-error mt-1 block">
@@ -103,7 +105,9 @@ export function LeadForm({
                 value="+91"
                 readOnly
                 aria-label="Country Code"
-                className="w-16 bg-slate-50 text-slate-600 font-semibold h-14 text-center border-slate-200 px-0 rounded-xl"
+                className={`w-16 font-semibold h-14 text-center px-0 rounded-xl ${
+                  isLight ? 'bg-slate-50 border-slate-200 text-slate-600' : 'bg-white/10 border-white/10 text-slate-300'
+                }`}
               />
               <Input
                 id="phone-bar"
@@ -116,7 +120,9 @@ export function LeadForm({
                 onChange={handleChange}
                 aria-invalid={!!errors.phone}
                 aria-describedby={errors.phone ? "phone-bar-error" : undefined}
-                className={`flex-1 h-14 bg-white text-base rounded-xl placeholder:text-slate-400 focus-visible:ring-ring/50 focus-visible:border-ring border-slate-200 text-slate-900`}
+                className={`flex-1 h-14 text-base rounded-xl placeholder:text-slate-400 focus-visible:ring-ring/50 focus-visible:border-ring transition-all ${
+                  isLight ? 'bg-white border-slate-200 text-slate-900' : 'bg-white/5 border-white/10 text-white focus-visible:bg-slate-950/40'
+                }`}
               />
             </div>
             {errors.phone && (
