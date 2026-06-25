@@ -66,11 +66,11 @@ export function LeadForm({
   if (layout === 'bar') {
     return (
       <form onSubmit={handleSubmit} className="w-full">
-        <div className={`rounded-3xl p-6 sm:p-5 shadow-2xl flex flex-col md:flex-row gap-4 items-end max-w-4xl mx-auto ${
+        <div className={`rounded-3xl p-6 sm:p-5 shadow-2xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 md:gap-5 items-end max-w-4xl mx-auto ${
           isLight ? 'bg-white border border-slate-100' : 'bg-white/5 backdrop-blur-xl border border-white/10'
         }`}>
           {/* Name Field */}
-          <div className="w-full md:w-[35%] text-left">
+          <div className="w-full md:col-span-1 lg:col-span-4 text-left">
             <label htmlFor="name-bar" className={`text-sm font-bold mb-2 block ${isLight ? 'text-slate-900' : 'text-slate-200'}`}>
               Name
             </label>
@@ -96,7 +96,7 @@ export function LeadForm({
           </div>
 
           {/* Phone Field */}
-          <div className="w-full md:w-[35%] text-left">
+          <div className="w-full md:col-span-1 lg:col-span-4 text-left">
             <label htmlFor="phone-bar" className={`text-sm font-bold mb-2 block ${isLight ? 'text-slate-900' : 'text-slate-200'}`}>
               Phone
             </label>
@@ -133,11 +133,11 @@ export function LeadForm({
           </div>
 
           {/* Submit Button */}
-          <div className="w-full md:w-[30%]">
+          <div className="w-full md:col-span-2 lg:col-span-4">
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="w-full h-14 text-slate-950 font-extrabold text-[15px] rounded-xl flex items-center justify-center gap-2"
+              className="w-full h-14 text-slate-950 font-extrabold text-xs sm:text-sm lg:text-[13px] xl:text-sm rounded-xl flex items-center justify-center gap-2 px-4 uppercase tracking-wider whitespace-nowrap"
             >
               {isSubmitting ? (
                 <>

@@ -29,20 +29,34 @@ export default function Hero() {
         >
           <motion.div 
             variants={fadeIn} 
-            className="text-xs sm:text-sm font-bold tracking-widest text-slate-300 uppercase mb-6 sm:mb-10 pl-6 border-l-[3px] border-white/20 leading-relaxed"
+            className="inline-flex items-center gap-2 border border-white/10 bg-white/5 backdrop-blur-md rounded-full px-4 py-2 mb-6 sm:mb-8 shadow-[0_0_15px_rgba(255,255,255,0.02)]"
           >
-            #1 STOCK MARKET COURSE IN BANGALORE —<br />
-            PRACTICAL, AI-POWERED.
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-secondary opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-secondary"></span>
+            </span>
+            <span className="text-[11px] sm:text-xs font-extrabold tracking-wider text-slate-200 uppercase">
+              #1 Stock Market Course in Bangalore · Practical & AI-Powered
+            </span>
           </motion.div>
 
           <motion.h1 
-            variants={fadeIn} 
-            className="text-3xl sm:text-5xl md:text-6xl lg:text-[68px] font-extrabold leading-[1.05] sm:leading-[0.95] tracking-tighter mb-6 font-sans"
+            className="text-4xl sm:text-6xl md:text-7xl lg:text-[76px] font-extrabold leading-[1.05] tracking-tight sm:tracking-tighter mb-6 font-sans flex flex-col gap-1"
           >
-            <span className="text-transparent bg-clip-text bg-gradient-to-br from-brand-primary-light to-brand-primary block mb-2">MASTER</span>
-            <span className="block text-white mb-2 leading-none">THE STOCK MARKET</span>
-            <span className="block text-white mb-2 leading-none">WITH INDIA'S MOST</span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-secondary block mt-1">PRACTICAL TRADING ACADEMY</span>
+            <motion.span 
+              variants={fadeIn} 
+              className="block text-white"
+            >
+              Learn<span className="text-brand-primary">.</span>{' '}
+              Trade<span className="text-brand-secondary">.</span>{' '}
+              Grow<span className="text-brand-primary">.</span>
+            </motion.span>
+            <motion.span 
+              variants={fadeIn} 
+              className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary via-brand-primary-light to-brand-secondary block pb-1.5 leading-none"
+            >
+              Build Wealth<span className="text-brand-secondary">.</span>
+            </motion.span>
           </motion.h1>
 
           <motion.p 

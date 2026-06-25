@@ -63,7 +63,6 @@ export default function App() {
             <LazySection importFunc={() => import('@/components/sections/Certifications')} />
             <LazySection importFunc={() => import('@/components/sections/MediaAwards')} />
             <LazySection importFunc={() => import('@/components/sections/HonestFAQ')} />
-            <LazySection importFunc={() => import('@/components/sections/FinalCTA')} />
           </>
         )}
         {currentView === 'join' && <JoinUs />}
