@@ -55,6 +55,7 @@ export default function App() {
 
             {/* Below the fold (lazy loaded on proximity scroll) */}
             <LazySection importFunc={() => import('@/components/sections/Achieve90Days')} />
+            <LazySection importFunc={() => import('@/components/sections/WhyChooseUs')} />
             <LazySection importFunc={() => import('@/components/sections/Reviews')} />
             <LazySection importFunc={() => import('@/components/sections/CoursesWithAI')} />
             <LazySection importFunc={() => import('@/components/sections/CourseTracks')} />
