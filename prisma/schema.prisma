@@ -1,0 +1,73 @@
+datasource db {
+  provider = "postgresql"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id        String   @id @default(uuid())
+  fullName  String
+  email     String   @unique
+  phone     String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  orders    Order[]
+}
+
+model Course {
+  id            String   @id // e.g., 'foundation', 'futures-options-trader-pro'
+  title         String
+  slug          String   @unique
+  description   String
+  thumbnail     String
+  price         Float    // Original Price (inclusive of GST)
+  discountPrice Float    // Actual Selling Price (inclusive of GST)
+  isActive      Boolean  @default(true)
+  orders        Order[]
+}
+
+model Order {
+  id               String    @id @default(uuid())
+  orderId          String    @unique // Our generated ID, e.g., ORD_1719379200000
+  userId           String
+  courseId         String
+  amount           Float     // Final Amount paid after coupon
+  currency         String    @default("INR")
+  paymentStatus    String    @default("PENDING") // PENDING, PAID, FAILED, CANCELLED
+  orderStatus      String    @default("CREATED") // CREATED, COMPLETED, FAILED
+  paymentGateway   String    @default("CASHFREE")
+  cashfreeOrderId  String?
+  paymentSessionId String?
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+  
+  user             User      @relation(fields: [userId], references: [id])
+  course           Course    @relation(fields: [courseId], references: [id])
+  payments         Payment[]
+}
+
+model Payment {
+  id               String   @id @default(uuid())
+  orderId          String
+  transactionId    String   @unique // Cashfree reference ID
+  paymentSessionId String?
+  paymentMethod    String?  // UPI, CARD, NET_BANKING, WALLET
+  paymentStatus    String   // SUCCESS, FAILED, USER_DROPPED
+  gatewayResponse  Json?    // Complete payload for audit/refund needs
+  paidAt           DateTime @default(now())
+  
+  order            Order    @relation(fields: [orderId], references: [id])
+}
+
+model Coupon {
+  id            String   @id @default(uuid())
+  code          String   @unique
+  discountType  String   // PERCENTAGE, FIXED
+  discountValue Float
+  maxUses       Int
+  usedCount     Int      @default(0)
+  expiryDate    DateTime
+  isActive      Boolean  @default(true)
+}

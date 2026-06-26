@@ -260,10 +260,10 @@ export default function CourseDetails() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a href="#final-cta" className="w-full sm:w-auto">
+            <a href={`#/checkout/${course.id}`} className="w-full sm:w-auto">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
                 <Button size="lg" className="w-full font-extrabold text-[15px] tracking-wide uppercase cursor-pointer">
-                  Book Free Consultation
+                  Enroll In Program
                 </Button>
               </motion.div>
             </a>

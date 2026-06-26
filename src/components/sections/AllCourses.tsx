@@ -183,13 +183,13 @@ export default function AllCourses() {
                     )}
                   </div>
                   
-                  <a href="#final-cta" className="block w-full">
+                  <a href={`#/checkout/${course.id}`} className="block w-full">
                     <motion.button 
                       whileHover={{ scale: 1.02 }} 
                       whileTap={{ scale: 0.98 }} 
-                      className={`w-full font-bold py-4.5 rounded-xl shadow-md border-0 transition-colors flex justify-center items-center gap-2 mt-2 uppercase ${styles.primaryButton}`}
+                      className={`w-full font-bold py-4.5 rounded-xl shadow-md border-0 transition-colors flex justify-center items-center gap-2 mt-2 uppercase cursor-pointer ${styles.primaryButton}`}
                     >
-                       {course.badgeType === 'popular' ? 'APPLY FOR ADMISSION' : 'BOOK FREE COUNSELING'} <span className="text-xl leading-none">→</span>
+                       ENROLL NOW <span className="text-xl leading-none">→</span>
                     </motion.button>
                   </a>
                   

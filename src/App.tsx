@@ -11,9 +11,14 @@ import ReviewsPage from '@/components/sections/ReviewsPage';
 const AllCourses = React.lazy(() => import('@/components/sections/AllCourses'));
 const CourseDetails = React.lazy(() => import('@/components/sections/CourseDetails'));
 const CollegeCollaboration = React.lazy(() => import('@/components/sections/CollegeCollaboration'));
+const Checkout = React.lazy(() => import('@/components/sections/CheckoutPage'));
+const PaymentStatus = React.lazy(() => import('@/components/sections/PaymentStatusPage'));
+const PaymentSuccess = React.lazy(() => import('@/components/sections/PaymentSuccessPage'));
+const PaymentFailed = React.lazy(() => import('@/components/sections/PaymentFailedPage'));
 
 export default function App() {
-  const [currentView, setCurrentView] = useState<'landing' | 'courses' | 'details' | 'collaboration' | 'join' | 'reviews'>('landing');
+  const [currentView, setCurrentView] = useState<'landing' | 'courses' | 'details' | 'collaboration' | 'join' | 'reviews' | 'checkout' | 'payment-status' | 'payment-success' | 'payment-failed'>('landing');
+  const [activeCourseId, setActiveCourseId] = useState<string>('');
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -32,6 +37,20 @@ export default function App() {
         window.scrollTo(0, 0);
       } else if (hash === '#/reviews') {
         setCurrentView('reviews');
+        window.scrollTo(0, 0);
+      } else if (hash.startsWith('#/checkout/')) {
+        const id = hash.substring('#/checkout/'.length).split('?')[0]; // strip query parameters
+        setActiveCourseId(id);
+        setCurrentView('checkout');
+        window.scrollTo(0, 0);
+      } else if (hash.startsWith('#/payment/status')) {
+        setCurrentView('payment-status');
+        window.scrollTo(0, 0);
+      } else if (hash.startsWith('#/payment/success')) {
+        setCurrentView('payment-success');
+        window.scrollTo(0, 0);
+      } else if (hash.startsWith('#/payment/failed')) {
+        setCurrentView('payment-failed');
         window.scrollTo(0, 0);
       } else {
         setCurrentView('landing');
@@ -80,6 +99,26 @@ export default function App() {
         {currentView === 'collaboration' && (
           <Suspense fallback={<div className="w-full min-h-[60vh] bg-brand-bg-dark flex items-center justify-center text-white">Loading...</div>}>
             <CollegeCollaboration />
+          </Suspense>
+        )}
+        {currentView === 'checkout' && (
+          <Suspense fallback={<div className="w-full min-h-[60vh] bg-brand-bg-dark flex items-center justify-center text-white">Opening Secure Checkout...</div>}>
+            <Checkout courseId={activeCourseId} onBack={() => { window.location.hash = '#/all-courses'; }} />
+          </Suspense>
+        )}
+        {currentView === 'payment-status' && (
+          <Suspense fallback={<div className="w-full min-h-[60vh] bg-brand-bg-dark flex items-center justify-center text-white">Connecting with Gateway...</div>}>
+            <PaymentStatus onNavigate={() => {}} />
+          </Suspense>
+        )}
+        {currentView === 'payment-success' && (
+          <Suspense fallback={<div className="w-full min-h-[60vh] bg-brand-bg-dark flex items-center justify-center text-white">Generating Receipt...</div>}>
+            <PaymentSuccess />
+          </Suspense>
+        )}
+        {currentView === 'payment-failed' && (
+          <Suspense fallback={<div className="w-full min-h-[60vh] bg-brand-bg-dark flex items-center justify-center text-white">Loading Error Details...</div>}>
+            <PaymentFailed />
           </Suspense>
         )}
         {/* 1% Change section removed */}
