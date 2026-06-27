@@ -213,17 +213,30 @@ export default function CheckoutPage({ courseId, onBack }: CheckoutPageProps) {
     <div className="min-h-screen bg-brand-bg-dark py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header & Back Link */}
-        <div className="flex items-center justify-between mb-8 pb-4 border-b border-white/10">
-          <button 
-            onClick={onBack}
-            className="inline-flex items-center gap-2 text-slate-400 hover:text-white font-bold text-sm bg-white/5 hover:bg-white/10 px-4 py-2 rounded-xl border border-white/10 cursor-pointer transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Back
-          </button>
-          <div className="text-right">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-4 border-b border-slate-200/80">
+          <div className="flex items-center gap-4">
+            <button 
+              onClick={onBack}
+              className="inline-flex items-center gap-2 text-slate-600 hover:text-brand-navy font-bold text-sm bg-slate-50 hover:bg-slate-100 px-4 py-2 rounded-xl border border-slate-200 cursor-pointer transition-colors shadow-sm"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              Back
+            </button>
+            <a href="#" className="flex items-center gap-2.5 group">
+              <img
+                src="/logo.png"
+                alt="Logo"
+                className="h-10 w-10 object-contain transition-transform group-hover:scale-105"
+              />
+              <div className="flex flex-col text-left leading-none">
+                <span className="text-[14px] font-extrabold text-brand-navy">Ashwini Trading</span>
+                <span className="text-[11px] font-semibold text-slate-500">Academy</span>
+              </div>
+            </a>
+          </div>
+          <div className="text-left sm:text-right">
             <span className="text-xs text-brand-primary font-extrabold tracking-widest uppercase">Secured Checkout</span>
-            <div className="flex items-center gap-1 text-slate-400 text-xs justify-end mt-0.5">
+            <div className="flex items-center gap-1 text-slate-500 text-xs justify-start sm:justify-end mt-0.5">
               <Lock className="w-3.5 h-3.5 text-brand-success" />
               <span>SSL 256-Bit Encryption</span>
             </div>
@@ -237,16 +250,16 @@ export default function CheckoutPage({ courseId, onBack }: CheckoutPageProps) {
             <motion.div 
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              className="bg-brand-bg-card/40 border border-white/10 rounded-[32px] p-6 sm:p-8 backdrop-blur-md shadow-2xl"
+              className="bg-white border border-slate-200 rounded-[32px] p-6 sm:p-8 shadow-sm"
             >
-              <h2 className="text-2xl font-extrabold text-white mb-6 flex items-center gap-3">
+              <h2 className="text-2xl font-extrabold text-brand-navy mb-6 flex items-center gap-3">
                 <span className="w-8 h-8 rounded-full bg-brand-secondary/10 text-brand-secondary flex items-center justify-center text-sm font-bold">1</span>
                 Customer Information
               </h2>
 
               <form onSubmit={handlePayNow} className="space-y-5">
                 <div>
-                  <label className="block text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Full Name</label>
+                  <label className="block text-xs font-bold uppercase tracking-widest text-slate-500 mb-2">Full Name</label>
                   <input 
                     type="text"
                     required
@@ -254,14 +267,14 @@ export default function CheckoutPage({ courseId, onBack }: CheckoutPageProps) {
                     placeholder="Enter your full name"
                     value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
-                    className="w-full bg-brand-bg-dark border border-white/10 focus:border-brand-secondary rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none transition-colors"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 placeholder-slate-400 focus:bg-white focus:outline-none transition-colors focus:ring-2 focus:ring-brand-secondary/20 focus:border-brand-secondary"
                   />
                   {formErrors.fullName && <p className="text-xs text-brand-primary mt-1 font-semibold flex items-center gap-1"><AlertCircle className="w-3 h-3" /> {formErrors.fullName}</p>}
                 </div>
 
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Email Address</label>
+                    <label className="block text-xs font-bold uppercase tracking-widest text-slate-500 mb-2">Email Address</label>
                     <input 
                       type="email"
                       required
@@ -269,13 +282,13 @@ export default function CheckoutPage({ courseId, onBack }: CheckoutPageProps) {
                       placeholder="e.g. john@example.com"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      className="w-full bg-brand-bg-dark border border-white/10 focus:border-brand-secondary rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none transition-colors"
+                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 placeholder-slate-400 focus:bg-white focus:outline-none transition-colors focus:ring-2 focus:ring-brand-secondary/20 focus:border-brand-secondary"
                     />
                     {formErrors.email && <p className="text-xs text-brand-primary mt-1 font-semibold flex items-center gap-1"><AlertCircle className="w-3 h-3" /> {formErrors.email}</p>}
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Phone Number</label>
+                    <label className="block text-xs font-bold uppercase tracking-widest text-slate-500 mb-2">Phone Number</label>
                     <div className="relative">
                       <span className="absolute left-4 top-3.5 text-slate-500 font-bold text-sm">+91</span>
                       <input 
@@ -285,7 +298,7 @@ export default function CheckoutPage({ courseId, onBack }: CheckoutPageProps) {
                         placeholder="10-digit mobile number"
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
-                        className="w-full bg-brand-bg-dark border border-white/10 focus:border-brand-secondary rounded-xl pl-12 pr-4 py-3 text-white placeholder-slate-500 focus:outline-none transition-colors"
+                        className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-12 pr-4 py-3 text-slate-800 placeholder-slate-400 focus:bg-white focus:outline-none transition-colors focus:ring-2 focus:ring-brand-secondary/20 focus:border-brand-secondary"
                       />
                     </div>
                     {formErrors.phone && <p className="text-xs text-brand-primary mt-1 font-semibold flex items-center gap-1"><AlertCircle className="w-3 h-3" /> {formErrors.phone}</p>}
@@ -293,7 +306,7 @@ export default function CheckoutPage({ courseId, onBack }: CheckoutPageProps) {
                 </div>
 
                 {/* Secure Badge & Privacy Note */}
-                <div className="bg-white/5 border border-white/5 rounded-2xl p-4 text-xs text-slate-400 flex items-start gap-3 mt-2">
+                <div className="bg-slate-50 border border-slate-100 rounded-2xl p-4 text-xs text-slate-500 flex items-start gap-3 mt-2">
                   <ShieldCheck className="w-5 h-5 text-brand-success shrink-0 mt-0.5" />
                   <p>
                     <strong>Privacy & Security:</strong> Your credentials are secure. Course access instructions, receipts, and login credentials will be sent to the email address provided above.
@@ -307,9 +320,9 @@ export default function CheckoutPage({ courseId, onBack }: CheckoutPageProps) {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="bg-brand-bg-card/40 border border-white/10 rounded-[32px] p-6 backdrop-blur-md shadow-2xl"
+              className="bg-white border border-slate-200 rounded-[32px] p-6 shadow-sm"
             >
-              <h2 className="text-lg font-extrabold text-white mb-4 flex items-center gap-3">
+              <h2 className="text-lg font-extrabold text-brand-navy mb-4 flex items-center gap-3">
                 <Tag className="w-5 h-5 text-brand-secondary" />
                 Apply Coupon Code
               </h2>
@@ -322,7 +335,7 @@ export default function CheckoutPage({ courseId, onBack }: CheckoutPageProps) {
                     placeholder="Enter coupon code (e.g. WELCOME10)"
                     value={couponCode}
                     onChange={(e) => setCouponCode(e.target.value.toUpperCase())}
-                    className="w-full bg-brand-bg-dark border border-white/10 focus:border-brand-secondary rounded-xl px-4 py-3 text-white uppercase tracking-wider placeholder-slate-500 focus:outline-none transition-colors"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 uppercase tracking-wider placeholder-slate-400 focus:bg-white focus:outline-none transition-colors focus:ring-2 focus:ring-brand-secondary/20 focus:border-brand-secondary"
                   />
                   {couponStatus === 'success' && <Check className="absolute right-4 top-3.5 w-5 h-5 text-brand-success" />}
                 </div>
@@ -340,7 +353,7 @@ export default function CheckoutPage({ courseId, onBack }: CheckoutPageProps) {
                     type="button"
                     disabled={couponLoading || !couponCode}
                     onClick={handleApplyCoupon}
-                    className="cursor-pointer bg-slate-800 text-white hover:bg-slate-700 font-bold px-6"
+                    className="cursor-pointer bg-brand-navy hover:bg-slate-900 text-white font-bold px-6"
                   >
                     {couponLoading ? <Loader2 className="w-4 h-4 animate-spin" /> : 'Apply'}
                   </Button>
@@ -361,13 +374,13 @@ export default function CheckoutPage({ courseId, onBack }: CheckoutPageProps) {
                 <div className="flex flex-wrap gap-2 mt-3">
                   <button 
                     onClick={() => { setCouponCode('WELCOME10'); }} 
-                    className="text-[11px] font-bold bg-white/5 hover:bg-white/10 border border-white/10 px-3 py-1.5 rounded-lg text-slate-300 transition-colors"
+                    className="text-[11px] font-bold bg-slate-50 hover:bg-slate-100 border border-slate-200 px-3 py-1.5 rounded-lg text-slate-600 transition-colors shadow-sm"
                   >
                     WELCOME10 (10% OFF)
                   </button>
                   <button 
                     onClick={() => { setCouponCode('EARLYBIRD'); }} 
-                    className="text-[11px] font-bold bg-white/5 hover:bg-white/10 border border-white/10 px-3 py-1.5 rounded-lg text-slate-300 transition-colors"
+                    className="text-[11px] font-bold bg-slate-50 hover:bg-slate-100 border border-slate-200 px-3 py-1.5 rounded-lg text-slate-600 transition-colors shadow-sm"
                   >
                     EARLYBIRD (₹1500 OFF)
                   </button>
@@ -382,32 +395,32 @@ export default function CheckoutPage({ courseId, onBack }: CheckoutPageProps) {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="bg-brand-bg-card border border-white/15 rounded-[32px] p-6 sm:p-8 shadow-2xl"
+              className="bg-white border border-slate-200 rounded-[32px] p-6 sm:p-8 shadow-md"
             >
-              <h2 className="text-xl font-extrabold text-white mb-6 pb-4 border-b border-white/10">Order Summary</h2>
+              <h2 className="text-xl font-extrabold text-brand-navy mb-6 pb-4 border-b border-slate-100">Order Summary</h2>
 
               {/* Course Detail Card */}
               <div className="flex gap-4 mb-6">
                 {/* Thumbnail placeholder or badge */}
-                <div className="w-20 h-20 bg-gradient-to-br from-brand-secondary/20 to-brand-primary/20 border border-white/10 rounded-2xl flex items-center justify-center shrink-0">
+                <div className="w-20 h-20 bg-gradient-to-br from-brand-secondary/20 to-brand-primary/20 border border-slate-100 rounded-2xl flex items-center justify-center shrink-0">
                   <ShieldCheck className="w-10 h-10 text-brand-secondary opacity-80" />
                 </div>
                 <div>
                   <span className="text-[10px] font-bold bg-brand-primary/10 text-brand-primary-hover border border-brand-primary/20 px-2.5 py-1 rounded-full uppercase tracking-wider">
                     {course.badge}
                   </span>
-                  <h3 className="font-extrabold text-white text-base mt-2 leading-snug line-clamp-2">
+                  <h3 className="font-extrabold text-brand-navy text-base mt-2 leading-snug line-clamp-2">
                     {course.title}
                   </h3>
-                  <p className="text-slate-400 text-xs mt-1 font-semibold">Duration: {course.duration}</p>
+                  <p className="text-slate-500 text-xs mt-1 font-semibold">Duration: {course.duration}</p>
                 </div>
               </div>
 
               {/* Price Breakdown */}
-              <div className="space-y-3 border-t border-b border-white/10 py-5 mb-6">
-                <div className="flex justify-between text-sm font-semibold text-slate-400">
+              <div className="space-y-3 border-t border-b border-slate-100 py-5 mb-6">
+                <div className="flex justify-between text-sm font-semibold text-slate-600">
                   <span>Original Fee</span>
-                  <span className="text-white">₹{originalPrice.toLocaleString('en-IN')}</span>
+                  <span className="text-brand-navy">₹{originalPrice.toLocaleString('en-IN')}</span>
                 </div>
 
                 {discountAmount > 0 && (
@@ -431,7 +444,7 @@ export default function CheckoutPage({ courseId, onBack }: CheckoutPageProps) {
               </div>
 
               <div className="flex justify-between items-center mb-6">
-                <span className="text-base font-extrabold text-white">Final Amount (Incl. GST)</span>
+                <span className="text-base font-extrabold text-brand-navy">Final Amount (Incl. GST)</span>
                 <span className="text-2xl sm:text-3xl font-extrabold text-brand-secondary">
                   ₹{finalAmount.toLocaleString('en-IN')}
                 </span>
@@ -445,9 +458,9 @@ export default function CheckoutPage({ courseId, onBack }: CheckoutPageProps) {
                     disabled={isSubmitting}
                     checked={termsAccepted}
                     onChange={(e) => setTermsAccepted(e.target.checked)}
-                    className="w-5 h-5 rounded border-white/10 text-brand-secondary bg-brand-bg-dark focus:ring-brand-secondary shrink-0 mt-0.5 accent-brand-secondary cursor-pointer"
+                    className="w-5 h-5 rounded border-slate-300 text-brand-secondary bg-slate-50 focus:ring-brand-secondary shrink-0 mt-0.5 accent-brand-secondary cursor-pointer"
                   />
-                  <span className="text-xs text-slate-400 leading-normal">
+                  <span className="text-xs text-slate-600 leading-normal">
                     I agree to the <a href="#/terms" target="_blank" rel="noopener noreferrer" className="text-brand-secondary hover:underline font-bold">Terms & Conditions</a>, <a href="#/privacy" target="_blank" rel="noopener noreferrer" className="text-brand-secondary hover:underline font-bold">Privacy Policy</a>, and the refund guidelines.
                   </span>
                 </label>

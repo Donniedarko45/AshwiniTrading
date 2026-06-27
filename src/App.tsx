@@ -63,9 +63,11 @@ export default function App() {
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
+  const showNavbar = !['checkout', 'payment-status', 'payment-success', 'payment-failed'].includes(currentView);
+
   return (
     <div className="min-h-screen bg-brand-bg-dark font-sans selection:bg-brand-primary/30 text-slate-800">
-      <Navbar />
+      {showNavbar && <Navbar />}
       <main>
         {currentView === 'landing' && (
           <>

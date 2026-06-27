@@ -66,7 +66,7 @@ export default function Reviews() {
         </div>
 
         {/* Bottom CTA Block */}
-        <div className="max-w-4xl mx-auto text-center mt-24 sm:mt-32 mb-10">
+        <div id="final-cta" className="max-w-4xl mx-auto text-center mt-24 sm:mt-32 mb-10">
           <h2 className="text-3xl sm:text-4xl md:text-[44px] font-extrabold text-brand-light-heading mb-4 tracking-tight">
             Begin Your Learning Journey
           </h2>

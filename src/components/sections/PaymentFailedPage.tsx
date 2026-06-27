@@ -88,7 +88,7 @@ export default function PaymentFailedPage() {
         <motion.div 
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="bg-brand-bg-card border border-white/10 rounded-[32px] p-8 text-center shadow-2xl backdrop-blur-md relative overflow-hidden"
+          className="bg-white border border-slate-200 rounded-[32px] p-8 text-center shadow-sm relative overflow-hidden"
         >
           {/* Top decorative line */}
           <div className="absolute top-0 inset-x-0 h-1.5 bg-brand-primary" />
@@ -98,28 +98,28 @@ export default function PaymentFailedPage() {
             <XCircle className="w-10 h-10 text-brand-primary" />
           </div>
 
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-brand-navy tracking-tight">
             Payment Failed
           </h1>
           
-          <p className="text-slate-400 text-sm mt-3 leading-relaxed">
+          <p className="text-slate-600 text-sm mt-3 leading-relaxed">
             We were unable to process your transaction. Don't worry — if any amount was debited from your account, it will be automatically refunded by your bank within 3-5 business days.
           </p>
 
           {/* Failure Reason Box */}
-          <div className="mt-6 bg-brand-primary/5 border border-brand-primary/15 rounded-2xl p-4 text-left">
-            <div className="text-xs font-bold text-slate-300 flex items-center gap-2">
+          <div className="mt-6 bg-slate-50 border border-slate-100 rounded-2xl p-4 text-left">
+            <div className="text-xs font-bold text-slate-700 flex items-center gap-2">
               <AlertTriangle className="w-4 h-4 text-brand-primary" />
               Reason for Failure
             </div>
-            <p className="text-xs text-slate-400 mt-2 font-semibold italic leading-normal">
+            <p className="text-xs text-slate-600 mt-2 font-semibold italic leading-normal">
               "{reason}"
             </p>
           </div>
 
           {/* Order Reference */}
           {orderId && (
-            <div className="text-[10px] font-mono text-slate-600 mt-4 text-left">
+            <div className="text-[10px] font-mono text-slate-500 mt-4 text-left">
               Order Ref: {orderId}
             </div>
           )}
@@ -160,7 +160,7 @@ export default function PaymentFailedPage() {
               >
                 <Button 
                   variant="outline"
-                  className="w-full cursor-pointer font-bold border-white/10 hover:bg-white/5 text-xs h-12 flex justify-center items-center gap-1.5"
+                  className="w-full cursor-pointer font-bold border-slate-200 hover:bg-slate-50 text-slate-700 text-xs h-12 flex justify-center items-center gap-1.5"
                 >
                   <MessageSquare className="w-4 h-4 text-brand-success" />
                   WhatsApp
@@ -170,9 +170,9 @@ export default function PaymentFailedPage() {
               <a href="mailto:support@ashwinitrading.com" className="block">
                 <Button 
                   variant="outline"
-                  className="w-full cursor-pointer font-bold border-white/10 hover:bg-white/5 text-xs h-12 flex justify-center items-center gap-1.5"
+                  className="w-full cursor-pointer font-bold border-slate-200 hover:bg-slate-50 text-slate-700 text-xs h-12 flex justify-center items-center gap-1.5"
                 >
-                  <PhoneCall className="w-4 h-4 text-slate-400" />
+                  <PhoneCall className="w-4 h-4 text-slate-500" />
                   Contact Desk
                 </Button>
               </a>
@@ -180,7 +180,7 @@ export default function PaymentFailedPage() {
 
             <a href="#/all-courses" className="block pt-2">
               <button 
-                className="text-xs text-slate-400 hover:text-white font-bold flex items-center gap-1.5 mx-auto transition-colors cursor-pointer"
+                className="text-xs text-slate-600 hover:text-brand-navy font-bold flex items-center gap-1.5 mx-auto transition-colors cursor-pointer"
               >
                 <ArrowLeft className="w-3.5 h-3.5" />
                 Back to Trading Programs

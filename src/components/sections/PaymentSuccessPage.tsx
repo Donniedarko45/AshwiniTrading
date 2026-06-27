@@ -276,8 +276,8 @@ export default function PaymentSuccessPage() {
     return (
       <div className="min-h-[70vh] bg-brand-bg-dark flex flex-col items-center justify-center text-center">
         <Loader2 className="w-12 h-12 text-brand-secondary animate-spin mb-4" />
-        <h2 className="text-xl font-extrabold text-white">Loading Receipt Details</h2>
-        <p className="text-slate-400 text-sm mt-2">Retrieving tax invoice and enrollment confirmation...</p>
+        <h2 className="text-xl font-extrabold text-brand-navy">Loading Receipt Details</h2>
+        <p className="text-slate-600 text-sm mt-2">Retrieving tax invoice and enrollment confirmation...</p>
       </div>
     );
   }
@@ -288,13 +288,13 @@ export default function PaymentSuccessPage() {
         <div className="w-16 h-16 bg-brand-primary/10 rounded-full flex items-center justify-center text-brand-primary mb-4">
           ⚠
         </div>
-        <h2 className="text-2xl font-extrabold text-white">Receipt Retrieval Failed</h2>
-        <p className="text-slate-400 text-sm mt-2 max-w-md">
+        <h2 className="text-2xl font-extrabold text-brand-navy">Receipt Retrieval Failed</h2>
+        <p className="text-slate-600 text-sm mt-2 max-w-md">
           Although your payment was successful, we had trouble displaying the invoice details on this screen. Rest assured, your purchase is secure. Please check your email for confirmation.
         </p>
         <div className="mt-8 flex gap-4">
           <a href="#">
-            <Button className="cursor-pointer bg-slate-800 hover:bg-slate-700 text-white">Go to Home</Button>
+            <Button className="cursor-pointer bg-brand-navy hover:bg-slate-900 text-white">Go to Home</Button>
           </a>
         </div>
       </div>
@@ -308,7 +308,7 @@ export default function PaymentSuccessPage() {
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-brand-bg-card border border-white/10 rounded-[40px] p-6 sm:p-10 shadow-2xl backdrop-blur-md relative overflow-hidden"
+          className="bg-white border border-slate-200 rounded-[40px] p-6 sm:p-10 shadow-sm relative overflow-hidden"
         >
           {/* Top Banner Accent */}
           <div className="absolute top-0 inset-x-0 h-2 bg-gradient-to-r from-brand-success to-brand-secondary" />
@@ -318,44 +318,44 @@ export default function PaymentSuccessPage() {
             <CheckCircle2 className="w-10 h-10 text-brand-success" />
           </div>
 
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-center text-white tracking-tight">
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-center text-brand-navy tracking-tight">
             Payment Successful!
           </h1>
-          <p className="text-center text-slate-400 text-sm mt-3 max-w-md mx-auto leading-relaxed">
-            Welcome to Ashwini Trading Academy. Your seat has been successfully reserved. A confirmation email with access instructions has been sent to <strong className="text-white">{invoiceData.email}</strong>.
+          <p className="text-center text-slate-600 text-sm mt-3 max-w-md mx-auto leading-relaxed">
+            Welcome to Ashwini Trading Academy. Your seat has been successfully reserved. A confirmation email with access instructions has been sent to <strong className="text-brand-navy font-bold">{invoiceData.email}</strong>.
           </p>
 
           {/* Email Notice Box */}
-          <div className="mt-8 bg-brand-success/5 border border-brand-success/15 rounded-2xl p-4 flex gap-3 text-left">
+          <div className="mt-8 bg-slate-50 border border-slate-100 rounded-2xl p-4 flex gap-3 text-left">
             <Mail className="w-5 h-5 text-brand-success shrink-0 mt-0.5" />
             <div>
-              <div className="text-xs font-bold text-slate-200">Email Confirmation Sent</div>
-              <p className="text-[11px] text-slate-400 mt-1 leading-normal">
+              <div className="text-xs font-bold text-slate-700">Email Confirmation Sent</div>
+              <p className="text-[11px] text-slate-500 mt-1 leading-normal">
                 Please check your inbox (and spam folder) for an email from <strong>support@ashwinitrading.com</strong>. It contains your LMS login credentials and live session links.
               </p>
             </div>
           </div>
 
           {/* Transaction Invoice Detail Block */}
-          <div className="mt-8 bg-black/40 border border-white/5 rounded-3xl p-6 space-y-4 text-sm">
-            <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest pb-2 border-b border-white/5">
+          <div className="mt-8 bg-slate-50 border border-slate-100 rounded-3xl p-6 space-y-4 text-sm">
+            <h3 className="text-xs font-bold text-slate-500 uppercase tracking-widest pb-2 border-b border-slate-200">
               Transaction Details
             </h3>
 
             <div className="grid grid-cols-2 gap-y-4 gap-x-4">
               <div>
                 <span className="text-slate-500 text-xs flex items-center gap-1"><Hash className="w-3.5 h-3.5" /> Order ID</span>
-                <span className="font-mono font-bold text-slate-200 text-[13px] block mt-1 break-all">{invoiceData.orderId}</span>
+                <span className="font-mono font-bold text-slate-800 text-[13px] block mt-1 break-all">{invoiceData.orderId}</span>
               </div>
 
               <div>
                 <span className="text-slate-500 text-xs flex items-center gap-1"><CreditCard className="w-3.5 h-3.5" /> Transaction Ref</span>
-                <span className="font-mono font-bold text-slate-200 text-[13px] block mt-1 break-all">{invoiceData.transactionId}</span>
+                <span className="font-mono font-bold text-slate-800 text-[13px] block mt-1 break-all">{invoiceData.transactionId}</span>
               </div>
 
               <div>
                 <span className="text-slate-500 text-xs flex items-center gap-1"><Calendar className="w-3.5 h-3.5" /> Date & Time</span>
-                <span className="font-bold text-slate-200 block mt-1">
+                <span className="font-bold text-slate-800 block mt-1">
                   {new Date(invoiceData.paidAt).toLocaleString('en-IN', { 
                     day: 'numeric', 
                     month: 'short', 
@@ -368,17 +368,17 @@ export default function PaymentSuccessPage() {
 
               <div>
                 <span className="text-slate-500 text-xs">Payment Method</span>
-                <span className="font-bold text-slate-200 block mt-1 uppercase">{invoiceData.paymentMethod}</span>
+                <span className="font-bold text-slate-800 block mt-1 uppercase">{invoiceData.paymentMethod}</span>
               </div>
             </div>
 
-            <div className="border-t border-white/5 pt-4 mt-2 flex justify-between items-center">
+            <div className="border-t border-slate-200 pt-4 mt-2 flex justify-between items-center">
               <div>
-                <span className="text-xs font-bold text-slate-400 block">Enrolled Course</span>
-                <span className="font-extrabold text-white text-[15px] mt-1 block">{invoiceData.courseTitle}</span>
+                <span className="text-xs font-bold text-slate-500 block">Enrolled Course</span>
+                <span className="font-extrabold text-brand-navy text-[15px] mt-1 block">{invoiceData.courseTitle}</span>
               </div>
               <div className="text-right">
-                <span className="text-xs font-bold text-slate-400 block">Amount Paid</span>
+                <span className="text-xs font-bold text-slate-500 block">Amount Paid</span>
                 <span className="font-extrabold text-brand-secondary text-lg mt-1 block">
                   ₹{invoiceData.totalAmount.toLocaleString('en-IN')}
                 </span>
@@ -390,7 +390,7 @@ export default function PaymentSuccessPage() {
           <div className="mt-10 flex flex-col sm:flex-row gap-4">
             <Button 
               onClick={handleDownloadInvoice}
-              className="flex-1 cursor-pointer bg-slate-800 hover:bg-slate-700 font-bold py-6 rounded-xl border border-white/5 text-white flex justify-center items-center gap-2"
+              className="flex-1 cursor-pointer bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-700 font-bold py-6 rounded-xl flex justify-center items-center gap-2 shadow-sm"
             >
               <Download className="w-4.5 h-4.5" />
               Download GST Invoice

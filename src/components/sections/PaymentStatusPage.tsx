@@ -124,7 +124,7 @@ export default function PaymentStatusPage({ onNavigate }: PaymentStatusPageProps
       <motion.div 
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="max-w-md w-full bg-brand-bg-card border border-white/10 rounded-[32px] p-8 text-center shadow-2xl backdrop-blur-md relative overflow-hidden"
+        className="max-w-md w-full bg-white border border-slate-200 rounded-[32px] p-8 text-center shadow-sm relative overflow-hidden"
       >
         {/* Glow Decor */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-48 bg-brand-secondary/10 rounded-full blur-3xl pointer-events-none" />
@@ -135,8 +135,8 @@ export default function PaymentStatusPage({ onNavigate }: PaymentStatusPageProps
               <Loader2 className="w-10 h-10 text-brand-secondary animate-spin" />
             </div>
             <div>
-              <h2 className="text-2xl font-extrabold text-white">Verifying Transaction</h2>
-              <p className="text-slate-400 text-sm mt-3 leading-relaxed">
+              <h2 className="text-2xl font-extrabold text-brand-navy">Verifying Transaction</h2>
+              <p className="text-slate-600 text-sm mt-3 leading-relaxed">
                 We are securely communicating with Cashfree Payment Gateway to verify your transaction status. Please do not refresh this page.
               </p>
             </div>
@@ -150,13 +150,13 @@ export default function PaymentStatusPage({ onNavigate }: PaymentStatusPageProps
               <Clock className="w-8 h-8 text-brand-secondary" />
             </div>
             <div>
-              <h2 className="text-2xl font-extrabold text-white">Payment Processing</h2>
+              <h2 className="text-2xl font-extrabold text-brand-navy">Payment Processing</h2>
               {courseName && (
-                <p className="text-sm font-bold text-slate-300 mt-2 bg-white/5 py-1.5 px-3 rounded-xl border border-white/5 w-fit mx-auto">
+                <p className="text-sm font-bold text-slate-700 mt-2 bg-slate-50 py-1.5 px-3 rounded-xl border border-slate-100 w-fit mx-auto">
                   {courseName} • ₹{amount.toLocaleString('en-IN')}
                 </p>
               )}
-              <p className="text-slate-400 text-sm mt-4 leading-relaxed">
+              <p className="text-slate-600 text-sm mt-4 leading-relaxed">
                 Your payment is currently being processed by your bank. We are awaiting the final confirmation. This usually takes just a few seconds.
               </p>
             </div>
@@ -164,7 +164,7 @@ export default function PaymentStatusPage({ onNavigate }: PaymentStatusPageProps
             <div className="pt-4 flex flex-col gap-2">
               <Button 
                 onClick={handleManualRefresh}
-                className="w-full bg-slate-800 hover:bg-slate-700 font-bold py-4.5 rounded-xl border-0 cursor-pointer text-white flex justify-center items-center gap-2"
+                className="w-full bg-brand-navy hover:bg-slate-900 font-bold py-4.5 rounded-xl border-0 cursor-pointer text-white flex justify-center items-center gap-2"
               >
                 <RefreshCw className="w-4 h-4" />
                 Check Status Now
@@ -179,17 +179,17 @@ export default function PaymentStatusPage({ onNavigate }: PaymentStatusPageProps
               <Clock className="w-10 h-10 text-brand-primary" />
             </div>
             <div>
-              <h2 className="text-2xl font-extrabold text-white">Verification Delayed</h2>
-              <p className="text-slate-400 text-sm mt-3 leading-relaxed">
+              <h2 className="text-2xl font-extrabold text-brand-navy">Verification Delayed</h2>
+              <p className="text-slate-600 text-sm mt-3 leading-relaxed">
                 Confirmation from your bank is taking longer than expected. Do not worry — your money is safe. You can click the refresh button below to re-verify.
               </p>
             </div>
 
-            <div className="bg-white/5 border border-white/5 rounded-2xl p-4 text-xs text-left text-slate-400 space-y-2">
-              <div className="font-bold text-slate-300">What happened?</div>
+            <div className="bg-slate-50 border border-slate-100 rounded-2xl p-4 text-xs text-left text-slate-600 space-y-2">
+              <div className="font-bold text-slate-700">What happened?</div>
               <p>Sometimes banking networks experience latency in reporting transaction statuses to payment gateways.</p>
-              <div className="font-bold text-slate-300 mt-2">Order Reference:</div>
-              <code className="block bg-black/40 text-brand-secondary py-1 px-2 rounded font-mono text-[10px] break-all">{orderId}</code>
+              <div className="font-bold text-slate-700 mt-2">Order Reference:</div>
+              <code className="block bg-slate-100 text-brand-primary py-1 px-2 rounded font-mono text-[10px] break-all">{orderId}</code>
             </div>
 
             <div className="pt-2 flex flex-col gap-2">
@@ -203,7 +203,7 @@ export default function PaymentStatusPage({ onNavigate }: PaymentStatusPageProps
               <a href="#" className="w-full">
                 <Button 
                   variant="outline"
-                  className="w-full cursor-pointer text-slate-300 font-bold"
+                  className="w-full cursor-pointer text-slate-600 hover:text-brand-navy font-bold border border-slate-200"
                 >
                   Return to Home
                 </Button>
@@ -218,14 +218,14 @@ export default function PaymentStatusPage({ onNavigate }: PaymentStatusPageProps
               <ShieldAlert className="w-10 h-10 text-brand-primary" />
             </div>
             <div>
-              <h2 className="text-2xl font-extrabold text-white">Invalid Order Details</h2>
-              <p className="text-slate-400 text-sm mt-3 leading-relaxed">
+              <h2 className="text-2xl font-extrabold text-brand-navy">Invalid Order Details</h2>
+              <p className="text-slate-600 text-sm mt-3 leading-relaxed">
                 The transaction reference is missing or invalid. Please return to the homepage and try enrolling again.
               </p>
             </div>
             <div className="pt-4">
               <a href="#" className="w-full">
-                <Button className="w-full cursor-pointer bg-slate-800 hover:bg-slate-700 text-white font-bold py-4.5 rounded-xl border-0">
+                <Button className="w-full cursor-pointer bg-brand-navy hover:bg-slate-900 text-white font-bold py-4.5 rounded-xl border-0">
                   Return to Programs
                 </Button>
               </a>
