@@ -6,14 +6,16 @@ import { LeadForm } from '@/components/shared/LeadForm';
 
 export default function Hero() {
   const features = [
-    "100% Placement Record",
-    "AI-Native 2026 Curriculum",
-    "Trainers with 5-10 yrs Exp",
-    "Indiranagar, Next to Metro Station"
+    "NISM Certification Exam Training",
+    "Technical Analysis & Chart Reading",
+    "Fundamental Analysis & Company Research",
+    "AI-Powered Market Analysis",
+    "Beginner to Advanced Programs",
+    "Online & Classroom Training"
   ];
 
   return (
-    <section className="relative min-h-screen bg-brand-bg-dark overflow-hidden pt-28 sm:pt-36 pb-16 sm:pb-20">
+    <section className="relative min-h-screen bg-brand-navy overflow-hidden pt-28 sm:pt-36 pb-16 sm:pb-20">
       {/* Glow overlays */}
       <div className="absolute top-[-10%] right-[-5%] w-[800px] h-[800px] bg-brand-glow/30 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-brand-glow/20 rounded-full blur-[140px] pointer-events-none" />
@@ -36,28 +38,23 @@ export default function Hero() {
               <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-secondary"></span>
             </span>
             <span className="text-[11px] sm:text-xs font-extrabold tracking-wider text-slate-200 uppercase">
-              #1 Stock Market Course in Bangalore · Practical & AI-Powered
+              SEBI Registered Research Analyst · Practical & AI-Powered
             </span>
           </motion.div>
 
           <motion.h1 
-            className="text-4xl sm:text-6xl md:text-7xl lg:text-[76px] font-extrabold leading-[1.05] tracking-tight sm:tracking-tighter mb-6 font-sans flex flex-col gap-1"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-[68px] font-extrabold leading-[1.1] tracking-tight mb-4 text-white"
+            variants={fadeIn}
           >
-            <motion.span 
-              variants={fadeIn} 
-              className="block text-white"
-            >
-              Learn<span className="text-brand-primary">.</span>{' '}
-              Trade<span className="text-brand-secondary">.</span>{' '}
-              Grow<span className="text-brand-primary">.</span>
-            </motion.span>
-            <motion.span 
-              variants={fadeIn} 
-              className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary via-brand-primary-light to-brand-secondary block pb-1.5 leading-none"
-            >
-              Build Wealth<span className="text-brand-secondary">.</span>
-            </motion.span>
+            Master the Stock Market with <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary via-brand-primary-light to-brand-secondary">Research-Driven & AI-Powered Learning</span>
           </motion.h1>
+
+          <motion.h2 
+            className="text-lg sm:text-xl font-bold text-brand-primary mb-6"
+            variants={fadeIn}
+          >
+            Learn the Stock Market from a SEBI Registered Research Analyst
+          </motion.h2>
 
           <motion.p 
             variants={fadeIn}
@@ -93,58 +90,40 @@ export default function Hero() {
         >
           <div className="relative">
             {/* Lead Form Redesigned Glassmorphic Card */}
-            <div className="bg-brand-bg-card/70 backdrop-blur-2xl rounded-[28px] p-8 md:p-10 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.6)] border border-white/10 relative overflow-hidden">
+            <div className="bg-slate-900/60 backdrop-blur-2xl rounded-[28px] p-8 md:p-10 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.6)] border border-white/10 relative overflow-hidden text-left">
               
-              <h3 className="text-2xl md:text-3xl font-extrabold text-white mb-2 tracking-tight">Apply for the Next Batch</h3>
-              
-              <div className="text-brand-primary font-bold mb-8 text-base md:text-lg tracking-tight flex items-center gap-2">
-                <span className="relative flex h-2.5 w-2.5">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-primary opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand-primary"></span>
-                </span>
-                <span>Batch Capped at 24 · 7 Seats Left</span>
-              </div>
+              <h3 className="text-2xl md:text-3xl font-extrabold text-white mb-2 tracking-tight">Get Started Today</h3>
+              <p className="text-slate-300 text-sm font-semibold mb-6 leading-relaxed">
+                Not sure which course is right for you? Our academic counsellor will help you choose the right program based on your experience and career goals.
+              </p>
               
               <LeadForm 
                 layout="flat" 
                 theme="dark" 
                 showRoleSelect={true} 
-                buttonText="CHECK BATCH ELIGIBILITY"
+                buttonText="Request a Callback"
               />
-              
-              <div className="text-center text-xs text-slate-400 font-medium mt-6 tracking-wide">
-                No spam calls - ever.
-              </div>
             </div>
           </div>
 
-          {/* Badges below form */}
-          <div className="flex flex-col sm:flex-row gap-4 mt-6">
-            <div className="flex-1 flex flex-col items-center justify-center relative bg-gradient-to-b from-brand-bg-card to-transparent border border-white/5 rounded-xl p-4 min-h-[100px] backdrop-blur-sm">
-              {/* Wreath icons */}
-              <div className="absolute inset-0 flex items-center justify-center opacity-40 pointer-events-none">
-                 <svg width="100%" height="100%" viewBox="0 0 120 120" fill="none" className="text-brand-primary absolute transform scale-125">
-                   <path d="M20 60 C20 40 30 25 45 15 C35 30 35 50 40 65 C25 55 15 70 25 85 C15 75 10 50 20 60" fill="currentColor"/>
-                   <path d="M100 60 C100 40 90 25 75 15 C85 30 85 50 80 65 C95 55 105 70 95 85 C105 75 110 50 100 60" fill="currentColor"/>
-                 </svg>
+          {/* Badges below form - Bottom Trust Strip */}
+          <div className="grid grid-cols-2 gap-4 mt-6">
+            {[
+              "SEBI Registered Research Analyst",
+              "Practical Market Education",
+              "NISM Certification Training",
+              "Beginner to Advanced Programs"
+            ].map((text, i) => (
+              <div 
+                key={i} 
+                className="bg-white/5 border border-white/10 rounded-xl p-4 flex items-start gap-2.5 backdrop-blur-sm text-left"
+              >
+                <div className="shrink-0 flex items-center justify-center w-5 h-5 rounded-full border border-brand-primary/20 text-brand-primary mt-0.5">
+                  <Check className="w-3.5 h-3.5 text-brand-primary" strokeWidth={3} />
+                </div>
+                <span className="text-slate-100 font-bold text-xs leading-snug">{text}</span>
               </div>
-              <div className="text-brand-primary font-bold text-center text-[12px] leading-tight z-10 tracking-widest uppercase">
-                TOP 10<br/>STOCK<br/>MARKET<br/>ACADEMY IN<br/>INDIA
-              </div>
-            </div>
-            
-            <div className="flex-[1.5] bg-gradient-to-r from-brand-bg-card to-brand-glow/50 rounded-xl p-5 border border-white/10 flex flex-col items-center justify-center text-center shadow-lg">
-              <div className="text-slate-200 font-bold text-[12px] leading-[1.4] mb-3 tracking-wide">
-                RATED BASED ON BEST TRAINED FACULTY AND LATEST CURRICULUM
-              </div>
-              <div className="flex items-center justify-center gap-1">
-                 {[...Array(5)].map((_, i) => (
-                    <svg key={i} className={`w-5 h-5 text-brand-primary ${i === 2 ? 'transform -translate-y-1 w-6 h-6' : ''}`} fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                    </svg>
-                 ))}
-              </div>
-            </div>
+            ))}
           </div>
 
         </motion.div>

@@ -398,7 +398,7 @@ export default function PaymentSuccessPage() {
             
             <a href="#" className="flex-1">
               <Button 
-                className="w-full cursor-pointer bg-gradient-to-r from-brand-primary-grad-start to-brand-primary-grad-end text-slate-950 hover:brightness-110 font-extrabold py-6 rounded-xl border-0 flex justify-center items-center gap-2 uppercase tracking-wider text-xs"
+                className="w-full cursor-pointer bg-gradient-to-r from-brand-primary-grad-start to-brand-primary-grad-end text-brand-navy hover:brightness-110 font-extrabold py-6 rounded-xl border-0 flex justify-center items-center gap-2 uppercase tracking-wider text-xs"
               >
                 <Home className="w-4 h-4" />
                 Go to Dashboard

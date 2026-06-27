@@ -252,8 +252,8 @@ export default function CourseDetails() {
         )}
 
         {/* Enroll CTA Box */}
-        <div className="bg-brand-bg-card rounded-[32px] p-6 sm:p-10 text-center text-white relative overflow-hidden shadow-2xl">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-brand-secondary/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="bg-brand-navy rounded-[32px] p-6 sm:p-10 text-center text-white relative overflow-hidden shadow-2xl">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-brand-primary/10 rounded-full blur-3xl pointer-events-none" />
           <h3 className="text-2xl sm:text-3xl font-extrabold mb-4 tracking-tight">Reserve Your Seat Today</h3>
           <p className="text-slate-300 text-sm sm:text-base max-w-lg mx-auto mb-8 leading-relaxed">
             Limited slots per batch to ensure interactive teaching and live Q&A. Apply now to speak with a mentor.
@@ -268,7 +268,7 @@ export default function CourseDetails() {
               </motion.div>
             </a>
             <a 
-              href={`https://wa.me/919845961990?text=Hi%2C%20I%20want%20to%20enroll%20in%20${encodeURIComponent(course.title)}.`}
+              href={`https://wa.me/918861756040?text=Hi%2C%20I%20want%20to%20enroll%20in%20${encodeURIComponent(course.title)}.`}
               target="_blank" 
               rel="noopener noreferrer"
               className="w-full sm:w-auto"

@@ -11,50 +11,50 @@ export default function WhyChooseUs() {
     {
       icon: <LineChart className="w-6 h-6" />,
       title: "Practical Market Learning",
-      desc: "Learn through live market examples instead of only theoretical concepts."
+      desc: "Learn through real market case studies, chart analysis, and research-based examples that bridge the gap between theory and practical application."
     },
     {
       icon: <Sparkles className="w-6 h-6" />,
-      title: "Updated 2026 Curriculum",
-      desc: "Course content designed to reflect current market conditions and technologies."
+      title: "Technical & Fundamental Analysis",
+      desc: "Master price action, chart patterns, indicators, financial statements, valuation techniques, and stock selection methodologies."
     },
     {
       icon: <Cpu className="w-6 h-6" />,
-      title: "AI-Integrated Learning",
-      desc: "Understand how AI can enhance research, analysis, and decision-making."
+      title: "AI-Powered Market Research",
+      desc: "Discover how Artificial Intelligence can enhance stock screening, market research, data analysis, and investment decision-making."
     },
     {
       icon: <GraduationCap className="w-6 h-6" />,
-      title: "Beginner-Friendly Approach",
-      desc: "Simple teaching methods suitable for students, professionals, and homemakers."
-    },
-    {
-      icon: <UserCheck className="w-6 h-6" />,
-      title: "Experienced Trainers",
-      desc: "Learn from market participants with practical exposure."
+      title: "NISM Certification Preparation",
+      desc: "Comprehensive training for NISM Certification Examinations with structured guidance, concept clarity, and exam-oriented preparation."
     },
     {
       icon: <Route className="w-6 h-6" />,
-      title: "Structured Learning Path",
-      desc: "Step-by-step progression from basic concepts to advanced topics."
+      title: "Beginner to Advanced Curriculum",
+      desc: "A step-by-step learning path designed to help beginners build strong fundamentals and progressively develop advanced market expertise."
+    },
+    {
+      icon: <UserCheck className="w-6 h-6" />,
+      title: "Industry-Experienced Faculty",
+      desc: "Learn from experienced market professionals committed to delivering practical, research-driven financial education."
     },
     {
       icon: <Users className="w-6 h-6" />,
-      title: "Community Support",
-      desc: "Network and learn alongside fellow market enthusiasts."
+      title: "Online & Classroom Learning",
+      desc: "Choose flexible learning options with interactive online sessions or classroom training designed to suit your schedule."
     },
     {
       icon: <Briefcase className="w-6 h-6" />,
-      title: "Career Opportunities",
-      desc: "Explore roles related to market research, investing, and financial services."
+      title: "Career & Professional Development",
+      desc: "Prepare for professional careers in trading, advisory, investing, and wealth management."
     }
   ];
 
   return (
-    <section id="why-choose-us" className="relative py-24 md:py-32 bg-brand-bg-dark px-5 sm:px-6 md:px-12 overflow-hidden border-t border-white/5">
+    <section id="why-choose-us" className="relative py-24 md:py-32 bg-brand-bg-deep px-5 sm:px-6 md:px-12 overflow-hidden border-t border-slate-200/80">
       {/* Subtle background decorative glows */}
-      <div className="absolute top-1/4 left-[-10%] w-[500px] h-[500px] bg-brand-glow/10 rounded-full blur-[130px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-[-10%] w-[500px] h-[500px] bg-brand-glow/5 rounded-full blur-[130px] pointer-events-none" />
+      <div className="absolute top-1/4 left-[-10%] w-[500px] h-[500px] bg-brand-primary/5 rounded-full blur-[130px] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-[-10%] w-[500px] h-[500px] bg-brand-primary/5 rounded-full blur-[130px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         
@@ -69,14 +69,14 @@ export default function WhyChooseUs() {
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-primary/10 border border-brand-primary/20 text-brand-primary text-xs font-bold tracking-widest uppercase mb-4">
             ADVANTAGES
           </div>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight leading-[1.1] mb-6">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-brand-navy tracking-tight leading-[1.1] mb-6">
             Why Choose <br className="sm:hidden" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary via-brand-secondary to-white">
+            <span className="text-brand-primary">
               Ashwini Trading Academy?
             </span>
           </h2>
-          <p className="text-slate-300 text-lg md:text-xl font-medium max-w-2xl mx-auto">
-            We bridge the gap between financial theory and real-world execution through a practical, modern learning framework.
+          <p className="text-slate-600 text-lg md:text-xl font-medium max-w-3xl mx-auto leading-relaxed">
+            Learn the skills that matter in today's financial markets. Master Technical Analysis, Fundamental Analysis, Futures & Options, risk management, and stock selection through both manual research and AI-powered analysis. Our structured approach helps you build the knowledge and confidence to analyse the markets independently and make informed investment decisions.
           </p>
         </motion.div>
 
@@ -92,27 +92,27 @@ export default function WhyChooseUs() {
             <motion.div 
               key={idx} 
               variants={scaleUp}
-              className="relative overflow-hidden bg-brand-bg-card/40 backdrop-blur-md border border-white/5 rounded-[24px] p-6 sm:p-8 flex flex-col justify-between hover:border-brand-primary/30 transition-all duration-300 group"
+              className="relative overflow-hidden bg-white border border-slate-200/80 rounded-[24px] p-6 sm:p-8 flex flex-col justify-between hover:border-brand-primary/45 transition-all duration-300 group shadow-sm hover:shadow-md"
             >
               {/* Radial glow background on hover */}
               <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
               {/* Watermark index number */}
-              <div className="absolute top-4 right-6 text-slate-800/25 font-extrabold text-4xl group-hover:text-brand-primary/15 transition-colors duration-300 select-none">
+              <div className="absolute top-4 right-6 text-slate-200/40 font-extrabold text-4xl group-hover:text-brand-primary/20 transition-colors duration-300 select-none">
                 {String(idx + 1).padStart(2, '0')}
               </div>
 
               <div>
                 {/* Icon Wrapper */}
-                <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-brand-secondary mb-6 group-hover:bg-brand-primary/10 group-hover:text-brand-primary group-hover:border-brand-primary/20 transition-all duration-300 shadow-sm">
+                <div className="w-12 h-12 rounded-2xl bg-slate-50 border border-slate-200/80 flex items-center justify-center text-brand-primary mb-6 group-hover:bg-brand-primary/10 group-hover:text-brand-primary group-hover:border-brand-primary/20 transition-all duration-300 shadow-sm">
                   {item.icon}
                 </div>
 
                 {/* Content */}
-                <h3 className="text-xl font-extrabold text-white mb-3 tracking-tight group-hover:text-brand-primary transition-colors duration-300">
+                <h3 className="text-xl font-extrabold text-brand-navy mb-3 tracking-tight group-hover:text-brand-primary transition-colors duration-300">
                   {item.title}
                 </h3>
-                <p className="text-slate-400 text-[14px] leading-relaxed font-medium">
+                <p className="text-slate-600 text-[14px] leading-relaxed font-medium">
                   {item.desc}
                 </p>
               </div>

@@ -1,0 +1,71 @@
+# ==============================================================================
+# AshwiniTrading Academy — Docker Compose (Production)
+# ==============================================================================
+# This is the SECOND app on the VPS. It shares the first app's nginx
+# via the 'shared-proxy' external Docker network.
+#
+# No nginx or PostgreSQL containers — uses:
+#   - First app's app-nginx for reverse proxy + SSL
+#   - Neon.tech for PostgreSQL
+# ==============================================================================
+
+services:
+  # ─── Express API + Static Frontend ───────────────────────
+  app:
+    build:
+      context: .
+      target: runner
+    image: ashwini-trading-app:latest
+    container_name: ashwini-trading-app
+    restart: unless-stopped
+    env_file:
+      - .env.production
+    environment:
+      - NODE_ENV=production
+    networks:
+      - shared-proxy
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:5000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: "0.50"
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  # ─── Database Migrations (run on-demand only) ───────────
+  migrate:
+    build:
+      context: .
+      target: runner
+    image: ashwini-trading-app:latest
+    container_name: ashwini-trading-migrate
+    env_file:
+      - .env.production
+    environment:
+      - NODE_ENV=production
+    command: >
+      sh -c "
+        echo '==> Running Prisma DB Push...' &&
+        npx prisma db push --skip-generate &&
+        echo '==> Running database seed (idempotent upserts)...' &&
+        node prisma/seed.js &&
+        echo '==> Migrations complete!'
+      "
+    networks:
+      - shared-proxy
+    profiles:
+      - tools
+
+# ─── External network shared with first app's nginx ──────
+networks:
+  shared-proxy:
+    external: true

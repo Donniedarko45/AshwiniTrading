@@ -136,7 +136,7 @@ export default function PaymentFailedPage() {
             <Button 
               onClick={handleRetryPayment}
               disabled={isRetrying}
-              className="w-full cursor-pointer bg-gradient-to-r from-brand-primary-grad-start to-brand-primary-grad-end text-slate-950 hover:brightness-110 font-extrabold py-5 rounded-xl border-0 flex justify-center items-center gap-2"
+              className="w-full cursor-pointer bg-gradient-to-r from-brand-primary-grad-start to-brand-primary-grad-end text-brand-navy hover:brightness-110 font-extrabold py-5 rounded-xl border-0 flex justify-center items-center gap-2"
             >
               {isRetrying ? (
                 <>
@@ -153,7 +153,7 @@ export default function PaymentFailedPage() {
 
             <div className="grid grid-cols-2 gap-3">
               <a 
-                href="https://wa.me/919845961990?text=Hi%2C%20my%20payment%20failed%20on%20the%20website.%20Please%20help."
+                href="https://wa.me/918861756040?text=Hi%2C%20my%20payment%20failed%20on%20the%20website.%20Please%20help."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block"

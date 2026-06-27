@@ -19,6 +19,109 @@ export interface WorkshopCourse {
 
 export const workshopCourses: WorkshopCourse[] = [
   {
+    id: 'foundation',
+    badge: '2-Week Program',
+    title: 'Stock Market Foundation Program',
+    duration: '2 Weeks',
+    fee: '₹4,999',
+    tagline: 'Build a strong foundation in investing and trading with practical, beginner-friendly training designed for today\'s markets. Learn how the stock market works, analyze stocks, manage risk, and use AI-powered tools to make smarter investment decisions.',
+    idealAudience: [
+      'College Students',
+      'Working Professionals',
+      'Homemakers',
+      'New Investors',
+      'Aspiring Traders'
+    ],
+    bonuses: [
+      'Certificate of Completion from Ashwini Trading Academy',
+      'Stock Selection Framework Cheat Sheet',
+      'AI prompt book for stock screening'
+    ],
+    modules: [
+      {
+        title: 'Stock Market Fundamentals',
+        points: [
+          'Introduction to the Stock Market',
+          'NSE, BSE, Nifty & Sensex',
+          'Market Participants & Their Role',
+          'Primary vs Secondary Market',
+          'Understanding IPOs'
+        ]
+      },
+      {
+        title: 'Getting Started',
+        points: [
+          'Demat & Trading Account Setup',
+          'Types of Market Orders',
+          'How to Buy & Sell Stocks',
+          'Trading Platforms Overview',
+          'Creating Your First Watchlist'
+        ]
+      },
+      {
+        title: 'Smart Investing Basics',
+        points: [
+          'Investing vs Trading',
+          'Introduction to Fundamental Analysis',
+          'Key Financial Ratios',
+          'Understanding Company Results',
+          'How to Identify Good Companies'
+        ]
+      },
+      {
+        title: 'Technical Analysis for Beginners',
+        points: [
+          'Candlestick Charts',
+          'Support & Resistance',
+          'Trend Identification',
+          'Moving Averages Basics',
+          'Chart Reading Essentials'
+        ]
+      },
+      {
+        title: 'Risk Management',
+        points: [
+          'Position Sizing Basics',
+          'Stop Loss & Target Setting',
+          'Capital Protection Strategies',
+          'Trading Psychology Fundamentals'
+        ]
+      },
+      {
+        title: 'Wealth Creation Strategies',
+        points: [
+          'SIP vs Direct Equity Investing',
+          'Power of Compounding',
+          'Portfolio Diversification',
+          'Long-Term Wealth Building Framework'
+        ]
+      },
+      {
+        title: 'AI-Powered Stock Market Learning',
+        points: [
+          'Using AI for Stock Research',
+          'AI Prompts for Fundamental Analysis',
+          'Finding Quality Stocks Using AI',
+          'Modern Tools for Smarter Decisions'
+        ]
+      }
+    ],
+    liveApplication: [
+      'Live Market Demonstration',
+      'TradingView Platform Introduction',
+      'Stock Selection Framework',
+      'Real Market Case Studies',
+      'Hands-On Chart Analysis'
+    ],
+    outcomes: [
+      'Understand NSE, BSE, Nifty & Sensex market operations',
+      'Set up Demat and Trading accounts and build watchlists',
+      'Conduct basic Fundamental and Technical Analysis on stocks',
+      'Implement risk management, position sizing, and stop loss rules',
+      'Utilize AI prompts and tools for fast market research'
+    ]
+  },
+  {
     id: 'fundamental-analysis-masterclass',
     badge: '1-Day Workshop',
     title: 'AI Powered Fundamental Analysis Masterclass',

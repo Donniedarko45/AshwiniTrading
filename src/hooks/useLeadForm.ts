@@ -3,25 +3,38 @@ import { useState, ChangeEvent, FormEvent } from 'react';
 export interface LeadFormData {
   name: string;
   phone: string;
-  role?: string;
+  role: string;
+  learningGoal: string;
+  learningMode: 'Online' | 'Classroom';
 }
 
 export interface LeadFormErrors {
   name?: string;
   phone?: string;
   role?: string;
+  learningGoal?: string;
+  learningMode?: string;
 }
 
 interface UseLeadFormProps {
   initialRole?: string;
+  initialLearningGoal?: string;
+  initialLearningMode?: 'Online' | 'Classroom';
   onSubmitSuccess?: (data: LeadFormData) => void;
 }
 
-export function useLeadForm({ initialRole = '', onSubmitSuccess }: UseLeadFormProps = {}) {
+export function useLeadForm({ 
+  initialRole = 'Student', 
+  initialLearningGoal = 'Learn Stock Market Basics',
+  initialLearningMode = 'Online',
+  onSubmitSuccess 
+}: UseLeadFormProps = {}) {
   const [formData, setFormData] = useState<LeadFormData>({
     name: '',
     phone: '',
     role: initialRole,
+    learningGoal: initialLearningGoal,
+    learningMode: initialLearningMode,
   });
 
   const [errors, setErrors] = useState<LeadFormErrors>({});
@@ -72,6 +85,20 @@ export function useLeadForm({ initialRole = '', onSubmitSuccess }: UseLeadFormPr
     }
   };
 
+  const handleLearningGoalChange = (value: string) => {
+    setFormData(prev => ({ ...prev, learningGoal: value }));
+    if (errors.learningGoal) {
+      setErrors(prev => ({ ...prev, learningGoal: undefined }));
+    }
+  };
+
+  const handleLearningModeChange = (value: 'Online' | 'Classroom') => {
+    setFormData(prev => ({ ...prev, learningMode: value }));
+    if (errors.learningMode) {
+      setErrors(prev => ({ ...prev, learningMode: undefined }));
+    }
+  };
+
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!validate()) return;
@@ -92,6 +119,8 @@ export function useLeadForm({ initialRole = '', onSubmitSuccess }: UseLeadFormPr
         name: '',
         phone: '',
         role: initialRole,
+        learningGoal: initialLearningGoal,
+        learningMode: initialLearningMode,
       });
       setErrors({});
     } catch (err) {
@@ -109,6 +138,8 @@ export function useLeadForm({ initialRole = '', onSubmitSuccess }: UseLeadFormPr
     setIsSuccess,
     handleChange,
     handleRoleChange,
+    handleLearningGoalChange,
+    handleLearningModeChange,
     handleSubmit,
   };
 }

@@ -1,0 +1,204 @@
+name: Deploy AshwiniTrading to Hostinger VPS
+
+on:
+  push:
+    branches: [main]
+
+env:
+  DOCKER_BUILDKIT: 1
+  COMPOSE_DOCKER_CLI_BUILD: 1
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  deploy:
+    name: Deploy to VPS
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: SSH Preflight – connectivity check with port fallback
+        run: |
+          SSH_PORT="${{ secrets.VPS_PORT }}"
+          SSH_PORT="${SSH_PORT:-22}"
+          echo "Testing SSH connectivity to ${{ secrets.VPS_HOST }}:${SSH_PORT}…"
+          for attempt in 1 2 3; do
+            if nc -z -w5 "${{ secrets.VPS_HOST }}" "${SSH_PORT}" 2>/dev/null; then
+              echo "✅ SSH port ${SSH_PORT} is reachable (attempt ${attempt})"
+              echo "SSH_PORT=${SSH_PORT}" >> "$GITHUB_ENV"
+              exit 0
+            fi
+            echo "⏳ Attempt ${attempt} failed, retrying in 5s…"
+            sleep 5
+          done
+          # Fallback to port 22 if custom port was specified
+          if [ "${SSH_PORT}" != "22" ]; then
+            echo "⚠️  Port ${SSH_PORT} unreachable, falling back to 22…"
+            if nc -z -w5 "${{ secrets.VPS_HOST }}" 22 2>/dev/null; then
+              echo "✅ Fallback port 22 is reachable"
+              echo "SSH_PORT=22" >> "$GITHUB_ENV"
+              exit 0
+            fi
+          fi
+          echo "❌ Cannot reach SSH on ${{ secrets.VPS_HOST }}"
+          exit 1
+
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          port: ${{ env.SSH_PORT }}
+          command_timeout: 15m
+          script: |
+            set -e
+
+            # ── Variables ──────────────────────────────────────────
+            APP_DIR="/opt/ashwini-trading"
+            REPO_URL="https://github.com/${{ github.repository }}.git"
+
+            echo "══════════════════════════════════════════════════════"
+            echo "  Deploying AshwiniTrading → ${APP_DIR}"
+            echo "  Repo: ${REPO_URL}"
+            echo "══════════════════════════════════════════════════════"
+
+            # ── Validate required secrets ──────────────────────────
+            MISSING=""
+            [ -z "${{ secrets.DATABASE_URL }}" ]      && MISSING="${MISSING} DATABASE_URL"
+            [ -z "${{ secrets.CF_CLIENT_ID }}" ]      && MISSING="${MISSING} CF_CLIENT_ID"
+            [ -z "${{ secrets.CF_CLIENT_SECRET }}" ]   && MISSING="${MISSING} CF_CLIENT_SECRET"
+            if [ -n "${MISSING}" ]; then
+              echo "❌ Missing required secrets:${MISSING}"
+              exit 1
+            fi
+
+            # ── Sanitize helper (strip \r \n) ─────────────────────
+            sanitize_single_line() {
+              printf '%s' "$1" | tr -d '\r\n'
+            }
+
+            DB_URL="$(sanitize_single_line '${{ secrets.DATABASE_URL }}')"
+            CF_CID="$(sanitize_single_line '${{ secrets.CF_CLIENT_ID }}')"
+            CF_CSEC="$(sanitize_single_line '${{ secrets.CF_CLIENT_SECRET }}')"
+            CF_WHSEC="$(sanitize_single_line '${{ secrets.CF_WEBHOOK_SECRET }}')"
+            GEMINI_KEY="$(sanitize_single_line '${{ secrets.GEMINI_API_KEY }}')"
+
+            # ── Clone / update repo ───────────────────────────────
+            mkdir -p "${APP_DIR}"
+            cd "${APP_DIR}"
+
+            if [ ! -d ".git" ]; then
+              echo "📦 Cloning repository…"
+              git clone "${REPO_URL}" .
+            else
+              echo "🔄 Updating repository…"
+              git fetch --all
+              git reset --hard origin/main
+              git clean -fd
+            fi
+
+            # ── Create .env.production ────────────────────────────
+            echo "📝 Writing .env.production…"
+            cat > .env.production <<ENVEOF
+            PORT=5000
+            NODE_ENV=production
+            APP_URL=https://ashwinitradingacademy.com
+            DATABASE_URL=${DB_URL}
+            CF_CLIENT_ID=${CF_CID}
+            CF_CLIENT_SECRET=${CF_CSEC}
+            CF_ENVIRONMENT=production
+            CF_WEBHOOK_SECRET=${CF_WHSEC}
+            GEMINI_API_KEY=${GEMINI_KEY}
+            ENVEOF
+            # strip leading whitespace from heredoc
+            sed -i 's/^[[:space:]]*//' .env.production
+
+            # ── Disk cleanup ──────────────────────────────────────
+            echo "🧹 Pre-build cleanup…"
+            docker container prune -f  || true
+            docker image prune -f      || true
+            docker builder prune -f    || true
+
+            # ── Verify SSL certificate ────────────────────────────
+            SSL_CERT="/opt/app/certbot/conf/live/ashwinitradingacademy.com/fullchain.pem"
+            if [ ! -f "${SSL_CERT}" ]; then
+              echo "❌ SSL certificate not found at ${SSL_CERT}"
+              echo "   Run  bash scripts/setup-vps.sh  on the VPS first."
+              exit 1
+            fi
+            echo "✅ SSL certificate found"
+
+            # ── Build ─────────────────────────────────────────────
+            echo "🔨 Building Docker images…"
+            docker compose build
+
+            # ── Run migrations ────────────────────────────────────
+            echo "🗄️  Running database migrations…"
+            docker compose --profile tools run --rm migrate
+
+            # ── Canary test ───────────────────────────────────────
+            echo "🐤 Starting canary container…"
+            docker rm -f ashwini-trading-canary 2>/dev/null || true
+
+            docker run -d \
+              --name ashwini-trading-canary \
+              --env-file .env.production \
+              -e NODE_ENV=production \
+              -e PORT=5000 \
+              -p 15000:5000 \
+              ashwini-trading-app:latest
+
+            CANARY_OK=false
+            for i in $(seq 1 20); do
+              echo "  Health check attempt ${i}/20…"
+              if wget --spider --timeout=5 http://localhost:15000/api/health 2>/dev/null; then
+                CANARY_OK=true
+                echo "  ✅ Canary is healthy"
+                break
+              fi
+              sleep 4
+            done
+
+            # Clean up canary
+            docker rm -f ashwini-trading-canary 2>/dev/null || true
+
+            if [ "${CANARY_OK}" != "true" ]; then
+              echo "❌ Canary health check failed – aborting deploy"
+              exit 1
+            fi
+
+            # ── Deploy ────────────────────────────────────────────
+            echo "🚀 Deploying…"
+            docker compose down --remove-orphans
+            docker compose up -d --remove-orphans
+
+            # ── Networking ────────────────────────────────────────
+            echo "🌐 Configuring shared-proxy network…"
+            docker network create shared-proxy 2>/dev/null || true
+            docker network connect shared-proxy ashwini-trading-app 2>/dev/null || true
+            docker network connect shared-proxy app-nginx 2>/dev/null || true
+
+            # ── Nginx config ──────────────────────────────────────
+            echo "📋 Copying nginx config…"
+            cp /opt/ashwini-trading/nginx/ashwinitradingacademy.conf \
+               /opt/app/nginx/conf.d/ashwinitradingacademy.conf
+
+            echo "🔄 Reloading nginx…"
+            docker exec app-nginx nginx -s reload
+
+            # ── Post-deploy cleanup ───────────────────────────────
+            echo "🧹 Post-deploy cleanup…"
+            docker container prune -f  || true
+            docker image prune -a -f   || true
+            docker builder prune -f    || true
+
+            # ── Status ────────────────────────────────────────────
+            echo ""
+            echo "══════════════════════════════════════════════════════"
+            echo "  📊 Disk usage:"
+            df -h / | tail -1
+            echo ""
+            echo "  🐳 Running containers:"
+            docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"
+            echo "══════════════════════════════════════════════════════"
+            echo "✅ Deploy complete!"

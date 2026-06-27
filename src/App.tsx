@@ -64,7 +64,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-brand-bg-dark font-sans selection:bg-brand-primary/30 text-white">
+    <div className="min-h-screen bg-brand-bg-dark font-sans selection:bg-brand-primary/30 text-slate-800">
       <Navbar />
       <main>
         {currentView === 'landing' && (
@@ -87,37 +87,37 @@ export default function App() {
         {currentView === 'join' && <JoinUs />}
         {currentView === 'reviews' && <ReviewsPage />}
         {currentView === 'courses' && (
-          <Suspense fallback={<div className="w-full min-h-[60vh] bg-brand-bg-dark flex items-center justify-center text-white">Loading Courses...</div>}>
+          <Suspense fallback={<div className="w-full min-h-[60vh] bg-brand-bg-dark flex items-center justify-center text-slate-800">Loading Courses...</div>}>
             <AllCourses />
           </Suspense>
         )}
         {currentView === 'details' && (
-          <Suspense fallback={<div className="w-full min-h-[60vh] bg-brand-bg-dark flex items-center justify-center text-white">Loading Syllabus...</div>}>
+          <Suspense fallback={<div className="w-full min-h-[60vh] bg-brand-bg-dark flex items-center justify-center text-slate-800">Loading Syllabus...</div>}>
             <CourseDetails />
           </Suspense>
         )}
         {currentView === 'collaboration' && (
-          <Suspense fallback={<div className="w-full min-h-[60vh] bg-brand-bg-dark flex items-center justify-center text-white">Loading...</div>}>
+          <Suspense fallback={<div className="w-full min-h-[60vh] bg-brand-bg-dark flex items-center justify-center text-slate-800">Loading...</div>}>
             <CollegeCollaboration />
           </Suspense>
         )}
         {currentView === 'checkout' && (
-          <Suspense fallback={<div className="w-full min-h-[60vh] bg-brand-bg-dark flex items-center justify-center text-white">Opening Secure Checkout...</div>}>
+          <Suspense fallback={<div className="w-full min-h-[60vh] bg-brand-bg-dark flex items-center justify-center text-slate-800">Opening Secure Checkout...</div>}>
             <Checkout courseId={activeCourseId} onBack={() => { window.location.hash = '#/all-courses'; }} />
           </Suspense>
         )}
         {currentView === 'payment-status' && (
-          <Suspense fallback={<div className="w-full min-h-[60vh] bg-brand-bg-dark flex items-center justify-center text-white">Connecting with Gateway...</div>}>
+          <Suspense fallback={<div className="w-full min-h-[60vh] bg-brand-bg-dark flex items-center justify-center text-slate-800">Connecting with Gateway...</div>}>
             <PaymentStatus onNavigate={() => {}} />
           </Suspense>
         )}
         {currentView === 'payment-success' && (
-          <Suspense fallback={<div className="w-full min-h-[60vh] bg-brand-bg-dark flex items-center justify-center text-white">Generating Receipt...</div>}>
+          <Suspense fallback={<div className="w-full min-h-[60vh] bg-brand-bg-dark flex items-center justify-center text-slate-800">Generating Receipt...</div>}>
             <PaymentSuccess />
           </Suspense>
         )}
         {currentView === 'payment-failed' && (
-          <Suspense fallback={<div className="w-full min-h-[60vh] bg-brand-bg-dark flex items-center justify-center text-white">Loading Error Details...</div>}>
+          <Suspense fallback={<div className="w-full min-h-[60vh] bg-brand-bg-dark flex items-center justify-center text-slate-800">Loading Error Details...</div>}>
             <PaymentFailed />
           </Suspense>
         )}

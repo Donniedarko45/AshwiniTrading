@@ -195,7 +195,7 @@ export default function PaymentStatusPage({ onNavigate }: PaymentStatusPageProps
             <div className="pt-2 flex flex-col gap-2">
               <Button 
                 onClick={handleManualRefresh}
-                className="w-full bg-gradient-to-r from-brand-primary-grad-start to-brand-primary-grad-end text-slate-950 hover:brightness-110 font-bold py-4.5 rounded-xl border-0 cursor-pointer flex justify-center items-center gap-2"
+                className="w-full bg-gradient-to-r from-brand-primary-grad-start to-brand-primary-grad-end text-brand-navy hover:brightness-110 font-bold py-4.5 rounded-xl border-0 cursor-pointer flex justify-center items-center gap-2"
               >
                 <RefreshCw className="w-4 h-4" />
                 Refresh Transaction Status

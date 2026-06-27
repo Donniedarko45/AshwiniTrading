@@ -30,14 +30,14 @@ export default function Reviews() {
             return (
               <div 
                 key={i} 
-                className="bg-brand-bg-card rounded-[28px] px-8 py-10 shadow-sm border border-white/10 hover:shadow-md transition-all duration-300 flex flex-col items-center justify-center relative min-h-[220px]"
+                className="bg-brand-bg-card rounded-[28px] px-8 py-10 shadow-sm border border-slate-200/80 hover:shadow-md transition-all duration-300 flex flex-col items-center justify-center relative min-h-[220px]"
               >
                 {/* Floating Platform Badge */}
                 {review.platform !== 'none' && (
                   <div className={`absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full flex items-center justify-center shadow-md z-10 ${
                     review.platform === 'whatsapp' 
                       ? 'bg-brand-success shadow-brand-success/20 text-white' 
-                      : 'bg-brand-secondary shadow-brand-secondary/20 text-slate-950'
+                      : 'bg-brand-secondary shadow-brand-secondary/20 text-white'
                   }`}>
                     {review.platform === 'whatsapp' ? (
                       <svg className="w-5.5 h-5.5 fill-current text-white" viewBox="0 0 24 24">
@@ -68,26 +68,24 @@ export default function Reviews() {
         {/* Bottom CTA Block */}
         <div className="max-w-4xl mx-auto text-center mt-24 sm:mt-32 mb-10">
           <h2 className="text-3xl sm:text-4xl md:text-[44px] font-extrabold text-brand-light-heading mb-4 tracking-tight">
-            You could be our next <span className="text-brand-primary underline decoration-[5px] decoration-brand-primary/30 underline-offset-4">success story</span>.
+            Begin Your Learning Journey
           </h2>
-          <p className="text-brand-light-body font-medium mb-8 text-base sm:text-lg">
-            Few seats left for the upcoming mentorship batch.
+          <p className="text-brand-light-body font-medium mb-8 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+            Take the first step towards building a strong foundation in the stock market. Fill in your details, and our academic counsellor will help you choose the program that best matches your learning goals.
           </p>
           <div className="inline-flex items-center gap-2 text-brand-success-light font-bold text-[13px] bg-brand-success/15 border border-brand-success/30 px-4 py-2 rounded-full mb-12 shadow-sm tracking-wide">
             <svg className="w-4 h-4 text-brand-success-light" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
             </svg>
-            SEBI Registered Research Analyst Mentorship
+            Learn from a SEBI Registered Research Analyst
           </div>
 
-          <LeadForm 
-            layout="bar" 
-            theme="dark" 
-            buttonText="DOWNLOAD SYLLABUS & REPORT" 
-          />
-          
-          <div className="text-brand-light-muted text-sm font-medium mt-6">
-            <span className="text-brand-primary font-bold">7 seats left</span> · No spam · Reply within 15 mins
+          <div className="max-w-lg mx-auto text-left">
+            <LeadForm 
+              layout="card" 
+              theme="light" 
+              buttonText="Request a Callback" 
+            />
           </div>
         </div>
       </div>

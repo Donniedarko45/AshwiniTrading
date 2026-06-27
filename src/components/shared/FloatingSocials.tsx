@@ -1,13 +1,25 @@
 import React from 'react';
+import { Phone } from 'lucide-react';
 
 export default function FloatingSocials() {
-  const whatsappNumber = '919845961990';
+  const whatsappNumber = '918861756040';
+  const phoneNumber = '9845961990';
+  const telegramLink = 'https://t.me/tradewithashwinisd6';
   
   return (
     <div className="fixed bottom-24 lg:bottom-8 right-5 lg:right-8 z-40 flex flex-col gap-3.5 items-center">
+      {/* Call Floating Button */}
+      <a
+        href={`tel:${phoneNumber}`}
+        className="w-14 h-14 rounded-full bg-brand-primary border-2 border-white flex items-center justify-center text-brand-navy shadow-lg shadow-brand-primary/30 hover:bg-brand-primary-light hover:shadow-xl hover:shadow-brand-primary/45 hover:scale-110 active:scale-95 transition-all duration-300 group cursor-pointer focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-brand-primary/40"
+        aria-label="Call Admissions Advisor"
+      >
+        <Phone className="w-6 h-6 stroke-[2.5px] transition-transform group-hover:scale-110" />
+      </a>
+
       {/* Telegram Floating Button */}
       <a
-        href="https://t.me/ashwinitrading"
+        href={telegramLink}
         target="_blank"
         rel="noopener noreferrer"
         className="w-14 h-14 rounded-full bg-ext-telegram border-2 border-white flex items-center justify-center text-white shadow-lg shadow-ext-telegram/30 hover:shadow-xl hover:shadow-ext-telegram/45 hover:scale-110 active:scale-95 transition-all duration-300 group cursor-pointer focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ext-telegram/40"

@@ -56,10 +56,10 @@ export default function Achieve90Days() {
   ];
 
   return (
-    <section id="achievements" className="relative bg-brand-bg-dark py-24 md:py-32 px-5 sm:px-6 md:px-12 overflow-hidden border-b border-white/5">
-      {/* Glow Effects */}
-      <div className="absolute top-1/4 left-[-10%] w-[500px] h-[500px] bg-brand-glow/10 rounded-full blur-[130px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-[-10%] w-[500px] h-[500px] bg-brand-glow/20 rounded-full blur-[130px] pointer-events-none" />
+    <section id="achievements" className="relative bg-white py-24 md:py-32 px-5 sm:px-6 md:px-12 overflow-hidden border-b border-slate-200/85">
+      {/* Subtle Glow Effects */}
+      <div className="absolute top-1/4 left-[-10%] w-[500px] h-[500px] bg-brand-primary/5 rounded-full blur-[130px] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-[-10%] w-[500px] h-[500px] bg-brand-primary/5 rounded-full blur-[130px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         
@@ -75,10 +75,10 @@ export default function Achieve90Days() {
             <Calendar className="w-3.5 h-3.5 text-brand-primary" />
             90-Day Journey
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-6 max-w-4xl mx-auto leading-tight">
-            What You Will <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-secondary">Achieve in 90 Days</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-brand-navy tracking-tight mb-6 max-w-4xl mx-auto leading-tight">
+            What You Will <span className="text-brand-primary">Achieve in 90 Days</span>
           </h2>
-          <p className="text-slate-400 text-base sm:text-lg font-semibold max-w-2xl mx-auto leading-relaxed">
+          <p className="text-slate-600 text-base sm:text-lg font-semibold max-w-2xl mx-auto leading-relaxed">
             From absolute beginner to a disciplined, structured market participant. Here is your roadmap to trading and investing confidence.
           </p>
         </motion.div>
@@ -97,7 +97,7 @@ export default function Achieve90Days() {
               <motion.div 
                 key={idx}
                 variants={scaleUp}
-                className="relative rounded-3xl p-8 bg-brand-bg-card/40 border border-white/5 backdrop-blur-xl flex flex-col justify-between group transition-all duration-500 hover:-translate-y-1.5 hover:border-brand-primary/30 hover:shadow-[0_12px_40px_-15px_rgba(0,0,0,0.6)]"
+                className="relative rounded-3xl p-8 bg-white border border-slate-200/80 flex flex-col justify-between group transition-all duration-500 hover:-translate-y-1.5 hover:border-brand-primary/45 hover:shadow-[0_20px_40px_-15px_rgba(15,23,42,0.08)]"
               >
                 {/* Background glow circle */}
                 <div className={`absolute top-6 right-6 w-24 h-24 rounded-full ${item.glowColor} blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`} />
@@ -106,20 +106,20 @@ export default function Achieve90Days() {
                   <div>
                     {/* Number & Icon Header */}
                     <div className="flex items-center justify-between mb-8">
-                      <span className="text-3xl font-black text-white/15 group-hover:text-brand-primary/80 transition-colors duration-300 tracking-tighter select-none font-mono">
+                      <span className="text-3xl font-black text-slate-200 group-hover:text-brand-primary/80 transition-colors duration-300 tracking-tighter select-none font-mono">
                         {item.num}
                       </span>
-                      <div className={`p-3 rounded-2xl bg-white/5 ${item.accentColor} transition-transform duration-500 group-hover:scale-110`}>
+                      <div className={`p-3 rounded-2xl bg-slate-50 ${item.accentColor} transition-transform duration-500 group-hover:scale-110`}>
                         <IconComponent className="w-6 h-6" />
                       </div>
                     </div>
 
-                    <h3 className="text-xl font-extrabold text-white mb-4 tracking-tight leading-snug group-hover:text-brand-primary transition-colors duration-300">
+                    <h3 className="text-xl font-extrabold text-brand-navy mb-4 tracking-tight leading-snug group-hover:text-brand-primary transition-colors duration-300">
                       {item.title}
                     </h3>
                   </div>
 
-                  <p className="text-slate-400 text-sm sm:text-[15px] font-semibold leading-relaxed mt-2">
+                  <p className="text-slate-600 text-sm sm:text-[15px] font-semibold leading-relaxed mt-2">
                     {item.desc}
                   </p>
                 </div>

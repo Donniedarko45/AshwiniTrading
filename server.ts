@@ -1,6 +1,8 @@
 import express, { Request, Response } from 'express';
 import cors from 'cors';
 import crypto from 'crypto';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
 import { PrismaClient } from '@prisma/client';
 import rateLimit from 'express-rate-limit';
@@ -12,6 +14,10 @@ const app = express();
 const prisma = new PrismaClient();
 const PORT = process.env.PORT || 5000;
 const APP_URL = process.env.APP_URL || 'http://localhost:3000';
+
+// ESM __dirname equivalent (needed for static file serving)
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Configure middleware
 // Capture the raw body buffer for Cashfree webhook signature verification
@@ -25,6 +31,11 @@ app.use(
 );
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({ origin: '*' })); // Allow all origins for dev/sandbox; restrict in production
+
+// Health check endpoint for Docker HEALTHCHECK and CI/CD canary testing
+app.get('/api/health', (_req: Request, res: Response) => {
+  res.json({ status: 'ok', timestamp: new Date().toISOString() });
+});
 
 // Rate limiting to protect payment APIs
 const paymentLimiter = rateLimit({
@@ -854,6 +865,22 @@ app.get('/api/orders/:id', async (req: Request, res: Response): Promise<any> => 
     log('Error fetching order details:', error);
     return res.status(500).json({ error: 'Internal server error.' });
   }
+});
+
+// ==========================================
+// PRODUCTION STATIC FILE SERVING
+// ==========================================
+// In production, Express serves the Vite-built frontend.
+// In development, the Vite dev server handles this (see vite.config.ts proxy).
+app.use(express.static(path.join(__dirname, 'dist')));
+
+// SPA catch-all: non-API routes serve index.html for client-side routing
+app.get('*', (req: Request, res: Response) => {
+  // Return JSON 404 for unmatched API routes
+  if (req.path.startsWith('/api/')) {
+    return res.status(404).json({ error: 'API endpoint not found.' });
+  }
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
 // Start server

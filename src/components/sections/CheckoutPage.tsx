@@ -466,7 +466,7 @@ export default function CheckoutPage({ courseId, onBack }: CheckoutPageProps) {
               <Button 
                 onClick={handlePayNow}
                 disabled={isSubmitting}
-                className="w-full cursor-pointer bg-gradient-to-r from-brand-primary-grad-start to-brand-primary-grad-end text-slate-950 hover:brightness-110 shadow-lg shadow-brand-primary/15 font-extrabold py-6.5 rounded-xl uppercase tracking-widest text-[14px] flex justify-center items-center gap-2"
+                className="w-full cursor-pointer bg-gradient-to-r from-brand-primary-grad-start to-brand-primary-grad-end text-brand-navy hover:brightness-110 shadow-lg shadow-brand-primary/15 font-extrabold py-6.5 rounded-xl uppercase tracking-widest text-[14px] flex justify-center items-center gap-2"
               >
                 {isSubmitting ? (
                   <>

@@ -2,27 +2,37 @@ export interface Review {
   name: string;
   text: string;
   platform: 'whatsapp' | 'chat' | 'none';
+  rating: number;
+  role: string;
 }
 
 export const academyReviews: Review[] = [
   {
-    name: "Savitha Manjunath",
-    text: "I learned technical analysis and F&O trading with Ashwini. She cleared all my doubts and had me do paper trading for a week. It was great learning sessions with her.",
-    platform: "none"
+    name: "Ramesh Boopathi",
+    text: "I enrolled in the Stock Market Foundation Program. The way Ashwini explains Technical Analysis and market structures with real-time examples made it very simple. I'm now confident in reading charts independently.",
+    platform: "whatsapp",
+    rating: 5,
+    role: "College Student & Aspiring Trader"
   },
   {
-    name: "Rekha Hs",
-    text: "Ashwini’s F&O trading lessons were easy to follow and really helpful. She explained everything clearly and made trading less scary. Thanks to her.",
-    platform: "none"
+    name: "Suman Thakur",
+    text: "As a working professional, the weekend batches were perfect. The AI-powered stock screening and company analysis tools saved me hours of research. Truly value for money.",
+    platform: "chat",
+    rating: 5,
+    role: "Working Professional"
   },
   {
-    name: "Pragya Yadav",
-    text: "I recently had the pleasure of enrolling in the courses offered by Ashwini Trading Academy, and I can confidently say that it has been an exceptional experience. From the moment I joined, the professionalism and expertise of the instructors were evident. The academy offers a well-structured curriculum that caters to both beginners and advanced traders.",
-    platform: "whatsapp"
+    name: "Neelu M",
+    text: "I was a complete beginner. The step-by-step curriculum starting from basics to risk management was exactly what I needed. Highly recommend for any homemaker looking to start investing.",
+    platform: "whatsapp",
+    rating: 5,
+    role: "Homemaker & New Investor"
   },
   {
-    name: "Akash",
-    text: "Ashwini Trading Academy has transformed my trading skills. The courses are comprehensive and easy to follow, making complex concepts simple. The “Stock Market from Scratch” course built a solid foundation, while the Futures and Options (FNO) Trading lessons offered practical strategies.",
-    platform: "chat"
+    name: "Christu Steevard",
+    text: "The F&O trading concepts were taught in a very disciplined way. The focus on stop-loss, capital protection, and position sizing is what sets this academy apart. Thank you, Ashwini!",
+    platform: "none",
+    rating: 5,
+    role: "Trader"
   }
 ];
