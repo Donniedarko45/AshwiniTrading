@@ -78,9 +78,9 @@ export default function App() {
             <LazySection importFunc={() => import('@/components/sections/Achieve90Days')} />
             <LazySection importFunc={() => import('@/components/sections/WhyChooseUs')} />
             <LazySection importFunc={() => import('@/components/sections/Reviews')} />
+            <LazySection importFunc={() => import('@/components/sections/LearningJourneyCTA')} />
             <LazySection importFunc={() => import('@/components/sections/CoursesWithAI')} />
             <LazySection importFunc={() => import('@/components/sections/CourseTracks')} />
-            <LazySection importFunc={() => import('@/components/sections/Curriculum')} />
             <LazySection importFunc={() => import('@/components/sections/Certifications')} />
             <LazySection importFunc={() => import('@/components/sections/MediaAwards')} />
             <LazySection importFunc={() => import('@/components/sections/HonestFAQ')} />
