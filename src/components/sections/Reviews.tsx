@@ -1,7 +1,5 @@
 import React from 'react';
 import { academyReviews } from '@/data/reviews';
-import { LeadForm } from '@/components/shared/LeadForm';
-
 export default function Reviews() {
   return (
     <section 
@@ -67,27 +65,6 @@ export default function Reviews() {
           })}
         </div>
 
-        {/* Bottom CTA Block */}
-        <div id="final-cta" className="max-w-4xl mx-auto text-center mt-24 sm:mt-32 mb-10">
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-medium text-brand-navy mb-6 tracking-tight">
-            Begin Your <span className="text-brand-primary italic">Learning Journey</span>
-          </h2>
-          <p className="text-slate-600 font-light mb-10 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-            Take the first step towards building a strong foundation in the stock market. Fill in your details, and our academic counsellor will help you choose the program that best matches your learning goals.
-          </p>
-          
-          <div className="inline-flex items-center gap-2 text-brand-primary font-bold text-xs uppercase tracking-widest border border-brand-primary/30 bg-brand-primary/5 px-4 py-2 mb-12">
-            SEBI Registered Research Analyst
-          </div>
-
-          <div className="max-w-lg mx-auto text-left">
-            <LeadForm 
-              layout="card" 
-              theme="light" 
-              buttonText="Request a Callback" 
-            />
-          </div>
-        </div>
       </div>
     </section>
   );
