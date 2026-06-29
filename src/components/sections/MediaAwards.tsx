@@ -1,7 +1,7 @@
 import React from 'react';
-import { Award, Trophy, TrendingUp, Users, Tv, Sparkles } from 'lucide-react';
+import { Award, Trophy, TrendingUp, Users, Tv } from 'lucide-react';
 import { motion } from 'motion/react';
-import { fadeIn, staggerContainer, scaleUp } from '@/lib/animations';
+import { fadeIn, staggerContainer } from '@/lib/animations';
 
 export default function MediaAwards() {
   const items = [
@@ -9,47 +9,31 @@ export default function MediaAwards() {
       title: "Financial Awareness Programs",
       desc: "Featured in major financial awareness programs and public literacy campaigns spreading structured trading knowledge.",
       icon: Tv,
-      color: "text-brand-secondary",
-      bgGlow: "bg-brand-secondary/10",
-      border: "border-brand-secondary/20",
       span: "lg:col-span-4"
     },
     {
       title: "Industry Recognition",
       desc: "Commended by industry leaders and networks for delivering outstanding training quality, options strategies, and risk management pedagogy.",
       icon: Award,
-      color: "text-brand-primary",
-      bgGlow: "bg-brand-primary/10",
-      border: "border-brand-primary/20",
       span: "lg:col-span-8"
     },
     {
       title: "Educational Workshops",
       desc: "Over 100+ high-impact stock market seminars and interactive workshops conducted across leading colleges, institutions, and corporate teams.",
       icon: Users,
-      color: "text-brand-secondary",
-      bgGlow: "bg-brand-secondary/10",
-      border: "border-brand-secondary/20",
       span: "lg:col-span-8"
     },
     {
       title: "Investor Awareness Initiatives",
       desc: "Dedicated to educating retail investors on market realities, systematic investment planning, and protecting capital from high-risk exposure.",
       icon: TrendingUp,
-      color: "text-brand-primary",
-      bgGlow: "bg-brand-primary/10",
-      border: "border-brand-primary/20",
       span: "lg:col-span-4"
     }
   ];
 
   return (
-    <section id="media-awards" className="relative bg-brand-bg-deep py-24 md:py-32 px-5 sm:px-6 md:px-12 overflow-hidden border-b border-slate-200/80">
-      {/* Subtle Glow Effects */}
-      <div className="absolute top-1/3 right-[-10%] w-[500px] h-[500px] bg-brand-primary/5 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-1/4 left-[-10%] w-[600px] h-[600px] bg-brand-secondary/5 rounded-full blur-[140px] pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto relative z-10">
+    <section id="media-awards" className="relative bg-white py-24 md:py-32 px-5 sm:px-6 md:px-12 border-b border-slate-200">
+      <div className="max-w-[1400px] mx-auto relative z-10">
         
         {/* Header */}
         <motion.div 
@@ -57,20 +41,22 @@ export default function MediaAwards() {
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeIn}
-          className="text-center mb-16 sm:mb-20"
+          className="mb-16 sm:mb-20 flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-slate-200 pb-8"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-primary/10 border border-brand-primary/30 text-brand-primary font-extrabold text-xs tracking-widest uppercase mb-4">
-            <Sparkles className="w-3.5 h-3.5 text-brand-primary animate-pulse" />
-            Media & Awards
+          <div className="max-w-2xl">
+            <div className="inline-block px-3 py-1 border border-slate-300 text-slate-500 font-mono text-xs tracking-widest uppercase mb-6 bg-white">
+              Media & Awards
+            </div>
+            <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl font-medium text-brand-navy tracking-tight leading-tight">
+              Recognized for <br className="hidden md:block" />
+              <span className="text-brand-primary italic">Excellence</span>
+            </h2>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-brand-navy tracking-tight mb-6 max-w-4xl mx-auto leading-tight">
-            Recognized for <span className="text-brand-primary">Financial Education Excellence</span>
-          </h2>
         </motion.div>
 
         {/* Bento Grid */}
         <motion.div 
-          className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch"
+          className="grid grid-cols-1 lg:grid-cols-12 border-t border-l border-slate-200 bg-white"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -81,20 +67,23 @@ export default function MediaAwards() {
             return (
               <motion.div 
                 key={idx}
-                variants={scaleUp}
-                className={`${item.span} relative rounded-3xl p-6 sm:p-8 bg-white border border-slate-200/80 backdrop-blur-xl flex flex-col justify-between group transition-all duration-500 hover:-translate-y-1 hover:border-brand-primary/45 hover:shadow-[0_20px_40px_-15px_rgba(15,23,42,0.06)]`}
+                variants={fadeIn}
+                className={`${item.span} p-8 md:p-12 border-r border-b border-slate-200 hover:bg-slate-50 transition-colors duration-300 flex flex-col h-full`}
               >
-                {/* Background Glow */}
-                <div className={`absolute top-4 right-4 w-24 h-24 rounded-full ${item.bgGlow} blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`} />
-
-                <div>
-                  <div className={`p-4 rounded-2xl bg-slate-50 border border-slate-100 ${item.color} w-fit mb-6 transition-transform duration-500 group-hover:scale-110`}>
-                    <IconComponent className="w-7 h-7" />
+                <div className="flex items-center justify-between mb-12">
+                  <span className="text-sm font-mono text-slate-400 tracking-wider">
+                    {String(idx + 1).padStart(2, '0')}
+                  </span>
+                  <div className="text-brand-primary">
+                    <IconComponent className="w-6 h-6" />
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-extrabold text-brand-navy mb-3 tracking-tight group-hover:text-brand-primary transition-colors duration-300">
+                </div>
+
+                <div className="mt-auto">
+                  <h3 className="font-serif text-2xl font-medium text-brand-navy mb-3">
                     {item.title}
                   </h3>
-                  <p className="text-slate-600 text-sm sm:text-base font-semibold leading-relaxed">
+                  <p className="text-slate-600 text-[15px] leading-relaxed font-light">
                     {item.desc}
                   </p>
                 </div>
@@ -104,32 +93,28 @@ export default function MediaAwards() {
 
           {/* Full Width Alumni Achievement Banner Card */}
           <motion.div 
-            variants={scaleUp}
-            className="lg:col-span-12 relative rounded-3xl p-8 bg-white border border-brand-primary/35 overflow-hidden group transition-all duration-500 hover:border-brand-primary/50 hover:shadow-[0_20px_40px_rgba(201,162,39,0.06)] flex flex-col md:flex-row items-center justify-between gap-8"
+            variants={fadeIn}
+            className="lg:col-span-12 p-8 md:p-12 border-r border-b border-slate-200 bg-brand-navy text-white flex flex-col md:flex-row items-center justify-between gap-8"
           >
-            {/* Ambient gold glow */}
-            <div className="absolute inset-0 bg-radial-gradient from-brand-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
-
-            <div className="flex flex-col md:flex-row items-center gap-6 text-center md:text-left relative z-10">
-              <div className="p-5 rounded-2xl bg-brand-primary/10 text-brand-primary shadow-[0_0_15px_rgba(201,162,39,0.1)]">
-                <Trophy className="w-10 h-10 animate-bounce-slow" />
+            <div className="flex flex-col md:flex-row items-center gap-8 text-center md:text-left">
+              <div className="text-brand-primary">
+                <Trophy className="w-10 h-10" />
               </div>
               <div className="max-w-2xl">
-                <h3 className="text-2xl sm:text-3xl font-extrabold text-brand-navy mb-2 tracking-tight">
+                <h3 className="font-serif text-2xl sm:text-3xl font-medium mb-3 text-white tracking-tight">
                   Student Achievement Awards
                 </h3>
-                <p className="text-slate-600 text-sm sm:text-base font-semibold leading-relaxed">
+                <p className="text-slate-300 text-[15px] font-light leading-relaxed">
                   Celebrating the milestones, trading consistency, and career success of our outstanding academy graduates. We actively support and reward disciplined execution and consistent performance.
                 </p>
               </div>
             </div>
 
-            <div className="shrink-0 relative z-10 bg-slate-50 border border-slate-200/80 px-6 py-4 rounded-2xl text-center">
-              <div className="text-brand-primary text-3xl font-black mb-1">100%</div>
-              <div className="text-slate-500 text-xs font-bold uppercase tracking-wider">Practical Pedagogy</div>
+            <div className="shrink-0 bg-white/5 border border-white/10 px-8 py-6 text-center">
+              <div className="text-brand-primary font-serif text-4xl mb-1">100%</div>
+              <div className="text-slate-400 text-xs font-mono tracking-widest uppercase">Practical Pedagogy</div>
             </div>
           </motion.div>
-
         </motion.div>
 
         {/* Bottom Tagline Banner */}
@@ -138,9 +123,9 @@ export default function MediaAwards() {
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeIn}
-          className="mt-16 sm:mt-20 relative rounded-2xl p-6 bg-gradient-to-r from-brand-primary/10 to-brand-primary/5 border border-brand-primary/20 text-center shadow-sm"
+          className="mt-16 sm:mt-20 border-y border-slate-200 py-8 text-center"
         >
-          <p className="text-brand-navy text-lg sm:text-xl font-bold tracking-wide italic">
+          <p className="font-serif text-brand-navy text-xl sm:text-2xl font-medium italic tracking-wide">
             "Building a financially aware and educated investment community."
           </p>
         </motion.div>

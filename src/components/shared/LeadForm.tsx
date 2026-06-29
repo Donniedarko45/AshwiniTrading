@@ -85,8 +85,8 @@ export function LeadForm({
           onChange={handleChange}
           aria-invalid={!!errors.name}
           aria-describedby={errors.name ? "name-card-error" : undefined}
-          className={`h-14 text-base rounded-xl placeholder:text-slate-400 focus-visible:ring-ring/50 focus-visible:border-ring focus-visible:bg-white transition-all shadow-none ${
-            isLight ? 'border-slate-200 bg-slate-50 text-slate-900' : 'border-slate-700/80 bg-slate-950/65 text-white focus:bg-slate-950'
+          className={`h-14 text-base rounded-none placeholder:text-slate-500 focus-visible:ring-1 focus-visible:ring-brand-primary focus-visible:border-brand-primary focus-visible:bg-white transition-none shadow-none ${
+            isLight ? 'border-slate-200 bg-white text-slate-900' : 'border-white/20 bg-transparent text-white focus:bg-white/5'
           }`}
         />
         {errors.name && (
@@ -106,8 +106,8 @@ export function LeadForm({
             value="+91"
             readOnly
             aria-label="Country Code"
-            className={`w-20 font-semibold h-14 text-center rounded-xl shadow-none ${
-              isLight ? 'bg-slate-100 border-slate-200 text-slate-600' : 'bg-slate-950/65 border-slate-700/80 text-slate-300'
+            className={`w-20 font-semibold h-14 text-center rounded-none shadow-none ${
+              isLight ? 'bg-slate-100 border-slate-200 text-slate-600' : 'bg-white/5 border-white/20 text-slate-300'
             }`}
           />
           <Input
@@ -121,8 +121,8 @@ export function LeadForm({
             onChange={handleChange}
             aria-invalid={!!errors.phone}
             aria-describedby={errors.phone ? "phone-card-error" : undefined}
-            className={`flex-1 h-14 text-base rounded-xl placeholder:text-slate-400 focus-visible:ring-ring/50 focus-visible:border-ring focus-visible:bg-white transition-all shadow-none ${
-              isLight ? 'border-slate-200 bg-slate-50 text-slate-900' : 'border-slate-700/80 bg-slate-950/65 text-white focus:bg-slate-950'
+            className={`flex-1 h-14 text-base rounded-none placeholder:text-slate-500 focus-visible:ring-1 focus-visible:ring-brand-primary focus-visible:border-brand-primary focus-visible:bg-white transition-none shadow-none ${
+              isLight ? 'border-slate-200 bg-white text-slate-900' : 'border-white/20 bg-transparent text-white focus:bg-white/5'
             }`}
           />
         </div>
@@ -144,10 +144,10 @@ export function LeadForm({
             name="role"
             value={formData.role}
             onChange={handleChange}
-            className={`w-full appearance-none h-14 rounded-xl border px-4 text-base focus:outline-none focus:ring-2 focus:ring-ring/50 focus:border-ring transition-all font-semibold ${
+            className={`w-full appearance-none h-14 rounded-none border px-4 text-base focus:outline-none focus:ring-1 focus:ring-brand-primary focus:border-brand-primary transition-none font-semibold ${
               isLight 
-                ? 'border-slate-200 bg-slate-50 text-slate-700 focus:bg-white' 
-                : 'border-slate-700/80 bg-slate-950/65 text-slate-200 focus:bg-slate-950'
+                ? 'border-slate-200 bg-white text-slate-700 focus:bg-slate-50' 
+                : 'border-white/20 bg-transparent text-slate-200 focus:bg-white/5'
             }`}
           >
             <option value="Student">Student</option>
@@ -178,10 +178,10 @@ export function LeadForm({
             name="learningGoal"
             value={formData.learningGoal}
             onChange={handleChange}
-            className={`w-full appearance-none h-14 rounded-xl border px-4 text-base focus:outline-none focus:ring-2 focus:ring-ring/50 focus:border-ring transition-all font-semibold ${
+            className={`w-full appearance-none h-14 rounded-none border px-4 text-base focus:outline-none focus:ring-1 focus:ring-brand-primary focus:border-brand-primary transition-none font-semibold ${
               isLight 
-                ? 'border-slate-200 bg-slate-50 text-slate-700 focus:bg-white' 
-                : 'border-slate-700/80 bg-slate-950/65 text-slate-200 focus:bg-slate-950'
+                ? 'border-slate-200 bg-white text-slate-700 focus:bg-slate-50' 
+                : 'border-white/20 bg-transparent text-slate-200 focus:bg-white/5'
             }`}
           >
             <option value="Learn Stock Market Basics">Learn Stock Market Basics</option>
@@ -210,14 +210,14 @@ export function LeadForm({
           <button
             type="button"
             onClick={() => handleLearningModeChange('Online')}
-            className={`h-14 rounded-xl border flex items-center justify-center gap-2 font-bold text-sm cursor-pointer transition-all ${
+            className={`h-14 rounded-none border flex items-center justify-center gap-2 font-bold text-sm cursor-pointer transition-none ${
               formData.learningMode === 'Online'
                 ? isLight 
-                  ? 'border-brand-primary bg-brand-primary/10 text-brand-navy shadow-sm'
-                  : 'border-brand-primary bg-brand-primary/10 text-white shadow-sm'
+                  ? 'border-brand-primary bg-brand-primary/10 text-brand-navy'
+                  : 'border-brand-primary bg-brand-primary/10 text-white'
                 : isLight
                   ? 'border-slate-200 bg-slate-50 text-slate-500 hover:bg-slate-100 hover:text-slate-700'
-                  : 'border-slate-700/80 bg-slate-950/65 text-slate-400 hover:bg-slate-900 hover:text-white'
+                  : 'border-white/20 bg-transparent text-slate-400 hover:bg-white/5 hover:text-white'
             }`}
           >
             Online
@@ -225,14 +225,14 @@ export function LeadForm({
           <button
             type="button"
             onClick={() => handleLearningModeChange('Classroom')}
-            className={`h-14 rounded-xl border flex items-center justify-center gap-2 font-bold text-sm cursor-pointer transition-all ${
+            className={`h-14 rounded-none border flex items-center justify-center gap-2 font-bold text-sm cursor-pointer transition-none ${
               formData.learningMode === 'Classroom'
                 ? isLight
-                  ? 'border-brand-secondary bg-brand-secondary/10 text-brand-navy shadow-sm'
-                  : 'border-brand-secondary bg-brand-secondary/10 text-white shadow-sm'
+                  ? 'border-brand-secondary bg-brand-secondary/10 text-brand-navy'
+                  : 'border-brand-secondary bg-brand-secondary/10 text-white'
                 : isLight
                   ? 'border-slate-200 bg-slate-50 text-slate-500 hover:bg-slate-100 hover:text-slate-700'
-                  : 'border-slate-700/80 bg-slate-950/65 text-slate-400 hover:bg-slate-900 hover:text-white'
+                  : 'border-white/20 bg-transparent text-slate-400 hover:bg-white/5 hover:text-white'
             }`}
           >
             Classroom
@@ -244,9 +244,9 @@ export function LeadForm({
       <motion.button
         type="submit"
         disabled={isSubmitting}
-        whileHover={{ scale: 1.02 }}
-        whileTap={{ scale: 0.98 }}
-        className="w-full h-14 flex items-center justify-center bg-gradient-to-r from-brand-primary-grad-start to-brand-primary-grad-end hover:brightness-110 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50 text-brand-navy font-extrabold text-base sm:text-lg tracking-wide rounded-xl shadow-lg shadow-brand-primary/15 mt-6 border-0 transition-all duration-250 ease-out uppercase disabled:opacity-75 disabled:pointer-events-none gap-2"
+        whileHover={{ scale: 1.01 }}
+        whileTap={{ scale: 0.99 }}
+        className="w-full h-14 flex items-center justify-center bg-brand-primary hover:bg-brand-primary-light focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-navy text-brand-navy font-extrabold text-base sm:text-lg tracking-wide rounded-none border border-transparent hover:border-brand-primary transition-none duration-0 uppercase disabled:opacity-75 disabled:pointer-events-none gap-2"
       >
         {isSubmitting ? (
           <>
@@ -303,8 +303,8 @@ export function LeadForm({
 
   // Card Variant (default wrapper card)
   return (
-    <div className={`rounded-[28px] p-6 sm:p-8 md:p-10 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.6)] relative overflow-hidden ${
-      isLight ? 'bg-white border border-slate-100' : 'bg-slate-900/60 backdrop-blur-2xl border border-white/10'
+    <div className={`rounded-none p-6 sm:p-8 md:p-10 relative overflow-hidden ${
+      isLight ? 'bg-white border border-slate-200' : 'bg-brand-navy border border-white/20'
     }`}>
       {formContent}
     </div>

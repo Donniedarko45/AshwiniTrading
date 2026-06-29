@@ -1,67 +1,51 @@
 import React from 'react';
-import { BookOpen, TrendingUp, ShieldCheck, FileText, Briefcase, Cpu, Calendar } from 'lucide-react';
+import { BookOpen, TrendingUp, ShieldCheck, FileText, Briefcase, Cpu } from 'lucide-react';
 import { motion } from 'motion/react';
-import { fadeIn, staggerContainer, scaleUp } from '@/lib/animations';
+import { fadeIn, staggerContainer } from '@/lib/animations';
 
 export default function Achieve90Days() {
   const achievements = [
     {
       num: "01",
-      title: "Understand Stock Market Fundamentals",
+      title: "Market Fundamentals",
       desc: "Learn how stock markets work, how companies create value, and how investors build wealth from the ground up.",
-      icon: BookOpen,
-      accentColor: "text-brand-secondary",
-      glowColor: "bg-brand-secondary/10"
+      icon: BookOpen
     },
     {
       num: "02",
-      title: "Read Charts Like a Professional",
+      title: "Chart Reading",
       desc: "Identify trends, support, resistance levels, breakouts, and learn to gauge real-time market momentum.",
-      icon: TrendingUp,
-      accentColor: "text-brand-primary",
-      glowColor: "bg-brand-primary/10"
+      icon: TrendingUp
     },
     {
       num: "03",
-      title: "Learn Risk Management",
+      title: "Risk Management",
       desc: "Protect your capital using proven money management techniques, strict position sizing, and stop-loss execution.",
-      icon: ShieldCheck,
-      accentColor: "text-brand-secondary",
-      glowColor: "bg-brand-secondary/10"
+      icon: ShieldCheck
     },
     {
       num: "04",
-      title: "Build Your Own Trading & Investment Plan",
+      title: "Trading Plan",
       desc: "Create a structured, rule-based approach tailored to your specific financial goals and risk tolerance profile.",
-      icon: FileText,
-      accentColor: "text-brand-primary",
-      glowColor: "bg-brand-primary/10"
+      icon: FileText
     },
     {
       num: "05",
-      title: "Understand Mutual Funds & Portfolio Building",
+      title: "Portfolio Building",
       desc: "Learn the mechanics of diversification, SIPs, tactical asset allocation, and long-term compounding wealth creation.",
-      icon: Briefcase,
-      accentColor: "text-brand-secondary",
-      glowColor: "bg-brand-secondary/10"
+      icon: Briefcase
     },
     {
       num: "06",
-      title: "Use AI for Market Research",
+      title: "AI Research",
       desc: "Leverage modern AI tools and automated screening systems to analyze companies, sectors, and market trends faster.",
-      icon: Cpu,
-      accentColor: "text-brand-primary",
-      glowColor: "bg-brand-primary/10"
+      icon: Cpu
     }
   ];
 
   return (
-    <section id="achievements" className="relative bg-white py-24 md:py-32 px-5 sm:px-6 md:px-12 overflow-hidden border-b border-slate-200/85">
-      {/* Subtle Glow Effects */}
-      <div className="absolute top-1/4 left-[-10%] w-[500px] h-[500px] bg-brand-primary/5 rounded-full blur-[130px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-[-10%] w-[500px] h-[500px] bg-brand-primary/5 rounded-full blur-[130px] pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto relative z-10">
+    <section id="achievements" className="relative bg-white py-24 md:py-32 px-5 sm:px-6 md:px-12 border-b border-slate-200">
+      <div className="max-w-[1400px] mx-auto relative z-10">
         
         {/* Header */}
         <motion.div 
@@ -69,23 +53,24 @@ export default function Achieve90Days() {
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeIn}
-          className="text-center mb-16 sm:mb-20"
+          className="mb-16 sm:mb-20 flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-slate-200 pb-8"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-primary/10 border border-brand-primary/30 text-brand-primary font-extrabold text-xs tracking-widest uppercase mb-4">
-            <Calendar className="w-3.5 h-3.5 text-brand-primary" />
-            90-Day Journey
+          <div className="max-w-2xl">
+            <div className="inline-block px-3 py-1 border border-slate-300 text-slate-500 font-mono text-xs tracking-widest uppercase mb-6">
+              90-Day Journey
+            </div>
+            <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl font-medium text-brand-navy tracking-tight leading-tight">
+              What You Will <span className="text-brand-primary italic">Achieve</span>
+            </h2>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-brand-navy tracking-tight mb-6 max-w-4xl mx-auto leading-tight">
-            What You Will <span className="text-brand-primary">Achieve in 90 Days</span>
-          </h2>
-          <p className="text-slate-600 text-base sm:text-lg font-semibold max-w-2xl mx-auto leading-relaxed">
-            From absolute beginner to a disciplined, structured market participant. Here is your roadmap to trading and investing confidence.
+          <p className="text-slate-600 text-base md:text-lg font-light max-w-md leading-relaxed">
+            From absolute beginner to a disciplined, structured market participant. Here is your roadmap to trading confidence.
           </p>
         </motion.div>
 
-        {/* Achievements Grid */}
+        {/* Achievements Grid (Tabular) */}
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-slate-200"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -96,30 +81,21 @@ export default function Achieve90Days() {
             return (
               <motion.div 
                 key={idx}
-                variants={scaleUp}
-                className="relative rounded-3xl p-8 bg-white border border-slate-200/80 flex flex-col justify-between group transition-all duration-500 hover:-translate-y-1.5 hover:border-brand-primary/45 hover:shadow-[0_20px_40px_-15px_rgba(15,23,42,0.08)]"
+                variants={fadeIn}
+                className="p-8 md:p-12 border-r border-b border-slate-200 bg-white hover:bg-slate-50 transition-colors duration-300 flex flex-col"
               >
-                {/* Background glow circle */}
-                <div className={`absolute top-6 right-6 w-24 h-24 rounded-full ${item.glowColor} blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`} />
+                <div className="flex items-center justify-between mb-16">
+                  <span className="text-sm font-mono text-slate-400 tracking-wider">
+                    MODULE {item.num}
+                  </span>
+                  <IconComponent className="w-5 h-5 text-brand-primary" />
+                </div>
 
-                <div className="h-full flex flex-col justify-between relative z-10">
-                  <div>
-                    {/* Number & Icon Header */}
-                    <div className="flex items-center justify-between mb-8">
-                      <span className="text-3xl font-black text-slate-200 group-hover:text-brand-primary/80 transition-colors duration-300 tracking-tighter select-none font-mono">
-                        {item.num}
-                      </span>
-                      <div className={`p-3 rounded-2xl bg-slate-50 ${item.accentColor} transition-transform duration-500 group-hover:scale-110`}>
-                        <IconComponent className="w-6 h-6" />
-                      </div>
-                    </div>
-
-                    <h3 className="text-xl font-extrabold text-brand-navy mb-4 tracking-tight leading-snug group-hover:text-brand-primary transition-colors duration-300">
-                      {item.title}
-                    </h3>
-                  </div>
-
-                  <p className="text-slate-600 text-sm sm:text-[15px] font-semibold leading-relaxed mt-2">
+                <div className="mt-auto">
+                  <h3 className="font-serif text-2xl font-medium text-brand-navy mb-4">
+                    {item.title}
+                  </h3>
+                  <p className="text-slate-600 text-[15px] leading-relaxed font-light">
                     {item.desc}
                   </p>
                 </div>
@@ -127,7 +103,6 @@ export default function Achieve90Days() {
             );
           })}
         </motion.div>
-
       </div>
     </section>
   );

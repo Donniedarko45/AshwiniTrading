@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Award, BookOpen, ShieldCheck, Trophy, ZoomIn, X } from 'lucide-react';
+import { BookOpen, ShieldCheck, Trophy, ZoomIn, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { fadeIn, staggerContainer } from '@/lib/animations';
 
@@ -11,36 +11,23 @@ export default function Certifications() {
       series: "NISM Series V-A",
       title: "Mutual Fund Distributors",
       desc: "Certification Examination",
-      gradient: "from-brand-secondary/20 to-transparent",
-      border: "border-brand-secondary/30",
-      iconColor: "text-brand-secondary"
     },
     {
       series: "NISM Series VIII",
       title: "Equity Derivatives",
       desc: "Certification Examination",
-      gradient: "from-brand-secondary/20 to-transparent",
-      border: "border-brand-secondary/30",
-      iconColor: "text-brand-secondary"
     },
     {
       series: "NISM Series XV",
       title: "Research Analyst",
       desc: "Certification Examination",
-      gradient: "from-brand-primary/20 to-transparent",
-      border: "border-brand-primary/30",
-      iconColor: "text-brand-primary"
     }
   ];
 
   return (
-    <section id="certifications" className="relative bg-white py-24 md:py-32 px-5 sm:px-6 md:px-12 overflow-hidden border-b border-slate-200/85">
-      {/* Background Decorative Glows */}
-      <div className="absolute top-1/4 left-[-10%] w-[500px] h-[500px] bg-brand-primary/5 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-[-10%] w-[600px] h-[600px] bg-brand-secondary/5 rounded-full blur-[140px] pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+    <section id="certifications" className="relative bg-slate-50 py-24 md:py-32 px-5 sm:px-6 md:px-12 border-b border-slate-200">
+      <div className="max-w-[1400px] mx-auto relative z-10">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           
           {/* Column 1: NISM Certifications (lg:col-span-7) */}
           <motion.div 
@@ -52,43 +39,43 @@ export default function Certifications() {
           >
             <motion.div 
               variants={fadeIn}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-primary/10 border border-brand-primary/30 text-brand-primary font-extrabold text-xs tracking-widest uppercase mb-6"
+              className="inline-block px-3 py-1 border border-brand-primary/30 text-brand-primary font-mono text-xs tracking-widest uppercase mb-6 bg-brand-primary/5"
             >
-              <Award className="w-4 h-4 text-brand-primary animate-pulse" />
-              NISM Certification Training Included
+              NISM Certification Training
             </motion.div>
             
             <motion.h2 
               variants={fadeIn}
-              className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-brand-navy tracking-tight leading-[1.1] mb-6"
+              className="font-serif text-4xl sm:text-5xl md:text-6xl font-medium text-brand-navy tracking-tight leading-tight mb-6"
             >
-              Build Knowledge. <span className="text-brand-primary">Earn Certifications.</span> Create Opportunities.
+              Build Knowledge. <br className="hidden md:block" />
+              <span className="text-brand-primary italic">Earn Certifications.</span>
             </motion.h2>
             
             <motion.p 
               variants={fadeIn}
-              className="text-slate-600 text-base sm:text-lg font-medium leading-relaxed mb-8 max-w-2xl"
+              className="text-slate-600 text-base md:text-lg font-light leading-relaxed mb-10 max-w-2xl"
             >
-              To enhance employability and industry readiness, students will receive dedicated preparation and guidance for highly valued regulatory certifications:
+              To enhance employability and industry readiness, students will receive dedicated preparation and guidance for highly valued regulatory certifications.
             </motion.p>
 
-            {/* Certifications Cards Stack */}
-            <motion.div variants={fadeIn} className="space-y-4 mb-6">
+            {/* Certifications List */}
+            <motion.div variants={fadeIn} className="border-t border-slate-200 bg-white">
               {certifications.map((cert, index) => (
                 <div 
                   key={index}
-                  className={`relative p-5 rounded-2xl bg-gradient-to-r ${cert.gradient} border ${cert.border} backdrop-blur-md flex items-center gap-5 transition-transform hover:translate-x-2 duration-300 shadow-sm`}
+                  className="flex items-center gap-5 p-6 border-b border-l border-r border-slate-200 hover:bg-slate-50 transition-colors"
                 >
-                  <div className="p-3 rounded-xl bg-slate-50 border border-slate-200/50 text-brand-primary shrink-0">
-                    <BookOpen className="w-6 h-6" />
+                  <div className="text-brand-primary shrink-0 hidden sm:block">
+                    <BookOpen className="w-5 h-5" />
                   </div>
                   <div>
-                    <span className="text-xs font-black tracking-widest uppercase text-slate-500 block mb-1">{cert.series}</span>
-                    <h4 className="text-brand-navy font-extrabold text-base sm:text-lg tracking-tight leading-tight">{cert.title}</h4>
-                    <p className="text-slate-600 text-xs font-semibold mt-0.5">{cert.desc}</p>
+                    <span className="text-xs font-mono tracking-widest uppercase text-slate-400 block mb-1">{cert.series}</span>
+                    <h4 className="font-serif text-brand-navy font-medium text-xl tracking-tight leading-tight">{cert.title}</h4>
+                    <p className="text-slate-500 text-sm font-light mt-1">{cert.desc}</p>
                   </div>
-                  <div className="ml-auto pr-2">
-                    <ShieldCheck className="w-6.5 h-6.5 text-brand-primary opacity-80" />
+                  <div className="ml-auto text-slate-300">
+                    <ShieldCheck className="w-5 h-5" />
                   </div>
                 </div>
               ))}
@@ -96,59 +83,52 @@ export default function Certifications() {
 
             <motion.p 
               variants={fadeIn}
-              className="text-slate-600 text-sm font-semibold leading-relaxed max-w-2xl border-l-2 border-brand-primary pl-4 py-1"
+              className="text-slate-600 text-[15px] font-light leading-relaxed max-w-2xl border-l border-brand-primary pl-4 py-1 mt-8"
             >
-              Our structured training helps students understand the concepts, examination patterns, and practical applications required to successfully clear these certifications on their first attempt.
+              Our structured training helps students understand the concepts, examination patterns, and practical applications required to successfully clear these certifications.
             </motion.p>
           </motion.div>
 
           {/* Column 2: Award & Recognition Certificate (lg:col-span-5) */}
           <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="lg:col-span-5 flex flex-col items-center justify-center h-full"
+            transition={{ duration: 0.6 }}
+            className="lg:col-span-5 flex flex-col items-center lg:items-end justify-center h-full"
           >
-            <div className="text-left w-full max-w-[360px] sm:max-w-[400px] mb-4 lg:hidden">
-              <div className="text-xs font-bold text-brand-primary tracking-wider uppercase mb-1">Award & Recognition</div>
-              <h4 className="text-brand-navy font-bold text-xl">Udyog Yogdaan Puraskar</h4>
-            </div>
+            <div className="w-full max-w-[400px]">
+              <div className="text-left w-full mb-4">
+                <div className="text-xs font-mono text-slate-500 tracking-widest uppercase mb-1 flex items-center gap-2">
+                  <Trophy className="w-4 h-4 text-brand-primary" />
+                  Award & Recognition
+                </div>
+                <h4 className="font-serif text-brand-navy font-medium text-2xl">Udyog Yogdaan Puraskar</h4>
+              </div>
 
-            <div 
-              onClick={() => setIsOpen(true)}
-              className="relative w-full max-w-[360px] sm:max-w-[400px] aspect-[3/4.2] rounded-[24px] p-2 bg-gradient-to-br from-brand-primary/30 via-white to-slate-200 border border-brand-primary/20 shadow-xl group cursor-pointer overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-brand-primary/10 hover:border-brand-primary/45"
-            >
-              {/* Shine effect */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out z-10" />
+              <div 
+                onClick={() => setIsOpen(true)}
+                className="relative w-full aspect-[3/4.2] p-2 bg-white border border-slate-200 group cursor-pointer overflow-hidden transition-all duration-300 hover:border-brand-primary"
+              >
+                <div className="relative w-full h-full overflow-hidden bg-slate-50 border border-slate-200">
+                  <img 
+                    src="/nmis.png" 
+                    alt="Udyog Yogdaan Puraskar Certificate given to Ashwini Trading Academy"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    loading="lazy"
+                  />
 
-              {/* Certificate Image Wrapper */}
-              <div className="relative w-full h-full rounded-[18px] overflow-hidden bg-slate-50 border border-slate-200/80">
-                <img 
-                  src="/nmis.png" 
-                  alt="Udyog Yogdaan Puraskar Certificate given to Ashwini Trading Academy"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  loading="lazy"
-                />
-
-                {/* Hover overlay */}
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-2 z-20">
-                  <div className="p-3.5 bg-brand-primary text-brand-navy rounded-full shadow-lg scale-90 group-hover:scale-100 transition-transform duration-300">
-                    <ZoomIn className="w-6 h-6 stroke-[2.5]" />
+                  {/* Hover overlay */}
+                  <div className="absolute inset-0 bg-brand-navy/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-3 z-20">
+                    <div className="text-white">
+                      <ZoomIn className="w-8 h-8" />
+                    </div>
+                    <span className="text-white text-xs font-mono uppercase tracking-widest border border-white/20 bg-white/10 px-3 py-1">
+                      View Certificate
+                    </span>
                   </div>
-                  <span className="text-white text-xs font-extrabold uppercase tracking-widest bg-slate-900/90 px-3 py-1 rounded-md mt-2">
-                    Click to Zoom
-                  </span>
                 </div>
               </div>
-            </div>
-
-            <div className="hidden lg:block text-center w-full max-w-[360px] sm:max-w-[400px] mt-6 px-2">
-              <div className="text-[10px] font-black text-brand-primary/90 tracking-widest uppercase mb-1 flex items-center justify-center gap-1.5">
-                <Trophy className="w-4.5 h-4.5 text-brand-primary" />
-                Awarded Academy
-              </div>
-              <h4 className="text-brand-navy font-extrabold text-base leading-snug">Udyog Yogdaan Puraskar for Best Trading Academy</h4>
             </div>
           </motion.div>
 
@@ -162,32 +142,31 @@ export default function Certifications() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 backdrop-blur-sm"
+            className="fixed inset-0 z-[100] bg-brand-navy/95 flex items-center justify-center p-4"
           >
             {/* Close trigger on background */}
             <div className="absolute inset-0 cursor-zoom-out" onClick={() => setIsOpen(false)} />
 
             {/* Modal Card */}
             <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
+              initial={{ scale: 0.95, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              transition={{ type: 'spring', damping: 25, stiffness: 180 }}
-              className="relative w-full max-w-[550px] max-h-[90vh] aspect-[3/4.2] bg-white rounded-3xl overflow-hidden shadow-2xl z-10 p-1 border border-brand-primary"
+              exit={{ scale: 0.95, opacity: 0 }}
+              className="relative w-full max-w-[600px] max-h-[90vh] aspect-[3/4.2] bg-white p-2 border border-slate-200 z-10"
             >
               {/* Close Button */}
               <button
                 onClick={() => setIsOpen(false)}
-                className="absolute top-4 right-4 z-50 bg-black/75 hover:bg-black text-white p-2.5 rounded-full border-0 cursor-pointer shadow-lg hover:scale-105 transition-transform"
+                className="absolute -top-4 -right-4 z-50 bg-white hover:bg-slate-50 border border-slate-200 text-brand-navy p-2 cursor-pointer transition-colors"
                 aria-label="Close cert modal"
               >
-                <X className="w-5 h-5 stroke-[2.5]" />
+                <X className="w-5 h-5" />
               </button>
 
               <img 
                 src="/nmis.png" 
                 alt="Udyog Yogdaan Puraskar Certificate given to Ashwini Trading Academy"
-                className="w-full h-full object-contain bg-slate-900 rounded-[20px]"
+                className="w-full h-full object-contain bg-slate-50 border border-slate-200"
               />
             </motion.div>
           </motion.div>
