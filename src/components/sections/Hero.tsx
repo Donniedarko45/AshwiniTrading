@@ -60,19 +60,6 @@ export default function Hero() {
               ))}
             </motion.div>
 
-            {/* Social Proof Stats */}
-            <motion.div variants={fadeIn} className="flex flex-wrap items-center gap-y-4 gap-x-8 mb-12 py-6 border-y border-white/10">
-              {stats.map((stat, i) => (
-                <div key={i} className="flex flex-col gap-1">
-                  <div className="flex items-center gap-1.5">
-                    {stat.icon && stat.icon}
-                    <span className="text-xl font-bold text-white tracking-tight">{stat.value}</span>
-                  </div>
-                  <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">{stat.label}</span>
-                </div>
-              ))}
-            </motion.div>
-
             {/* CTAs */}
             <motion.div variants={fadeIn} className="flex flex-col sm:flex-row items-center gap-4">
               <button onClick={() => {

@@ -1,9 +1,9 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { staggerContainer, fadeIn } from '@/lib/animations';
-import { 
-  LineChart, Sparkles, Cpu, GraduationCap, 
-  UserCheck, Route, Users, Briefcase 
+import {
+  LineChart, Sparkles, Cpu, GraduationCap,
+  UserCheck, Route, Users, Briefcase
 } from 'lucide-react';
 
 export default function WhyChooseUs() {
@@ -53,9 +53,9 @@ export default function WhyChooseUs() {
   return (
     <section id="why-choose-us" className="relative py-24 md:py-32 bg-slate-50 px-5 sm:px-6 md:px-12 border-b border-slate-200">
       <div className="max-w-[1400px] mx-auto relative z-10">
-        
+
         {/* Header Block */}
-        <motion.div 
+        <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -72,12 +72,12 @@ export default function WhyChooseUs() {
             </h2>
           </div>
           <p className="text-slate-600 text-base md:text-lg font-light max-w-lg leading-relaxed">
-            Learn the skills that matter in today's financial markets. Master Technical Analysis, Fundamental Analysis, Futures & Options, risk management, and stock selection through both manual research and AI-powered analysis.
+            Learn the skills that matter in today's financial markets. Master Technical Analysis, Fundamental Analysis, Futures & Options, risk management, and stock selection through both manual research and AI-powered analysis. Our structured approach helps you build the knowledge and confidence to analyse the markets independently and make informed investment decisions.
           </p>
         </motion.div>
 
         {/* 8-Card Grid Layout */}
-        <motion.div 
+        <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
           initial="hidden"
           whileInView="visible"
@@ -85,8 +85,8 @@ export default function WhyChooseUs() {
           variants={staggerContainer}
         >
           {points.map((item, idx) => (
-            <motion.div 
-              key={idx} 
+            <motion.div
+              key={idx}
               variants={fadeIn}
               className="group p-8 rounded-2xl border border-slate-200/60 bg-white hover:border-brand-primary/30 surface-card-light transition-all duration-500 hover:-translate-y-1 hover:shadow-lg flex flex-col h-full"
             >
