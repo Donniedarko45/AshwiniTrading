@@ -128,7 +128,7 @@ export default function Navbar() {
               }}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="h-11 px-6 bg-cta-gold text-brand-navy font-bold text-[14px] rounded-xl shadow-brand-gold hover:shadow-brand-gold-lg transition-all duration-300 inline-flex items-center justify-center"
+              className="h-11 px-6 bg-cta-gold text-brand-navy font-bold text-[14px] rounded-xl shadow-brand-gold hover:shadow-brand-gold-lg hover:-translate-y-0.5 transition-all duration-300 inline-flex items-center justify-center"
             >
               Book Free Consultation
             </motion.button>

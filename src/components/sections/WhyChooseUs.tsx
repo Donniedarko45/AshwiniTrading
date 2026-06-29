@@ -78,29 +78,31 @@ export default function WhyChooseUs() {
 
         {/* 8-Card Grid Layout */}
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-l border-slate-200 bg-white"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-100px" }}
           variants={staggerContainer}
         >
           {points.map((item, idx) => (
             <motion.div 
               key={idx} 
               variants={fadeIn}
-              className="p-8 border-r border-b border-slate-200 hover:bg-slate-50 transition-colors duration-300 flex flex-col h-full"
+              className="group p-8 rounded-2xl border border-slate-200/60 bg-white hover:border-brand-primary/30 surface-card-light transition-all duration-500 hover:-translate-y-1 hover:shadow-lg flex flex-col h-full"
             >
               <div className="flex items-center justify-between mb-8">
-                <span className="text-sm font-mono text-slate-400 tracking-wider">
+                <span className="text-xs font-mono text-slate-400 tracking-wider group-hover:text-brand-primary transition-colors">
                   {String(idx + 1).padStart(2, '0')}
                 </span>
-                <div className="text-brand-primary">
-                  {item.icon}
+                <div className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-brand-primary/10 transition-colors">
+                  <div className="text-slate-600 group-hover:text-brand-primary transition-colors">
+                    {item.icon}
+                  </div>
                 </div>
               </div>
 
               <div>
-                <h3 className="font-serif text-xl font-medium text-brand-navy mb-3">
+                <h3 className="font-serif text-xl font-medium text-brand-navy mb-3 group-hover:text-brand-primary transition-colors">
                   {item.title}
                 </h3>
                 <p className="text-slate-600 text-[14px] leading-relaxed font-light">

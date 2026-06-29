@@ -5,34 +5,34 @@ import { coursesData } from '@/data/courses';
 
 const themeStyles = {
   blue: {
-    container: 'bg-white border-slate-200 hover:border-brand-secondary/45 shadow-sm',
+    container: 'surface-card-light border-slate-200 hover:border-brand-secondary/45 transition-all duration-500 hover:-translate-y-1 hover:shadow-lg',
     badge: 'bg-brand-secondary/10 text-brand-secondary-hover border-brand-secondary/20',
     bullet: 'bg-brand-secondary',
     extraItem: 'bg-slate-50 border-slate-200',
     extraIcon: 'bg-brand-secondary/10 text-brand-secondary-hover',
     emiText: 'text-brand-navy',
     batchBg: 'bg-brand-secondary/10 border-brand-secondary/20 text-slate-700',
-    primaryButton: 'bg-brand-navy hover:bg-slate-900 text-white'
+    primaryButton: 'bg-brand-navy hover:bg-slate-900 text-white hover:-translate-y-0.5'
   },
   indigo: {
-    container: 'bg-white border-[3px] border-brand-primary shadow-xl z-10 lg:scale-100',
+    container: 'surface-card-light border-[3px] border-brand-primary z-10 lg:scale-100 transition-all duration-500 hover:-translate-y-1 shadow-[0_20px_40px_-15px_rgba(201,162,39,0.2)]',
     badge: 'bg-brand-primary/10 text-brand-primary border-brand-primary/20',
     bullet: 'bg-brand-primary',
     extraItem: 'bg-brand-primary/5 border-brand-primary/20',
     extraIcon: 'bg-brand-primary/10 text-brand-primary',
     emiText: 'text-brand-primary',
     batchBg: 'bg-brand-primary/10 border-brand-primary/20 text-slate-700',
-    primaryButton: 'bg-gradient-to-r from-brand-primary-grad-start to-brand-primary-grad-end text-brand-navy hover:brightness-110 shadow-lg shadow-brand-primary/15'
+    primaryButton: 'bg-gradient-to-r from-brand-primary-grad-start to-brand-primary-grad-end text-brand-navy hover:brightness-110 shadow-brand-gold hover:shadow-brand-gold-lg hover:-translate-y-0.5'
   },
   orange: {
-    container: 'bg-white border-slate-200 hover:border-brand-primary/45 shadow-sm shadow-md',
+    container: 'surface-card-light border-slate-200 hover:border-brand-primary/45 transition-all duration-500 hover:-translate-y-1 hover:shadow-lg',
     badge: 'bg-brand-primary/10 text-brand-primary border-brand-primary/20',
     bullet: 'bg-brand-primary',
     extraItem: 'bg-slate-50 border-brand-primary/10',
     extraIcon: 'bg-brand-primary/10 text-brand-primary',
     emiText: 'text-brand-primary',
     batchBg: 'bg-brand-primary/10 border-brand-primary/20 text-slate-700',
-    primaryButton: 'bg-brand-navy hover:bg-slate-900 text-white'
+    primaryButton: 'bg-brand-navy hover:bg-slate-900 text-white hover:-translate-y-0.5'
   }
 };
 

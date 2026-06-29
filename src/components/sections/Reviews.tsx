@@ -25,24 +25,24 @@ export default function Reviews() {
         </div>
 
         {/* Reviews Grid */}
-        <div className="grid md:grid-cols-2 border-t border-l border-slate-200 bg-white">
+        <div className="grid md:grid-cols-2 gap-6">
           {academyReviews.map((review, i) => {
             return (
               <div 
                 key={i} 
-                className="p-10 md:p-14 border-r border-b border-slate-200 hover:bg-slate-50 transition-colors duration-300 flex flex-col justify-between"
+                className="group p-8 md:p-10 rounded-2xl border border-slate-200/60 bg-white hover:border-brand-primary/30 surface-card-light transition-all duration-500 hover:-translate-y-1 hover:shadow-lg flex flex-col justify-between"
               >
                 {/* Platform Badge */}
                 <div className="mb-8 flex items-center justify-between">
-                  <span className="text-sm font-mono text-slate-400 tracking-wider">
+                  <span className="text-xs font-mono text-slate-400 tracking-wider group-hover:text-brand-primary transition-colors">
                     {String(i + 1).padStart(2, '0')}
                   </span>
                   {review.platform !== 'none' && (
                     <div className="text-slate-400">
                       {review.platform === 'whatsapp' ? (
-                        <span className="text-xs font-mono uppercase tracking-widest text-brand-secondary border border-brand-secondary/20 bg-brand-secondary/5 px-2 py-1">WhatsApp</span>
+                        <span className="text-xs font-mono uppercase tracking-widest text-brand-secondary border border-brand-secondary/20 bg-brand-secondary/5 px-3 py-1 rounded-full">WhatsApp</span>
                       ) : (
-                        <span className="text-xs font-mono uppercase tracking-widest border border-slate-200 bg-slate-50 px-2 py-1">Message</span>
+                        <span className="text-xs font-mono uppercase tracking-widest border border-slate-200 bg-slate-50 px-3 py-1 rounded-full">Message</span>
                       )}
                     </div>
                   )}
@@ -50,15 +50,22 @@ export default function Reviews() {
 
                 {/* Review Content */}
                 <div className="flex-1">
-                  <p className="font-serif text-xl sm:text-2xl text-brand-navy leading-relaxed italic mb-8">
+                  <p className="font-serif text-xl sm:text-2xl text-brand-navy leading-relaxed italic mb-8 max-w-[65ch]">
                     "{review.text}"
                   </p>
                 </div>
                 
-                <div className="border-t border-slate-200 pt-6 mt-6">
-                  <h4 className="font-bold text-brand-navy tracking-wide uppercase text-sm">
+                <div className="border-t border-slate-100 pt-6 mt-6 flex items-center justify-between">
+                  <h4 className="font-bold text-brand-navy tracking-wide uppercase text-sm group-hover:text-brand-primary transition-colors">
                     {review.name}
                   </h4>
+                  <div className="flex gap-1">
+                    {[1,2,3,4,5].map((_, star) => (
+                      <svg key={star} className="w-4 h-4 text-brand-primary fill-brand-primary" viewBox="0 0 24 24">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                      </svg>
+                    ))}
+                  </div>
                 </div>
               </div>
             );

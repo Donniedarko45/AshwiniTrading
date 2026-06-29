@@ -71,11 +71,11 @@ export default function ReviewsPage() {
             <h2 className="font-serif text-4xl md:text-5xl font-medium text-brand-navy">What Our Students Say</h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-px bg-slate-200 border border-slate-200">
+          <div className="grid md:grid-cols-2 gap-6">
             {academyReviews.map((review, idx) => (
               <div
                 key={idx}
-                className="bg-white p-10 flex flex-col justify-between hover:bg-slate-50 transition-colors"
+                className="group bg-white p-10 rounded-2xl border border-slate-200/60 surface-card-light transition-all duration-500 hover:-translate-y-1 hover:shadow-lg flex flex-col justify-between"
               >
                 <div>
                   <div className="flex gap-1 mb-6 text-brand-primary">
@@ -83,17 +83,17 @@ export default function ReviewsPage() {
                       <Star key={i} className="w-4 h-4 fill-current" />
                     ))}
                   </div>
-                  <p className="font-serif text-xl text-slate-700 leading-relaxed italic mb-8">
+                  <p className="font-serif text-xl text-slate-700 leading-relaxed italic mb-8 max-w-[65ch]">
                     "{review.text}"
                   </p>
                 </div>
                 <div className="pt-6 border-t border-slate-100 flex items-center justify-between">
                   <div>
-                    <h4 className="font-bold text-brand-navy text-sm uppercase tracking-wider mb-1">{review.name}</h4>
+                    <h4 className="font-bold text-brand-navy text-sm uppercase tracking-wider mb-1 group-hover:text-brand-primary transition-colors">{review.name}</h4>
                     <p className="text-xs font-mono text-slate-500 uppercase">{review.role}</p>
                   </div>
                   {review.platform !== 'none' && (
-                    <div className="text-[10px] font-mono text-slate-400 uppercase tracking-widest px-2 py-1 border border-slate-200 bg-slate-50">
+                    <div className="text-[10px] font-mono text-slate-400 uppercase tracking-widest px-3 py-1 rounded-full border border-slate-200 bg-slate-50">
                       {review.platform}
                     </div>
                   )}
@@ -147,15 +147,15 @@ export default function ReviewsPage() {
             viewport={{ once: true }}
             variants={staggerContainer}
           >
-            <div className="grid sm:grid-cols-2 gap-px bg-slate-200 border border-slate-200">
+            <div className="grid sm:grid-cols-2 gap-4">
               {[
                 'NISM Certified Students',
                 'Successful Course Graduates',
                 'Dedicated Learners & Market Enthusiasts',
                 'Future Finance Professionals'
               ].map((item, idx) => (
-                <div key={idx} className="bg-white p-8 flex flex-col justify-center h-40 hover:bg-slate-50 transition-colors">
-                  <div className="w-8 h-8 flex items-center justify-center text-brand-primary font-bold text-xl mb-4">
+                <div key={idx} className="group bg-white p-8 flex flex-col justify-center h-40 rounded-2xl border border-slate-200/60 surface-card-light transition-all duration-500 hover:-translate-y-1 hover:shadow-lg">
+                  <div className="w-12 h-12 flex items-center justify-center text-brand-primary bg-brand-primary/10 rounded-full font-bold text-xl mb-4 group-hover:scale-110 transition-transform">
                     🏆
                   </div>
                   <span className="text-slate-800 font-bold leading-tight">{item}</span>
@@ -180,7 +180,7 @@ export default function ReviewsPage() {
             </h2>
           </motion.div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-slate-200 border border-slate-200">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { title: 'Practical Market Training', icon: TrendingUp },
               { title: 'Live Market Learning', icon: Video },
@@ -192,9 +192,11 @@ export default function ReviewsPage() {
             ].map((item, idx) => {
               const Icon = item.icon;
               return (
-                <div key={idx} className="bg-white p-8 hover:bg-slate-50 transition-colors flex flex-col items-start">
-                  <Icon className="w-6 h-6 text-brand-primary mb-6" />
-                  <h4 className="font-bold text-slate-800 leading-snug">{item.title}</h4>
+                <div key={idx} className="group bg-white p-8 rounded-2xl border border-slate-200/60 surface-card-light transition-all duration-500 hover:-translate-y-1 hover:shadow-lg flex flex-col items-start">
+                  <div className="w-12 h-12 rounded-full bg-slate-50 flex items-center justify-center mb-6 group-hover:bg-brand-primary/10 transition-colors">
+                    <Icon className="w-6 h-6 text-brand-primary transition-transform group-hover:scale-110" />
+                  </div>
+                  <h4 className="font-bold text-slate-800 leading-snug group-hover:text-brand-primary transition-colors">{item.title}</h4>
                 </div>
               );
             })}
@@ -219,13 +221,15 @@ export default function ReviewsPage() {
             </p>
           </motion.div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-px bg-slate-200 border border-slate-200">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
             {classroomExperiences.map((item, idx) => {
               const IconComponent = item.icon;
               return (
-                <div key={idx} className="bg-white p-8 flex flex-col hover:bg-slate-50 transition-colors">
-                  <IconComponent className="w-6 h-6 text-brand-primary mb-6" />
-                  <h3 className="font-bold text-brand-navy tracking-tight leading-snug mb-4">{item.title}</h3>
+                <div key={idx} className="group bg-white p-8 rounded-2xl border border-slate-200/60 surface-card-light transition-all duration-500 hover:-translate-y-1 hover:shadow-lg flex flex-col">
+                  <div className="w-12 h-12 rounded-full bg-slate-50 flex items-center justify-center mb-6 group-hover:bg-brand-primary/10 transition-colors">
+                    <IconComponent className="w-6 h-6 text-brand-primary transition-transform group-hover:scale-110" />
+                  </div>
+                  <h3 className="font-bold text-brand-navy tracking-tight leading-snug mb-4 group-hover:text-brand-primary transition-colors">{item.title}</h3>
                   <p className="text-slate-600 text-sm leading-relaxed font-medium">{item.desc}</p>
                 </div>
               );
@@ -234,36 +238,37 @@ export default function ReviewsPage() {
         </div>
 
         {/* Section 5: Bottom CTA Card */}
-        <div className="bg-brand-navy text-white p-10 md:p-20 relative">
-          <div className="absolute top-0 right-0 p-6 flex gap-2">
-            <div className="w-1.5 h-1.5 bg-brand-primary rounded-none" />
-            <div className="w-1.5 h-1.5 bg-white/20 rounded-none" />
-            <div className="w-1.5 h-1.5 bg-white/20 rounded-none" />
+        <div className="bg-brand-navy text-white p-10 md:p-20 relative rounded-[32px] overflow-hidden shadow-2xl mt-12 border border-white/10">
+          <div className="absolute top-[-10%] right-[-5%] w-96 h-96 bg-brand-primary/20 blur-[100px] rounded-full pointer-events-none" />
+          <div className="absolute top-0 right-0 p-8 flex gap-3 z-10 hidden sm:flex">
+            <div className="w-2 h-2 rounded-full bg-brand-primary" />
+            <div className="w-2 h-2 rounded-full bg-white/20" />
+            <div className="w-2 h-2 rounded-full bg-white/20" />
           </div>
           
-          <div className="max-w-3xl">
+          <div className="max-w-3xl relative z-10">
             <h3 className="font-serif text-4xl md:text-5xl font-medium mb-6">
               Join Our Growing Learning Community
             </h3>
-            <p className="text-brand-primary font-mono text-sm uppercase tracking-widest mb-8">
+            <p className="text-brand-primary font-bold text-sm tracking-widest uppercase mb-8 flex items-center gap-2">
               Start your stock market learning journey today
             </p>
-            <p className="text-white/70 leading-relaxed mb-12 text-lg">
+            <p className="text-white/80 leading-relaxed mb-12 text-lg font-medium">
               Whether you are a student, working professional, entrepreneur, homemaker, or aspiring investor, our programs are designed to help you build strong financial knowledge and market confidence.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center gap-6">
+            <div className="flex flex-col sm:flex-row items-center gap-8">
               <a
                 href="tel:9845961990"
-                className="inline-flex items-center gap-3 px-8 py-4 bg-brand-primary text-brand-navy font-bold uppercase tracking-widest text-sm hover:bg-white transition-colors cursor-pointer"
+                className="inline-flex items-center gap-3 px-8 py-4 bg-cta-gold text-brand-navy font-bold rounded-xl shadow-brand-gold hover:shadow-brand-gold-lg hover:-translate-y-0.5 transition-all duration-300 group"
               >
-                <Phone className="w-4 h-4 text-brand-navy" />
+                <Phone className="w-5 h-5 group-hover:rotate-12 transition-transform" />
                 Call 9845961990
               </a>
               
-              <div className="text-left">
-                <span className="block text-xl font-bold tracking-tight text-white">Ashwini Trading Academy</span>
-                <span className="block text-xs font-mono text-white/50 uppercase tracking-widest mt-1">Learn • Analyze • Grow</span>
+              <div className="text-center sm:text-left">
+                <span className="block text-xl font-bold tracking-tight text-white mb-1">Ashwini Trading Academy</span>
+                <span className="block text-xs font-bold text-brand-primary/80 uppercase tracking-widest">Learn • Analyze • Grow</span>
               </div>
             </div>
           </div>

@@ -60,21 +60,21 @@ export default function Certifications() {
             </motion.p>
 
             {/* Certifications List */}
-            <motion.div variants={fadeIn} className="border-t border-slate-200 bg-white">
+            <motion.div variants={fadeIn} className="space-y-4">
               {certifications.map((cert, index) => (
                 <div 
                   key={index}
-                  className="flex items-center gap-5 p-6 border-b border-l border-r border-slate-200 hover:bg-slate-50 transition-colors"
+                  className="group flex items-center gap-5 p-6 rounded-2xl border border-slate-200/60 bg-white hover:border-brand-primary/30 surface-card-light transition-all duration-500 hover:-translate-y-1 hover:shadow-lg"
                 >
-                  <div className="text-brand-primary shrink-0 hidden sm:block">
-                    <BookOpen className="w-5 h-5" />
+                  <div className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-brand-primary/10 transition-colors shrink-0 hidden sm:flex">
+                    <BookOpen className="w-5 h-5 text-slate-600 group-hover:text-brand-primary transition-colors" />
                   </div>
                   <div>
-                    <span className="text-xs font-mono tracking-widest uppercase text-slate-400 block mb-1">{cert.series}</span>
-                    <h4 className="font-serif text-brand-navy font-medium text-xl tracking-tight leading-tight">{cert.title}</h4>
+                    <span className="text-xs font-mono tracking-widest uppercase text-slate-400 block mb-1 group-hover:text-brand-primary transition-colors">{cert.series}</span>
+                    <h4 className="font-serif text-brand-navy font-medium text-xl tracking-tight leading-tight group-hover:text-brand-primary transition-colors">{cert.title}</h4>
                     <p className="text-slate-500 text-sm font-light mt-1">{cert.desc}</p>
                   </div>
-                  <div className="ml-auto text-slate-300">
+                  <div className="ml-auto text-slate-300 group-hover:text-brand-primary transition-colors">
                     <ShieldCheck className="w-5 h-5" />
                   </div>
                 </div>

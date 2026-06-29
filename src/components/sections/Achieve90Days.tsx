@@ -70,10 +70,10 @@ export default function Achieve90Days() {
 
         {/* Achievements Grid (Tabular) */}
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-slate-200"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-100px" }}
           variants={staggerContainer}
         >
           {achievements.map((item, idx) => {
@@ -82,17 +82,19 @@ export default function Achieve90Days() {
               <motion.div 
                 key={idx}
                 variants={fadeIn}
-                className="p-8 md:p-12 border-r border-b border-slate-200 bg-white hover:bg-slate-50 transition-colors duration-300 flex flex-col"
+                className="group p-8 rounded-2xl border border-slate-200/60 bg-white hover:border-brand-primary/30 surface-card-light transition-all duration-500 hover:-translate-y-1 hover:shadow-lg flex flex-col"
               >
-                <div className="flex items-center justify-between mb-16">
-                  <span className="text-sm font-mono text-slate-400 tracking-wider">
+                <div className="flex items-center justify-between mb-12">
+                  <span className="text-xs font-mono text-slate-400 tracking-wider group-hover:text-brand-primary transition-colors">
                     MODULE {item.num}
                   </span>
-                  <IconComponent className="w-5 h-5 text-brand-primary" />
+                  <div className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-brand-primary/10 transition-colors">
+                    <IconComponent className="w-5 h-5 text-slate-600 group-hover:text-brand-primary transition-colors" />
+                  </div>
                 </div>
 
                 <div className="mt-auto">
-                  <h3 className="font-serif text-2xl font-medium text-brand-navy mb-4">
+                  <h3 className="font-serif text-2xl font-medium text-brand-navy mb-4 group-hover:text-brand-primary transition-colors">
                     {item.title}
                   </h3>
                   <p className="text-slate-600 text-[15px] leading-relaxed font-light">

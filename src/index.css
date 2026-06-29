@@ -180,7 +180,7 @@
     -webkit-tap-highlight-color: transparent;
   }
   a, button, input, select, textarea {
-    @apply transition-colors duration-250;
+    @apply transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background;
   }
   ::selection {
     background: color-mix(in srgb, var(--color-brand-primary) 35%, transparent);

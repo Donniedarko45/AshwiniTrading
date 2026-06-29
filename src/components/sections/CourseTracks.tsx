@@ -30,7 +30,7 @@ export default function CourseTracks() {
         </motion.div>
  
         <motion.div 
-          className="grid lg:grid-cols-3 border-t border-l border-slate-200 bg-white"
+          className="grid lg:grid-cols-3 gap-6"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
@@ -41,26 +41,26 @@ export default function CourseTracks() {
               <motion.div 
                 key={course.id}
                 variants={fadeIn} 
-                className="p-8 md:p-12 border-r border-b border-slate-200 hover:bg-slate-50 transition-colors duration-300 flex flex-col h-full"
+                className="group p-8 md:p-10 rounded-2xl border border-slate-200/60 bg-white hover:border-brand-primary/30 surface-card-light transition-all duration-500 hover:-translate-y-1 hover:shadow-lg flex flex-col h-full"
               >
                 {/* Badges */}
                 <div className="flex flex-wrap gap-2 mb-10">
                   {course.badgeType === 'popular' && (
-                    <div className="px-3 py-1 border border-brand-secondary/30 bg-brand-secondary/5 text-brand-secondary font-bold text-[10px] tracking-widest uppercase">
+                    <div className="px-3 py-1 rounded-full border border-brand-secondary/30 bg-brand-secondary/5 text-brand-secondary font-bold text-[10px] tracking-widest uppercase">
                       Most Popular
                     </div>
                   )}
                   {course.badgeType === 'flagship' && (
-                    <div className="px-3 py-1 border border-brand-primary/30 bg-brand-primary/5 text-brand-primary font-bold text-[10px] tracking-widest uppercase">
+                    <div className="px-3 py-1 rounded-full border border-brand-primary/30 bg-brand-primary/5 text-brand-primary font-bold text-[10px] tracking-widest uppercase">
                       Flagship Program
                     </div>
                   )}
-                  <div className="px-3 py-1 border border-slate-300 bg-white text-slate-500 font-bold text-[10px] tracking-widest uppercase">
+                  <div className="px-3 py-1 rounded-full border border-slate-300 bg-white text-slate-500 font-bold text-[10px] tracking-widest uppercase">
                     {course.badge}
                   </div>
                 </div>
 
-                 <h3 className="font-serif text-3xl font-medium text-brand-navy mb-8 tracking-tight">
+                 <h3 className="font-serif text-3xl font-medium text-brand-navy mb-8 tracking-tight group-hover:text-brand-primary transition-colors">
                   {course.title}
                 </h3>
                 
@@ -90,13 +90,13 @@ export default function CourseTracks() {
                     ))}
                     
                     {course.idealAudience && (
-                      <li className="flex items-start gap-3 mt-6 text-[14px] font-medium text-slate-600 p-4 border border-slate-200 bg-white">
+                      <li className="flex items-start gap-3 mt-6 text-[14px] font-medium text-slate-600 p-4 rounded-xl border border-slate-200 bg-white shadow-sm">
                         <span><strong>Ideal for:</strong> {course.idealAudience}</span>
                       </li>
                     )}
                     
                     {course.bonus && (
-                      <li className="flex items-start gap-3 mt-3 text-[14px] font-medium text-brand-success p-4 border border-brand-success/30 bg-brand-success/5">
+                      <li className="flex items-start gap-3 mt-3 text-[14px] font-medium text-brand-success p-4 rounded-xl border border-brand-success/30 bg-brand-success/5 shadow-sm">
                         <span><strong>Bonus:</strong> {course.bonus}</span>
                       </li>
                     )}
@@ -121,7 +121,7 @@ export default function CourseTracks() {
                     <motion.button 
                       whileHover={{ scale: 1.01 }} 
                       whileTap={{ scale: 0.99 }} 
-                      className="w-full h-12 flex justify-center items-center gap-2 border border-brand-navy bg-brand-navy text-white font-bold text-xs tracking-widest uppercase hover:bg-slate-900 transition-colors cursor-pointer"
+                      className="w-full h-12 flex justify-center items-center gap-2 rounded-xl border border-brand-navy bg-brand-navy text-white font-bold text-xs tracking-widest uppercase hover:bg-slate-900 transition-colors cursor-pointer hover:-translate-y-0.5 shadow-md"
                     >
                        View Course Details
                     </motion.button>
@@ -131,7 +131,7 @@ export default function CourseTracks() {
                     <motion.button 
                       whileHover={{ scale: 1.01 }} 
                       whileTap={{ scale: 0.99 }} 
-                      className="w-full h-12 border border-slate-300 bg-white text-slate-700 font-bold text-xs tracking-widest uppercase hover:bg-slate-50 transition-colors cursor-pointer"
+                      className="w-full h-12 rounded-xl border border-slate-300 bg-white text-slate-700 font-bold text-xs tracking-widest uppercase hover:bg-slate-50 transition-colors cursor-pointer hover:-translate-y-0.5 shadow-sm"
                     >
                        Get Syllabus via WhatsApp
                      </motion.button>
