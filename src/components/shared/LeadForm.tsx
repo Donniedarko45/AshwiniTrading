@@ -74,20 +74,6 @@ export function LeadForm({
         <h3 className="font-serif text-2xl sm:text-[28px] font-medium text-white mb-4 leading-tight tracking-tight">
           Secure Your Free<br />Career Consultation
         </h3>
-        <div className="space-y-2.5">
-          {[
-            'Personalized roadmap',
-            'Curriculum walkthrough',
-            'Career guidance'
-          ].map((benefit, idx) => (
-            <div key={idx} className="flex items-center gap-2.5 justify-center sm:justify-start">
-              <div className="flex-shrink-0 w-4 h-4 rounded-full bg-brand-primary/20 flex items-center justify-center">
-                <Check className="w-2.5 h-2.5 text-brand-primary stroke-[3px]" />
-              </div>
-              <span className="text-[13px] font-medium text-slate-300">{benefit}</span>
-            </div>
-          ))}
-        </div>
       </div>
 
       <div className="space-y-5">
