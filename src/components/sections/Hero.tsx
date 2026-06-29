@@ -1,60 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Check } from 'lucide-react';
 import { motion } from 'motion/react';
 import { fadeIn, staggerContainer } from '@/lib/animations';
 import { LeadForm } from '@/components/shared/LeadForm';
-
-const AbstractChart = () => {
-  const [bars, setBars] = useState<number[]>([]);
-
-  useEffect(() => {
-    // Initial bars
-    setBars(Array.from({ length: 30 }, () => Math.random() * 80 + 10));
-    
-    const interval = setInterval(() => {
-      setBars(prev => {
-        if (prev.length === 0) return prev;
-        const newBars = [...prev.slice(1), Math.random() * 80 + 10];
-        return newBars;
-      });
-    }, 800);
-    return () => clearInterval(interval);
-  }, []);
-
-  return (
-    <div className="h-full w-full flex items-end gap-1 p-6 bg-brand-navy border-t lg:border-t-0 border-white/10 relative overflow-hidden">
-      <div className="absolute top-4 left-6 flex gap-4 text-xs font-mono text-white/40 tracking-widest z-10">
-        <span>MARKET_TAPE</span>
-        <span className="text-brand-success flex items-center gap-2">
-           <span className="relative flex h-1.5 w-1.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-success opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-brand-success"></span>
-           </span>
-           LIVE
-        </span>
-      </div>
-      
-      {/* Ticker Grid Lines */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:100%_40px,40px_100%] pointer-events-none" />
-
-      {bars.map((val, i) => (
-        <motion.div
-          key={i}
-          initial={{ height: 0 }}
-          animate={{ height: `${val}%` }}
-          transition={{ duration: 0.4, ease: "linear" }}
-          className={`flex-1 max-w-[20px] border-t-2 relative z-10 ${
-            i === bars.length - 1 
-              ? 'bg-brand-primary/20 border-brand-primary' 
-              : val > (bars[i-1] || 50) 
-                ? 'bg-white/5 border-brand-success/50' 
-                : 'bg-white/5 border-brand-error/50'
-          }`}
-        />
-      ))}
-    </div>
-  );
-};
 
 export default function Hero() {
   const features = [
@@ -121,13 +69,8 @@ export default function Hero() {
 
         {/* Right Side Grid */}
         <div className="lg:col-span-5 flex flex-col lg:h-full">
-           {/* Top Abstract Visual (Signature Element) */}
-           <div className="h-[250px] lg:min-h-[350px] lg:flex-1 w-full shrink-0">
-             <AbstractChart />
-           </div>
-
-           {/* Bottom Form Container */}
-           <div className="flex-1 lg:flex-none p-8 md:p-12 border-t border-white/10 bg-brand-navy relative flex flex-col justify-center">
+           {/* Form Container */}
+           <div className="flex-1 p-8 md:p-12 bg-brand-navy relative flex flex-col justify-center">
              <div className="absolute top-0 right-0 p-6 flex gap-2">
                 <div className="w-1.5 h-1.5 bg-brand-primary rounded-none" />
                 <div className="w-1.5 h-1.5 bg-white/20 rounded-none" />
