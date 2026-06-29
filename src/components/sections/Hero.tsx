@@ -6,17 +6,12 @@ import { LeadForm } from '@/components/shared/LeadForm';
 
 export default function Hero() {
   const benefits = [
-    "Live Market Sessions",
-    "AI Trading Simulator",
-    "Lifetime Community",
-    "Placement Assistance"
-  ];
-
-  const stats = [
-    { label: "Google Rating", value: "4.9", icon: <Star className="w-4 h-4 fill-brand-primary text-brand-primary" /> },
-    { label: "Students", value: "12,000+", icon: null },
-    { label: "Alumni", value: "5000+", icon: null },
-    { label: "Satisfaction", value: "95%", icon: null }
+    "NISM Certification Exam Training",
+    "Technical Analysis & Chart Reading",
+    "Fundamental Analysis & Company Research",
+    "AI-Powered Market Analysis",
+    "Beginner to Advanced Programs",
+    "Online & Classroom Training"
   ];
 
   return (
@@ -27,9 +22,9 @@ export default function Hero() {
       <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03] pointer-events-none mix-blend-overlay" />
 
       <div className="max-w-[1400px] mx-auto px-6 relative z-10">
-        
+
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center min-h-[calc(100vh-180px)]">
-          
+
           {/* Left Content Column */}
           <motion.div
             initial="hidden"
@@ -50,7 +45,7 @@ export default function Hero() {
               variants={fadeIn}
               className="text-slate-300 text-lg sm:text-xl leading-relaxed mb-10 max-w-2xl font-normal"
             >
-              Learn directly from SEBI-certified professionals through live market sessions, structured curriculum, practical trading simulations and placement assistance.
+              At Ashwini Trading Academy, we don’t just teach theory we train you to understand real market movements, identify opportunities, manage risk, and make informed investment decisions using modern tools, AI-powered analysis, and practical market exposure.
             </motion.p>
 
             {/* Key Benefits */}
@@ -81,9 +76,9 @@ export default function Hero() {
             {/* CTAs */}
             <motion.div variants={fadeIn} className="flex flex-col sm:flex-row items-center gap-4">
               <button onClick={() => {
-                  const form = document.getElementById('name-card');
-                  if (form) form.focus();
-                }} 
+                const form = document.getElementById('name-card');
+                if (form) form.focus();
+              }}
                 className="w-full sm:w-auto h-14 px-8 flex items-center justify-center gap-2 bg-cta-gold text-brand-navy font-bold text-[15px] rounded-xl shadow-brand-gold hover:shadow-brand-gold-lg hover:-translate-y-0.5 transition-all duration-300 group"
               >
                 Book Free Consultation
@@ -108,7 +103,7 @@ export default function Hero() {
 
         </div>
       </div>
-      
+
       {/* Bottom Trust Strip */}
       <div className="absolute bottom-0 left-0 right-0 border-t border-white/5 bg-white/[0.02] backdrop-blur-md py-4">
         <div className="max-w-[1400px] mx-auto px-6 flex flex-wrap items-center justify-center sm:justify-between gap-6 opacity-70">
