@@ -66,7 +66,10 @@ export default function App() {
   const showNavbar = !['checkout', 'payment-status', 'payment-success', 'payment-failed'].includes(currentView);
 
   return (
-    <div className="min-h-screen bg-brand-bg-dark font-sans selection:bg-brand-primary/30 text-slate-800">
+    <div className="min-h-screen bg-brand-bg-dark font-sans selection:bg-brand-primary/30 text-slate-800 relative">
+      {/* Global Noise Texture */}
+      <div className="pointer-events-none fixed inset-0 z-[9999] opacity-[0.015] mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+      
       {showNavbar && <Navbar />}
       <main>
         {currentView === 'landing' && (

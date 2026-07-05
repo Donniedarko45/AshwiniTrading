@@ -134,10 +134,10 @@ export default function JoinUs() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
               id="join-form-card"
-              className="bg-white p-6 sm:p-8 rounded-[28px] border border-slate-200/85 shadow-md relative overflow-hidden"
+              className="bg-white p-6 sm:p-8 rounded-[28px] border border-slate-200/50 shadow-[0_32px_64px_-16px_rgb(15,23,42,0.1)] relative overflow-hidden"
             >
               {/* Top accent gradient stripe */}
-              <div className="absolute top-0 left-0 w-full h-1.5 bg-brand-primary" />
+              <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-brand-primary to-brand-secondary" />
 
               <h2 className="text-2xl font-extrabold tracking-tight mb-2 text-brand-navy">Join the Academy</h2>
               <p className="text-slate-500 text-xs font-semibold uppercase tracking-wider mb-6">Register your seat today</p>
@@ -333,12 +333,12 @@ export default function JoinUs() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className="bg-white border border-slate-200/80 rounded-2xl p-5 hover:border-brand-primary/45 transition-all duration-300 shadow-sm"
+                className="pt-5 pb-2 transition-all duration-300 flex items-start gap-4 border-t border-slate-200"
               >
-                <div className="w-8 h-8 rounded-lg bg-brand-primary/10 border border-brand-primary/20 flex items-center justify-center text-brand-primary mb-4">
+                <div className="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center text-brand-primary shrink-0 mt-0.5">
                   <Check className="w-4 h-4 stroke-[3px]" />
                 </div>
-                <h4 className="font-bold text-[15px] text-brand-navy tracking-tight">{item}</h4>
+                <h4 className="font-bold text-[15px] text-brand-navy tracking-tight mt-1">{item}</h4>
               </motion.div>
             ))}
           </div>
@@ -369,13 +369,13 @@ export default function JoinUs() {
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
-                  className="bg-white border border-slate-200/80 rounded-3xl p-6 hover:border-brand-primary/45 transition-all duration-300 flex flex-col justify-between shadow-sm"
+                  className="pt-6 pb-2 border-t-2 border-slate-200 transition-all duration-300 flex flex-col justify-between hover:border-brand-primary/50"
                 >
                   <div>
-                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-5 ${
-                      item.color === 'gold' ? 'bg-brand-primary/10 text-brand-primary' : 'bg-brand-secondary/10 text-brand-secondary'
+                    <div className={`w-10 h-10 flex items-center mb-5 ${
+                      item.color === 'gold' ? 'text-brand-primary' : 'text-brand-secondary'
                     }`}>
-                      <Icon className="w-5 h-5" />
+                      <Icon className="w-8 h-8" />
                     </div>
                     <h3 className="font-extrabold text-lg text-brand-navy mb-3 tracking-tight">{item.title}</h3>
                     <p className="text-slate-600 text-[13px] leading-relaxed font-medium">{item.desc}</p>

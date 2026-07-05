@@ -41,17 +41,21 @@ export default function CourseTracks() {
               <motion.div 
                 key={course.id}
                 variants={fadeIn} 
-                className="group p-8 md:p-10 rounded-2xl border border-slate-200/60 bg-white hover:border-brand-primary/30 surface-card-light transition-all duration-500 hover:-translate-y-1 hover:shadow-lg flex flex-col h-full"
+                className={`group p-8 md:p-10 rounded-2xl border transition-all duration-500 flex flex-col h-full relative ${
+                  course.badgeType === 'flagship'
+                    ? 'border-brand-primary bg-white shadow-[0_8px_30px_rgb(201,162,39,0.15)] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgb(201,162,39,0.25)] scale-[1.02] z-10'
+                    : 'border-slate-200/60 bg-white hover:border-brand-primary/30 surface-card-light hover:-translate-y-1 hover:shadow-lg'
+                }`}
               >
                 {/* Badges */}
-                <div className="flex flex-wrap gap-2 mb-10">
+                <div className="flex flex-wrap gap-2 mb-8">
                   {course.badgeType === 'popular' && (
                     <div className="px-3 py-1 rounded-full border border-brand-secondary/30 bg-brand-secondary/5 text-brand-secondary font-bold text-[10px] tracking-widest uppercase">
                       Most Popular
                     </div>
                   )}
                   {course.badgeType === 'flagship' && (
-                    <div className="px-3 py-1 rounded-full border border-brand-primary/30 bg-brand-primary/5 text-brand-primary font-bold text-[10px] tracking-widest uppercase">
+                    <div className="px-3 py-1 rounded-full border border-brand-primary bg-brand-primary/10 text-brand-primary font-bold text-[10px] tracking-widest uppercase shadow-sm">
                       Flagship Program
                     </div>
                   )}
@@ -60,7 +64,7 @@ export default function CourseTracks() {
                   </div>
                 </div>
 
-                 <h3 className="font-serif text-3xl font-medium text-brand-navy mb-8 tracking-tight group-hover:text-brand-primary transition-colors">
+                 <h3 className="font-serif text-3xl font-medium text-brand-navy mb-8 tracking-tight group-hover:text-brand-primary transition-colors min-h-[4rem] flex items-start">
                   {course.title}
                 </h3>
                 

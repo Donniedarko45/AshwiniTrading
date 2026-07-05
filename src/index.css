@@ -179,7 +179,10 @@
     @apply font-sans scroll-smooth scroll-pt-20;
     -webkit-tap-highlight-color: transparent;
   }
-  a, button, input, select, textarea {
+  a, button {
+    @apply transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background active:scale-[0.98] active:translate-y-[1px];
+  }
+  input, select, textarea {
     @apply transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background;
   }
   ::selection {

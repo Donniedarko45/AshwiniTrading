@@ -88,24 +88,24 @@ export default function WhyChooseUs() {
             <motion.div
               key={idx}
               variants={fadeIn}
-              className="group p-8 rounded-2xl border border-slate-200/60 bg-white hover:border-brand-primary/30 surface-card-light transition-all duration-500 hover:-translate-y-1 hover:shadow-lg flex flex-col h-full"
+              className="group pt-8 pb-4 border-t border-slate-200 transition-all duration-500 flex flex-col h-full"
             >
               <div className="flex items-center justify-between mb-8">
                 <span className="text-xs font-mono text-slate-400 tracking-wider group-hover:text-brand-primary transition-colors">
                   {String(idx + 1).padStart(2, '0')}
                 </span>
-                <div className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-brand-primary/10 transition-colors">
-                  <div className="text-slate-600 group-hover:text-brand-primary transition-colors">
+                <div className="w-10 h-10 flex items-center justify-end transition-colors">
+                  <div className="text-slate-400 group-hover:text-brand-primary group-hover:scale-110 transition-all duration-300">
                     {item.icon}
                   </div>
                 </div>
               </div>
 
               <div>
-                <h3 className="font-serif text-xl font-medium text-brand-navy mb-3 group-hover:text-brand-primary transition-colors">
+                <h3 className="font-serif text-2xl font-medium text-brand-navy mb-4 group-hover:text-brand-primary transition-colors">
                   {item.title}
                 </h3>
-                <p className="text-slate-600 text-[14px] leading-relaxed font-light">
+                <p className="text-slate-600 text-[15px] leading-relaxed font-light">
                   {item.desc}
                 </p>
               </div>

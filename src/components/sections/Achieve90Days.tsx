@@ -82,24 +82,28 @@ export default function Achieve90Days() {
               <motion.div 
                 key={idx}
                 variants={fadeIn}
-                className="group p-8 rounded-2xl border border-slate-200/60 bg-white hover:border-brand-primary/30 surface-card-light transition-all duration-500 hover:-translate-y-1 hover:shadow-lg flex flex-col"
+                className="group flex flex-col pt-4 relative transition-all duration-500"
               >
-                <div className="flex items-center justify-between mb-12">
-                  <span className="text-xs font-mono text-slate-400 tracking-wider group-hover:text-brand-primary transition-colors">
-                    MODULE {item.num}
-                  </span>
-                  <div className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-brand-primary/10 transition-colors">
-                    <IconComponent className="w-5 h-5 text-slate-600 group-hover:text-brand-primary transition-colors" />
-                  </div>
+                {/* Large Background Number */}
+                <div className="absolute -top-6 -left-4 text-8xl font-serif font-black text-slate-100 group-hover:text-brand-primary/10 transition-colors z-0 select-none pointer-events-none">
+                  {item.num}
                 </div>
 
-                <div className="mt-auto">
-                  <h3 className="font-serif text-2xl font-medium text-brand-navy mb-4 group-hover:text-brand-primary transition-colors">
-                    {item.title}
-                  </h3>
-                  <p className="text-slate-600 text-[15px] leading-relaxed font-light">
-                    {item.desc}
-                  </p>
+                <div className="relative z-10 flex flex-col h-full pl-2">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="w-12 h-12 flex items-center justify-center bg-brand-navy text-white group-hover:bg-brand-primary transition-colors">
+                      <IconComponent className="w-5 h-5" />
+                    </div>
+                  </div>
+
+                  <div className="mt-auto">
+                    <h3 className="font-serif text-2xl font-medium text-brand-navy mb-3 group-hover:text-brand-primary transition-colors">
+                      {item.title}
+                    </h3>
+                    <p className="text-slate-600 text-[15px] leading-relaxed font-light">
+                      {item.desc}
+                    </p>
+                  </div>
                 </div>
               </motion.div>
             );

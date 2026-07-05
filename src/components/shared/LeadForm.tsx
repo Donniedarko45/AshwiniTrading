@@ -71,7 +71,7 @@ export function LeadForm({
       
       {/* Premium Form Header */}
       <div className="mb-8 text-center sm:text-left">
-        <h3 className="font-serif text-2xl sm:text-[28px] font-medium text-white mb-4 leading-tight tracking-tight">
+        <h3 className={`font-serif text-2xl sm:text-[28px] font-medium mb-4 leading-tight tracking-tight ${isLight ? 'text-brand-navy' : 'text-white'}`}>
           Secure Your Free<br />Career Consultation
         </h3>
       </div>
@@ -79,10 +79,10 @@ export function LeadForm({
       <div className="space-y-5">
         {/* Name */}
         <div className="space-y-1.5 group">
-          <label htmlFor="name-card" className="text-[13px] font-medium text-slate-400 pl-1">
+          <label htmlFor="name-card" className={`text-[13px] font-medium pl-1 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
             Full Name *
           </label>
-          <div className={`relative transition-all duration-300 rounded-xl bg-white/5 border ${focusedField === 'name' ? 'border-brand-primary shadow-[0_0_15px_rgba(201,162,39,0.3)]' : 'border-white/10 hover:border-white/20'}`}>
+          <div className={`relative transition-all duration-300 rounded-xl border ${isLight ? 'bg-slate-50' : 'bg-white/5'} ${focusedField === 'name' ? 'border-brand-primary shadow-[0_0_15px_rgba(201,162,39,0.15)]' : isLight ? 'border-slate-200 hover:border-slate-300' : 'border-white/10 hover:border-white/20'}`}>
             <Input
               id="name-card"
               name="name"
@@ -94,7 +94,7 @@ export function LeadForm({
               onFocus={() => setFocusedField('name')}
               onBlur={() => setFocusedField(null)}
               aria-invalid={!!errors.name}
-              className="h-14 text-[15px] font-medium rounded-xl bg-transparent border-0 text-white placeholder:text-slate-500 shadow-none focus-visible:ring-0 px-4"
+              className={`h-14 text-[15px] font-medium rounded-xl bg-transparent border-0 shadow-none focus-visible:ring-0 px-4 ${isLight ? 'text-brand-navy placeholder:text-slate-400' : 'text-white placeholder:text-slate-500'}`}
             />
           </div>
           {errors.name && <span className="text-xs text-brand-error pl-1">{errors.name}</span>}
@@ -102,13 +102,13 @@ export function LeadForm({
 
         {/* Phone */}
         <div className="space-y-1.5 group">
-          <label htmlFor="phone-card" className="text-[13px] font-medium text-slate-400 pl-1">
+          <label htmlFor="phone-card" className={`text-[13px] font-medium pl-1 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
             Mobile Number *
           </label>
-          <div className={`flex relative transition-all duration-300 rounded-xl bg-white/5 border ${focusedField === 'phone' ? 'border-brand-primary shadow-[0_0_15px_rgba(201,162,39,0.3)]' : 'border-white/10 hover:border-white/20'}`}>
-            <div className="flex items-center justify-center pl-4 pr-3 border-r border-white/10 select-none">
+          <div className={`flex relative transition-all duration-300 rounded-xl border ${isLight ? 'bg-slate-50' : 'bg-white/5'} ${focusedField === 'phone' ? 'border-brand-primary shadow-[0_0_15px_rgba(201,162,39,0.15)]' : isLight ? 'border-slate-200 hover:border-slate-300' : 'border-white/10 hover:border-white/20'}`}>
+            <div className={`flex items-center justify-center pl-4 pr-3 border-r select-none ${isLight ? 'border-slate-200' : 'border-white/10'}`}>
               <span className="text-lg mr-2">🇮🇳</span>
-              <span className="text-slate-300 font-medium text-[15px]">+91</span>
+              <span className={`font-medium text-[15px] ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>+91</span>
             </div>
             <Input
               id="phone-card"
@@ -122,7 +122,7 @@ export function LeadForm({
               onFocus={() => setFocusedField('phone')}
               onBlur={() => setFocusedField(null)}
               aria-invalid={!!errors.phone}
-              className="h-14 flex-1 text-[15px] font-medium rounded-r-xl bg-transparent border-0 text-white placeholder:text-slate-500 shadow-none focus-visible:ring-0 px-4"
+              className={`h-14 flex-1 text-[15px] font-medium rounded-r-xl bg-transparent border-0 shadow-none focus-visible:ring-0 px-4 ${isLight ? 'text-brand-navy placeholder:text-slate-400' : 'text-white placeholder:text-slate-500'}`}
             />
           </div>
           {errors.phone && <span className="text-xs text-brand-error pl-1">{errors.phone}</span>}
@@ -130,10 +130,10 @@ export function LeadForm({
 
         {/* Role Dropdown */}
         <div className="space-y-1.5 group">
-          <label htmlFor="role-card" className="text-[13px] font-medium text-slate-400 pl-1">
+          <label htmlFor="role-card" className={`text-[13px] font-medium pl-1 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
             I am a...
           </label>
-          <div className={`relative transition-all duration-300 rounded-xl bg-white/5 border ${focusedField === 'role' ? 'border-brand-primary shadow-[0_0_15px_rgba(201,162,39,0.3)]' : 'border-white/10 hover:border-white/20'}`}>
+          <div className={`relative transition-all duration-300 rounded-xl border ${isLight ? 'bg-slate-50' : 'bg-white/5'} ${focusedField === 'role' ? 'border-brand-primary shadow-[0_0_15px_rgba(201,162,39,0.15)]' : isLight ? 'border-slate-200 hover:border-slate-300' : 'border-white/10 hover:border-white/20'}`}>
             <select
               id="role-card"
               name="role"
@@ -141,18 +141,18 @@ export function LeadForm({
               onChange={handleChange}
               onFocus={() => setFocusedField('role')}
               onBlur={() => setFocusedField(null)}
-              className="w-full appearance-none h-14 rounded-xl bg-transparent border-0 px-4 text-[15px] font-medium text-white focus:outline-none focus:ring-0 cursor-pointer"
+              className={`w-full appearance-none h-14 rounded-xl bg-transparent border-0 px-4 text-[15px] font-medium focus:outline-none focus:ring-0 cursor-pointer ${isLight ? 'text-brand-navy' : 'text-white'}`}
             >
-              <option value="Student" className="bg-slate-800 text-white">Student</option>
-              <option value="Working Professional" className="bg-slate-800 text-white">Working Professional</option>
-              <option value="Investor" className="bg-slate-800 text-white">Investor</option>
-              <option value="Trader" className="bg-slate-800 text-white">Trader</option>
-              <option value="Entrepreneur" className="bg-slate-800 text-white">Entrepreneur</option>
-              <option value="Homemaker" className="bg-slate-800 text-white">Homemaker</option>
-              <option value="Retired Professional" className="bg-slate-800 text-white">Retired Professional</option>
-              <option value="Other" className="bg-slate-800 text-white">Other</option>
+              <option value="Student" className={isLight ? 'bg-white text-brand-navy' : 'bg-slate-800 text-white'}>Student</option>
+              <option value="Working Professional" className={isLight ? 'bg-white text-brand-navy' : 'bg-slate-800 text-white'}>Working Professional</option>
+              <option value="Investor" className={isLight ? 'bg-white text-brand-navy' : 'bg-slate-800 text-white'}>Investor</option>
+              <option value="Trader" className={isLight ? 'bg-white text-brand-navy' : 'bg-slate-800 text-white'}>Trader</option>
+              <option value="Entrepreneur" className={isLight ? 'bg-white text-brand-navy' : 'bg-slate-800 text-white'}>Entrepreneur</option>
+              <option value="Homemaker" className={isLight ? 'bg-white text-brand-navy' : 'bg-slate-800 text-white'}>Homemaker</option>
+              <option value="Retired Professional" className={isLight ? 'bg-white text-brand-navy' : 'bg-slate-800 text-white'}>Retired Professional</option>
+              <option value="Other" className={isLight ? 'bg-white text-brand-navy' : 'bg-slate-800 text-white'}>Other</option>
             </select>
-            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-400">
+            <div className={`pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 ${isLight ? 'text-slate-400' : 'text-slate-400'}`}>
               <ChevronDown className="w-4 h-4" />
             </div>
           </div>
@@ -160,10 +160,10 @@ export function LeadForm({
 
         {/* Learning Goal Dropdown */}
         <div className="space-y-1.5 group">
-          <label htmlFor="learning-goal-card" className="text-[13px] font-medium text-slate-400 pl-1">
+          <label htmlFor="learning-goal-card" className={`text-[13px] font-medium pl-1 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
             Learning Goal
           </label>
-          <div className={`relative transition-all duration-300 rounded-xl bg-white/5 border ${focusedField === 'goal' ? 'border-brand-primary shadow-[0_0_15px_rgba(201,162,39,0.3)]' : 'border-white/10 hover:border-white/20'}`}>
+          <div className={`relative transition-all duration-300 rounded-xl border ${isLight ? 'bg-slate-50' : 'bg-white/5'} ${focusedField === 'goal' ? 'border-brand-primary shadow-[0_0_15px_rgba(201,162,39,0.15)]' : isLight ? 'border-slate-200 hover:border-slate-300' : 'border-white/10 hover:border-white/20'}`}>
             <select
               id="learning-goal-card"
               name="learningGoal"
@@ -171,18 +171,18 @@ export function LeadForm({
               onChange={handleChange}
               onFocus={() => setFocusedField('goal')}
               onBlur={() => setFocusedField(null)}
-              className="w-full appearance-none h-14 rounded-xl bg-transparent border-0 px-4 text-[15px] font-medium text-white focus:outline-none focus:ring-0 cursor-pointer"
+              className={`w-full appearance-none h-14 rounded-xl bg-transparent border-0 px-4 text-[15px] font-medium focus:outline-none focus:ring-0 cursor-pointer ${isLight ? 'text-brand-navy' : 'text-white'}`}
             >
-              <option value="Learn Stock Market Basics" className="bg-slate-800 text-white">Learn Stock Market Basics</option>
-              <option value="Technical Analysis" className="bg-slate-800 text-white">Technical Analysis</option>
-              <option value="Fundamental Analysis" className="bg-slate-800 text-white">Fundamental Analysis</option>
-              <option value="Futures & Options" className="bg-slate-800 text-white">Futures & Options</option>
-              <option value="Long-Term Investing" className="bg-slate-800 text-white">Long-Term Investing</option>
-              <option value="Swing Trading" className="bg-slate-800 text-white">Swing Trading</option>
-              <option value="NISM Certification" className="bg-slate-800 text-white">NISM Certification</option>
-              <option value="Career in Financial Markets" className="bg-slate-800 text-white">Career in Financial Markets</option>
+              <option value="Learn Stock Market Basics" className={isLight ? 'bg-white text-brand-navy' : 'bg-slate-800 text-white'}>Learn Stock Market Basics</option>
+              <option value="Technical Analysis" className={isLight ? 'bg-white text-brand-navy' : 'bg-slate-800 text-white'}>Technical Analysis</option>
+              <option value="Fundamental Analysis" className={isLight ? 'bg-white text-brand-navy' : 'bg-slate-800 text-white'}>Fundamental Analysis</option>
+              <option value="Futures & Options" className={isLight ? 'bg-white text-brand-navy' : 'bg-slate-800 text-white'}>Futures & Options</option>
+              <option value="Long-Term Investing" className={isLight ? 'bg-white text-brand-navy' : 'bg-slate-800 text-white'}>Long-Term Investing</option>
+              <option value="Swing Trading" className={isLight ? 'bg-white text-brand-navy' : 'bg-slate-800 text-white'}>Swing Trading</option>
+              <option value="NISM Certification" className={isLight ? 'bg-white text-brand-navy' : 'bg-slate-800 text-white'}>NISM Certification</option>
+              <option value="Career in Financial Markets" className={isLight ? 'bg-white text-brand-navy' : 'bg-slate-800 text-white'}>Career in Financial Markets</option>
             </select>
-            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-400">
+            <div className={`pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 ${isLight ? 'text-slate-400' : 'text-slate-400'}`}>
               <ChevronDown className="w-4 h-4" />
             </div>
           </div>
@@ -190,17 +190,17 @@ export function LeadForm({
 
         {/* Segmented Control for Learning Mode */}
         <div className="space-y-2 pt-2">
-          <label className="text-[13px] font-medium text-slate-400 pl-1 block">
+          <label className={`text-[13px] font-medium pl-1 block ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
             Preferred Learning Mode
           </label>
-          <div className="flex p-1 bg-white/5 rounded-xl border border-white/10 relative">
+          <div className={`flex p-1 rounded-xl border relative ${isLight ? 'bg-slate-100 border-slate-200' : 'bg-white/5 border-white/10'}`}>
             <button
               type="button"
               onClick={() => handleLearningModeChange('Online')}
               className={`flex-1 h-11 text-[13px] font-semibold rounded-lg transition-all duration-300 z-10 ${
                 formData.learningMode === 'Online'
-                  ? 'bg-white text-brand-navy shadow-sm'
-                  : 'text-slate-400 hover:text-white'
+                  ? (isLight ? 'bg-white text-brand-navy shadow-sm' : 'bg-white text-brand-navy shadow-sm')
+                  : (isLight ? 'text-slate-500 hover:text-brand-navy' : 'text-slate-400 hover:text-white')
               }`}
             >
               Online
@@ -210,8 +210,8 @@ export function LeadForm({
               onClick={() => handleLearningModeChange('Classroom')}
               className={`flex-1 h-11 text-[13px] font-semibold rounded-lg transition-all duration-300 z-10 ${
                 formData.learningMode === 'Classroom'
-                  ? 'bg-white text-brand-navy shadow-sm'
-                  : 'text-slate-400 hover:text-white'
+                  ? (isLight ? 'bg-white text-brand-navy shadow-sm' : 'bg-white text-brand-navy shadow-sm')
+                  : (isLight ? 'text-slate-500 hover:text-brand-navy' : 'text-slate-400 hover:text-white')
               }`}
             >
               Classroom
@@ -241,13 +241,13 @@ export function LeadForm({
             </>
           )}
         </motion.button>
-        <p className="text-center text-[12px] text-slate-400 mt-4 font-medium tracking-wide">
+        <p className={`text-center text-[12px] mt-4 font-medium tracking-wide ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
           Your information is used only to assist you with course enquiries.
         </p>
       </div>
 
       {/* Bottom Trust strip */}
-      <div className="pt-6 mt-6 border-t border-dashed border-white/10 space-y-3">
+      <div className={`pt-6 mt-6 border-t border-dashed space-y-3 ${isLight ? 'border-slate-200' : 'border-white/10'}`}>
         {[
           'SEBI Registered Research Analyst',
           'Practical Market Education',
@@ -255,10 +255,10 @@ export function LeadForm({
           'Beginner to Advanced Programs'
         ].map((trust, tIdx) => (
           <div key={tIdx} className="flex items-center gap-2.5">
-            <span className="flex-shrink-0 w-4 h-4 rounded-full bg-brand-primary/10 text-brand-primary flex items-center justify-center">
+            <span className={`flex-shrink-0 w-4 h-4 rounded-full flex items-center justify-center ${isLight ? 'bg-brand-success/15 text-brand-success' : 'bg-brand-primary/10 text-brand-primary'}`}>
               <Check className="w-2.5 h-2.5 stroke-[3px]" />
             </span>
-            <span className="text-[13px] font-bold tracking-tight text-slate-300">
+            <span className={`text-[13px] font-bold tracking-tight ${isLight ? 'text-slate-700' : 'text-slate-300'}`}>
               {trust}
             </span>
           </div>
@@ -268,9 +268,9 @@ export function LeadForm({
   );
 
   return (
-    <div className="glass-card-premium rounded-3xl p-8 sm:p-10 relative overflow-hidden">
+    <div className={`rounded-3xl p-8 sm:p-10 relative overflow-hidden ${isLight ? 'bg-white shadow-[0_32px_64px_-16px_rgb(15,23,42,0.1)] border border-slate-200/50' : 'glass-card-premium'}`}>
       {/* Decorative Glow inside card */}
-      <div className="absolute -top-32 -right-32 w-64 h-64 bg-brand-primary/20 blur-[80px] rounded-full pointer-events-none" />
+      <div className={`absolute -top-32 -right-32 w-64 h-64 blur-[80px] rounded-full pointer-events-none ${isLight ? 'bg-brand-primary/10' : 'bg-brand-primary/20'}`} />
       {formContent}
     </div>
   );

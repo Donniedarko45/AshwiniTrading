@@ -15,11 +15,10 @@ export default function Hero() {
   ];
 
   return (
-    <section className="relative min-h-screen bg-brand-navy pt-24 pb-16 overflow-hidden">
+    <section className="relative min-h-screen bg-brand-bg-deep pt-24 pb-16 overflow-hidden">
       {/* Premium Background Effects */}
-      <div className="absolute top-[-10%] left-[-10%] w-[800px] h-[800px] bg-brand-primary/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-brand-secondary/5 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03] pointer-events-none mix-blend-overlay" />
+      <div className="absolute top-[-10%] left-[-10%] w-[800px] h-[800px] bg-brand-primary/15 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-brand-secondary/10 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="max-w-[1400px] mx-auto px-6 relative z-10">
 
@@ -35,7 +34,7 @@ export default function Hero() {
             {/* Hero Heading */}
             <motion.h1
               variants={fadeIn}
-              className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-[76px] font-medium leading-[1.05] tracking-tight mb-6 text-white"
+              className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-[76px] font-medium leading-[1.05] tracking-tight mb-6 text-brand-navy"
             >
               Master the Stock Market with <span className="text-brand-primary italic block mt-2">Research-Driven</span> AI-Powered Learning
             </motion.h1>
@@ -43,7 +42,7 @@ export default function Hero() {
             {/* Outcome Copy */}
             <motion.p
               variants={fadeIn}
-              className="text-slate-300 text-lg sm:text-xl leading-relaxed mb-10 max-w-2xl font-normal"
+              className="text-slate-600 text-lg sm:text-xl leading-relaxed mb-10 max-w-2xl font-light"
             >
               At Ashwini Trading Academy, we don’t just teach theory we train you to understand real market movements, identify opportunities, manage risk, and make informed investment decisions using modern tools, AI-powered analysis, and practical market exposure.
             </motion.p>
@@ -55,7 +54,7 @@ export default function Hero() {
                   <div className="flex-shrink-0 w-5 h-5 rounded-full bg-brand-primary/20 flex items-center justify-center">
                     <Check className="w-3 h-3 text-brand-primary stroke-[3px]" />
                   </div>
-                  <span className="text-slate-200 text-[15px] font-medium">{benefit}</span>
+                  <span className="text-slate-700 text-[15px] font-medium">{benefit}</span>
                 </div>
               ))}
             </motion.div>
@@ -71,8 +70,8 @@ export default function Hero() {
                 Book Free Consultation
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
-              <button className="w-full sm:w-auto h-14 px-8 flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 text-white font-bold text-[15px] rounded-xl border border-white/10 hover:border-white/20 transition-all duration-300">
-                <Download className="w-5 h-5 text-slate-300" />
+              <button className="w-full sm:w-auto h-14 px-8 flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-brand-navy font-bold text-[15px] rounded-xl border border-slate-200 hover:border-slate-300 shadow-sm transition-all duration-300">
+                <Download className="w-5 h-5 text-slate-500" />
                 Download Curriculum
               </button>
             </motion.div>
@@ -85,23 +84,23 @@ export default function Hero() {
             transition={{ delay: 0.2, duration: 0.6, ease: "easeOut" }}
             className="lg:col-span-5 relative z-20"
           >
-            <LeadForm />
+            <LeadForm theme="light" />
           </motion.div>
 
         </div>
       </div>
 
       {/* Bottom Trust Strip */}
-      <div className="absolute bottom-0 left-0 right-0 border-t border-white/5 bg-white/[0.02] backdrop-blur-md py-4">
-        <div className="max-w-[1400px] mx-auto px-6 flex flex-wrap items-center justify-center sm:justify-between gap-6 opacity-70">
-          <div className="flex items-center gap-6 text-[11px] font-bold tracking-widest text-slate-400 uppercase">
+      <div className="absolute bottom-0 left-0 right-0 border-t border-slate-200/50 bg-white/50 backdrop-blur-md py-4">
+        <div className="max-w-[1400px] mx-auto px-6 flex flex-wrap items-center justify-center sm:justify-between gap-6 opacity-80">
+          <div className="flex items-center gap-6 text-[11px] font-bold tracking-widest text-slate-500 uppercase">
             <span>SEBI Registered Reg. No. INH000024453</span>
-            <span className="hidden sm:inline-block w-1 h-1 rounded-full bg-slate-600" />
+            <span className="hidden sm:inline-block w-1 h-1 rounded-full bg-slate-300" />
             <span>NISM Certified Faculty</span>
           </div>
-          <div className="flex items-center gap-6 text-[11px] font-bold tracking-widest text-slate-400 uppercase">
+          <div className="flex items-center gap-6 text-[11px] font-bold tracking-widest text-slate-500 uppercase">
             <span>Enterprise-Grade Security</span>
-            <span className="hidden sm:inline-block w-1 h-1 rounded-full bg-slate-600" />
+            <span className="hidden sm:inline-block w-1 h-1 rounded-full bg-slate-300" />
             <span>95% Completion Rate</span>
           </div>
         </div>
