@@ -6,10 +6,11 @@ import { LeadForm } from '@/components/shared/LeadForm';
 
 export default function CurriculumCTA() {
   return (
-    <section className="relative py-32 px-6 overflow-hidden bg-brand-bg-dark text-center">
-       {/* Background gradients */}
-       <div className="absolute inset-0 bg-gradient-to-br from-brand-bg-card via-brand-bg-deep to-brand-bg-dark opacity-80" />
-       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-secondary-soft0/20 rounded-full blur-[140px] pointer-events-none" />
+    <section className="relative py-32 px-6 overflow-hidden bg-brand-navy text-center">
+       {/* Premium Surface Textures & Gradients */}
+       <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.04] mix-blend-overlay pointer-events-none z-0" />
+       <div className="absolute inset-0 bg-gradient-to-br from-brand-navy via-[#0A1220] to-[#050A14] opacity-90 z-0" />
+       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-brand-primary/10 rounded-full blur-[160px] pointer-events-none z-0 mix-blend-screen" />
        
        <div className="max-w-4xl mx-auto relative z-10">
          <motion.div 

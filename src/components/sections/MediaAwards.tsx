@@ -56,7 +56,7 @@ export default function MediaAwards() {
 
         {/* Bento Grid */}
         <motion.div 
-          className="grid grid-cols-1 lg:grid-cols-12 border-t border-l border-slate-200 bg-white"
+          className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -68,9 +68,12 @@ export default function MediaAwards() {
               <motion.div 
                 key={idx}
                 variants={fadeIn}
-                className={`${item.span} p-8 md:p-12 border-r border-b border-slate-200 hover:bg-slate-50 transition-colors duration-300 flex flex-col h-full`}
+                className={`${item.span} group relative p-8 md:p-10 bg-white rounded-3xl border border-slate-200 hover:border-brand-primary/40 shadow-sm hover:shadow-[0_20px_40px_-12px_rgb(15,23,42,0.08)] transition-all duration-500 flex flex-col h-full overflow-hidden hover:-translate-y-1`}
               >
-                <div className="flex items-center justify-between mb-12">
+                {/* Subtle gradient hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/0 to-brand-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                
+                <div className="relative z-10 flex items-center justify-between mb-12">
                   <span className="text-sm font-mono text-slate-400 tracking-wider">
                     {String(idx + 1).padStart(2, '0')}
                   </span>
@@ -94,9 +97,13 @@ export default function MediaAwards() {
           {/* Full Width Alumni Achievement Banner Card */}
           <motion.div 
             variants={fadeIn}
-            className="lg:col-span-12 p-8 md:p-12 border-r border-b border-slate-200 bg-brand-navy text-white flex flex-col md:flex-row items-center justify-between gap-8"
+            className="lg:col-span-12 p-8 md:p-10 rounded-3xl bg-brand-navy border border-brand-navy-light text-white flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl overflow-hidden relative"
           >
-            <div className="flex flex-col md:flex-row items-center gap-8 text-center md:text-left">
+            {/* Background texture for the dark banner */}
+            <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03] mix-blend-overlay pointer-events-none" />
+            <div className="absolute -top-32 -left-32 w-64 h-64 bg-brand-primary/20 rounded-full blur-[80px] pointer-events-none" />
+            
+            <div className="relative z-10 flex flex-col md:flex-row items-center gap-8 text-center md:text-left">
               <div className="text-brand-primary">
                 <Trophy className="w-10 h-10" />
               </div>

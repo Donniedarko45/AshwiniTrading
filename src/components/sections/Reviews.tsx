@@ -30,7 +30,7 @@ export default function Reviews() {
             return (
               <div 
                 key={i} 
-                className="group p-8 md:p-10 rounded-2xl border border-slate-200/60 bg-white hover:border-brand-primary/30 surface-card-light transition-all duration-500 hover:-translate-y-1 hover:shadow-lg flex flex-col justify-between"
+                className="group py-12 border-t border-slate-200 transition-all duration-500 hover:border-brand-primary flex flex-col justify-between h-full"
               >
                 {/* Platform Badge */}
                 <div className="mb-8 flex items-center justify-between">
@@ -50,14 +50,14 @@ export default function Reviews() {
 
                 {/* Review Content */}
                 <div className="flex-1">
-                  <p className="font-serif text-xl sm:text-2xl text-brand-navy leading-relaxed italic mb-8 max-w-[65ch]">
+                  <p className="font-serif text-2xl md:text-[28px] text-brand-navy leading-[1.4] mb-12 max-w-[65ch] transition-colors group-hover:text-slate-900">
                     "{review.text}"
                   </p>
                 </div>
                 
-                <div className="border-t border-slate-100 pt-6 mt-6 flex items-center justify-between">
+                <div className="pt-6 flex items-center justify-between">
                   <h4 className="font-bold text-brand-navy tracking-wide uppercase text-sm group-hover:text-brand-primary transition-colors">
-                    {review.name}
+                    — {review.name}
                   </h4>
                   <div className="flex gap-1">
                     {[1,2,3,4,5].map((_, star) => (

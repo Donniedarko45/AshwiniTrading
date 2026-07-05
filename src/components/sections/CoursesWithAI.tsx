@@ -73,7 +73,7 @@ export default function CoursesWithAI() {
 
         {/* Course Cards Grid */}
         <motion.div 
-          className="grid md:grid-cols-2 border-t border-l border-slate-200 bg-white"
+          className="grid md:grid-cols-2 gap-8 lg:gap-12"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
@@ -85,8 +85,11 @@ export default function CoursesWithAI() {
               <motion.div
                 key={course.id}
                 variants={fadeIn}
-                className="group relative p-8 md:p-12 border-r border-b border-slate-200 hover:bg-slate-50 transition-colors duration-300 flex flex-col justify-between"
+                className="group relative p-8 md:p-12 bg-white rounded-[32px] border border-slate-200 shadow-sm hover:shadow-[0_32px_64px_-16px_rgb(15,23,42,0.1)] hover:border-brand-primary/50 transition-all duration-500 flex flex-col justify-between hover:-translate-y-1 overflow-hidden"
               >
+                {/* Decorative background glow on hover */}
+                <div className="absolute top-0 right-0 w-64 h-64 bg-brand-primary/0 group-hover:bg-brand-primary/5 blur-3xl rounded-full transition-colors duration-700 pointer-events-none" />
+                
                 <div className="relative z-10">
                   {/* Top Row: Icon & Badge */}
                   <div className="flex items-center justify-between mb-12">

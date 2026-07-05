@@ -64,18 +64,18 @@ export default function Certifications() {
               {certifications.map((cert, index) => (
                 <div 
                   key={index}
-                  className="group flex items-center gap-5 p-6 rounded-2xl border border-slate-200/60 bg-white hover:border-brand-primary/30 surface-card-light transition-all duration-500 hover:-translate-y-1 hover:shadow-lg"
+                  className="group flex items-center gap-5 py-6 border-b border-slate-200 transition-all duration-500 hover:border-brand-primary"
                 >
-                  <div className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-brand-primary/10 transition-colors shrink-0 hidden sm:flex">
-                    <BookOpen className="w-5 h-5 text-slate-600 group-hover:text-brand-primary transition-colors" />
+                  <div className="w-12 h-12 flex items-center justify-center bg-slate-50 group-hover:bg-brand-primary/10 transition-colors shrink-0 hidden sm:flex">
+                    <BookOpen className="w-5 h-5 text-slate-400 group-hover:text-brand-primary transition-colors" />
                   </div>
                   <div>
-                    <span className="text-xs font-mono tracking-widest uppercase text-slate-400 block mb-1 group-hover:text-brand-primary transition-colors">{cert.series}</span>
-                    <h4 className="font-serif text-brand-navy font-medium text-xl tracking-tight leading-tight group-hover:text-brand-primary transition-colors">{cert.title}</h4>
-                    <p className="text-slate-500 text-sm font-light mt-1">{cert.desc}</p>
+                    <span className="text-xs font-mono tracking-widest uppercase text-slate-400 block mb-2 group-hover:text-brand-primary transition-colors">{cert.series}</span>
+                    <h4 className="font-serif text-brand-navy font-medium text-2xl tracking-tight leading-tight group-hover:text-brand-primary transition-colors">{cert.title}</h4>
+                    <p className="text-slate-500 text-[15px] font-light mt-2">{cert.desc}</p>
                   </div>
-                  <div className="ml-auto text-slate-300 group-hover:text-brand-primary transition-colors">
-                    <ShieldCheck className="w-5 h-5" />
+                  <div className="ml-auto text-slate-200 group-hover:text-brand-primary transition-colors">
+                    <ShieldCheck className="w-6 h-6" />
                   </div>
                 </div>
               ))}
