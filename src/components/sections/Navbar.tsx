@@ -70,9 +70,9 @@ export default function Navbar() {
                 alt="Ashwini Trading Academy – SEBI Registered RA"
                 className="h-10 w-10 sm:h-12 sm:w-12 object-contain flex-shrink-0 transition-transform group-hover:scale-105"
               />
-              <div className={`flex flex-col leading-tight text-left transition-colors duration-300 ${isScrolled || isOpen ? 'text-brand-navy' : 'text-white'}`}>
+              <div className="flex flex-col leading-tight text-left text-brand-navy">
                 <span className="text-[15px] sm:text-[17px] font-extrabold tracking-tight">Ashwini Trading</span>
-                <span className={`text-[12px] sm:text-sm font-semibold tracking-wide transition-colors duration-300 ${isScrolled || isOpen ? 'text-slate-500' : 'text-slate-300'}`}>Academy</span>
+                <span className="text-[12px] sm:text-sm font-semibold tracking-wide text-slate-500">Academy</span>
               </div>
             </a>
           </motion.div>
@@ -81,7 +81,7 @@ export default function Navbar() {
           <motion.div 
              initial={{ opacity: 0, y: -10 }}
              animate={{ opacity: 1, y: 0 }}
-             className={`hidden xl:flex items-center gap-6 2xl:gap-8 text-[14px] font-medium transition-colors duration-300 ${isScrolled || isOpen ? 'text-slate-600' : 'text-slate-300'}`}
+             className="hidden xl:flex items-center gap-6 2xl:gap-8 text-[14px] font-medium text-slate-600"
           >
             {navLinks.map((link) => (
               <a
@@ -89,7 +89,7 @@ export default function Navbar() {
                 href={link.href}
                 aria-current={isActiveLink(link.href) ? 'page' : undefined}
                 className={`relative py-2 transition-colors ${
-                  isActiveLink(link.href) ? 'text-brand-primary font-bold' : isScrolled || isOpen ? 'hover:text-brand-navy' : 'hover:text-white'
+                  isActiveLink(link.href) ? 'text-brand-primary font-bold' : 'hover:text-brand-navy'
                 }`}
               >
                 {link.label}
@@ -103,20 +103,16 @@ export default function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             className="hidden xl:flex items-center gap-6"
           >
-            <div className={`flex items-center gap-2 text-[14px] font-semibold transition-colors ${isScrolled || isOpen ? 'text-slate-600' : 'text-slate-300'}`}>
+            <div className="flex items-center gap-2 text-[14px] font-semibold text-slate-600">
               <Phone className="w-4 h-4 opacity-70" />
               <span>+91 9845961990</span>
             </div>
 
             <a
-              href="https://wa.me/918861756040"
+              href="https://wa.me/919845961990"
               target="_blank"
               rel="noopener noreferrer"
-              className={`flex items-center justify-center w-10 h-10 rounded-full transition-colors ${
-                isScrolled || isOpen
-                  ? 'bg-slate-100 text-brand-secondary hover:bg-slate-200'
-                  : 'bg-white/10 text-white hover:bg-white/20'
-              }`}
+              className="flex items-center justify-center w-10 h-10 rounded-full transition-colors bg-slate-100 text-brand-secondary hover:bg-slate-200"
             >
               <MessageCircle className="w-5 h-5" />
             </a>
@@ -138,9 +134,7 @@ export default function Navbar() {
           <div className="flex xl:hidden items-center gap-3">
             <button
               onClick={toggleMenu}
-              className={`p-2 focus:outline-none flex items-center justify-center transition-colors rounded-lg ${
-                isScrolled || isOpen ? 'text-brand-navy hover:bg-slate-100' : 'text-white hover:bg-white/10'
-              }`}
+              className="p-2 focus:outline-none flex items-center justify-center transition-colors rounded-lg text-brand-navy hover:bg-slate-100"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -197,7 +191,7 @@ export default function Navbar() {
                 </a>
                 
                 <a
-                  href="https://wa.me/918861756040"
+                  href="https://wa.me/919845961990"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={closeMenu}
