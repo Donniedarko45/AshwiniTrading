@@ -26,6 +26,7 @@ export default function ReviewsPage() {
           <a href="/">
             <motion.button
               whileHover={{ x: -4 }}
+              whileTap={{ scale: 0.96 }}
               className="inline-flex items-center gap-2 text-slate-500 hover:text-brand-navy font-mono text-xs uppercase tracking-widest transition-colors cursor-pointer"
             >
               <ArrowLeft className="w-4 h-4" />
@@ -50,16 +51,16 @@ export default function ReviewsPage() {
             Rated by Our Students
           </div>
 
-          <h1 className="font-serif text-5xl md:text-7xl font-medium tracking-tight mb-8 leading-[1.05]">
+          <h1 className="font-serif text-5xl md:text-7xl font-medium tracking-tight mb-8 leading-[1.05] text-balance">
             Student Reviews & <br />
             <span className="text-brand-primary italic">Success Stories</span>
           </h1>
 
-          <p className="text-brand-navy text-xl md:text-2xl font-light leading-relaxed max-w-3xl mx-auto mb-8">
+          <p className="text-brand-navy text-xl md:text-2xl font-light leading-relaxed max-w-3xl mx-auto mb-8 text-pretty">
             Trusted by Aspiring Traders, Investors & Finance Professionals
           </p>
 
-          <p className="text-slate-600 leading-relaxed max-w-2xl mx-auto font-medium">
+          <p className="text-slate-600 leading-relaxed max-w-2xl mx-auto font-medium text-pretty">
             At Ashwini Trading Academy, we believe that the success of our students is the true measure of our success. From complete beginners to aspiring finance professionals, our students have gained practical market knowledge, confidence, and valuable skills through our programs.
           </p>
         </motion.div>
@@ -68,14 +69,14 @@ export default function ReviewsPage() {
         <div className="mb-24">
           <div className="mb-12">
             <div className="text-brand-primary font-mono text-xs uppercase tracking-widest mb-4">Testimonials</div>
-            <h2 className="font-serif text-4xl md:text-5xl font-medium text-brand-navy">What Our Students Say</h2>
+            <h2 className="font-serif text-4xl md:text-5xl font-medium text-brand-navy text-balance">What Our Students Say</h2>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
             {academyReviews.map((review, idx) => (
               <div
                 key={idx}
-                className="group bg-white p-10 rounded-2xl border border-slate-200/60 surface-card-light transition-all duration-500 hover:-translate-y-1 hover:shadow-lg flex flex-col justify-between"
+                className="group bg-white p-10 rounded-2xl border border-slate-200/60 surface-card-light transition-[box-shadow,transform] duration-500 hover:-translate-y-1 hover:shadow-lg flex flex-col justify-between"
               >
                 <div>
                   <div className="flex gap-1 mb-6 text-brand-primary">
@@ -83,7 +84,7 @@ export default function ReviewsPage() {
                       <Star key={i} className="w-4 h-4 fill-current" />
                     ))}
                   </div>
-                  <p className="font-serif text-xl text-slate-700 leading-relaxed italic mb-8 max-w-[65ch]">
+                  <p className="font-serif text-xl text-slate-700 leading-relaxed italic mb-8 max-w-[65ch] text-pretty">
                     "{review.text}"
                   </p>
                 </div>
@@ -114,13 +115,13 @@ export default function ReviewsPage() {
             variants={fadeIn}
           >
             <div className="text-brand-primary font-mono text-xs uppercase tracking-widest mb-4">Achievements</div>
-            <h2 className="font-serif text-4xl md:text-5xl font-medium text-brand-navy mb-8">
+            <h2 className="font-serif text-4xl md:text-5xl font-medium text-brand-navy mb-8 text-balance">
               Student Success Stories
             </h2>
             <p className="text-brand-navy font-mono text-sm uppercase tracking-widest mb-6">
               From Learning to Achieving
             </p>
-            <p className="text-slate-600 leading-relaxed mb-8">
+            <p className="text-slate-600 leading-relaxed mb-8 text-pretty">
               Many of our students started with little or no knowledge of the stock market. Through structured learning, practical sessions, and continuous support, they developed the confidence to understand markets, make informed decisions, and pursue opportunities in the financial sector.
             </p>
             
@@ -154,7 +155,7 @@ export default function ReviewsPage() {
                 'Dedicated Learners & Market Enthusiasts',
                 'Future Finance Professionals'
               ].map((item, idx) => (
-                <div key={idx} className="group bg-white p-8 flex flex-col justify-center h-40 rounded-2xl border border-slate-200/60 surface-card-light transition-all duration-500 hover:-translate-y-1 hover:shadow-lg">
+                <div key={idx} className="group bg-white p-8 flex flex-col justify-center h-40 rounded-2xl border border-slate-200/60 surface-card-light transition-[box-shadow,transform] duration-500 hover:-translate-y-1 hover:shadow-lg">
                   <div className="w-12 h-12 flex items-center justify-center text-brand-primary bg-brand-primary/10 rounded-full font-bold text-xl mb-4 group-hover:scale-110 transition-transform">
                     🏆
                   </div>
@@ -175,7 +176,7 @@ export default function ReviewsPage() {
             className="mb-12"
           >
             <div className="text-brand-primary font-mono text-xs uppercase tracking-widest mb-4">Advantages</div>
-            <h2 className="font-serif text-4xl md:text-5xl font-medium text-brand-navy">
+            <h2 className="font-serif text-4xl md:text-5xl font-medium text-brand-navy text-balance">
               Why Students Choose Us
             </h2>
           </motion.div>
@@ -192,7 +193,7 @@ export default function ReviewsPage() {
             ].map((item, idx) => {
               const Icon = item.icon;
               return (
-                <div key={idx} className="group bg-white p-8 rounded-2xl border border-slate-200/60 surface-card-light transition-all duration-500 hover:-translate-y-1 hover:shadow-lg flex flex-col items-start">
+                <div key={idx} className="group bg-white p-8 rounded-2xl border border-slate-200/60 surface-card-light transition-[box-shadow,transform] duration-500 hover:-translate-y-1 hover:shadow-lg flex flex-col items-start">
                   <div className="w-12 h-12 rounded-full bg-slate-50 flex items-center justify-center mb-6 group-hover:bg-brand-primary/10 transition-colors">
                     <Icon className="w-6 h-6 text-brand-primary transition-transform group-hover:scale-110" />
                   </div>
@@ -213,10 +214,10 @@ export default function ReviewsPage() {
             className="mb-12"
           >
             <div className="text-brand-primary font-mono text-xs uppercase tracking-widest mb-4">Experience</div>
-            <h2 className="font-serif text-4xl md:text-5xl font-medium text-brand-navy mb-6">
+            <h2 className="font-serif text-4xl md:text-5xl font-medium text-brand-navy mb-6 text-balance">
               Classroom & Learning
             </h2>
-            <p className="text-slate-600 max-w-2xl font-medium leading-relaxed">
+            <p className="text-slate-600 max-w-2xl font-medium leading-relaxed text-pretty">
               Our students learn through interactive sessions, real-market examples, case studies, and practical demonstrations designed to bridge the gap between theory and practice.
             </p>
           </motion.div>
@@ -225,12 +226,12 @@ export default function ReviewsPage() {
             {classroomExperiences.map((item, idx) => {
               const IconComponent = item.icon;
               return (
-                <div key={idx} className="group bg-white p-8 rounded-2xl border border-slate-200/60 surface-card-light transition-all duration-500 hover:-translate-y-1 hover:shadow-lg flex flex-col">
+                <div key={idx} className="group bg-white p-8 rounded-2xl border border-slate-200/60 surface-card-light transition-[box-shadow,transform] duration-500 hover:-translate-y-1 hover:shadow-lg flex flex-col">
                   <div className="w-12 h-12 rounded-full bg-slate-50 flex items-center justify-center mb-6 group-hover:bg-brand-primary/10 transition-colors">
                     <IconComponent className="w-6 h-6 text-brand-primary transition-transform group-hover:scale-110" />
                   </div>
                   <h3 className="font-bold text-brand-navy tracking-tight leading-snug mb-4 group-hover:text-brand-primary transition-colors">{item.title}</h3>
-                  <p className="text-slate-600 text-sm leading-relaxed font-medium">{item.desc}</p>
+                  <p className="text-slate-600 text-sm leading-relaxed font-medium text-pretty">{item.desc}</p>
                 </div>
               );
             })}
@@ -247,20 +248,20 @@ export default function ReviewsPage() {
           </div>
           
           <div className="max-w-3xl relative z-10">
-            <h3 className="font-serif text-4xl md:text-5xl font-medium mb-6">
+            <h3 className="font-serif text-4xl md:text-5xl font-medium mb-6 text-balance">
               Join Our Growing Learning Community
             </h3>
             <p className="text-brand-primary font-bold text-sm tracking-widest uppercase mb-8 flex items-center gap-2">
               Start your stock market learning journey today
             </p>
-            <p className="text-white/80 leading-relaxed mb-12 text-lg font-medium">
+            <p className="text-white/80 leading-relaxed mb-12 text-lg font-medium text-pretty">
               Whether you are a student, working professional, entrepreneur, homemaker, or aspiring investor, our programs are designed to help you build strong financial knowledge and market confidence.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center gap-8">
               <a
                 href="tel:9845961990"
-                className="inline-flex items-center gap-3 px-8 py-4 bg-cta-gold text-brand-navy font-bold rounded-xl shadow-brand-gold hover:shadow-brand-gold-lg hover:-translate-y-0.5 transition-all duration-300 group"
+                className="inline-flex items-center gap-3 px-8 py-4 bg-cta-gold text-brand-navy font-bold rounded-xl shadow-brand-gold hover:shadow-brand-gold-lg active:scale-[0.96] active:translate-y-0 transition-[color,background-color,border-color,box-shadow,transform] duration-300 group"
               >
                 <Phone className="w-5 h-5 group-hover:rotate-12 transition-transform" />
                 Call 9845961990

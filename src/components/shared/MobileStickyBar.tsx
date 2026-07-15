@@ -35,7 +35,7 @@ export default function MobileStickyBar() {
       {/* Call CTA Button */}
       <a 
         href="tel:+919845961990" 
-        className="flex items-center justify-center w-12 h-12 rounded-xl bg-white/10 border border-white/20 text-white shrink-0 hover:bg-white/20 transition-all touch-target"
+        className="flex items-center justify-center w-12 h-12 rounded-xl bg-white/10 border border-white/20 text-white shrink-0 hover:bg-white/20 active:scale-[0.96] transition-[background-color,border-color,transform] duration-250 touch-target"
         aria-label="Call admissions advisor"
       >
         <Phone className="w-5 h-5 fill-white text-white" />
@@ -49,7 +49,7 @@ export default function MobileStickyBar() {
             finalCta.scrollIntoView({ behavior: 'smooth' });
           }
         }}
-        className="flex-1 h-12 flex items-center justify-center bg-gradient-to-r from-brand-primary-grad-start to-brand-primary-grad-end hover:brightness-110 text-brand-navy font-extrabold text-sm sm:text-base tracking-wider rounded-xl uppercase transition-all shadow-lg shadow-brand-primary/15 touch-target"
+        className="flex-1 h-12 flex items-center justify-center bg-gradient-to-r from-brand-primary-grad-start to-brand-primary-grad-end hover:brightness-110 text-brand-navy font-extrabold text-sm sm:text-base tracking-wider rounded-xl uppercase active:scale-[0.96] transition-[box-shadow,filter,transform] duration-250 shadow-lg shadow-brand-primary/15 touch-target"
       >
         Apply Now
       </button>

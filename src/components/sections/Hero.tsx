@@ -34,7 +34,7 @@ export default function Hero() {
             {/* Hero Heading */}
             <motion.h1
               variants={fadeIn}
-              className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-[76px] font-medium leading-[1.05] tracking-tight mb-6 text-brand-navy"
+              className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-[76px] font-medium leading-[1.05] tracking-tight mb-6 text-brand-navy text-balance"
             >
               Master the Stock Market with <span className="text-brand-primary italic block mt-2">Research-Driven</span> AI-Powered Learning
             </motion.h1>
@@ -42,7 +42,7 @@ export default function Hero() {
             {/* Outcome Copy */}
             <motion.p
               variants={fadeIn}
-              className="text-slate-600 text-lg sm:text-xl leading-relaxed mb-10 max-w-2xl font-light"
+              className="text-slate-600 text-lg sm:text-xl leading-relaxed mb-10 max-w-2xl font-light text-pretty"
             >
               At Ashwini Trading Academy, we don’t just teach theory we train you to understand real market movements, identify opportunities, manage risk, and make informed investment decisions using modern tools, AI-powered analysis, and practical market exposure.
             </motion.p>
@@ -65,12 +65,12 @@ export default function Hero() {
                 const form = document.getElementById('name-card');
                 if (form) form.focus();
               }}
-                className="w-full sm:w-auto h-14 px-8 flex items-center justify-center gap-2 bg-cta-gold text-brand-navy font-bold text-[15px] rounded-xl shadow-brand-gold hover:shadow-brand-gold-lg hover:-translate-y-0.5 transition-all duration-300 group"
+                className="w-full sm:w-auto h-14 px-8 flex items-center justify-center gap-2 bg-cta-gold text-brand-navy font-bold text-[15px] rounded-xl shadow-brand-gold hover:shadow-brand-gold-lg hover:-translate-y-0.5 transition-[color,background-color,border-color,box-shadow,transform] duration-300 group"
               >
                 Book Free Consultation
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
-              <button className="w-full sm:w-auto h-14 px-8 flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-brand-navy font-bold text-[15px] rounded-xl border border-slate-200 hover:border-slate-300 shadow-sm transition-all duration-300">
+              <button className="w-full sm:w-auto h-14 px-8 flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-brand-navy font-bold text-[15px] rounded-xl border border-slate-200 hover:border-slate-300 shadow-sm transition-[color,background-color,border-color,box-shadow,transform] duration-300">
                 <Download className="w-5 h-5 text-slate-500" />
                 Download Curriculum
               </button>
@@ -91,7 +91,7 @@ export default function Hero() {
       </div>
 
       {/* Bottom Trust Strip */}
-      <div className="absolute bottom-0 left-0 right-0 border-t border-slate-200/50 bg-white/50 backdrop-blur-md py-4">
+      <div className="relative lg:absolute lg:bottom-0 lg:left-0 lg:right-0 border-t border-slate-200/50 bg-white/50 backdrop-blur-md py-4 mt-12 lg:mt-0 z-30 w-full">
         <div className="max-w-[1400px] mx-auto px-6 flex flex-wrap items-center justify-center sm:justify-between gap-6 opacity-80">
           <div className="flex items-center gap-6 text-[11px] font-bold tracking-widest text-slate-500 uppercase">
             <span>SEBI Registered Reg. No. INH000024453</span>

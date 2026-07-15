@@ -14,12 +14,12 @@ export default function Reviews() {
             <div className="inline-block px-3 py-1 border border-slate-300 text-slate-500 font-mono text-xs tracking-widest uppercase mb-6 bg-white">
               TESTIMONIALS
             </div>
-            <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl font-medium text-brand-navy tracking-tight leading-tight">
+            <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl font-medium text-brand-navy tracking-tight leading-tight text-balance">
               Hear From <br className="hidden md:block" />
               <span className="text-brand-primary italic">Our Students</span>
             </h2>
           </div>
-          <p className="text-slate-600 text-base md:text-lg font-light max-w-sm leading-relaxed">
+          <p className="text-slate-600 text-base md:text-lg font-light max-w-sm leading-relaxed text-pretty">
             Real experiences and success stories from our learning community.
           </p>
         </div>
@@ -30,11 +30,11 @@ export default function Reviews() {
             return (
               <div 
                 key={i} 
-                className="group py-12 border-t border-slate-200 transition-all duration-500 hover:border-brand-primary flex flex-col justify-between h-full"
+                className="group py-12 border-t border-slate-200 transition-[border-color] duration-500 hover:border-brand-primary flex flex-col justify-between h-full"
               >
                 {/* Platform Badge */}
                 <div className="mb-8 flex items-center justify-between">
-                  <span className="text-xs font-mono text-slate-400 tracking-wider group-hover:text-brand-primary transition-colors">
+                  <span className="text-xs font-mono text-slate-400 tracking-wider group-hover:text-brand-primary transition-colors tabular-nums">
                     {String(i + 1).padStart(2, '0')}
                   </span>
                   {review.platform !== 'none' && (
@@ -50,7 +50,7 @@ export default function Reviews() {
 
                 {/* Review Content */}
                 <div className="flex-1">
-                  <p className="font-serif text-2xl md:text-[28px] text-brand-navy leading-[1.4] mb-12 max-w-[65ch] transition-colors group-hover:text-slate-900">
+                  <p className="font-serif text-2xl md:text-[28px] text-brand-navy leading-[1.4] mb-12 max-w-[65ch] transition-colors group-hover:text-slate-900 text-pretty">
                     "{review.text}"
                   </p>
                 </div>

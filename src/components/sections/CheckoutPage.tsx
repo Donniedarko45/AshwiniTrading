@@ -13,7 +13,8 @@ import {
   ChevronRight, 
   ArrowLeft,
   Loader2,
-  Check
+  Check,
+  MessageSquare
 } from 'lucide-react';
 
 interface CheckoutPageProps {
@@ -495,16 +496,37 @@ export default function CheckoutPage({ courseId, onBack }: CheckoutPageProps) {
               </Button>
 
               {/* Guarantees Badges */}
-              <div className="grid grid-cols-2 gap-4 mt-8 pt-6 border-t border-white/10">
-                <div className="text-center p-3 bg-white/5 rounded-2xl border border-white/5">
+              <div className="grid grid-cols-2 gap-4 mt-8 pt-6 border-t border-slate-100">
+                <div className="text-center p-3 bg-slate-50 rounded-2xl border border-slate-100">
                   <ShieldCheck className="w-6 h-6 text-brand-success mx-auto mb-2" />
-                  <div className="text-[11px] font-bold text-slate-300">100% SECURE</div>
-                  <div className="text-[9px] text-slate-500 uppercase mt-0.5">SSL Encrypted</div>
+                  <div className="text-[11px] font-bold text-slate-700">100% SECURE</div>
+                  <div className="text-[9px] text-slate-400 uppercase mt-0.5">SSL Encrypted</div>
                 </div>
-                <div className="text-center p-3 bg-white/5 rounded-2xl border border-white/5">
+                <div className="text-center p-3 bg-slate-50 rounded-2xl border border-slate-100">
                   <CheckCircle2 className="w-6 h-6 text-brand-secondary mx-auto mb-2" />
-                  <div className="text-[11px] font-bold text-slate-300">MONEY BACK</div>
-                  <div className="text-[9px] text-slate-500 uppercase mt-0.5">Assurance Policy</div>
+                  <div className="text-[11px] font-bold text-slate-700">MONEY BACK</div>
+                  <div className="text-[9px] text-slate-400 uppercase mt-0.5">Assurance Policy</div>
+                </div>
+              </div>
+
+              {/* Live Help Callout */}
+              <div className="mt-6 p-4 bg-emerald-50/50 border border-emerald-100/80 rounded-2xl flex items-start gap-3.5 text-left relative overflow-hidden group/whatsapp">
+                <div className="w-10 h-10 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-600 shrink-0 mt-0.5 group-hover/whatsapp:scale-110 transition-transform duration-300">
+                  <MessageSquare className="w-5 h-5 fill-emerald-600/10" />
+                </div>
+                <div className="space-y-1 z-10">
+                  <div className="text-xs font-bold text-slate-800">Stuck on payment?</div>
+                  <p className="text-[11px] text-slate-500 leading-normal">
+                    WhatsApp us for instant transaction verification or custom payment modes.
+                  </p>
+                  <a 
+                    href={`https://wa.me/919845961990?text=Hi%2C%20I%20am%20on%20the%20checkout%20page%20for%20the%20program%20"${encodeURIComponent(course.title)}"%20and%20need%20help%20completing%20my%20payment.`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[11px] font-bold text-emerald-600 hover:text-emerald-700 flex items-center gap-1 mt-1.5 transition-colors cursor-pointer"
+                  >
+                    Chat on WhatsApp <ChevronRight className="w-3.5 h-3.5 group-hover/whatsapp:translate-x-0.5 transition-transform" />
+                  </a>
                 </div>
               </div>
             </motion.div>

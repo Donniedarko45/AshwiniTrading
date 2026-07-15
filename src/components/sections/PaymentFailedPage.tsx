@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
-import { XCircle, RefreshCw, PhoneCall, HelpCircle, ArrowLeft, MessageSquare, Loader2, AlertTriangle } from 'lucide-react';
+import { XCircle, RefreshCw, PhoneCall, HelpCircle, ArrowLeft, MessageSquare, Loader2, AlertTriangle, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { load } from '@cashfreepayments/cashfree-js';
 
@@ -124,6 +124,27 @@ export default function PaymentFailedPage() {
             </div>
           )}
 
+          {/* WhatsApp Support Callout */}
+          <div className="mt-6 p-4.5 bg-emerald-50/50 border border-emerald-100 rounded-2xl flex items-start gap-4 text-left relative overflow-hidden group/whatsapp">
+            <div className="w-10 h-10 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-600 shrink-0 mt-0.5 group-hover/whatsapp:scale-110 transition-transform duration-300">
+              <MessageSquare className="w-5 h-5 fill-emerald-600/10" />
+            </div>
+            <div className="space-y-1 z-10">
+              <div className="text-xs font-bold text-slate-800">Stuck on payment?</div>
+              <p className="text-[11px] text-slate-500 leading-normal">
+                If the payment failed or you need custom bank details (IMPS/NEFT/UPI), WhatsApp us for instant help.
+              </p>
+              <a 
+                href={`https://wa.me/919845961990?text=Hi%2C%20my%20payment%20failed%20for%20Ashwini%20Trading%20Academy%20${orderId ? `%28Order%20Ref%3A%20${orderId}%29` : ''}.%20Please%20help.`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[11px] font-bold text-emerald-600 hover:text-emerald-700 flex items-center gap-1 mt-2.5 transition-colors cursor-pointer"
+              >
+                Chat on WhatsApp <ChevronRight className="w-3.5 h-3.5 group-hover/whatsapp:translate-x-0.5 transition-transform" />
+              </a>
+            </div>
+          </div>
+
           {retryError && (
             <p className="text-xs text-brand-primary font-bold mt-4 flex items-center gap-1.5 justify-center">
               <AlertTriangle className="w-4 h-4" />
@@ -153,7 +174,7 @@ export default function PaymentFailedPage() {
 
             <div className="grid grid-cols-2 gap-3">
               <a 
-                href="https://wa.me/918861756040?text=Hi%2C%20my%20payment%20failed%20on%20the%20website.%20Please%20help."
+                href={`https://wa.me/919845961990?text=Hi%2C%20my%20payment%20failed%20for%20Ashwini%20Trading%20Academy%20${orderId ? `%28Order%20Ref%3A%20${orderId}%29` : ''}.%20Please%20help.`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block"

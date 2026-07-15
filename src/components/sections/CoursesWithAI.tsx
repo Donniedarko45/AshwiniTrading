@@ -61,12 +61,12 @@ export default function CoursesWithAI() {
             <div className="inline-block px-3 py-1 border border-slate-300 text-slate-500 font-mono text-xs tracking-widest uppercase mb-6 bg-white">
               COURSE SELECTION
             </div>
-            <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl font-medium text-brand-navy tracking-tight leading-tight">
+            <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl font-medium text-brand-navy tracking-tight leading-tight text-balance">
               Explore Stock Market <br className="hidden md:block" />
               <span className="text-brand-primary italic">Courses with AI</span>
             </h2>
           </div>
-          <p className="text-slate-600 text-base md:text-lg font-light max-w-sm leading-relaxed">
+          <p className="text-slate-600 text-base md:text-lg font-light max-w-sm leading-relaxed text-pretty">
             Learn how Artificial Intelligence can enhance Technical and Fundamental Analysis through smarter research, stock screening, and data-driven insights.
           </p>
         </motion.div>
@@ -85,7 +85,7 @@ export default function CoursesWithAI() {
               <motion.div
                 key={course.id}
                 variants={fadeIn}
-                className="group relative p-8 md:p-12 bg-white rounded-[32px] border border-slate-200 shadow-sm hover:shadow-[0_32px_64px_-16px_rgb(15,23,42,0.1)] hover:border-brand-primary/50 transition-all duration-500 flex flex-col justify-between hover:-translate-y-1 overflow-hidden"
+                className="group relative p-8 md:p-12 bg-white rounded-[32px] border border-slate-200 shadow-sm hover:shadow-[0_32px_64px_-16px_rgb(15,23,42,0.1)] hover:border-brand-primary/50 transition-[border-color,box-shadow,transform] duration-500 flex flex-col justify-between hover:-translate-y-1 overflow-hidden"
               >
                 {/* Decorative background glow on hover */}
                 <div className="absolute top-0 right-0 w-64 h-64 bg-brand-primary/0 group-hover:bg-brand-primary/5 blur-3xl rounded-full transition-colors duration-700 pointer-events-none" />
@@ -105,7 +105,7 @@ export default function CoursesWithAI() {
                   <h3 className="font-serif text-3xl font-medium text-brand-navy mb-3 tracking-tight">
                     {course.title}
                   </h3>
-                  <p className="text-slate-600 text-sm font-light mb-10 leading-relaxed max-w-sm">
+                  <p className="text-slate-600 text-sm font-light mb-10 leading-relaxed max-w-sm text-pretty">
                     {course.subtitle}
                   </p>
  
@@ -130,11 +130,11 @@ export default function CoursesWithAI() {
                   <a href={`#/course-details/${course.detailsId}`} className="block w-full">
                     <motion.button
                       whileHover={{ scale: 1.01 }}
-                      whileTap={{ scale: 0.99 }}
-                      className="w-full h-12 flex items-center justify-center gap-2 border border-brand-primary bg-brand-primary/5 text-brand-primary font-bold text-xs tracking-widest uppercase hover:bg-brand-primary hover:text-brand-navy transition-colors"
+                      whileTap={{ scale: 0.96 }}
+                      className="group/btn w-full h-12 flex items-center justify-center gap-2 border border-brand-primary bg-brand-primary/5 text-brand-primary font-bold text-xs tracking-widest uppercase hover:bg-brand-primary hover:text-brand-navy transition-[color,background-color] duration-300"
                     >
                       {course.ctaText}
-                      <ArrowRight className="w-4 h-4" />
+                      <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 group-hover/btn:scale-110" />
                     </motion.button>
                   </a>
                   <div className="text-center text-[10px] text-slate-400 font-mono mt-4 tracking-widest uppercase">

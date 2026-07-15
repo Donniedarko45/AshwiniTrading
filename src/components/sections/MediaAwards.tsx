@@ -47,7 +47,7 @@ export default function MediaAwards() {
             <div className="inline-block px-3 py-1 border border-slate-300 text-slate-500 font-mono text-xs tracking-widest uppercase mb-6 bg-white">
               Media & Awards
             </div>
-            <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl font-medium text-brand-navy tracking-tight leading-tight">
+            <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl font-medium text-brand-navy tracking-tight leading-tight text-balance">
               Recognized for <br className="hidden md:block" />
               <span className="text-brand-primary italic">Excellence</span>
             </h2>
@@ -68,13 +68,13 @@ export default function MediaAwards() {
               <motion.div 
                 key={idx}
                 variants={fadeIn}
-                className={`${item.span} group relative p-8 md:p-10 bg-white rounded-3xl border border-slate-200 hover:border-brand-primary/40 shadow-sm hover:shadow-[0_20px_40px_-12px_rgb(15,23,42,0.08)] transition-all duration-500 flex flex-col h-full overflow-hidden hover:-translate-y-1`}
+                className={`${item.span} group relative p-8 md:p-10 bg-white rounded-3xl border border-slate-200 hover:border-brand-primary/40 shadow-sm hover:shadow-[0_20px_40px_-12px_rgb(15,23,42,0.08)] transition-[border-color,box-shadow,transform] duration-500 flex flex-col h-full overflow-hidden hover:-translate-y-1`}
               >
                 {/* Subtle gradient hover */}
                 <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/0 to-brand-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                 
                 <div className="relative z-10 flex items-center justify-between mb-12">
-                  <span className="text-sm font-mono text-slate-400 tracking-wider">
+                  <span className="text-sm font-mono text-slate-400 tracking-wider tabular-nums">
                     {String(idx + 1).padStart(2, '0')}
                   </span>
                   <div className="text-brand-primary">
@@ -86,7 +86,7 @@ export default function MediaAwards() {
                   <h3 className="font-serif text-2xl font-medium text-brand-navy mb-3">
                     {item.title}
                   </h3>
-                  <p className="text-slate-600 text-[15px] leading-relaxed font-light">
+                  <p className="text-slate-600 text-[15px] leading-relaxed font-light text-pretty">
                     {item.desc}
                   </p>
                 </div>
@@ -108,17 +108,17 @@ export default function MediaAwards() {
                 <Trophy className="w-10 h-10" />
               </div>
               <div className="max-w-2xl">
-                <h3 className="font-serif text-2xl sm:text-3xl font-medium mb-3 text-white tracking-tight">
+                <h3 className="font-serif text-2xl sm:text-3xl font-medium mb-3 text-white tracking-tight text-balance">
                   Student Achievement Awards
                 </h3>
-                <p className="text-slate-300 text-[15px] font-light leading-relaxed">
+                <p className="text-slate-300 text-[15px] font-light leading-relaxed text-pretty">
                   Celebrating the milestones, trading consistency, and career success of our outstanding academy graduates. We actively support and reward disciplined execution and consistent performance.
                 </p>
               </div>
             </div>
 
             <div className="shrink-0 bg-white/5 border border-white/10 px-8 py-6 text-center">
-              <div className="text-brand-primary font-serif text-4xl mb-1">100%</div>
+              <div className="text-brand-primary font-serif text-4xl mb-1 tabular-nums">100%</div>
               <div className="text-slate-400 text-xs font-mono tracking-widest uppercase">Practical Pedagogy</div>
             </div>
           </motion.div>
@@ -132,7 +132,7 @@ export default function MediaAwards() {
           variants={fadeIn}
           className="mt-16 sm:mt-20 border-y border-slate-200 py-8 text-center"
         >
-          <p className="font-serif text-brand-navy text-xl sm:text-2xl font-medium italic tracking-wide">
+          <p className="font-serif text-brand-navy text-xl sm:text-2xl font-medium italic tracking-wide text-pretty">
             "Building a financially aware and educated investment community."
           </p>
         </motion.div>
