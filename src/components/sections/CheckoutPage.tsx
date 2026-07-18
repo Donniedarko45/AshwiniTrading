@@ -187,7 +187,7 @@ export default function CheckoutPage({ courseId, onBack }: CheckoutPageProps) {
 
       // 2. Initialize Cashfree JS SDK
       // Using sandbox or production mode based on client config
-      const cfEnv = import.meta.env.VITE_CF_ENVIRONMENT || 'sandbox';
+      const cfEnv = (import.meta as any).env.VITE_CF_ENVIRONMENT || 'sandbox';
       const cashfree = await load({
         mode: cfEnv === 'production' ? 'production' : 'sandbox',
       });

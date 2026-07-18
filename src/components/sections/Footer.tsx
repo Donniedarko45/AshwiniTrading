@@ -20,25 +20,25 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Column 2: Programs (Quick Links) */}
+          {/* Column 2: Programs */}
           <div className="flex flex-col text-left lg:pl-8">
             <h4 className="text-white font-bold tracking-wider uppercase text-sm mb-8">Programs</h4>
             <ul className="space-y-5 text-slate-300 text-sm">
               <li className="flex items-start gap-3">
                 <span className="text-brand-primary text-xs mt-0.5">›</span>
-                <a href="#" className="hover:text-white transition-colors">Advanced Trading Strategies (15 Days)</a>
+                <a href="#/course-details/foundation" className="hover:text-white transition-colors">Stock Market Foundation</a>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-brand-primary text-xs mt-0.5">›</span>
-                <a href="#" className="hover:text-white transition-colors">Certified Trading Program (60 Days)</a>
+                <a href="#/course-details/basics-to-advanced" className="hover:text-white transition-colors">Basics to Advanced Program</a>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-brand-primary text-xs mt-0.5">›</span>
-                <a href="#" className="hover:text-white transition-colors">Technical Analysis Mastery (25 Days)</a>
+                <a href="#/course-details/nism-certified" className="hover:text-white transition-colors">NISM Certified Career Pro</a>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-brand-primary text-xs mt-0.5">›</span>
-                <a href="#" className="hover:text-white transition-colors">Free Stock Market Workshop</a>
+                <a href="#/course-details/futures-options-30-online" className="hover:text-white transition-colors">Futures & Options Pro</a>
               </li>
             </ul>
           </div>
@@ -49,23 +49,27 @@ export default function Footer() {
             <ul className="space-y-5 text-slate-300 text-sm">
               <li className="flex items-start gap-3">
                 <span className="text-brand-primary text-xs mt-0.5">›</span>
-                <a href="#" className="hover:text-white transition-colors">Stock Market Training</a>
+                <a href="#" className="hover:text-white transition-colors">Home</a>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-brand-primary text-xs mt-0.5">›</span>
-                <a href="#" className="hover:text-white transition-colors">Course Fees</a>
+                <a href="#/about-us" className="hover:text-white transition-colors">About Us</a>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-brand-primary text-xs mt-0.5">›</span>
-                <a href="#" className="hover:text-white transition-colors">Contact Us</a>
+                <a href="#/all-courses" className="hover:text-white transition-colors">All Courses</a>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-brand-primary text-xs mt-0.5">›</span>
-                <a href="#" className="hover:text-white transition-colors">Terms & Conditions</a>
+                <a href="#/reviews" className="hover:text-white transition-colors">Reviews</a>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-brand-primary text-xs mt-0.5">›</span>
-                <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="#/contact-us" className="hover:text-white transition-colors">Contact Us</a>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-brand-primary text-xs mt-0.5">›</span>
+                <a href="#/admin-panel" className="hover:text-white transition-colors text-slate-500 hover:text-slate-400">Admin Portal</a>
               </li>
             </ul>
           </div>
@@ -78,7 +82,7 @@ export default function Footer() {
                 <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-brand-primary/10 transition-colors shrink-0">
                   <Phone className="w-3.5 h-3.5 text-slate-400 group-hover:text-brand-primary transition-colors" />
                 </div>
-                <a href="tel:+919845961990" className="hover:text-white transition-colors">+91 9845961990</a>
+                <a href="tel:+918861756040" className="hover:text-white transition-colors">+91 88617 56040 | 9845961990</a>
               </li>
               <li className="flex items-center gap-4 group">
                 <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-brand-primary/10 transition-colors shrink-0">
@@ -90,12 +94,12 @@ export default function Footer() {
                 <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-brand-primary/10 transition-colors shrink-0 mt-0.5">
                   <MapPin className="w-3.5 h-3.5 text-slate-400 group-hover:text-brand-primary transition-colors" />
                 </div>
-                <span className="leading-relaxed mt-1.5">545, 2nd Floor, CMH Road, Stage 1, Indiranagar, Bengaluru, Karnataka 560038</span>
+                <span className="leading-relaxed mt-1.5">Ashwini Trading Academy, Bengaluru, Karnataka, India</span>
               </li>
             </ul>
           </div>
-
         </div>
+
       </div>
 
       {/* Divider and Copyright Bar */}

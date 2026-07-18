@@ -106,8 +106,21 @@ export function useLeadForm({
     setIsSubmitting(true);
     
     try {
-      // Simulate API submission
-      await new Promise(resolve => setTimeout(resolve, 1200));
+      const response = await fetch('/api/enquiries', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          fullName: formData.name,
+          phone: formData.phone,
+          interestedCourse: formData.learningGoal,
+          learningMode: formData.learningMode,
+          message: `Role: ${formData.role}`
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit lead to backend.');
+      }
       
       setIsSuccess(true);
       if (onSubmitSuccess) {
@@ -125,6 +138,7 @@ export function useLeadForm({
       setErrors({});
     } catch (err) {
       console.error('Submission failed:', err);
+      setErrors(prev => ({ ...prev, name: 'Network connection failed. Please try again.' }));
     } finally {
       setIsSubmitting(false);
     }

@@ -5,13 +5,17 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
 import { PrismaClient } from '@prisma/client';
+import { PrismaPg } from '@prisma/adapter-pg';
+import pg from 'pg';
 import rateLimit from 'express-rate-limit';
 
 // Load environment variables
 dotenv.config();
 
 const app = express();
-const prisma = new PrismaClient();
+const pool = new pg.Pool({ connectionString: process.env.DATABASE_URL });
+const adapter = new PrismaPg(pool);
+const prisma = new PrismaClient({ adapter });
 const PORT = process.env.PORT || 5000;
 const APP_URL = process.env.APP_URL || 'http://localhost:3000';
 
@@ -864,6 +868,259 @@ app.get('/api/orders/:id', async (req: Request, res: Response): Promise<any> => 
   } catch (error) {
     log('Error fetching order details:', error);
     return res.status(500).json({ error: 'Internal server error.' });
+  }
+});
+
+
+// ==========================================
+// 9. NEW ENQUIRIES, BLOGS, SETTINGS & ADMIN APIs
+// ==========================================
+
+const adminAuth = (req: any, res: any, next: any) => {
+  const token = req.headers['x-admin-token'];
+  if (token === 'admin123') {
+    next();
+  } else {
+    res.status(401).json({ error: 'Unauthorized admin access.' });
+  }
+};
+
+// ─── Enquiries API ───
+app.post('/api/enquiries', async (req: Request, res: Response): Promise<any> => {
+  try {
+    const { fullName, email, phone, city, interestedCourse, learningMode, message } = req.body;
+    if (!fullName || !phone) {
+      return res.status(400).json({ error: 'Name and phone number are required.' });
+    }
+    const enquiry = await prisma.enquiry.create({
+      data: {
+        fullName,
+        phone,
+        email: email || 'not-provided@ashwinitradingacademy.com',
+        city: city || 'Not Specified',
+        interestedCourse: interestedCourse || 'General Enquiry / Free Consultation',
+        learningMode: learningMode || 'Online',
+        message: message || ''
+      },
+    });
+    return res.json({ success: true, enquiry });
+  } catch (error) {
+    log('Error creating enquiry:', error);
+    return res.status(500).json({ error: 'Failed to submit enquiry.' });
+  }
+});
+
+app.get('/api/admin/enquiries', adminAuth, async (req: Request, res: Response): Promise<any> => {
+  try {
+    const enquiries = await prisma.enquiry.findMany({
+      orderBy: { createdAt: 'desc' },
+    });
+    return res.json({ success: true, enquiries });
+  } catch (error) {
+    log('Error fetching enquiries:', error);
+    return res.status(500).json({ error: 'Failed to fetch enquiries.' });
+  }
+});
+
+app.delete('/api/admin/enquiries/:id', adminAuth, async (req: Request, res: Response): Promise<any> => {
+  try {
+    const { id } = req.params;
+    await prisma.enquiry.delete({ where: { id } });
+    return res.json({ success: true, message: 'Enquiry deleted.' });
+  } catch (error) {
+    log('Error deleting enquiry:', error);
+    return res.status(500).json({ error: 'Failed to delete enquiry.' });
+  }
+});
+
+// ─── Blogs API ───
+app.get('/api/blogs', async (req: Request, res: Response): Promise<any> => {
+  try {
+    const blogs = await prisma.blog.findMany({
+      where: { published: true },
+      orderBy: { createdAt: 'desc' },
+    });
+    return res.json({ success: true, blogs });
+  } catch (error) {
+    log('Error fetching public blogs:', error);
+    return res.status(500).json({ error: 'Failed to fetch blogs.' });
+  }
+});
+
+app.get('/api/blogs/:slug', async (req: Request, res: Response): Promise<any> => {
+  try {
+    const { slug } = req.params;
+    const blog = await prisma.blog.findUnique({ where: { slug } });
+    if (!blog) return res.status(404).json({ error: 'Blog not found.' });
+    return res.json({ success: true, blog });
+  } catch (error) {
+    log('Error fetching blog detail:', error);
+    return res.status(500).json({ error: 'Failed to fetch blog.' });
+  }
+});
+
+app.get('/api/admin/blogs', adminAuth, async (req: Request, res: Response): Promise<any> => {
+  try {
+    const blogs = await prisma.blog.findMany({
+      orderBy: { createdAt: 'desc' },
+    });
+    return res.json({ success: true, blogs });
+  } catch (error) {
+    log('Error fetching admin blogs:', error);
+    return res.status(500).json({ error: 'Failed to fetch blogs.' });
+  }
+});
+
+app.post('/api/admin/blogs', adminAuth, async (req: Request, res: Response): Promise<any> => {
+  try {
+    const { title, slug, content, summary, category, thumbnail, published } = req.body;
+    if (!title || !slug || !content) {
+      return res.status(400).json({ error: 'Title, slug, and content are required.' });
+    }
+    const blog = await prisma.blog.create({
+      data: { title, slug, content, summary: summary || '', category: category || 'General', thumbnail: thumbnail || '', published: published ?? true },
+    });
+    return res.json({ success: true, blog });
+  } catch (error) {
+    log('Error creating blog:', error);
+    return res.status(500).json({ error: 'Failed to create blog.' });
+  }
+});
+
+app.put('/api/admin/blogs/:id', adminAuth, async (req: Request, res: Response): Promise<any> => {
+  try {
+    const { id } = req.params;
+    const { title, slug, content, summary, category, thumbnail, published } = req.body;
+    const blog = await prisma.blog.update({
+      where: { id },
+      data: { title, slug, content, summary, category, thumbnail, published },
+    });
+    return res.json({ success: true, blog });
+  } catch (error) {
+    log('Error updating blog:', error);
+    return res.status(500).json({ error: 'Failed to update blog.' });
+  }
+});
+
+app.delete('/api/admin/blogs/:id', adminAuth, async (req: Request, res: Response): Promise<any> => {
+  try {
+    const { id } = req.params;
+    await prisma.blog.delete({ where: { id } });
+    return res.json({ success: true, message: 'Blog deleted.' });
+  } catch (error) {
+    log('Error deleting blog:', error);
+    return res.status(500).json({ error: 'Failed to delete blog.' });
+  }
+});
+
+// ─── Testimonials API ───
+app.get('/api/testimonials', async (req: Request, res: Response): Promise<any> => {
+  try {
+    const testimonials = await prisma.testimonial.findMany({
+      orderBy: { createdAt: 'desc' },
+    });
+    return res.json({ success: true, testimonials });
+  } catch (error) {
+    log('Error fetching testimonials:', error);
+    return res.status(500).json({ error: 'Failed to fetch testimonials.' });
+  }
+});
+
+app.post('/api/admin/testimonials', adminAuth, async (req: Request, res: Response): Promise<any> => {
+  try {
+    const { name, role, content, rating, courseId } = req.body;
+    if (!name || !role || !content) {
+      return res.status(400).json({ error: 'Name, role, and content are required.' });
+    }
+    const testimonial = await prisma.testimonial.create({
+      data: { name, role, content, rating: rating ?? 5, courseId },
+    });
+    return res.json({ success: true, testimonial });
+  } catch (error) {
+    log('Error creating testimonial:', error);
+    return res.status(500).json({ error: 'Failed to create testimonial.' });
+  }
+});
+
+app.delete('/api/admin/testimonials/:id', adminAuth, async (req: Request, res: Response): Promise<any> => {
+  try {
+    const { id } = req.params;
+    await prisma.testimonial.delete({ where: { id } });
+    return res.json({ success: true, message: 'Testimonial deleted.' });
+  } catch (error) {
+    log('Error deleting testimonial:', error);
+    return res.status(500).json({ error: 'Failed to delete testimonial.' });
+  }
+});
+
+// ─── FAQs API ───
+app.get('/api/faqs', async (req: Request, res: Response): Promise<any> => {
+  try {
+    const faqs = await prisma.fAQ.findMany({
+      orderBy: { createdAt: 'desc' },
+    });
+    return res.json({ success: true, faqs });
+  } catch (error) {
+    log('Error fetching faqs:', error);
+    return res.status(500).json({ error: 'Failed to fetch faqs.' });
+  }
+});
+
+app.post('/api/admin/faqs', adminAuth, async (req: Request, res: Response): Promise<any> => {
+  try {
+    const { question, answer, category } = req.body;
+    if (!question || !answer || !category) {
+      return res.status(400).json({ error: 'Question, answer, and category are required.' });
+    }
+    const faq = await prisma.fAQ.create({
+      data: { question, answer, category },
+    });
+    return res.json({ success: true, faq });
+  } catch (error) {
+    log('Error creating faq:', error);
+    return res.status(500).json({ error: 'Failed to create faq.' });
+  }
+});
+
+app.delete('/api/admin/faqs/:id', adminAuth, async (req: Request, res: Response): Promise<any> => {
+  try {
+    const { id } = req.params;
+    await prisma.fAQ.delete({ where: { id } });
+    return res.json({ success: true, message: 'FAQ deleted.' });
+  } catch (error) {
+    log('Error deleting faq:', error);
+    return res.status(500).json({ error: 'Failed to delete faq.' });
+  }
+});
+
+// ─── Settings API ───
+app.get('/api/settings/:key', async (req: Request, res: Response): Promise<any> => {
+  try {
+    const { key } = req.params;
+    const setting = await prisma.setting.findUnique({ where: { key } });
+    if (!setting) return res.status(404).json({ error: 'Setting not found.' });
+    return res.json({ success: true, key: setting.key, value: JSON.parse(setting.value) });
+  } catch (error) {
+    log('Error fetching setting:', error);
+    return res.status(500).json({ error: 'Failed to fetch setting.' });
+  }
+});
+
+app.post('/api/admin/settings', adminAuth, async (req: Request, res: Response): Promise<any> => {
+  try {
+    const { key, value } = req.body;
+    if (!key || value === undefined) {
+      return res.status(400).json({ error: 'Key and value are required.' });
+    }
+    const setting = await prisma.setting.upsert({
+      where: { key },
+      update: { value: typeof value === 'string' ? value : JSON.stringify(value) },
+      create: { key, value: typeof value === 'string' ? value : JSON.stringify(value) },
+    });
+    return res.json({ success: true, setting });
+  } catch (error) {
+    log('Error updating settings:', error);
+    return res.status(500).json({ error: 'Failed to update settings.' });
   }
 });
 

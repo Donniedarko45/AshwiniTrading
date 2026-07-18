@@ -120,7 +120,11 @@ export default function Navbar() {
             <motion.button 
               onClick={() => {
                 const form = document.getElementById('name-card');
-                if (form) form.focus();
+                if (form) {
+                  form.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                  window.location.hash = '#/contact-us';
+                }
               }}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
@@ -173,7 +177,11 @@ export default function Navbar() {
                 onClick={() => {
                   closeMenu();
                   const form = document.getElementById('name-card');
-                  if (form) form.focus();
+                  if (form) {
+                    form.scrollIntoView({ behavior: 'smooth' });
+                  } else {
+                    window.location.hash = '#/contact-us';
+                  }
                 }}
                 className="w-full h-14 bg-cta-gold text-brand-navy font-bold text-[15px] rounded-xl shadow-brand-gold transition-all duration-300 flex items-center justify-center"
               >

@@ -1,0 +1,966 @@
+1: **Ashwini Trading Academy Website Development Requirements**
+3: **Website Objective**
+12: **Main Navigation Menu**
+26: **Course Pages**
+28: **Each course should have its own dedicated page.**
+30: **Courses Listing Page**
+32: **Display all courses with:**
+48: **Individual Course Pages**
+50: **Create separate pages for:**
+70: **Each page should include:**
+94: **Home Page Sections (Order)**
+120: **About Us Page**
+122: **Include:**
+148: **Reviews & Student Success Page**
+150: **Include:**
+172: **Corporate & College Training**
+174: **Include:**
+196: **Contact Page**
+198: **Include:**
+212: **Footer Structure**
+214: **Use a 4-column responsive footer.**
+216: **Column 1**
+218: **Company Logo**
+220: **Short Company Description**
+222: **Social Media Icons**
+224: **Column 2**
+226: **Quick Links**
+240: **Column 3**
+242: **Courses**
+260: **Column 4**
+262: **Contact Information**
+264: **Phone**
+266: **Email**
+268: **Address**
+270: **Business Hours**
+272: **Footer Bottom**
+274: **Legal Links**
+284: **Divider**
+286: **Copyright**
+288: **© 2026 Ashwini Trading Academy. All Rights Reserved.**
+290: **Designed & Developed by Boost D Brands.**
+292: **Forms**
+294: **Every enquiry form should capture:**
+310: **Buttons:**
+316: **All forms should send enquiries to:**
+322: **CTA Buttons Throughout Website**
+324: **Use consistent CTA buttons:**
+338: **Blog**
+340: **Create a blog module with:**
+352: **Only show previews on the Home Page.**
+354: **Provide a complete Blog Management section in the admin panel.**
+356: **Google Map**
+358: **Embed Google Maps on the Contact page.**
+360: **Social Media**
+362: **Add icons with links for:**
+376: **SEO Requirements**
+378: **Every page should support:**
+397: **Performance Requirements**
+411: **Security**
+423: **Admin Panel Requirements**
+425: **The admin panel should allow easy management of:**
+447: **Integrations**
+461: **General Design Guidelines**
+478: **Deliverables**
+480: **The developer should deliver:**
+506: **HOME PAGE**
+508: **HERO SECTION**
+510: **Badge**
+512: **GUIDED BY A SEBI REGISTERED RESEARCH ANALYST**
+514: **Finance Made Simple.**
+516: **Learn. Understand. Grow.**
+525: **Buttons**
+527: **Book a Free Demo Class**
+529: **Explore Courses**
+531: **Start Your Learning Journey**
+536: **Form Fields**
+570: **Button**
+572: **Book My Free Demo Class**
+574: **Below Form**
+582: **WHY CHOOSE ASHWINI TRADING ACADEMY**
+584: **Financial Education Designed for Every Learner.**
+592: **Simple Learning**
+596: **Practical Learning**
+601: **Trusted Guidance**
+606: **Learn at Every Stage**
+611: **ABOUT ASHWINI TRADING ACADEMY**
+613: **More Than a Trading Academy.**
+615: **We Build Financial Confidence.**
+629: **OUR LEARNING PROGRAMS**
+631: **Choose the Right Program for Your Learning Journey.**
+633: **Basics of Financial Markets**
+638: **Explore Course**
+640: **Fundamental Analysis**
+645: **Explore Course**
+647: **Technical Analysis**
+652: **Explore Course**
+654: **Futures & Options**
+659: **Explore Course**
+661: **Complete Stock Market Program**
+666: **Explore Course**
+668: **AI for Financial Markets**
+673: **Explore Course**
+677: **OUR LEARNING APPROACH**
+679: **Learn Step by Step.**
+681: **Build Your Foundation**
+685: **Strengthen Your Knowledge**
+689: **Apply What You Learn**
+693: **Continue Learning**
+698: **WHY LEARN WITH US**
+700: **What Makes Ashwini Trading Academy Different?**
+727: **MEET YOUR MENTOR**
+729: **Learn from Experience.**
+731: **Ashwini SD**
+733: **Founder -- Ashwini Trading Academy**
+735: **SEBI Registered Research Analyst**
+744: **LEARNER SUCCESS STORIES**
+746: **Hear from Our Learners.**
+755: **CORPORATE & COLLEGE TRAINING**
+757: **Financial Education for Institutions.**
+766: **BLOGS & INSIGHTS**
+768: **Keep Learning Beyond the Classroom.**
+776: **FREQUENTLY ASKED QUESTIONS**
+778: **Who can join your programs?**
+784: **Do I need any prior knowledge?**
+789: **What learning modes are available?**
+793: **Are practical sessions included?**
+797: **How do I choose the right course?**
+804: **FINAL CALL TO ACTION**
+806: **Start Your Financial Learning Journey Today.**
+816: **FOOTER**
+818: **Ashwini Trading Academy**
+820: **Finance Made Simple.**
+822: **Learn. Understand. Grow.**
+824: **Quick Links**
+840: **Legal**
+852: **Contact**
+860: **Follow Us**
+872: **ABOUT US**
+874: **Ashwini Trading Academy**
+876: ***An Institute of Financial Education***
+878: **Understanding Finance Starts Here.**
+890: **Our Story**
+903: **Our Mission**
+909: **Our Vision**
+915: **Our Values**
+917: **Simplicity**
+921: **Practical Learning**
+925: **Integrity**
+930: **Continuous Learning**
+935: **Excellence**
+940: **Why Choose Ashwini Trading Academy?**
+942: **Structured Learning**
+947: **Practical Education**
+952: **Research-Driven Approach**
+957: **Beginner Friendly**
+962: **Flexible Learning**
+967: **Lifelong Learning**
+972: **Who We Help**
+992: **Our Learning Programs**
+1011: **NISM Certification Programs**
+1028: **Meet the Founder**
+1030: **Ashwini SD**
+1032: **Founder -- Ashwini Trading Academy**
+1034: **SEBI Registered Research Analyst**
+1042: **Our Teaching Methodology**
+1046: **Learn**
+1050: **Understand**
+1054: **Apply**
+1059: **Grow**
+1064: **Our Commitment**
+1073: **Ready to Start Your Financial Learning Journey?**
+1079: **Book a Free Demo Class**
+1081: **Explore Our Programs**
+1083: **OUR COURSES**
+1085: **Learn Today. Invest Smarter Tomorrow.**
+1093: **Buttons**
+1099: **Why Choose Our Programs?**
+1124: **Choose the Right Course for You**
+1126: **Stock Market Foundation**
+1128: **Build Your Financial Knowledge from the Ground Up**
+1139: **Buttons**
+1145: **Fundamental Analysis with AI**
+1147: **Learn to Evaluate Companies Like an Investor**
+1158: **Buttons**
+1164: **Technical Analysis with AI**
+1166: **Discover Smarter Ways to Analyze Charts**
+1177: **Buttons**
+1183: **Technical Analysis -- 15 Days**
+1185: **Master the Fundamentals of Chart Reading**
+1197: **Buttons**
+1203: **Technical Analysis -- 30 Days**
+1205: **Advance Your Technical Analysis Skills**
+1217: **Buttons**
+1223: **Futures & Options -- 15 Days**
+1225: **Learn the Fundamentals of Derivatives Trading**
+1236: **Buttons**
+1242: **Futures & Options -- 30 Days**
+1244: **Build Advanced Knowledge in Derivatives**
+1256: **Buttons**
+1262: **AI for Fundamental & Technical Analysis**
+1264: **Learn How AI Can Improve Your Market Research**
+1277: **Buttons**
+1283: **Basics to Advanced Stock Market Program**
+1285: **One Complete Program. Everything You Need to Learn.**
+1295: **Buttons**
+1301: **NISM Certified Professional Program**
+1303: **Build a Career in the Financial Markets**
+1313: **Buttons**
+1319: **Not Sure Which Course is Right for You?**
+1324: **Buttons**
+1330: **Frequently Asked Questions**
+1352: **STOCK MARKET FOUNDATION**
+1354: **Duration: 3 Hours**
+1356: **Course Fee: ₹3,999**
+1358: **MODULE 1**
+1360: **Introduction to Financial Markets**
+1362: **Overview**
+1369: **Topics Covered**
+1388: **MODULE 2**
+1390: **Understanding the Stock Market**
+1392: **Overview**
+1397: **Topics Covered**
+1418: **MODULE 3**
+1420: **Market Participants & Investment Products**
+1422: **Overview**
+1427: **Topics Covered**
+1450: **MODULE 4**
+1452: **Demat & Trading Accounts**
+1454: **Overview**
+1459: **Topics Covered**
+1477: **MODULE 5**
+1479: **Investing Basics**
+1481: **Overview**
+1486: **Topics Covered**
+1505: **MODULE 6**
+1507: **Understanding Market Indices**
+1509: **Overview**
+1514: **Topics Covered**
+1532: **MODULE 7**
+1534: **Live Market Demonstration**
+1536: **Overview**
+1541: **Topics Covered**
+1560: **MODULE 8**
+1562: **Your Learning Roadmap**
+1564: **Overview**
+1569: **Topics Covered**
+1586: **WHAT YOU\'LL LEARN**
+1606: **COURSE INCLUDES**
+1620: **WHO SHOULD JOIN?**
+1634: **NEXT STEP AFTER THIS COURSE**
+1647: **READY TO START YOUR JOURNEY?**
+1652: **Buttons**
+1661: **TECHNICAL ANALYSIS PROGRAM (15 DAYS)**
+1663: **Master the Art of Reading Price Charts with Confidence**
+1678: **Course Details**
+1680: **Duration: 15 Days**
+1682: **Mode: Online \| Offline \| Hybrid**
+1684: **Course Fee: ₹6,999**
+1686: **Buttons**
+1692: **Course Overview**
+1703: **WHO SHOULD JOIN?**
+1721: **WHAT YOU\'LL LEARN**
+1739: **COMPLETE CURRICULUM**
+1741: **MODULE 1**
+1743: **Introduction to Technical Analysis**
+1745: **Overview**
+1750: **Topics Covered**
+1770: **MODULE 2**
+1772: **Understanding Candlestick Charts**
+1774: **Overview**
+1779: **Topics Covered**
+1805: **MODULE 3**
+1807: **Multiple Candlestick Patterns**
+1809: **Overview**
+1814: **Topics Covered**
+1841: **MODULE 4**
+1843: **Market Structure & Trend Analysis**
+1845: **Overview**
+1850: **Topics Covered**
+1872: **MODULE 5**
+1874: **Support & Resistance**
+1876: **Overview**
+1881: **Topics Covered**
+1903: **MODULE 6**
+1905: **Trendlines & Price Channels**
+1907: **Overview**
+1912: **Topics Covered**
+1930: **MODULE 7**
+1932: **Technical Indicators**
+1934: **Overview**
+1938: **Topics Covered**
+1960: **MODULE 8**
+1962: **Chart Patterns**
+1964: **Overview**
+1969: **Topics Covered**
+1993: **MODULE 9**
+1995: **Introduction to Price Action**
+1997: **Overview**
+2002: **Topics Covered**
+2020: **MODULE 10**
+2022: **Risk Management & Trading Psychology**
+2024: **Overview**
+2029: **Topics Covered**
+2049: **MODULE 11**
+2051: **Practical Chart Analysis**
+2053: **Overview**
+2058: **Practical Sessions**
+2076: **TOOLS YOU\'LL LEARN**
+2088: **COURSE INCLUDES**
+2102: **LEARNING OUTCOMES**
+2122: **FREQUENTLY ASKED QUESTIONS**
+2140: **TAKE THE NEXT STEP IN YOUR TRADING JOURNEY**
+2145: **Buttons**
+2151: **TECHNICAL ANALYSIS PROFESSIONAL PROGRAM**
+2153: **Master Advanced Technical Analysis Through Practical Market Learning**
+2165: **Course Details**
+2167: **Duration: 30 Days**
+2169: **Mode: Online \| Offline \| Hybrid**
+2171: **Course Fee**
+2173: **Online \| Offline: ₹9,999**
+2178: **Buttons**
+2180: **🟢 Enroll Now**
+2182: **🔵 Book a Free Demo Class**
+2184: **Course Overview**
+2195: **WHO SHOULD JOIN?**
+2197: **✔ Students who have completed Technical Analysis (15 Days)**
+2199: **✔ Swing Traders**
+2201: **✔ Intraday Traders**
+2203: **✔ Positional Traders**
+2205: **✔ Working Professionals**
+2207: **✔ Investors looking to improve chart analysis**
+2209: **✔ Anyone wanting advanced technical analysis skills**
+2211: **WHAT YOU\'LL LEARN**
+2213: **✔ Advanced Price Action**
+2215: **✔ Multi-Timeframe Analysis**
+2217: **✔ Advanced Chart Patterns**
+2219: **✔ Fibonacci Analysis**
+2221: **✔ Advanced Technical Indicators**
+2223: **✔ Trading Strategies**
+2225: **✔ Sector Analysis**
+2227: **✔ Scanner Building**
+2229: **✔ Trading Psychology**
+2231: **✔ Live Market Analysis**
+2233: **COMPLETE CURRICULUM**
+2235: **MODULE 1**
+2237: **Advanced Market Structure**
+2239: **Overview**
+2244: **Topics Covered**
+2262: **🎯 Learning Outcome**
+2264: **Understand market structure and identify potential shifts in trend.**
+2266: **MODULE 2**
+2268: **Advanced Price Action**
+2270: **Overview**
+2275: **Topics Covered**
+2293: **🎯 Learning Outcome**
+2295: **Develop confidence in reading raw price movement.**
+2297: **MODULE 3**
+2299: **Advanced Support & Resistance**
+2301: **Topics Covered**
+2315: **🎯 Learning Outcome**
+2320: **MODULE 4**
+2322: **Fibonacci Analysis**
+2324: **Topics Covered**
+2336: **🎯 Learning Outcome**
+2341: **MODULE 5**
+2343: **Advanced Technical Indicators**
+2345: **Topics Covered**
+2363: **🎯 Learning Outcome**
+2368: **MODULE 6**
+2370: **Advanced Chart Patterns**
+2372: **Topics Covered**
+2390: **🎯 Learning Outcome**
+2395: **MODULE 7**
+2397: **Trading Strategies**
+2399: **Topics Covered**
+2415: **🎯 Learning Outcome**
+2417: **Develop structured trading plans using multiple technical concepts.**
+2419: **MODULE 8**
+2421: **Scanner Building & Stock Selection**
+2423: **Topics Covered**
+2439: **🎯 Learning Outcome**
+2444: **MODULE 9**
+2446: **Sector & Relative Strength Analysis**
+2448: **Topics Covered**
+2460: **🎯 Learning Outcome**
+2465: **MODULE 10**
+2467: **Trading Psychology & Risk Management**
+2469: **Topics Covered**
+2485: **🎯 Learning Outcome**
+2490: **MODULE 11**
+2492: **Live Market Training**
+2494: **Practical Sessions**
+2508: **🎯 Learning Outcome**
+2513: **TOOLS COVERED**
+2529: **COURSE INCLUDES**
+2531: **✔ 30 Days of Live Training**
+2533: **✔ Online / Offline / Hybrid Learning**
+2535: **✔ Live Market Sessions**
+2537: **✔ Digital Study Material**
+2539: **✔ Chart Analysis Workbook**
+2541: **✔ Scanner Templates**
+2543: **✔ Trading Journal Template**
+2545: **✔ Interactive Q&A Sessions**
+2547: **✔ Course Completion Certificate**
+2549: **LEARNING OUTCOMES**
+2551: **After completing this program, you will be able to:**
+2553: **✔ Analyze charts using advanced technical concepts**
+2555: **✔ Apply multiple technical tools together**
+2557: **✔ Build trading strategies with confidence**
+2559: **✔ Create stock scanners**
+2561: **✔ Understand market structure**
+2563: **✔ Plan trades with better discipline**
+2565: **✔ Improve chart reading skills through practical learning**
+2567: **✔ Develop a structured market analysis process**
+2569: **FREQUENTLY ASKED QUESTIONS**
+2571: **Do I need to complete the 15-Day Technical Analysis course first?**
+2576: **Will there be live market sessions?**
+2581: **Will I learn ready-made trading strategies?**
+2587: **READY TO TAKE YOUR TECHNICAL ANALYSIS SKILLS TO THE NEXT LEVEL?**
+2592: **Buttons**
+2594: **🟢 Enroll Now**
+2596: **🔵 Book a Free Demo Class**
+2598: **FUTURES & OPTIONS PROFESSIONAL PROGRAM (30 DAYS)**
+2613: **Course Details**
+2615: **Duration: 30 Days**
+2617: **Mode: Online \| Offline \| Hybrid**
+2619: **Course Fee**
+2621: **Online: ₹14,999**
+2623: **Offline: ₹19,999**
+2628: **Buttons**
+2630: **🟢 Enroll Now**
+2632: **🔵 Book a Free Demo Class**
+2634: **📄 Download Course Brochure**
+2636: **Course Overview**
+2645: **WHO SHOULD JOIN?**
+2647: **✔ Students who have completed the 15-Day F&O Program**
+2649: **✔ Technical Traders**
+2651: **✔ Active Options Traders**
+2653: **✔ Swing & Positional Traders**
+2655: **✔ Working Professionals**
+2657: **✔ Anyone looking to deepen their understanding of derivatives**
+2659: **WHAT YOU\'LL LEARN**
+2661: **✔ Advanced Option Chain Analysis**
+2663: **✔ Advanced Option Greeks**
+2665: **✔ Implied Volatility & Volatility Analysis**
+2667: **✔ Multi-Leg Option Strategies**
+2669: **✔ Option Buying & Option Selling Concepts**
+2671: **✔ Futures Trading Techniques**
+2673: **✔ Trade Planning & Risk Management**
+2675: **✔ Live Market Analysis**
+2677: **COMPLETE CURRICULUM**
+2679: **MODULE 1**
+2681: **Advanced Futures Market**
+2683: **Overview**
+2688: **Topics Covered**
+2704: **🎯 Learning Outcome**
+2709: **MODULE 2**
+2711: **Advanced Option Chain Analysis**
+2713: **Overview**
+2718: **Topics Covered**
+2736: **🎯 Learning Outcome**
+2741: **MODULE 3**
+2743: **Option Greeks in Depth**
+2745: **Overview**
+2750: **Topics Covered**
+2766: **🎯 Learning Outcome**
+2771: **MODULE 4**
+2773: **Implied Volatility & Volatility Analysis**
+2775: **Overview**
+2777: **Learn how volatility affects option pricing and strategy selection.**
+2779: **Topics Covered**
+2793: **🎯 Learning Outcome**
+2795: **Use volatility analysis to support options decision-making.**
+2797: **MODULE 5**
+2799: **Advanced Option Buying Strategies**
+2801: **Overview**
+2806: **Topics Covered**
+2820: **🎯 Learning Outcome**
+2822: **Evaluate directional option strategies based on market outlook.**
+2824: **MODULE 6**
+2826: **Advanced Option Selling Strategies**
+2828: **Overview**
+2833: **Topics Covered**
+2849: **🎯 Learning Outcome**
+2854: **MODULE 7**
+2856: **Strategy Selection & Trade Planning**
+2858: **Overview**
+2863: **Topics Covered**
+2879: **🎯 Learning Outcome**
+2884: **MODULE 8**
+2886: **Risk Management for F&O**
+2888: **Overview**
+2893: **Topics Covered**
+2907: **🎯 Learning Outcome**
+2909: **Apply structured risk management principles in derivatives trading.**
+2911: **MODULE 9**
+2913: **Live Market Sessions**
+2915: **Practical Learning**
+2931: **🎯 Learning Outcome**
+2936: **TOOLS COVERED**
+2952: **COURSE INCLUDES**
+2954: **✔ 30 Days of Live Training**
+2956: **✔ Online / Offline / Hybrid Learning**
+2958: **✔ Live Market Sessions**
+2960: **✔ Digital Study Material**
+2962: **✔ Option Strategy Workbook**
+2964: **✔ Risk Management Templates**
+2966: **✔ Interactive Q&A Sessions**
+2968: **✔ Course Completion Certificate**
+2970: **LEARNING OUTCOMES**
+2972: **After completing this program, you\'ll be able to:**
+2974: **✔ Analyze advanced option chain data**
+2976: **✔ Understand and interpret Option Greeks**
+2978: **✔ Evaluate volatility in options markets**
+2980: **✔ Select suitable option strategy frameworks**
+2982: **✔ Plan and manage derivatives trades**
+2984: **✔ Apply disciplined risk management**
+2986: **✔ Build confidence in advanced F&O analysis**
+2988: **FREQUENTLY ASKED QUESTIONS**
+2990: **Do I need prior F&O knowledge?**
+2996: **Will I learn option selling?**
+3002: **Are live market sessions included?**
+3007: **Will I receive study materials?**
+3012: **READY TO MASTER FUTURES & OPTIONS?**
+3017: **Buttons**
+3019: **🟢 Enroll Now**
+3021: **🔵 Book a Free Demo Class**
+3023: **BASICS TO ADVANCED STOCK MARKET PROGRAM**
+3025: **Master the Stock Market from Foundation to Professional Trading**
+3041: **Course Details**
+3043: **Duration: 2 Months**
+3045: **Mode: Online \| Offline \| Hybrid**
+3047: **Course Fee: ₹50,000**
+3049: **Buttons**
+3051: **🟢 Enroll Now**
+3053: **🔵 Book a Free Demo Class**
+3055: **📄 Download Course Brochure**
+3057: **Course Overview**
+3070: **WHO SHOULD JOIN?**
+3072: **✔ Complete Beginners**
+3074: **✔ College Students**
+3076: **✔ Working Professionals**
+3078: **✔ Investors**
+3080: **✔ Traders**
+3082: **✔ Business Owners**
+3084: **✔ Finance Enthusiasts**
+3086: **✔ Anyone looking to build a career in the stock market**
+3088: **WHAT YOU\'LL LEARN**
+3090: **✔ Stock Market Fundamentals**
+3092: **✔ Fundamental Analysis**
+3094: **✔ Technical Analysis**
+3096: **✔ Price Action**
+3098: **✔ Futures & Options**
+3100: **✔ AI for Market Research**
+3102: **✔ Risk Management**
+3104: **✔ Trading Psychology**
+3106: **✔ Portfolio Building**
+3108: **✔ Live Market Analysis**
+3110: **COMPLETE CURRICULUM**
+3112: **MODULE 1**
+3114: **Financial Market Foundation**
+3116: **Topics Covered**
+3132: **MODULE 2**
+3134: **Fundamental Analysis**
+3136: **Topics Covered**
+3152: **MODULE 3**
+3154: **Technical Analysis**
+3156: **Topics Covered**
+3172: **MODULE 4**
+3174: **Advanced Technical Analysis**
+3176: **Topics Covered**
+3192: **MODULE 5**
+3194: **Futures & Options**
+3196: **Topics Covered**
+3212: **MODULE 6**
+3214: **AI in Stock Market**
+3216: **Topics Covered**
+3232: **MODULE 7**
+3234: **Portfolio Management**
+3236: **Topics Covered**
+3250: **MODULE 8**
+3252: **Risk Management & Trading Psychology**
+3254: **Topics Covered**
+3268: **MODULE 9**
+3270: **Practical Learning & Live Market Sessions**
+3272: **Practical Activities**
+3288: **MODULE 10**
+3290: **Career Development & Professional Growth**
+3292: **Topics Covered**
+3304: **TOOLS COVERED**
+3328: **COURSE INCLUDES**
+3330: **✔ 2 Months of Instructor-Led Training**
+3332: **✔ Online / Offline / Hybrid Learning**
+3334: **✔ Live Market Sessions**
+3336: **✔ Practical Assignments**
+3338: **✔ Real-Time Market Analysis**
+3340: **✔ Digital Study Material**
+3342: **✔ Lifetime Access to Recorded Sessions\***
+3344: **✔ Course Completion Certificate**
+3346: **✔ Dedicated Doubt-Clearing Sessions**
+3348: **✔ Trading & Investment Templates**
+3350: **✔ AI Prompt Library**
+3352: **✔ Portfolio Review Framework**
+3354: **\*Subject to academy policy.**
+3356: **LEARNING OUTCOMES**
+3358: **After completing this program, you\'ll be able to:**
+3360: **✔ Understand financial markets with confidence**
+3362: **✔ Analyze companies using fundamental analysis**
+3364: **✔ Read and interpret technical charts**
+3366: **✔ Evaluate Futures & Options markets**
+3368: **✔ Use AI to improve market research**
+3370: **✔ Develop structured trading and investment plans**
+3372: **✔ Apply disciplined risk management**
+3374: **✔ Build and review investment portfolios**
+3376: **✔ Make informed market decisions based on research**
+3378: **FREQUENTLY ASKED QUESTIONS**
+3380: **Do I need any prior stock market knowledge?**
+3385: **Will I receive practical exposure?**
+3390: **Is this course suitable for working professionals?**
+3395: **Will I receive a certificate?**
+3400: **WHY CHOOSE THIS PROGRAM?**
+3418: **START YOUR STOCK MARKET JOURNEY TODAY**
+3423: **Buttons**
+3425: **🟢 Enroll Now**
+3427: **🔵 Book a Free Demo Class**
+3429: **NISM CERTIFIED STOCK MARKET PROGRAM**
+3431: **Build a Professional Career in the Indian Stock Market**
+3447: **Course Details**
+3449: **Duration: 6 Months**
+3451: **Mode: Online \| Offline \| Hybrid**
+3453: **Course Fee: ₹99,999**
+3455: **Buttons**
+3457: **🟢 Enroll Now**
+3459: **🔵 Book a Free Demo Class**
+3461: **📄 Download Course Brochure**
+3463: **Course Overview**
+3473: **WHO SHOULD JOIN?**
+3475: **✔ Students pursuing careers in Finance**
+3477: **✔ MBA & Commerce Graduates**
+3479: **✔ Working Professionals**
+3481: **✔ Aspiring Research Analysts**
+3483: **✔ Future Investment Professionals**
+3485: **✔ Investors & Traders**
+3487: **✔ Anyone preparing for NISM Certification**
+3489: **WHAT YOU\'LL LEARN**
+3491: **✔ NISM Certification Syllabus**
+3493: **✔ Financial Market Fundamentals**
+3495: **✔ Fundamental Analysis**
+3497: **✔ Technical Analysis**
+3499: **✔ Futures & Options**
+3501: **✔ AI for Financial Research**
+3503: **✔ Portfolio Management**
+3505: **✔ Risk Management**
+3507: **✔ Live Market Analysis**
+3509: **✔ Professional Ethics & Compliance**
+3511: **COMPLETE CURRICULUM**
+3513: **MODULE 1**
+3515: **Introduction to Indian Financial Markets**
+3517: **Topics Covered**
+3533: **MODULE 2**
+3535: **NISM Certification Preparation**
+3537: **Topics Covered**
+3551: **MODULE 3**
+3553: **Fundamental Analysis**
+3555: **Topics Covered**
+3569: **MODULE 4**
+3571: **Technical Analysis**
+3573: **Topics Covered**
+3589: **MODULE 5**
+3591: **Futures & Options**
+3593: **Topics Covered**
+3609: **MODULE 6**
+3611: **AI in Financial Markets**
+3613: **Topics Covered**
+3627: **MODULE 7**
+3629: **Portfolio Management & Wealth Creation**
+3631: **Topics Covered**
+3645: **MODULE 8**
+3647: **Risk Management & Trading Psychology**
+3649: **Topics Covered**
+3663: **MODULE 9**
+3665: **Practical Market Training**
+3667: **Activities**
+3683: **MODULE 10**
+3685: **Career Development**
+3687: **Topics Covered**
+3701: **TOOLS COVERED**
+3725: **COURSE INCLUDES**
+3727: **✔ 3 Months of Comprehensive Training**
+3729: **✔ Online / Offline / Hybrid Learning**
+3731: **✔ NISM Exam Preparation**
+3733: **✔ Mock Tests & Practice Papers**
+3735: **✔ Live Market Sessions**
+3737: **✔ Practical Assignments**
+3739: **✔ Digital Study Material**
+3741: **✔ AI Prompt Library**
+3743: **✔ Portfolio Analysis Templates**
+3745: **✔ Course Completion Certificate**
+3747: **✔ Dedicated Doubt-Clearing Sessions**
+3753: **LEARNING OUTCOMES**
+3755: **After completing this program, you\'ll be able to:**
+3757: **✔ Understand Indian financial markets comprehensively**
+3759: **✔ Prepare confidently for the relevant NISM certification exam**
+3761: **✔ Analyze companies using fundamental analysis**
+3763: **✔ Read and interpret technical charts**
+3765: **✔ Understand Futures & Options concepts**
+3767: **✔ Use AI to enhance financial research**
+3769: **✔ Build and review investment portfolios**
+3771: **✔ Apply disciplined risk management**
+3773: **✔ Develop professional financial market skills**
+3775: **FREQUENTLY ASKED QUESTIONS**
+3777: **Is the NISM exam fee included in the course fee?**
+3782: **Do I receive an official NISM certificate after this course?**
+3787: **Is this course suitable for beginners?**
+3792: **Will I get practical exposure?**
+3797: **WHY CHOOSE THIS PROGRAM?**
+3815: **START YOUR PROFESSIONAL STOCK MARKET JOURNEY**
+3821: **Buttons**
+3823: **🟢 Enroll Now**
+3825: **🔵 Book a Free Demo Class**
+3827: **Reviews & Student Success**
+3829: **Trusted by Learners. Inspired by Success.**
+3842: **Why Thousands of Learners Choose Ashwini Trading Academy**
+3866: **Our Student Community**
+3873: **Our learners include:**
+3904: **What Our Students Say**
+3906: **⭐⭐⭐⭐⭐**
+3912: **-- Student, Technical Analysis Program**
+3914: **⭐⭐⭐⭐⭐**
+3920: **-- Student, Basics to Advanced Program**
+3922: **⭐⭐⭐⭐⭐**
+3928: **-- Student, AI Stock Market Program**
+3930: **⭐⭐⭐⭐⭐**
+3935: **-- Student, Futures & Options Program**
+3937: **⭐⭐⭐⭐⭐**
+3943: **-- Student, NISM Certified Program**
+3945: **A Practical Learning Experience**
+3951: **Students benefit from:**
+3977: **Student Gallery**
+3982: **Our gallery showcases:**
+4000: ***(Developer: Display in a responsive image gallery.)***
+4002: **Video Testimonials**
+4010: **Google Reviews**
+4018: **Frequently Asked Questions**
+4020: **Are the testimonials on this page from real students?**
+4025: **Can I speak with existing students before enrolling?**
+4030: **Are video testimonials available?**
+4035: **Are the courses suitable for beginners?**
+4041: **Begin Your Learning Journey Today**
+4051: **Take the First Step Today**
+4053: **🟢 Book a Free Demo Class**
+4055: **🔵 Explore Our Courses**
+4057: **📞 Contact Our Team**
+4059: **Our Commitment**
+4067: **Corporate & College Training**
+4069: **Empower Your Workforce and Students with Financial Market Education**
+4084: **Why Choose Ashwini Trading Academy?**
+4089: **Our programs are designed to:**
+4107: **Training Programs We Offer**
+4109: **Stock Market Foundation Program**
+4114: **Technical Analysis Training**
+4119: **Fundamental Analysis Training**
+4124: **Futures & Options Awareness**
+4129: **AI for Financial Markets**
+4134: **Financial Literacy Workshops**
+4139: **Who Can Partner With Us?**
+4141: **Our programs are suitable for:**
+4165: **Training Modes**
+4170: **Online Training**
+4172: **Interactive live sessions conducted through virtual platforms.**
+4174: **Offline Classroom Training**
+4179: **Hybrid Learning**
+4184: **Program Highlights**
+4208: **Why Financial Education Matters**
+4213: **Our programs are designed to help participants:**
+4225: **Our Training Process**
+4227: **Step 1**
+4229: **Understand your organization\'s learning objectives.**
+4231: **Step 2**
+4233: **Design a customized training curriculum.**
+4235: **Step 3**
+4237: **Schedule sessions based on your preferred format.**
+4239: **Step 4**
+4241: **Deliver engaging and interactive training.**
+4243: **Step 5**
+4245: **Conduct assessments and practical activities.**
+4247: **Step 6**
+4249: **Provide certificates upon successful completion.**
+4251: **Why Organizations Choose Us**
+4269: **Frequently Asked Questions**
+4271: **Can the training program be customized?**
+4276: **Do you conduct training at our location?**
+4281: **Are online training sessions available?**
+4283: **Yes. We offer Online, Offline, and Hybrid learning options.**
+4285: **Will participants receive certificates?**
+4291: **Partner With Ashwini Trading Academy**
+4301: **Get in Touch**
+4303: **🟢 Request a Corporate Proposal**
+4305: **🔵 Schedule a Consultation**
+4307: **📞 Contact Our Training Team**
+4309: **Contact Us**
+4311: **Let\'s Start Your Stock Market Learning Journey**
+4318: **Get in Touch**
+4320: **We\'d love to hear from you.**
+4322: **📞 Phone**
+4324: **+91 88617 56040 \| 9845961990**
+4326: **📧 Email**
+4328: **info@ashwinitradingacademy.com**
+4330: **🌐 Website**
+4334: **📍 Head Office**
+4336: **Ashwini Trading Academy**
+4338: **Bengaluru, Karnataka, India**
+4340: ***(Add your complete office address here.)***
+4342: **🕒 Business Hours**
+4344: **Monday -- Saturday**
+4346: **9:00 AM -- 7:00 PM**
+4348: **Sunday**
+4350: **By Appointment / Closed**
+4352: **Send Us a Message**
+4354: **Fill out the form below and our team will contact you shortly.**
+4356: **Contact Form**
+4378: **Button**
+4380: **🟢 Submit Enquiry**
+4382: **Book a Free Demo Class**
+4384: **Experience our teaching methodology before you enroll.**
+4390: **Button**
+4392: **🔵 Book Your Free Demo**
+4394: **Visit Our Academy**
+4399: **Address**
+4401: **Ashwini Trading Academy**
+4403: **Bengaluru, Karnataka**
+4405: ***(Developer: Integrate Google Maps here.)***
+4407: **Connect With Us**
+4412: ***(Developer: Display social media icons with links.)***
+4426: **Why Contact Ashwini Trading Academy?**
+4428: **Our academic counselors can help you:**
+4444: **Frequently Asked Questions**
+4446: **How soon will I receive a response?**
+4448: **Our team typically responds to enquiries during business hours.**
+4450: **Can I visit the academy before enrolling?**
+4455: **Do you offer online counseling?**
+4460: **Can I schedule a free demo class?**
+4465: **Ready to Begin?**
+4473: **Get Started Today**
+4475: **🟢 Book a Free Demo Class**
+4477: **📞 Call Now**
+4479: **📩 Send an Enquiry**
+4481: **Office Information**
+4483: **Ashwini Trading Academy**
+4485: **📍 Bengaluru, Karnataka, India**
+4487: **📞 +91 88617 56040 \| 9845961990**
+4489: **📧 info@ashwinitradingacademy.com**
+4501: **Privacy Policy**
+4503: **Effective Date: \[Insert Date\]**
+4515: **Information We Collect**
+4520: **Personal Information**
+4537: **Non-Personal Information**
+4554: **How We Use Your Information**
+4556: **Your information may be used for the following purposes:**
+4577: **Cookies**
+4586: **Information Sharing**
+4591: **Your information may only be shared:**
+4601: **Data Security**
+4611: **Third-Party Services**
+4629: **Children\'s Privacy**
+4639: **Your Rights**
+4641: **Subject to applicable laws, you may have the right to:**
+4656: **Updates to This Privacy Policy**
+4664: **Contact Us**
+4669: **Ashwini Trading Academy**
+4671: **📍 Bengaluru, Karnataka, India**
+4673: **📞 +91 88617 56040**
+4675: **📧 info@ashwinitradingacademy.com**
+4680: **Consent**
+4687: **Terms & Conditions**
+4689: **Effective Date: \[Insert Date\]**
+4700: **Acceptance of Terms**
+4706: **Courses & Training Programs**
+4721: **Enrolment**
+4729: **Payments**
+4737: **Intellectual Property**
+4744: **Students may use these materials only for their personal learning.**
+4764: **Student Responsibilities**
+4766: **Students are expected to:**
+4781: **Educational Purpose**
+4793: **Market Risks**
+4804: **Website Usage**
+4806: **Users agree not to:**
+4818: **Third-Party Links**
+4826: **Users access third-party websites at their own discretion.**
+4828: **Limitation of Liability**
+4845: **Changes to Courses & Services**
+4851: **Privacy**
+4856: **Governing Law**
+4865: **Changes to These Terms**
+4876: **Contact Us**
+4881: **Ashwini Trading Academy**
+4883: **📍 Bengaluru, Karnataka, India**
+4885: **📞 +91 88617 56040**
+4887: **📧 info@ashwinitradingacademy.com**
+4892: **Acceptance**
+4898: **Refund Policy**
+4900: **Effective Date: \[Insert Date\]**
+4910: **Course Fee Payments**
+4918: **Refund Eligibility**
+4942: **Batch Rescheduling**
+4951: **Course Cancellation by the Academy**
+4962: **The decision will be communicated directly to the affected students.**
+4964: **Duplicate Payments**
+4972: **Refund Processing**
+4980: **Non-Transferability**
+4987: **Digital Learning Materials**
+4994: **Access to digital content does not qualify for a refund.**
+4996: **Exceptional Circumstances**
+5003: **Changes to This Policy**
+5008: **The latest version will always be available on this website.**
+5010: **Contact Us**
+5015: **Ashwini Trading Academy**
+5017: **📍 Bengaluru, Karnataka, India**
+5019: **📞 +91 88617 56040**
+5021: **📧 info@ashwinitradingacademy.com**
+5026: **Acceptance**
+5032: **Disclaimer**
+5034: **Effective Date: \[Insert Date\]**
+5044: **Educational Purpose Only**
+5054: **No Investment Advice**
+5069: **Market Risk**
+5082: **No Guarantee of Results**
+5084: **Ashwini Trading Academy does not guarantee:**
+5106: **Accuracy of Information**
+5119: **Third-Party Content**
+5132: **Technology & Platform Availability**
+5143: **Intellectual Property**
+5153: **Limitation of Liability**
+5173: **Changes to This Disclaimer**
+5181: **Contact Us**
+5186: **Ashwini Trading Academy**
+5188: **📍 Bengaluru, Karnataka, India**
+5190: **📞 +91 88617 56040**
+5192: **📧 info@ashwinitradingacademy.com**
+5197: **Acceptance**
+5203: **Footer**
+5205: **Ashwini Trading Academy**
+5212: **Quick Links**
+5226: **Courses**
+5246: **Contact Information**
+5248: **Ashwini Trading Academy**
+5250: **📍 Bengaluru, Karnataka, India**
+5252: **📞 +91 88617 56040**
+5254: **📧 info@ashwinitradingacademy.com**
+5259: **Follow Us**
+5261: ***(Use social media icons instead of text)***
+5275: **Business Hours**
+5277: **Monday -- Saturday**
+5279: **9:00 AM -- 7:00 PM**
+5281: **Sunday**
+5283: **Closed / By Appointment**
+5285: **Legal**
+5295: **Stay Updated**
+5300: **Email Address**
+5302: **Subscribe Button**
+5304: **Disclaimer**
+5313: **Bottom Bar**
+5315: **© 2026 Ashwini Trading Academy. All Rights Reserved.**
+5317: **Developer Notes**
+5319: **For a modern, premium footer:**

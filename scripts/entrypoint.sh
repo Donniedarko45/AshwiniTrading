@@ -22,9 +22,9 @@ MAX_RETRIES=15
 RETRY_COUNT=0
 
 until node -e "
-  const { PrismaClient } = require('@prisma/client');
-  const p = new PrismaClient();
-  p.\$connect().then(() => { p.\$disconnect(); process.exit(0); }).catch(() => process.exit(1));
+  const pg = require('pg');
+  const client = new pg.Client({ connectionString: process.env.DATABASE_URL });
+  client.connect().then(() => { client.end(); process.exit(0); }).catch(() => process.exit(1));
 " 2>/dev/null; do
   RETRY_COUNT=$((RETRY_COUNT + 1))
   if [ "$RETRY_COUNT" -ge "$MAX_RETRIES" ]; then

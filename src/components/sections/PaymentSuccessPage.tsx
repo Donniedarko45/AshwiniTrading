@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
-import { CheckCircle2, Download, Home, ArrowRight, Loader2, Mail, CreditCard, Calendar, Hash } from 'lucide-react';
+import { CheckCircle2, Download, Home, ArrowRight, Loader2, Mail, CreditCard, Calendar, Hash, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export default function PaymentSuccessPage() {

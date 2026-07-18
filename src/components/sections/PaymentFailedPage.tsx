@@ -56,7 +56,7 @@ export default function PaymentFailedPage() {
       }
 
       // Re-initialize Cashfree SDK and launch overlay
-      const cfEnv = import.meta.env.VITE_CF_ENVIRONMENT || 'sandbox';
+      const cfEnv = (import.meta as any).env.VITE_CF_ENVIRONMENT || 'sandbox';
       const cashfree = await load({
         mode: cfEnv === 'production' ? 'production' : 'sandbox',
       });

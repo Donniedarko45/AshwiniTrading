@@ -15,9 +15,12 @@ const Checkout = React.lazy(() => import('@/components/sections/CheckoutPage'));
 const PaymentStatus = React.lazy(() => import('@/components/sections/PaymentStatusPage'));
 const PaymentSuccess = React.lazy(() => import('@/components/sections/PaymentSuccessPage'));
 const PaymentFailed = React.lazy(() => import('@/components/sections/PaymentFailedPage'));
+const AboutUs = React.lazy(() => import('@/components/sections/AboutUs'));
+const ContactUs = React.lazy(() => import('@/components/sections/ContactUs'));
+const AdminPanel = React.lazy(() => import('@/components/sections/AdminPanel'));
 
 export default function App() {
-  const [currentView, setCurrentView] = useState<'landing' | 'courses' | 'details' | 'collaboration' | 'join' | 'reviews' | 'checkout' | 'payment-status' | 'payment-success' | 'payment-failed'>('landing');
+  const [currentView, setCurrentView] = useState<'landing' | 'courses' | 'details' | 'collaboration' | 'join' | 'reviews' | 'checkout' | 'payment-status' | 'payment-success' | 'payment-failed' | 'about-us' | 'contact-us' | 'admin-panel'>('landing');
   const [activeCourseId, setActiveCourseId] = useState<string>('');
 
   useEffect(() => {
@@ -37,6 +40,15 @@ export default function App() {
         window.scrollTo(0, 0);
       } else if (hash === '#/reviews') {
         setCurrentView('reviews');
+        window.scrollTo(0, 0);
+      } else if (hash === '#/about-us') {
+        setCurrentView('about-us');
+        window.scrollTo(0, 0);
+      } else if (hash === '#/contact-us') {
+        setCurrentView('contact-us');
+        window.scrollTo(0, 0);
+      } else if (hash === '#/admin-panel') {
+        setCurrentView('admin-panel');
         window.scrollTo(0, 0);
       } else if (hash.startsWith('#/checkout/')) {
         const id = hash.substring('#/checkout/'.length).split('?')[0]; // strip query parameters
@@ -91,6 +103,21 @@ export default function App() {
         )}
         {currentView === 'join' && <JoinUs />}
         {currentView === 'reviews' && <ReviewsPage />}
+        {currentView === 'about-us' && (
+          <Suspense fallback={<div className="w-full min-h-[60vh] bg-brand-bg-dark flex items-center justify-center text-slate-800">Loading About Page...</div>}>
+            <AboutUs />
+          </Suspense>
+        )}
+        {currentView === 'contact-us' && (
+          <Suspense fallback={<div className="w-full min-h-[60vh] bg-brand-bg-dark flex items-center justify-center text-slate-800">Loading Contact Page...</div>}>
+            <ContactUs />
+          </Suspense>
+        )}
+        {currentView === 'admin-panel' && (
+          <Suspense fallback={<div className="w-full min-h-[60vh] bg-brand-bg-dark flex items-center justify-center text-slate-800">Loading Admin Dashboard...</div>}>
+            <AdminPanel />
+          </Suspense>
+        )}
         {currentView === 'courses' && (
           <Suspense fallback={<div className="w-full min-h-[60vh] bg-brand-bg-dark flex items-center justify-center text-slate-800">Loading Courses...</div>}>
             <AllCourses />

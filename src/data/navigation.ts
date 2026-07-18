@@ -4,8 +4,10 @@ export interface NavLink {
 }
 
 export const navLinks: NavLink[] = [
-  { label: 'Reviews', href: '#/reviews' },
+  { label: 'Home', href: '#' },
+  { label: 'About Us', href: '#/about-us' },
   { label: 'Courses', href: '#/all-courses' },
-  { label: 'College Collaboration', href: '#/college-collaboration' },
-  { label: 'FAQs', href: '#faq' }
+  { label: 'Reviews & Success', href: '#/reviews' },
+  { label: 'Corporate Training', href: '#/corporate-college' },
+  { label: 'Contact Us', href: '#/contact-us' }
 ];
