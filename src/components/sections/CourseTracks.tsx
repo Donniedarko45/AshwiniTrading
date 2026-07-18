@@ -5,7 +5,7 @@ import { coursesData } from '@/data/courses';
 
 export default function CourseTracks() {
   const homeCourses = coursesData.filter(course =>
-    ['foundation', 'technical-mastery', 'beginner-to-advanced'].includes(course.id)
+    ['foundation', 'basics-to-advanced', 'nism-certified'].includes(course.id)
   );
 
   return (
@@ -154,7 +154,7 @@ export default function CourseTracks() {
               whileTap={{ scale: 0.98 }}
               className="px-8 py-4 border border-brand-primary bg-brand-primary/5 text-brand-primary font-bold text-xs tracking-widest uppercase hover:bg-brand-primary hover:text-brand-navy transition-colors flex items-center gap-3 cursor-pointer"
             >
-              Explore All 9 Courses
+              Explore All 12 Courses
             </motion.button>
           </a>
         </div>
