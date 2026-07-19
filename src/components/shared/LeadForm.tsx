@@ -49,19 +49,34 @@ export function LeadForm({
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="flex flex-col items-center justify-center text-center p-8 rounded-2xl glass-card-premium text-white"
+        className={`flex flex-col items-center justify-center text-center p-8 sm:p-10 rounded-3xl relative overflow-hidden ${
+          isLight
+            ? 'bg-white shadow-[0_32px_64px_-16px_rgb(15,23,42,0.1)] border border-slate-200/50'
+            : 'glass-card-premium'
+        }`}
       >
-        <CheckCircle2 className="w-16 h-16 text-brand-primary mb-6 animate-bounce" />
-        <h4 className="text-2xl font-serif font-medium mb-3">Demo Class Booked!</h4>
-        <p className="text-sm text-slate-300 max-w-sm mb-8 leading-relaxed">
-          Thank you! Our academic counsellor will be in touch with you shortly to guide you.
-        </p>
-        <Button
-          onClick={() => setIsSuccess(false)}
-          className="bg-white/10 hover:bg-white/20 text-white border-0 rounded-xl px-6 h-12"
-        >
-          Submit Another Request
-        </Button>
+        {/* Decorative Glow inside card */}
+        <div className={`absolute -top-32 -right-32 w-64 h-64 blur-[80px] rounded-full pointer-events-none ${isLight ? 'bg-brand-primary/10' : 'bg-brand-primary/20'}`} />
+        
+        <div className="relative z-10 flex flex-col items-center justify-center">
+          <CheckCircle2 className="w-16 h-16 text-brand-primary mb-6 animate-bounce" />
+          <h4 className={`text-2xl font-serif font-medium mb-3 ${isLight ? 'text-brand-navy' : 'text-white'}`}>
+            Demo Class Booked!
+          </h4>
+          <p className={`text-sm max-w-sm mb-8 leading-relaxed ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+            Thank you! Our academic counsellor will be in touch with you shortly to guide you.
+          </p>
+          <Button
+            onClick={() => setIsSuccess(false)}
+            className={`rounded-xl px-6 h-12 transition-all duration-300 font-bold cursor-pointer ${
+              isLight
+                ? 'bg-brand-navy hover:bg-slate-900 text-white border-0'
+                : 'bg-white/10 hover:bg-white/20 text-white border-0'
+            }`}
+          >
+            Submit Another Request
+          </Button>
+        </div>
       </motion.div>
     );
   }
