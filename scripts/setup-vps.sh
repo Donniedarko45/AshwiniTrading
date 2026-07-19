@@ -67,14 +67,16 @@ echo "🔒 Requesting SSL certificate for ${DOMAIN}…"
 echo "   This may take a moment…"
 echo ""
 
-if docker compose -f "${FIRST_APP_DIR}/docker-compose.yml" run --rm certbot \
+if docker compose -f "${FIRST_APP_DIR}/docker-compose.yml" run --rm \
+  --entrypoint certbot \
+  certbot \
   certonly --webroot \
   -w /var/www/certbot \
   -d "${DOMAIN}" \
   -d "www.${DOMAIN}" \
   --email "${EMAIL}" \
   --agree-tos \
-  --no-eff-email; then
+  --no-eff-email --non-interactive; then
 
   echo ""
   echo "✅ SSL certificate issued successfully!"
