@@ -5,7 +5,7 @@ export interface LeadFormData {
   phone: string;
   role: string;
   learningGoal: string;
-  learningMode: 'Online' | 'Classroom';
+  learningMode: 'Online' | 'Classroom' | 'Hybrid';
 }
 
 export interface LeadFormErrors {
@@ -19,7 +19,7 @@ export interface LeadFormErrors {
 interface UseLeadFormProps {
   initialRole?: string;
   initialLearningGoal?: string;
-  initialLearningMode?: 'Online' | 'Classroom';
+  initialLearningMode?: 'Online' | 'Classroom' | 'Hybrid';
   onSubmitSuccess?: (data: LeadFormData) => void;
 }
 
@@ -92,7 +92,7 @@ export function useLeadForm({
     }
   };
 
-  const handleLearningModeChange = (value: 'Online' | 'Classroom') => {
+  const handleLearningModeChange = (value: 'Online' | 'Classroom' | 'Hybrid') => {
     setFormData(prev => ({ ...prev, learningMode: value }));
     if (errors.learningMode) {
       setErrors(prev => ({ ...prev, learningMode: undefined }));

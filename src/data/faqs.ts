@@ -7,35 +7,30 @@ export interface FAQItem {
 export const honestFAQsLeft: FAQItem[] = [
   {
     id: "q1",
-    question: "Do I need prior stock market knowledge?",
-    answer: "No. The course is designed for complete beginners as well as experienced learners."
+    question: "Who can join your programs?",
+    answer: "Our programs are designed for beginners, students, professionals, investors, traders, entrepreneurs, and anyone interested in learning financial markets."
   },
   {
     id: "q2",
-    question: "Is the course available online?",
-    answer: "Yes. Both online and offline learning options are available."
+    question: "Do I need any prior knowledge?",
+    answer: "No. We offer beginner-friendly programs as well as advanced learning paths."
   },
   {
     id: "q3",
-    question: "Will I receive certification?",
-    answer: "Yes. Students receive a course completion certificate."
+    question: "What learning modes are available?",
+    answer: "Online, Classroom, and Hybrid."
   }
 ];
 
 export const honestFAQsRight: FAQItem[] = [
   {
     id: "q4",
-    question: "How long is the course?",
-    answer: "The duration depends on the selected program and learning path."
+    question: "Are practical sessions included?",
+    answer: "Yes. Practical learning is an important part of every program."
   },
   {
     id: "q5",
-    question: "Will I learn live market analysis?",
-    answer: "Yes. Practical examples and live market discussions are included."
-  },
-  {
-    id: "q6",
-    question: "Can working professionals join?",
-    answer: "Absolutely. Flexible learning options are available."
+    question: "How do I choose the right course?",
+    answer: "Book a free demo class, and our academic counsellor will help you choose the right learning program."
   }
 ];

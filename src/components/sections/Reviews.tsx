@@ -1,5 +1,9 @@
 import React from 'react';
 import { academyReviews } from '@/data/reviews';
+import { ArrowRight } from 'lucide-react';
+import { motion } from 'motion/react';
+import { fadeIn } from '@/lib/animations';
+
 export default function Reviews() {
   return (
     <section 
@@ -12,16 +16,28 @@ export default function Reviews() {
         <div className="mb-20 flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-slate-200 pb-8">
           <div className="max-w-2xl">
             <div className="inline-block px-3 py-1 border border-slate-300 text-slate-500 font-mono text-xs tracking-widest uppercase mb-6 bg-white">
-              TESTIMONIALS
+              LEARNER SUCCESS STORIES
             </div>
             <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl font-medium text-brand-navy tracking-tight leading-tight text-balance">
-              Hear From <br className="hidden md:block" />
-              <span className="text-brand-primary italic">Our Students</span>
+              Hear from <br className="hidden md:block" />
+              <span className="text-brand-primary italic">Our Learners.</span>
             </h2>
           </div>
-          <p className="text-slate-600 text-base md:text-lg font-light max-w-sm leading-relaxed text-pretty">
-            Real experiences and success stories from our learning community.
-          </p>
+          <div className="max-w-sm">
+            <p className="text-slate-600 text-base md:text-lg font-light leading-relaxed text-pretty mb-6">
+              The learning journey of our learners reflects our commitment to quality education, practical learning, and structured guidance. Read their experiences and discover how financial education has helped them build confidence.
+            </p>
+            <a href="#/reviews">
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="h-12 px-6 flex items-center justify-center gap-2 border border-brand-primary bg-brand-primary/5 text-brand-primary font-bold text-xs tracking-widest uppercase hover:bg-brand-primary hover:text-brand-navy transition-[color,background-color] duration-300 group"
+              >
+                Read All Reviews
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </motion.button>
+            </a>
+          </div>
         </div>
 
         {/* Reviews Grid */}

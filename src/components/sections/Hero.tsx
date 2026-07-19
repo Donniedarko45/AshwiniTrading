@@ -1,19 +1,10 @@
 import React from 'react';
-import { Check, Star, Download, ArrowRight, Award } from 'lucide-react';
+import { Check, ArrowRight, BookOpen } from 'lucide-react';
 import { motion } from 'motion/react';
 import { fadeIn, staggerContainer } from '@/lib/animations';
 import { LeadForm } from '@/components/shared/LeadForm';
 
 export default function Hero() {
-  const benefits = [
-    "NISM Certification Exam Training",
-    "Technical Analysis & Chart Reading",
-    "Fundamental Analysis & Company Research",
-    "AI-Powered Market Analysis",
-    "Beginner to Advanced Programs",
-    "Online & Classroom Training"
-  ];
-
   return (
     <section className="relative min-h-screen bg-brand-bg-deep pt-24 pb-16 overflow-hidden">
       {/* Premium Background Effects */}
@@ -31,49 +22,52 @@ export default function Hero() {
             variants={staggerContainer}
             className="lg:col-span-7 flex flex-col justify-center pt-8 lg:pt-0"
           >
+            {/* Badge */}
+            <motion.div variants={fadeIn} className="mb-6">
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-primary/30 bg-brand-primary/5 text-brand-primary font-bold text-[11px] tracking-widest uppercase">
+                <BookOpen className="w-3.5 h-3.5" />
+                Guided by a SEBI Registered Research Analyst
+              </span>
+            </motion.div>
+
             {/* Hero Heading */}
             <motion.h1
               variants={fadeIn}
-              className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-[76px] font-medium leading-[1.05] tracking-tight mb-6 text-brand-navy text-balance"
+              className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-[76px] font-medium leading-[1.05] tracking-tight mb-2 text-brand-navy text-balance"
             >
-              Master the Stock Market with <span className="text-brand-primary italic block mt-2">Research-Driven</span> AI-Powered Learning
+              Finance Made Simple.
             </motion.h1>
+            <motion.p
+              variants={fadeIn}
+              className="font-serif text-3xl sm:text-4xl md:text-5xl font-medium text-brand-primary italic mb-8 tracking-tight"
+            >
+              Learn. Understand. Grow.
+            </motion.p>
 
-            {/* Outcome Copy */}
+            {/* Body Copy */}
             <motion.p
               variants={fadeIn}
               className="text-slate-600 text-lg sm:text-xl leading-relaxed mb-10 max-w-2xl font-light text-pretty"
             >
-              At Ashwini Trading Academy, we don’t just teach theory we train you to understand real market movements, identify opportunities, manage risk, and make informed investment decisions using modern tools, AI-powered analysis, and practical market exposure.
+              At Ashwini Trading Academy, we believe financial education should be simple, practical, and accessible to everyone. Whether you're a beginner, student, working professional, investor, trader, or entrepreneur, our structured learning programs help you build the knowledge and confidence to understand financial markets and make informed financial decisions.
             </motion.p>
-
-            {/* Key Benefits */}
-            <motion.div variants={fadeIn} className="grid grid-cols-2 gap-4 mb-12">
-              {benefits.map((benefit, i) => (
-                <div key={i} className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-5 h-5 rounded-full bg-brand-primary/20 flex items-center justify-center">
-                    <Check className="w-3 h-3 text-brand-primary stroke-[3px]" />
-                  </div>
-                  <span className="text-slate-700 text-[15px] font-medium">{benefit}</span>
-                </div>
-              ))}
-            </motion.div>
 
             {/* CTAs */}
             <motion.div variants={fadeIn} className="flex flex-col sm:flex-row items-center gap-4">
               <button onClick={() => {
                 const form = document.getElementById('name-card');
-                if (form) form.focus();
+                if (form) form.scrollIntoView({ behavior: 'smooth' });
               }}
                 className="w-full sm:w-auto h-14 px-8 flex items-center justify-center gap-2 bg-cta-gold text-brand-navy font-bold text-[15px] rounded-xl shadow-brand-gold hover:shadow-brand-gold-lg hover:-translate-y-0.5 transition-[color,background-color,border-color,box-shadow,transform] duration-300 group"
               >
-                Book Free Consultation
+                Book a Free Demo Class
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
-              <button className="w-full sm:w-auto h-14 px-8 flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-brand-navy font-bold text-[15px] rounded-xl border border-slate-200 hover:border-slate-300 shadow-sm transition-[color,background-color,border-color,box-shadow,transform] duration-300">
-                <Download className="w-5 h-5 text-slate-500" />
-                Download Curriculum
-              </button>
+              <a href="#/all-courses">
+                <button className="w-full sm:w-auto h-14 px-8 flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-brand-navy font-bold text-[15px] rounded-xl border border-slate-200 hover:border-slate-300 shadow-sm transition-[color,background-color,border-color,box-shadow,transform] duration-300">
+                  Explore Courses
+                </button>
+              </a>
             </motion.div>
           </motion.div>
 
@@ -94,14 +88,14 @@ export default function Hero() {
       <div className="relative lg:absolute lg:bottom-0 lg:left-0 lg:right-0 border-t border-slate-200/50 bg-white/50 backdrop-blur-md py-4 mt-12 lg:mt-0 z-30 w-full">
         <div className="max-w-[1400px] mx-auto px-6 flex flex-wrap items-center justify-center sm:justify-between gap-6 opacity-80">
           <div className="flex items-center gap-6 text-[11px] font-bold tracking-widest text-slate-500 uppercase">
-            <span>SEBI Registered Reg. No. INH000024453</span>
+            <span>SEBI Registered Research Analyst</span>
             <span className="hidden sm:inline-block w-1 h-1 rounded-full bg-slate-300" />
             <span>NISM Certified Faculty</span>
           </div>
           <div className="flex items-center gap-6 text-[11px] font-bold tracking-widest text-slate-500 uppercase">
-            <span>Enterprise-Grade Security</span>
+            <span>Online & Classroom Training</span>
             <span className="hidden sm:inline-block w-1 h-1 rounded-full bg-slate-300" />
-            <span>95% Completion Rate</span>
+            <span>Beginner to Advanced Programs</span>
           </div>
         </div>
       </div>

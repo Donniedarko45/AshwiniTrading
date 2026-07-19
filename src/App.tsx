@@ -86,19 +86,44 @@ export default function App() {
       <main>
         {currentView === 'landing' && (
           <>
-            {/* Above the fold (static render) */}
+            {/* 1. Hero Banner + Book Free Demo Form */}
             <Hero />
 
-            {/* Below the fold (lazy loaded on proximity scroll) */}
+            {/* 2. About Ashwini Trading Academy */}
             <LazySection importFunc={() => import('@/components/sections/Achieve90Days')} />
+
+            {/* 3. Why Choose Us */}
             <LazySection importFunc={() => import('@/components/sections/WhyChooseUs')} />
-            <LazySection importFunc={() => import('@/components/sections/Reviews')} />
-            <LazySection importFunc={() => import('@/components/sections/LearningJourneyCTA')} />
+
+            {/* 4. Featured Courses (Our Learning Programs) */}
             <LazySection importFunc={() => import('@/components/sections/CoursesWithAI')} />
-            <LazySection importFunc={() => import('@/components/sections/CourseTracks')} />
-            <LazySection importFunc={() => import('@/components/sections/Certifications')} />
+
+            {/* 5. Learning Approach + Why Learn With Us */}
+            <LazySection importFunc={() => import('@/components/sections/LearningJourneyCTA')} />
+
+            {/* 6. Meet the Mentor */}
+            <LazySection importFunc={() => import('@/components/sections/MeetMentor')} />
+
+            {/* 7. Student Testimonials (Learner Success Stories) */}
+            <LazySection importFunc={() => import('@/components/sections/Reviews')} />
+
+            {/* 8. Corporate & College Training */}
             <LazySection importFunc={() => import('@/components/sections/MediaAwards')} />
+
+            {/* 9. Blogs & Insights Preview */}
+            <LazySection importFunc={() => import('@/components/sections/BlogsPreview')} />
+
+            {/* 10. Course Tracks (Full Course Listing) */}
+            <LazySection importFunc={() => import('@/components/sections/CourseTracks')} />
+
+            {/* 11. NISM Certifications */}
+            <LazySection importFunc={() => import('@/components/sections/Certifications')} />
+
+            {/* 12. FAQs */}
             <LazySection importFunc={() => import('@/components/sections/HonestFAQ')} />
+
+            {/* 13. Final Call-to-Action */}
+            <LazySection importFunc={() => import('@/components/sections/FinalCTANew')} />
           </>
         )}
         {currentView === 'join' && <JoinUs />}
@@ -153,7 +178,6 @@ export default function App() {
             <PaymentFailed />
           </Suspense>
         )}
-        {/* 1% Change section removed */}
       </main>
 
       {/* Footer is always at the bottom, so lazy load it as well */}
