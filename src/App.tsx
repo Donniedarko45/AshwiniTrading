@@ -113,9 +113,6 @@ export default function App() {
             {/* 9. Blogs & Insights Preview */}
             <LazySection importFunc={() => import('@/components/sections/BlogsPreview')} />
 
-            {/* 10. Course Tracks (Full Course Listing) */}
-            <LazySection importFunc={() => import('@/components/sections/CourseTracks')} />
-
             {/* 11. NISM Certifications */}
             <LazySection importFunc={() => import('@/components/sections/Certifications')} />
 

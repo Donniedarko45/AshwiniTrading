@@ -43,6 +43,54 @@ export const coursesData: Course[] = [
     nextBatch: 'Starts Monday'
   },
   {
+    id: 'basics-to-advanced',
+    badge: 'Best-Seller',
+    badgeType: 'flagship',
+    title: 'Basics to Advanced Stock Market Program',
+    shortDescription: 'A comprehensive learning journey covering Stock Market Basics, Fundamental Analysis, Technical Analysis, Futures & Options, AI, Trading Psychology, Risk Management, and Practical Market Learning.',
+    duration: '2 Months',
+    format: 'Online | Offline | Hybrid',
+    schedule: 'Weekdays & Weekends Options',
+    fee: '₹50,000',
+    bonus: 'Recorded Videos + Study Material + Certificate',
+    topics: [
+      'Financial Market Foundations (NSE, BSE, SEBI)',
+      'Comprehensive Fundamental Analysis & Valuation',
+      'Basic to Advanced Technical Analysis & Charting',
+      'Price Action & Trend Trading Mastery',
+      'Futures & Options Foundations & Strategies',
+      'AI Tools Integration for Fast Stock Research',
+      'Asset Allocation, Portfolio Construct & Rebalance',
+      'Risk Management, Journaling & Trading Psychology'
+    ],
+    colorTheme: 'orange',
+    nextBatch: '12 Days',
+    remainingSeatsText: '3 seats left'
+  },
+  {
+    id: 'nism-certified',
+    badge: 'Career Pro',
+    badgeType: 'flagship',
+    title: 'NISM Certified Stock Market Program',
+    shortDescription: 'Prepare for NISM Series V-A, Series VIII, and Series XV examinations while completing our comprehensive Basics to Advanced Stock Market Program.',
+    duration: '6 Months',
+    format: 'Online | Classroom',
+    schedule: 'Comprehensive Learning Curriculum',
+    fee: '₹99,999',
+    bonus: 'Mock Tests & Study Materials Included',
+    topics: [
+      'Comprehensive Indian Financial Market Frameworks',
+      'NISM Series V-A: Mutual Fund Distributors Prep',
+      'NISM Series VIII: Equity Derivatives Exam Prep',
+      'NISM Series X-A: Investment Adviser Level 1 Prep',
+      'Full Basics to Advanced Practical Course Syllabus',
+      'Professional Resumes & Interview Readiness Coaching',
+      'Regulatory Compliance & Financial Advisory Ethics'
+    ],
+    colorTheme: 'orange',
+    nextBatch: '10 Days'
+  },
+  {
     id: 'fundamental-ai',
     badge: 'Fundamental',
     badgeType: 'standard',
@@ -248,53 +296,5 @@ export const coursesData: Course[] = [
     ],
     colorTheme: 'orange',
     nextBatch: '15 Days'
-  },
-  {
-    id: 'basics-to-advanced',
-    badge: 'Best-Seller',
-    badgeType: 'flagship',
-    title: 'Basics to Advanced Stock Market Program',
-    shortDescription: 'A comprehensive learning journey covering Stock Market Basics, Fundamental Analysis, Technical Analysis, Futures & Options, AI, Trading Psychology, Risk Management, and Practical Market Learning.',
-    duration: '2 Months',
-    format: 'Online | Offline | Hybrid',
-    schedule: 'Weekdays & Weekends Options',
-    fee: '₹50,000',
-    bonus: 'Recorded Videos + Study Material + Certificate',
-    topics: [
-      'Financial Market Foundations (NSE, BSE, SEBI)',
-      'Comprehensive Fundamental Analysis & Valuation',
-      'Basic to Advanced Technical Analysis & Charting',
-      'Price Action & Trend Trading Mastery',
-      'Futures & Options Foundations & Strategies',
-      'AI Tools Integration for Fast Stock Research',
-      'Asset Allocation, Portfolio Construct & Rebalance',
-      'Risk Management, Journaling & Trading Psychology'
-    ],
-    colorTheme: 'orange',
-    nextBatch: '12 Days',
-    remainingSeatsText: '3 seats left'
-  },
-  {
-    id: 'nism-certified',
-    badge: 'Career Pro',
-    badgeType: 'flagship',
-    title: 'NISM Certified Stock Market Program',
-    shortDescription: 'Prepare for NISM Series V-A, Series VIII, and Series XV examinations while completing our comprehensive Basics to Advanced Stock Market Program.',
-    duration: '6 Months',
-    format: 'Online | Classroom',
-    schedule: 'Comprehensive Learning Curriculum',
-    fee: '₹99,999',
-    bonus: 'Mock Tests & Study Materials Included',
-    topics: [
-      'Comprehensive Indian Financial Market Frameworks',
-      'NISM Series V-A: Mutual Fund Distributors Prep',
-      'NISM Series VIII: Equity Derivatives Exam Prep',
-      'NISM Series X-A: Investment Adviser Level 1 Prep',
-      'Full Basics to Advanced Practical Course Syllabus',
-      'Professional Resumes & Interview Readiness Coaching',
-      'Regulatory Compliance & Financial Advisory Ethics'
-    ],
-    colorTheme: 'orange',
-    nextBatch: '10 Days'
   }
 ];
