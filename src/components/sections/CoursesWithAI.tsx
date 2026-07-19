@@ -15,13 +15,13 @@ export default function CoursesWithAI() {
       id: 'fundamental',
       title: 'Fundamental Analysis',
       desc: 'Learn how to evaluate companies, interpret financial statements, and understand business performance.',
-      detailsId: 'fundamental-analysis-masterclass',
+      detailsId: 'fundamental-ai',
     },
     {
       id: 'technical',
       title: 'Technical Analysis',
       desc: 'Master charts, trends, price action, indicators, and market behaviour through practical learning.',
-      detailsId: 'technical-analysis-masterclass',
+      detailsId: 'technical-15',
     },
     {
       id: 'fno',
@@ -39,7 +39,7 @@ export default function CoursesWithAI() {
       id: 'ai',
       title: 'AI for Financial Markets',
       desc: 'Learn how Artificial Intelligence is transforming investing, financial research, and market analysis.',
-      detailsId: 'ai-fundamental-technical',
+      detailsId: 'ai-analysis',
     }
   ];
 

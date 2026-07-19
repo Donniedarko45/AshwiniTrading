@@ -3,6 +3,9 @@ import { useState, ChangeEvent, FormEvent } from 'react';
 export interface LeadFormData {
   name: string;
   phone: string;
+  email: string;
+  city: string;
+  message: string;
   role: string;
   learningGoal: string;
   learningMode: 'Online' | 'Classroom' | 'Hybrid';
@@ -11,6 +14,8 @@ export interface LeadFormData {
 export interface LeadFormErrors {
   name?: string;
   phone?: string;
+  email?: string;
+  city?: string;
   role?: string;
   learningGoal?: string;
   learningMode?: string;
@@ -32,6 +37,9 @@ export function useLeadForm({
   const [formData, setFormData] = useState<LeadFormData>({
     name: '',
     phone: '',
+    email: '',
+    city: '',
+    message: '',
     role: initialRole,
     learningGoal: initialLearningGoal,
     learningMode: initialLearningMode,
@@ -57,11 +65,21 @@ export function useLeadForm({
       tempErrors.phone = 'Phone number must be exactly 10 digits';
     }
 
+    if (!formData.email.trim()) {
+      tempErrors.email = 'Email address is required';
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      tempErrors.email = 'Please enter a valid email';
+    }
+
+    if (!formData.city.trim()) {
+      tempErrors.city = 'City is required';
+    }
+
     setErrors(tempErrors);
     return Object.keys(tempErrors).length === 0;
   };
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     
     // For phone, only allow digits
@@ -112,9 +130,11 @@ export function useLeadForm({
         body: JSON.stringify({
           fullName: formData.name,
           phone: formData.phone,
+          email: formData.email,
+          city: formData.city,
           interestedCourse: formData.learningGoal,
           learningMode: formData.learningMode,
-          message: `Role: ${formData.role}`
+          message: formData.message || `Role: ${formData.role}`
         }),
       });
 
@@ -131,6 +151,9 @@ export function useLeadForm({
       setFormData({
         name: '',
         phone: '',
+        email: '',
+        city: '',
+        message: '',
         role: initialRole,
         learningGoal: initialLearningGoal,
         learningMode: initialLearningMode,

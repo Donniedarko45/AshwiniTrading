@@ -3,10 +3,12 @@ export interface Course {
   badge: string;
   badgeType: 'standard' | 'popular' | 'flagship';
   title: string;
+  shortDescription: string;
   duration: string;
   format: string;
   schedule: string;
   fee: string;
+  regularPrice?: string;
   idealAudience?: string;
   bonus?: string;
   topics: string[];
@@ -20,7 +22,8 @@ export const coursesData: Course[] = [
     id: 'foundation',
     badge: 'Foundation',
     badgeType: 'standard',
-    title: 'Stock Market Foundation Program',
+    title: 'Stock Market Foundation',
+    shortDescription: 'Perfect for beginners who want to understand how the stock market works before moving on to investing or trading.',
     duration: '3 Hours',
     format: 'Online | Offline',
     schedule: 'Flexible Batches | Weekend & Weekday Options',
@@ -44,6 +47,7 @@ export const coursesData: Course[] = [
     badge: 'Fundamental',
     badgeType: 'standard',
     title: 'Fundamental Analysis with AI',
+    shortDescription: 'Understand financial statements, business performance, valuation basics, and explore how AI can make company research faster and more efficient.',
     duration: '3 Hours',
     format: 'Online | Offline',
     schedule: 'Flexible Batches | Weekend Options',
@@ -65,6 +69,7 @@ export const coursesData: Course[] = [
     badge: 'Technical',
     badgeType: 'standard',
     title: 'Technical Analysis with AI',
+    shortDescription: 'Learn how Artificial Intelligence can assist with chart analysis, stock screening, market research, and technical decision-making.',
     duration: '3 Hours',
     format: 'Online | Offline',
     schedule: 'Flexible Batches | Weekend Options',
@@ -85,7 +90,8 @@ export const coursesData: Course[] = [
     id: 'technical-15',
     badge: 'Technical 15D',
     badgeType: 'popular',
-    title: 'Technical Analysis -- 15 Days',
+    title: 'Technical Analysis — 15 Days',
+    shortDescription: 'Build a strong understanding of candlestick patterns, trends, support & resistance, indicators, and price action through structured practical learning.',
     duration: '15 Days',
     format: 'Online',
     schedule: 'Monday – Friday | 1 Hour Per Day',
@@ -108,9 +114,10 @@ export const coursesData: Course[] = [
     id: 'technical-30-online',
     badge: 'Technical 30D',
     badgeType: 'popular',
-    title: 'Technical Analysis Professional (Online)',
+    title: 'Technical Analysis Professional — 30 Days',
+    shortDescription: 'Go beyond the basics with advanced chart analysis, trading strategies, market psychology, and practical learning through live market sessions.',
     duration: '30 Days',
-    format: 'Online',
+    format: 'Online | Offline',
     schedule: 'Monday – Friday | 1.5 Hours Per Day',
     fee: '₹9,999',
     idealAudience: 'Active Traders, Swing Traders, Positional Investors',
@@ -132,6 +139,7 @@ export const coursesData: Course[] = [
     badge: 'Technical 30D Live',
     badgeType: 'popular',
     title: 'Technical Analysis Professional (Live Training)',
+    shortDescription: 'Advanced technical analysis with classroom sessions, online revision, and hands-on live market training at our Bengaluru facility.',
     duration: '30 Days',
     format: 'Offline + Live Market Training',
     schedule: 'Bengaluru Classroom + Live Market Hours',
@@ -153,7 +161,8 @@ export const coursesData: Course[] = [
     id: 'futures-options-15',
     badge: 'F&O 15D',
     badgeType: 'popular',
-    title: 'Futures & Options -- 15 Days',
+    title: 'Futures & Options — 15 Days',
+    shortDescription: 'Understand Futures, Options, Option Chains, Greeks, Open Interest, and risk management through structured learning.',
     duration: '15 Days',
     format: 'Online',
     schedule: 'Monday – Friday | 1 Hour Per Day',
@@ -175,7 +184,8 @@ export const coursesData: Course[] = [
     id: 'futures-options-30-online',
     badge: 'F&O 30D',
     badgeType: 'popular',
-    title: 'Futures & Options Professional (Online)',
+    title: 'Futures & Options Professional — 30 Days',
+    shortDescription: 'Learn advanced options strategies, market analysis, and practical applications through guided learning and live market training.',
     duration: '30 Days',
     format: 'Online',
     schedule: 'Monday – Friday | 1.5 Hours Per Day',
@@ -199,6 +209,7 @@ export const coursesData: Course[] = [
     badge: 'F&O 30D Live',
     badgeType: 'popular',
     title: 'Futures & Options Professional (Live Training)',
+    shortDescription: 'Advanced derivatives program with interactive classroom learning, live expiry day execution sessions, and offline mentoring.',
     duration: '30 Days',
     format: 'Offline + Live Expiry Training',
     schedule: 'Bengaluru Classroom + Expiry Day Live Execution',
@@ -220,10 +231,12 @@ export const coursesData: Course[] = [
     badge: 'AI Special',
     badgeType: 'standard',
     title: 'AI for Fundamental & Technical Analysis',
+    shortDescription: 'Discover practical AI techniques for company analysis, chart analysis, stock screening, research, and productivity.',
     duration: '4 Hours',
     format: 'Online | Offline',
     schedule: 'One-Day Masterclass | Weekend Batch',
     fee: '₹5,000',
+    regularPrice: '₹6,000',
     bonus: 'AI Prompt Library Book (Worth ₹4,999)',
     topics: [
       'AI Tools Overview (ChatGPT, Gemini, Perplexity)',
@@ -241,6 +254,7 @@ export const coursesData: Course[] = [
     badge: 'Best-Seller',
     badgeType: 'flagship',
     title: 'Basics to Advanced Stock Market Program',
+    shortDescription: 'A comprehensive learning journey covering Stock Market Basics, Fundamental Analysis, Technical Analysis, Futures & Options, AI, Trading Psychology, Risk Management, and Practical Market Learning.',
     duration: '2 Months',
     format: 'Online | Offline | Hybrid',
     schedule: 'Weekdays & Weekends Options',
@@ -265,6 +279,7 @@ export const coursesData: Course[] = [
     badge: 'Career Pro',
     badgeType: 'flagship',
     title: 'NISM Certified Stock Market Program',
+    shortDescription: 'Prepare for NISM Series V-A, Series VIII, and Series XV examinations while completing our comprehensive Basics to Advanced Stock Market Program.',
     duration: '6 Months',
     format: 'Online | Classroom',
     schedule: 'Comprehensive Learning Curriculum',
