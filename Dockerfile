@@ -48,6 +48,15 @@ RUN npx esbuild prisma/seed.ts \
     --format=esm \
     --packages=external
 
+# Compile Prisma config → JavaScript
+RUN npx esbuild prisma.config.ts \
+    --bundle \
+    --platform=node \
+    --target=node22 \
+    --outfile=prisma.config.js \
+    --format=esm \
+    --packages=external
+
 # ----------------------------------------------------------
 # Stage 3: Lean production image
 # ----------------------------------------------------------
@@ -79,15 +88,8 @@ COPY --from=builder /app/prisma/seed.js ./prisma/
 # Copy Prisma schema (needed for `prisma db push`)
 COPY prisma/schema.prisma ./prisma/
 
-# Create a plain JS Prisma config (avoids needing tsx to parse .ts config)
-# The Prisma CLI will use this instead of prisma.config.ts
-RUN printf '%s\n' \
-    'export default {' \
-    '  earlyAccess: true,' \
-    '  datasource: {' \
-    '    url: process.env.DATABASE_URL || "",' \
-    '  },' \
-    '};' > prisma.config.mjs
+# Copy compiled Prisma config
+COPY --from=builder /app/prisma.config.js ./
 
 # Copy public assets (logo, images served by Express static)
 COPY public ./public
