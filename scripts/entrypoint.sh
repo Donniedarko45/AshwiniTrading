@@ -43,7 +43,7 @@ echo "   Database is reachable."
 # ----------------------------------------------------------
 echo ""
 echo "==> [2/3] Syncing database schema (prisma db push)..."
-npx prisma db push --skip-generate
+npx prisma db push
 echo "   Schema sync complete."
 
 # ----------------------------------------------------------
