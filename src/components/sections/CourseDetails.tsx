@@ -129,7 +129,7 @@ export default function CourseDetails() {
             </a>
             <a href="#/join-us">
               <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                <Button variant="outline" size="lg" className="font-extrabold text-[15px] tracking-wide uppercase cursor-pointer">
+                <Button variant="light-outline" size="lg" className="font-extrabold text-[15px] tracking-wide uppercase cursor-pointer border-brand-primary text-brand-primary hover:bg-brand-primary/10 hover:border-brand-primary hover:text-brand-primary">
                   🔵 Book a Free Demo Class
                 </Button>
               </motion.div>

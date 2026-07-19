@@ -19,17 +19,22 @@ export default function MeetMentor() {
             <div className="relative w-full max-w-[420px] aspect-[4/5]">
               {/* Background accent */}
               <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/10 to-brand-primary/5 rounded-[40px] -rotate-2" />
-              <div className="absolute inset-3 bg-white border border-slate-200 rounded-[32px] shadow-[0_32px_64px_-16px_rgb(15,23,42,0.08)] overflow-hidden flex flex-col items-center justify-center p-12 text-center">
-                {/* Mentor Image placeholder with initials */}
-                <div className="w-32 h-32 rounded-full bg-brand-navy flex items-center justify-center mb-8 shadow-lg">
-                  <span className="text-4xl font-serif font-medium text-brand-primary">AS</span>
+              
+              <div className="absolute inset-3 bg-white border border-slate-200 rounded-[32px] shadow-[0_32px_64px_-16px_rgb(15,23,42,0.08)] overflow-hidden flex flex-col items-center justify-center p-8 text-center">
+                {/* Mentor Image */}
+                <div className="w-32 h-32 rounded-full border-2 border-brand-primary overflow-hidden mb-6 shadow-lg">
+                  <img 
+                    src="/assets/founder.png" 
+                    alt="Ashwini SD" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <div className="text-brand-primary font-mono text-xs tracking-widest uppercase mb-3">Founder</div>
+                <div className="text-brand-primary font-mono text-xs tracking-widest uppercase mb-2">Founder</div>
                 <h3 className="font-serif text-2xl font-medium text-brand-navy mb-2">Ashwini SD</h3>
-                <p className="text-slate-500 text-sm font-light">Ashwini Trading Academy</p>
-                <div className="mt-6 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-primary/5 border border-brand-primary/20">
+                <p className="text-slate-500 text-sm font-light mb-4">Ashwini Trading Academy</p>
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-primary/5 border border-brand-primary/20">
                   <Award className="w-3.5 h-3.5 text-brand-primary" />
-                  <span className="text-brand-primary font-bold text-[10px] tracking-widest uppercase">SEBI Registered Research Analyst</span>
+                  <span className="text-brand-primary font-bold text-[9px] tracking-wider uppercase">SEBI Registered Research Analyst</span>
                 </div>
               </div>
             </div>
@@ -66,7 +71,7 @@ export default function MeetMentor() {
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="h-14 px-8 flex items-center justify-center gap-2 bg-brand-navy text-white font-bold text-[15px] rounded-xl shadow-md hover:bg-slate-900 hover:-translate-y-0.5 transition-all duration-300 group"
+                  className="h-14 px-8 flex items-center justify-center gap-2 bg-brand-navy text-white font-bold text-[15px] rounded-xl shadow-md hover:bg-slate-900 hover:-translate-y-0.5 transition-all duration-300 group cursor-pointer"
                 >
                   Know More
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

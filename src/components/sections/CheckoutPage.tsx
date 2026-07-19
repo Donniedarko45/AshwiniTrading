@@ -54,7 +54,7 @@ export default function CheckoutPage({ courseId, onBack }: CheckoutPageProps) {
         <AlertCircle className="w-16 h-16 text-brand-primary mb-4 animate-bounce" />
         <h2 className="text-3xl font-extrabold mb-2">Program Not Found</h2>
         <p className="text-slate-400 mb-8 max-w-md">The program you are trying to enroll in could not be located.</p>
-        <Button onClick={onBack} variant="outline" className="cursor-pointer">
+        <Button onClick={onBack} variant="light-outline" className="cursor-pointer">
           Back to Programs
         </Button>
       </div>

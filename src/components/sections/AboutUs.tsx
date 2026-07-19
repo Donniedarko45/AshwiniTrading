@@ -200,7 +200,7 @@ export default function AboutUs() {
           <div className="md:col-span-4 flex flex-col items-center">
             <div className="w-48 h-48 rounded-full border-4 border-brand-primary/30 overflow-hidden relative group">
               <img 
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400&auto=format&fit=crop" 
+                src="/assets/founder.png" 
                 alt="Ashwini SD" 
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
