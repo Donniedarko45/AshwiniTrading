@@ -82,6 +82,12 @@ jobs:
             CF_CSEC="$(sanitize_single_line '${{ secrets.CF_CLIENT_SECRET }}')"
             CF_WHSEC="$(sanitize_single_line '${{ secrets.CF_WEBHOOK_SECRET }}')"
             GEMINI_KEY="$(sanitize_single_line '${{ secrets.GEMINI_API_KEY }}')"
+            SMTP_HOST="$(sanitize_single_line '${{ secrets.SMTP_HOST }}')"
+            SMTP_PORT="$(sanitize_single_line '${{ secrets.SMTP_PORT }}')"
+            SMTP_SECURE="$(sanitize_single_line '${{ secrets.SMTP_SECURE }}')"
+            SMTP_USER="$(sanitize_single_line '${{ secrets.SMTP_USER }}')"
+            SMTP_PASS="$(sanitize_single_line '${{ secrets.SMTP_PASS }}')"
+            SMTP_FROM="$(sanitize_single_line '${{ secrets.SMTP_FROM }}')"
 
             # ── Clone / update repo ───────────────────────────────
             mkdir -p "${APP_DIR}"
@@ -109,6 +115,12 @@ jobs:
             CF_ENVIRONMENT=production
             CF_WEBHOOK_SECRET=${CF_WHSEC}
             GEMINI_API_KEY=${GEMINI_KEY}
+            SMTP_HOST=${SMTP_HOST}
+            SMTP_PORT=${SMTP_PORT}
+            SMTP_SECURE=${SMTP_SECURE}
+            SMTP_USER=${SMTP_USER}
+            SMTP_PASS=${SMTP_PASS}
+            SMTP_FROM=${SMTP_FROM}
             ENVEOF
             # strip leading whitespace from heredoc
             sed -i 's/^[[:space:]]*//' .env.production

@@ -8,6 +8,7 @@ import { PrismaClient } from '@prisma/client';
 import { PrismaPg } from '@prisma/adapter-pg';
 import pg from 'pg';
 import rateLimit from 'express-rate-limit';
+import nodemailer from 'nodemailer';
 
 // Load environment variables
 dotenv.config();
@@ -60,6 +61,25 @@ const couponLimiter = rateLimit({
 const log = (message: string, ...args: any[]) => {
   console.log(`[${new Date().toISOString()}] ${message}`, ...args);
 };
+
+// SMTP Transporter configuration for forwarding lead enquiries
+const smtpTransporter = process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS
+  ? nodemailer.createTransport({
+      host: process.env.SMTP_HOST,
+      port: parseInt(process.env.SMTP_PORT || '587', 10),
+      secure: process.env.SMTP_SECURE === 'true',
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
+      },
+    })
+  : null;
+
+if (smtpTransporter) {
+  log('SMTP Transporter initialized successfully.');
+} else {
+  log('SMTP Transporter not configured. Lead emails will not be forwarded.');
+}
 
 // Cashfree PG API helper class
 class CashfreeService {
@@ -903,6 +923,71 @@ app.post('/api/enquiries', async (req: Request, res: Response): Promise<any> => 
         message: message || ''
       },
     });
+
+    // Send email notification to info@ashwinitradingacademy.com
+    if (smtpTransporter) {
+      const mailOptions = {
+        from: process.env.SMTP_FROM || '"Ashwini Trading Academy Leads" <no-reply@ashwinitradingacademy.com>',
+        to: 'info@ashwinitradingacademy.com',
+        subject: `New Lead: ${fullName} - ${interestedCourse || 'General Enquiry'}`,
+        text: `
+You have received a new enquiry lead:
+
+Name: ${fullName}
+Phone: ${phone}
+Email: ${email || 'Not Provided'}
+City/College: ${city || 'Not Specified'}
+Interested Course/Event: ${interestedCourse || 'General Enquiry / Free Consultation'}
+Learning Mode / Details: ${learningMode || 'Online'}
+Message: ${message || 'No message provided'}
+
+This lead has been saved to the database.
+`,
+        html: `
+<div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e0e0e0; border-radius: 8px;">
+  <h2 style="color: #0b132b; border-bottom: 2px solid #00b4d8; padding-bottom: 10px; margin-top: 0;">New Enquiry Lead</h2>
+  <table style="width: 100%; border-collapse: collapse; margin-top: 15px;">
+    <tr>
+      <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #f0f0f0; width: 35%;">Name:</td>
+      <td style="padding: 8px; border-bottom: 1px solid #f0f0f0;">${fullName}</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #f0f0f0;">Phone:</td>
+      <td style="padding: 8px; border-bottom: 1px solid #f0f0f0;"><a href="tel:${phone}">${phone}</a></td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #f0f0f0;">Email:</td>
+      <td style="padding: 8px; border-bottom: 1px solid #f0f0f0;"><a href="mailto:${email || ''}">${email || 'Not Provided'}</a></td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #f0f0f0;">City/College:</td>
+      <td style="padding: 8px; border-bottom: 1px solid #f0f0f0;">${city || 'Not Specified'}</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #f0f0f0;">Interested In:</td>
+      <td style="padding: 8px; border-bottom: 1px solid #f0f0f0;">${interestedCourse || 'General Enquiry / Free Consultation'}</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #f0f0f0;">Learning Mode:</td>
+      <td style="padding: 8px; border-bottom: 1px solid #f0f0f0;">${learningMode || 'Online'}</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; font-weight: bold; vertical-align: top;">Message/Role:</td>
+      <td style="padding: 8px; white-space: pre-wrap;">${message || 'No message provided'}</td>
+    </tr>
+  </table>
+  <div style="margin-top: 20px; font-size: 11px; color: #777; border-top: 1px solid #e0e0e0; padding-top: 10px; text-align: center;">
+    This lead was automatically captured and saved to the database.
+  </div>
+</div>
+`
+      };
+
+      smtpTransporter.sendMail(mailOptions)
+        .then(info => log(`Forwarded lead email for ${fullName} to info@ashwinitradingacademy.com: ${info.messageId}`))
+        .catch(err => log('Error forwarding lead email:', err));
+    }
+
     return res.json({ success: true, enquiry });
   } catch (error) {
     log('Error creating enquiry:', error);
