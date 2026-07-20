@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Phone } from 'lucide-react';
 
 export default function MobileStickyBar() {
   const [isVisible, setIsVisible] = useState(false);
@@ -31,16 +30,7 @@ export default function MobileStickyBar() {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 bg-brand-bg-dark/90 backdrop-blur-md border-t border-white/10 px-5 py-3 flex items-center gap-3 lg:hidden pb-safe shadow-[0_-8px_30px_rgba(0,0,0,0.4)] animate-in slide-in-from-bottom duration-300">
-      {/* Call CTA Button */}
-      <a 
-        href="tel:+919845961990" 
-        className="flex items-center justify-center w-12 h-12 rounded-xl bg-white/10 border border-white/20 text-white shrink-0 hover:bg-white/20 active:scale-[0.96] transition-[background-color,border-color,transform] duration-250 touch-target"
-        aria-label="Call admissions advisor"
-      >
-        <Phone className="w-5 h-5 fill-white text-white" />
-      </a>
-      
+    <div className="fixed bottom-0 left-0 right-0 z-50 bg-brand-bg-dark/90 backdrop-blur-md border-t border-white/10 px-5 py-3 flex items-center lg:hidden pb-safe shadow-[0_-8px_30px_rgba(0,0,0,0.4)] animate-in slide-in-from-bottom duration-300">
       {/* Primary Apply Button */}
       <button 
         onClick={() => {
@@ -49,7 +39,7 @@ export default function MobileStickyBar() {
             finalCta.scrollIntoView({ behavior: 'smooth' });
           }
         }}
-        className="flex-1 h-12 flex items-center justify-center bg-gradient-to-r from-brand-primary-grad-start to-brand-primary-grad-end hover:brightness-110 text-brand-navy font-extrabold text-sm sm:text-base tracking-wider rounded-xl uppercase active:scale-[0.96] transition-[box-shadow,filter,transform] duration-250 shadow-lg shadow-brand-primary/15 touch-target"
+        className="w-full h-12 flex items-center justify-center bg-gradient-to-r from-brand-primary-grad-start to-brand-primary-grad-end hover:brightness-110 text-brand-navy font-extrabold text-sm sm:text-base tracking-wider rounded-xl uppercase active:scale-[0.96] transition-[box-shadow,filter,transform] duration-250 shadow-lg shadow-brand-primary/15 touch-target"
       >
         Apply Now
       </button>
