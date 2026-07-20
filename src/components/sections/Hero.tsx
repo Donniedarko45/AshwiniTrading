@@ -86,13 +86,13 @@ export default function Hero() {
 
       {/* Bottom Trust Strip */}
       <div className="relative lg:absolute lg:bottom-0 lg:left-0 lg:right-0 border-t border-slate-200/50 bg-white/50 backdrop-blur-md py-4 mt-12 lg:mt-0 z-30 w-full">
-        <div className="max-w-[1400px] mx-auto px-6 flex flex-col md:flex-row items-center justify-center md:justify-between gap-4 md:gap-6 opacity-80">
-          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-6 text-[11px] font-bold tracking-widest text-slate-500 uppercase text-center leading-relaxed">
+        <div className="max-w-[1400px] mx-auto px-6 grid grid-cols-2 sm:flex sm:flex-row items-center justify-center sm:justify-between gap-y-6 gap-x-4 sm:gap-6 opacity-80">
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-6 text-[10px] sm:text-[11px] font-bold tracking-wider sm:tracking-widest text-slate-500 uppercase text-center leading-relaxed">
             <span>SEBI Registered Research Analyst</span>
             <span className="hidden sm:inline-block w-1 h-1 rounded-full bg-slate-300" />
             <span>NISM Certified Faculty</span>
           </div>
-          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-6 text-[11px] font-bold tracking-widest text-slate-500 uppercase text-center leading-relaxed">
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-6 text-[10px] sm:text-[11px] font-bold tracking-wider sm:tracking-widest text-slate-500 uppercase text-center leading-relaxed">
             <span>Online & Classroom Training</span>
             <span className="hidden sm:inline-block w-1 h-1 rounded-full bg-slate-300" />
             <span>Beginner to Advanced Programs</span>
