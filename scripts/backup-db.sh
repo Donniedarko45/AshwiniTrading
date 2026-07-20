@@ -41,13 +41,13 @@ echo "   Output: ${BACKUP_FILE}"
 pg_dump "${DATABASE_URL}" | gzip > "${BACKUP_FILE}"
 
 if [ ! -s "${BACKUP_FILE}" ]; then
-  echo "❌ Backup file is empty – something went wrong."
+  echo " Backup file is empty – something went wrong."
   rm -f "${BACKUP_FILE}"
   exit 1
 fi
 
 # ── Prune old backups ─────────────────────────────────────────────────
-echo "🧹 Removing backups older than ${RETENTION_DAYS} days…"
+echo " Removing backups older than ${RETENTION_DAYS} days…"
 find "${BACKUP_DIR}" -name "ashwini_trading_*.sql.gz" -type f -mtime +${RETENTION_DAYS} -delete
 
 # ── Summary ───────────────────────────────────────────────────────────
@@ -55,7 +55,7 @@ BACKUP_SIZE="$(du -h "${BACKUP_FILE}" | cut -f1)"
 BACKUP_COUNT="$(find "${BACKUP_DIR}" -name "ashwini_trading_*.sql.gz" -type f | wc -l)"
 
 echo ""
-echo "✅ Backup complete!"
+echo "   Backup complete!"
 echo "   File: ${BACKUP_FILE}"
 echo "   Size: ${BACKUP_SIZE}"
 echo "   Total backups: ${BACKUP_COUNT}"

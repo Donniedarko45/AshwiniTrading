@@ -9,16 +9,16 @@ export default function Footer() {
   return (
     <footer className="bg-brand-navy border-t border-white/10 relative z-10 font-mono text-slate-300">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-20">
-        
+
         {/* Main Footer Grid (4 Columns) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
-          
+
           {/* Column 1: Branding */}
           <div className="flex flex-col text-left">
             <h3 className="text-white font-serif font-medium text-2xl mb-3 tracking-tight">Ashwini Trading Academy</h3>
             <p className="text-brand-primary font-serif italic text-base mb-6">Finance Made Simple.</p>
             <p className="text-slate-300 font-serif text-sm mb-6">Learn. Understand. Grow.</p>
-            
+
             <div className="mb-6 inline-flex items-center w-fit px-4 py-2 rounded-full bg-brand-primary/5 border border-brand-primary/20 text-brand-primary font-bold text-[10px] tracking-widest uppercase shadow-sm">
               SEBI Registered Research Analyst
             </div>
@@ -163,7 +163,7 @@ export default function Footer() {
             <span>⭐⭐⭐⭐⭐</span>
             <span>Rated 4.9 on Google Business</span>
           </div>
-          <button 
+          <button
             onClick={scrollToTop}
             className="flex items-center gap-2 text-xs font-bold text-slate-400 hover:text-white bg-white/5 hover:bg-white/10 px-4 py-2 border border-white/10 rounded-xl transition-colors cursor-pointer"
           >
@@ -183,7 +183,7 @@ export default function Footer() {
       {/* Bottom Bar: Copyright and Legal */}
       <div className="border-t border-white/10 bg-black/20 text-[11px] text-slate-400">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          
+
           <div className="flex flex-wrap justify-center md:justify-start gap-6 font-bold uppercase tracking-wider">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-white transition-colors">Terms & Conditions</a>
@@ -193,7 +193,7 @@ export default function Footer() {
 
           {/* Copyright */}
           <div className="tracking-widest uppercase text-center md:text-right font-medium">
-            © 2026 Ashwini Trading Academy. All Rights Reserved. | Designed & Developed by Boost D Brands.
+            © 2026 Ashwini Trading Academy. All Rights Reserved.
           </div>
 
         </div>

@@ -12,7 +12,7 @@ export default function AboutUs() {
     { title: 'Continuous Learning', desc: 'Financial learning never stops. We support and encourage lifelong learning.' },
     { title: 'Excellence', desc: 'We strive to deliver high-quality education that creates meaningful learning experiences.' }
   ];
-
+ 
   const whyUs = [
     { title: 'Structured Learning', desc: 'A carefully designed curriculum that helps learners progress from foundations to advanced knowledge.' },
     { title: 'Practical Education', desc: 'Learn through real market examples, case studies, discussions, and practical sessions.' },

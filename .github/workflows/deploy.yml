@@ -183,11 +183,11 @@ jobs:
             cp /opt/ashwini-trading/nginx/ashwinitradingacademy.conf \
                /opt/app/nginx/conf.d/ashwinitradingacademy.conf
 
-            echo "🔄 Reloading nginx…"
+            echo " Reloading nginx…"
             docker exec app-nginx nginx -s reload
 
             # ── Post-deploy cleanup ───────────────────────────────
-            echo "🧹 Post-deploy cleanup…"
+            echo " Post-deploy cleanup…"
             docker container prune -f  || true
             docker image prune -a -f   || true
             docker builder prune -f    || true
@@ -195,10 +195,10 @@ jobs:
             # ── Status ────────────────────────────────────────────
             echo ""
             echo "══════════════════════════════════════════════════════"
-            echo "  📊 Disk usage:"
+            echo "   Disk usage:"
             df -h / | tail -1
             echo ""
-            echo "  🐳 Running containers:"
+            echo "   Running containers:"
             docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"
             echo "══════════════════════════════════════════════════════"
-            echo "✅ Deploy complete!"
+            echo " Deploy complete!"
