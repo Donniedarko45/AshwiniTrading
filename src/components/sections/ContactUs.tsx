@@ -139,7 +139,7 @@ export default function ContactUs() {
                   <div>
                     <span className="text-slate-400 text-xs font-semibold block uppercase tracking-wider">Head Office</span>
                     <span className="text-slate-700 text-sm font-semibold leading-relaxed">
-                      Ashwini Trading Academy, Bengaluru, Karnataka, India
+                      2nd floor, 545/1, Chinmaya Mission Hospital Rd, Stage 1, Indiranagar, Bengaluru, Karnataka 560038
                     </span>
                   </div>
                 </div>
@@ -333,7 +333,7 @@ export default function ContactUs() {
         {/* Google Maps Location Iframe */}
         <div className="rounded-3xl overflow-hidden border border-slate-200 shadow-md h-96 w-full relative group">
           <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.0003714902187!2d77.5896395!3d12.9715987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c0000001%3A0x633e5c9b685ea751!2sBengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+            src="https://maps.google.com/maps?q=2nd%20floor%2C%20545%2F1%2C%20Chinmaya%20Mission%20Hospital%20Rd%2C%20Stage%201%2C%20Indiranagar%2C%20Bengaluru%2C%20Karnataka%20560038&t=&z=16&ie=UTF8&iwloc=&output=embed" 
             width="100%" 
             height="100%" 
             style={{ border: 0 }} 
