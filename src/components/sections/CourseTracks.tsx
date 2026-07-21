@@ -4,9 +4,15 @@ import { staggerContainer, fadeIn } from '@/lib/animations';
 import { coursesData } from '@/data/courses';
 
 export default function CourseTracks() {
-  const homeCourses = coursesData.filter(course =>
-    ['foundation', 'basics-to-advanced', 'nism-certified'].includes(course.id)
-  );
+  const homeCourses = [...coursesData]
+    .filter(course =>
+      ['foundation', 'basics-to-advanced', 'nism-certified'].includes(course.id)
+    )
+    .sort((a, b) => {
+      const priceA = parseInt(a.fee.replace(/[^0-9]/g, ''), 10) || 0;
+      const priceB = parseInt(b.fee.replace(/[^0-9]/g, ''), 10) || 0;
+      return priceA - priceB;
+    });
 
   return (
     <section id="courses" className="py-24 md:py-32 bg-slate-50 border-t border-b border-slate-200">

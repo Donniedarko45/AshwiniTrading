@@ -148,7 +148,13 @@ export default function AllCourses() {
           animate="visible"
           variants={staggerContainer}
         >
-          {coursesData.map((course) => {
+          {[...coursesData]
+            .sort((a, b) => {
+              const priceA = parseInt(a.fee.replace(/[^0-9]/g, ''), 10) || 0;
+              const priceB = parseInt(b.fee.replace(/[^0-9]/g, ''), 10) || 0;
+              return priceA - priceB;
+            })
+            .map((course) => {
             const styles = themeStyles[course.colorTheme];
             return (
               <motion.div 
