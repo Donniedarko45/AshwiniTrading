@@ -106,7 +106,7 @@ export default function Navbar() {
             className="hidden lg:flex items-center gap-3"
           >
             <a
-              href="tel:+919845961990"
+              href="tel:+918861756040"
               className="flex items-center justify-center w-10 h-10 rounded-full transition-colors bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-brand-navy"
               aria-label="Call us"
             >
@@ -114,7 +114,7 @@ export default function Navbar() {
             </a>
 
             <a
-              href="https://wa.me/919845961990"
+              href="https://wa.me/918861756040"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center w-10 h-10 rounded-full transition-colors bg-brand-secondary/10 text-brand-secondary hover:bg-brand-secondary/20"
@@ -196,7 +196,7 @@ export default function Navbar() {
               
               <div className="grid grid-cols-2 gap-4 mt-2">
                 <a
-                  href="tel:+919845961990"
+                  href="tel:+918861756040"
                   onClick={closeMenu}
                   className="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl border border-slate-200 text-slate-700 text-[14px] font-bold hover:bg-slate-50 transition-colors"
                 >
@@ -205,7 +205,7 @@ export default function Navbar() {
                 </a>
                 
                 <a
-                  href="https://wa.me/919845961990"
+                  href="https://wa.me/918861756040"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={closeMenu}

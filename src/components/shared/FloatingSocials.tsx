@@ -3,7 +3,7 @@ import { Phone } from 'lucide-react';
 
 export default function FloatingSocials() {
   const whatsappNumber = '918861756040';
-  const phoneNumber = '9845961990';
+  const phoneNumber = '8861756040';
   const telegramLink = 'https://t.me/tradewithashwinisd6';
   
   return (

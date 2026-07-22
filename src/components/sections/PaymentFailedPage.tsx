@@ -135,7 +135,7 @@ export default function PaymentFailedPage() {
                 If the payment failed or you need custom bank details (IMPS/NEFT/UPI), WhatsApp us for instant help.
               </p>
               <a 
-                href={`https://wa.me/919845961990?text=Hi%2C%20my%20payment%20failed%20for%20Ashwini%20Trading%20Academy%20${orderId ? `%28Order%20Ref%3A%20${orderId}%29` : ''}.%20Please%20help.`}
+                href={`https://wa.me/918861756040?text=Hi%2C%20my%20payment%20failed%20for%20Ashwini%20Trading%20Academy%20${orderId ? `%28Order%20Ref%3A%20${orderId}%29` : ''}.%20Please%20help.`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[11px] font-bold text-emerald-600 hover:text-emerald-700 flex items-center gap-1 mt-2.5 transition-colors cursor-pointer"
@@ -174,7 +174,7 @@ export default function PaymentFailedPage() {
 
             <div className="grid grid-cols-2 gap-3">
               <a 
-                href={`https://wa.me/919845961990?text=Hi%2C%20my%20payment%20failed%20for%20Ashwini%20Trading%20Academy%20${orderId ? `%28Order%20Ref%3A%20${orderId}%29` : ''}.%20Please%20help.`}
+                href={`https://wa.me/918861756040?text=Hi%2C%20my%20payment%20failed%20for%20Ashwini%20Trading%20Academy%20${orderId ? `%28Order%20Ref%3A%20${orderId}%29` : ''}.%20Please%20help.`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block"

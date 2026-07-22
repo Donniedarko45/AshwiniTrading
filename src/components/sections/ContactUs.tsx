@@ -165,7 +165,7 @@ export default function ContactUs() {
             <div className="bg-white rounded-3xl p-6 border border-slate-200/60 shadow-sm flex items-center justify-between">
               <span className="text-slate-500 text-sm font-bold pl-2">Follow Us:</span>
               <div className="flex items-center gap-4">
-                <a href="https://wa.me/919845961990" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-100 text-[#25D366] hover:bg-[#25D366]/10 flex items-center justify-center transition-colors">
+                <a href="https://wa.me/918861756040" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-100 text-[#25D366] hover:bg-[#25D366]/10 flex items-center justify-center transition-colors">
                   <MessageCircle className="w-5 h-5" />
                 </a>
                 <a href="https://youtube.com/ashwinitradingacademy" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-100 text-[#FF0000] hover:bg-[#FF0000]/10 flex items-center justify-center transition-colors">

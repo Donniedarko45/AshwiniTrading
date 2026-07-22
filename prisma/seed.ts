@@ -239,7 +239,7 @@ const settings = [
         facebook: 'https://facebook.com/ashwinitradingacademy',
         linkedin: 'https://linkedin.com/company/ashwinitradingacademy',
         telegram: 'https://t.me/ashwinitradingacademy',
-        whatsapp: 'https://wa.me/919845961990',
+        whatsapp: 'https://wa.me/918861756040',
       },
     }),
   },
