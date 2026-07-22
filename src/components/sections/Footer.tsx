@@ -185,10 +185,10 @@ export default function Footer() {
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
 
           <div className="flex flex-wrap justify-center md:justify-start gap-6 font-bold uppercase tracking-wider">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms & Conditions</a>
-            <a href="#" className="hover:text-white transition-colors">Refund Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Disclaimer</a>
+            <a href="#/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</a>
+            <a href="#/terms-and-conditions" className="hover:text-white transition-colors">Terms & Conditions</a>
+            <a href="#/refund-policy" className="hover:text-white transition-colors">Refund Policy</a>
+            <a href="#/disclaimer" className="hover:text-white transition-colors">Disclaimer</a>
           </div>
 
           {/* Copyright */}

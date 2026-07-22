@@ -18,9 +18,13 @@ const PaymentFailed = React.lazy(() => import('@/components/sections/PaymentFail
 const AboutUs = React.lazy(() => import('@/components/sections/AboutUs'));
 const ContactUs = React.lazy(() => import('@/components/sections/ContactUs'));
 const AdminPanel = React.lazy(() => import('@/components/sections/AdminPanel'));
+const PrivacyPolicy = React.lazy(() => import('@/components/sections/PrivacyPolicy'));
+const TermsAndConditions = React.lazy(() => import('@/components/sections/TermsAndConditions'));
+const RefundPolicy = React.lazy(() => import('@/components/sections/RefundPolicy'));
+const DisclaimerPage = React.lazy(() => import('@/components/sections/DisclaimerPage'));
 
 export default function App() {
-  const [currentView, setCurrentView] = useState<'landing' | 'courses' | 'details' | 'collaboration' | 'join' | 'reviews' | 'checkout' | 'payment-status' | 'payment-success' | 'payment-failed' | 'about-us' | 'contact-us' | 'admin-panel'>('landing');
+  const [currentView, setCurrentView] = useState<'landing' | 'courses' | 'details' | 'collaboration' | 'join' | 'reviews' | 'checkout' | 'payment-status' | 'payment-success' | 'payment-failed' | 'about-us' | 'contact-us' | 'admin-panel' | 'privacy-policy' | 'terms-and-conditions' | 'refund-policy' | 'disclaimer'>('landing');
   const [activeCourseId, setActiveCourseId] = useState<string>('');
 
   useEffect(() => {
@@ -49,6 +53,18 @@ export default function App() {
         window.scrollTo(0, 0);
       } else if (hash === '#/admin-panel') {
         setCurrentView('admin-panel');
+        window.scrollTo(0, 0);
+      } else if (hash === '#/privacy-policy') {
+        setCurrentView('privacy-policy');
+        window.scrollTo(0, 0);
+      } else if (hash === '#/terms-and-conditions') {
+        setCurrentView('terms-and-conditions');
+        window.scrollTo(0, 0);
+      } else if (hash === '#/refund-policy') {
+        setCurrentView('refund-policy');
+        window.scrollTo(0, 0);
+      } else if (hash === '#/disclaimer') {
+        setCurrentView('disclaimer');
         window.scrollTo(0, 0);
       } else if (hash.startsWith('#/checkout/')) {
         const id = hash.substring('#/checkout/'.length).split('?')[0]; // strip query parameters
@@ -138,6 +154,26 @@ export default function App() {
         {currentView === 'admin-panel' && (
           <Suspense fallback={<div className="w-full min-h-[60vh] bg-brand-bg-dark flex items-center justify-center text-slate-800">Loading Admin Dashboard...</div>}>
             <AdminPanel />
+          </Suspense>
+        )}
+        {currentView === 'privacy-policy' && (
+          <Suspense fallback={<div className="w-full min-h-[60vh] bg-brand-bg-dark flex items-center justify-center text-slate-800">Loading Privacy Policy...</div>}>
+            <PrivacyPolicy />
+          </Suspense>
+        )}
+        {currentView === 'terms-and-conditions' && (
+          <Suspense fallback={<div className="w-full min-h-[60vh] bg-brand-bg-dark flex items-center justify-center text-slate-800">Loading Terms & Conditions...</div>}>
+            <TermsAndConditions />
+          </Suspense>
+        )}
+        {currentView === 'refund-policy' && (
+          <Suspense fallback={<div className="w-full min-h-[60vh] bg-brand-bg-dark flex items-center justify-center text-slate-800">Loading Refund Policy...</div>}>
+            <RefundPolicy />
+          </Suspense>
+        )}
+        {currentView === 'disclaimer' && (
+          <Suspense fallback={<div className="w-full min-h-[60vh] bg-brand-bg-dark flex items-center justify-center text-slate-800">Loading Disclaimer...</div>}>
+            <DisclaimerPage />
           </Suspense>
         )}
         {currentView === 'courses' && (
