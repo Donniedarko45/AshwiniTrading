@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, FormEvent } from 'react';
 import { useLeadForm } from '@/hooks/useLeadForm';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, CheckCircle2, Loader2, Check, ChevronDown } from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
+import { SecurityCaptcha } from '@/components/ui/SecurityCaptcha';
+import { ArrowRight, CheckCircle2, Loader2, Check } from 'lucide-react';
+import { motion } from 'motion/react';
 
 export interface LeadFormProps {
   layout?: 'card' | 'bar' | 'flat';
@@ -26,10 +27,7 @@ export function LeadForm({
     isSuccess,
     setIsSuccess,
     handleChange,
-    handleRoleChange,
-    handleLearningGoalChange,
-    handleLearningModeChange,
-    handleSubmit
+    handleSubmit: submitHook
   } = useLeadForm({
     initialRole: 'Student',
     initialLearningGoal: 'Basics of Financial Markets',
@@ -41,8 +39,22 @@ export function LeadForm({
 
   const isLight = theme === 'light';
 
-  // State to manage input focus for floating glow effect
+  // State to manage input focus
   const [focusedField, setFocusedField] = useState<string | null>(null);
+
+  // Security Captcha State
+  const [isCaptchaVerified, setIsCaptchaVerified] = useState(false);
+  const [captchaError, setCaptchaError] = useState<string | null>(null);
+
+  const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!isCaptchaVerified) {
+      setCaptchaError('Please type the correct captcha code.');
+      return;
+    }
+    setCaptchaError(null);
+    submitHook(e);
+  };
 
   if (isSuccess) {
     return (
@@ -55,7 +67,6 @@ export function LeadForm({
             : 'glass-card-premium'
         }`}
       >
-        {/* Decorative Glow inside card */}
         <div className={`absolute -top-32 -right-32 w-64 h-64 blur-[80px] rounded-full pointer-events-none ${isLight ? 'bg-brand-primary/10' : 'bg-brand-primary/20'}`} />
         
         <div className="relative z-10 flex flex-col items-center justify-center">
@@ -67,7 +78,9 @@ export function LeadForm({
             Thank you! Our academic counsellor will be in touch with you shortly to guide you.
           </p>
           <Button
-            onClick={() => setIsSuccess(false)}
+            onClick={() => {
+              setIsSuccess(false);
+            }}
             className={`rounded-xl px-6 h-12 transition-all duration-300 font-bold cursor-pointer ${
               isLight
                 ? 'bg-brand-navy hover:bg-slate-900 text-white border-0'
@@ -82,190 +95,101 @@ export function LeadForm({
   }
 
   const formContent = (
-    <form onSubmit={handleSubmit} className="space-y-4 relative z-10 text-left">
-      
+    <form onSubmit={handleFormSubmit} className="space-y-4 relative z-10 text-left">
       {/* Form Header */}
       <div className="mb-4 text-center sm:text-left">
         <h3 className={`font-serif text-xl sm:text-2xl font-medium mb-1.5 leading-tight tracking-tight ${isLight ? 'text-brand-navy' : 'text-white'}`}>
           Start Your Learning Journey
         </h3>
         <p className={`text-xs leading-relaxed ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
-          Fill in your details and our academic counsellor will help you choose the right learning program.
+          Fill in your details below to book your free demo class.
         </p>
       </div>
 
       <div className="space-y-3.5">
-        {/* Name and Email Row */}
-        <div className="grid sm:grid-cols-2 gap-3.5">
-          {/* Full Name */}
-          <div className="space-y-1 group">
-            <label htmlFor="name-card" className={`text-xs font-semibold pl-1 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
-              Full Name *
-            </label>
-            <div className={`relative transition-all duration-300 rounded-xl border ${isLight ? 'bg-slate-50' : 'bg-white/5'} ${focusedField === 'name' ? 'border-brand-primary shadow-[0_0_12px_rgba(201,162,39,0.12)]' : isLight ? 'border-slate-200 hover:border-slate-300' : 'border-white/10 hover:border-white/20'}`}>
-              <Input
-                id="name-card"
-                name="name"
-                type="text"
-                autoComplete="name"
-                placeholder="Enter full name"
-                value={formData.name}
-                onChange={handleChange}
-                onFocus={() => setFocusedField('name')}
-                onBlur={() => setFocusedField(null)}
-                aria-invalid={!!errors.name}
-                className={`h-12 text-[14px] font-semibold rounded-xl bg-transparent border-0 shadow-none focus-visible:ring-0 px-3.5 ${isLight ? 'text-brand-navy placeholder:text-slate-400 font-bold' : 'text-white placeholder:text-slate-500'}`}
-              />
-            </div>
-            {errors.name && <span className="text-[11px] text-brand-error pl-1">{errors.name}</span>}
-          </div>
-
-          {/* Email Address */}
-          <div className="space-y-1 group">
-            <label htmlFor="email-card" className={`text-xs font-semibold pl-1 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
-              Email Address *
-            </label>
-            <div className={`relative transition-all duration-300 rounded-xl border ${isLight ? 'bg-slate-50' : 'bg-white/5'} ${focusedField === 'email' ? 'border-brand-primary shadow-[0_0_12px_rgba(201,162,39,0.12)]' : isLight ? 'border-slate-200 hover:border-slate-300' : 'border-white/10 hover:border-white/20'}`}>
-              <Input
-                id="email-card"
-                name="email"
-                type="email"
-                placeholder="name@example.com"
-                value={formData.email}
-                onChange={handleChange}
-                onFocus={() => setFocusedField('email')}
-                onBlur={() => setFocusedField(null)}
-                aria-invalid={!!errors.email}
-                className={`h-12 text-[14px] font-semibold rounded-xl bg-transparent border-0 shadow-none focus-visible:ring-0 px-3.5 ${isLight ? 'text-brand-navy placeholder:text-slate-400 font-bold' : 'text-white placeholder:text-slate-500'}`}
-              />
-            </div>
-            {errors.email && <span className="text-[11px] text-brand-error pl-1">{errors.email}</span>}
-          </div>
-        </div>
-
-        {/* Mobile and City Row */}
-        <div className="grid sm:grid-cols-2 gap-3.5">
-          {/* Mobile Number */}
-          <div className="space-y-1 group">
-            <label htmlFor="phone-card" className={`text-xs font-semibold pl-1 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
-              Mobile Number *
-            </label>
-            <div className={`flex relative transition-all duration-300 rounded-xl border ${isLight ? 'bg-slate-50' : 'bg-white/5'} ${focusedField === 'phone' ? 'border-brand-primary shadow-[0_0_12px_rgba(201,162,39,0.12)]' : isLight ? 'border-slate-200 hover:border-slate-300' : 'border-white/10 hover:border-white/20'}`}>
-              <div className={`flex items-center justify-center pl-3 pr-2.5 border-r select-none ${isLight ? 'border-slate-200' : 'border-white/10'}`}>
-                <span className="text-base mr-1.5">🇮🇳</span>
-                <span className={`font-bold text-[14px] ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>+91</span>
-              </div>
-              <Input
-                id="phone-card"
-                name="phone"
-                type="tel"
-                inputMode="numeric"
-                autoComplete="tel"
-                placeholder="10-digit number"
-                value={formData.phone}
-                onChange={handleChange}
-                onFocus={() => setFocusedField('phone')}
-                onBlur={() => setFocusedField(null)}
-                aria-invalid={!!errors.phone}
-                className={`h-12 flex-1 text-[14px] font-semibold rounded-r-xl bg-transparent border-0 shadow-none focus-visible:ring-0 px-3.5 ${isLight ? 'text-brand-navy placeholder:text-slate-400 font-bold' : 'text-white placeholder:text-slate-500'}`}
-              />
-            </div>
-            {errors.phone && <span className="text-[11px] text-brand-error pl-1">{errors.phone}</span>}
-          </div>
-
-          {/* City */}
-          <div className="space-y-1 group">
-            <label htmlFor="city-card" className={`text-xs font-semibold pl-1 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
-              City *
-            </label>
-            <div className={`relative transition-all duration-300 rounded-xl border ${isLight ? 'bg-slate-50' : 'bg-white/5'} ${focusedField === 'city' ? 'border-brand-primary shadow-[0_0_12px_rgba(201,162,39,0.12)]' : isLight ? 'border-slate-200 hover:border-slate-300' : 'border-white/10 hover:border-white/20'}`}>
-              <Input
-                id="city-card"
-                name="city"
-                type="text"
-                placeholder="e.g. Bengaluru"
-                value={formData.city}
-                onChange={handleChange}
-                onFocus={() => setFocusedField('city')}
-                onBlur={() => setFocusedField(null)}
-                aria-invalid={!!errors.city}
-                className={`h-12 text-[14px] font-semibold rounded-xl bg-transparent border-0 shadow-none focus-visible:ring-0 px-3.5 ${isLight ? 'text-brand-navy placeholder:text-slate-400 font-bold' : 'text-white placeholder:text-slate-500'}`}
-              />
-            </div>
-            {errors.city && <span className="text-[11px] text-brand-error pl-1">{errors.city}</span>}
-          </div>
-        </div>
-
-        {/* Preferred Learning Mode — Segmented Control */}
-        <div className="space-y-1">
-          <label className={`text-xs font-semibold pl-1 block ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
-            Preferred Learning Mode
-          </label>
-          <div className={`flex p-1 rounded-xl border relative ${isLight ? 'bg-slate-100 border-slate-200' : 'bg-white/5 border-white/10'}`}>
-            {(['Online', 'Classroom', 'Hybrid'] as const).map((mode) => (
-              <button
-                key={mode}
-                type="button"
-                onClick={() => handleLearningModeChange(mode)}
-                className={`flex-1 h-10 text-xs font-bold rounded-lg transition-all duration-300 z-10 ${
-                  formData.learningMode === mode
-                    ? 'bg-white text-brand-navy shadow-sm'
-                    : (isLight ? 'text-slate-500 hover:text-brand-navy font-semibold' : 'text-slate-400 hover:text-white')
-                }`}
-              >
-                {mode}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Course Interested In Dropdown */}
+        {/* Full Name */}
         <div className="space-y-1 group">
-          <label htmlFor="learning-goal-card" className={`text-xs font-semibold pl-1 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
-            Course Interested In
+          <label htmlFor="name-card" className={`text-xs font-semibold pl-1 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+            Full Name *
           </label>
-          <div className={`relative transition-all duration-300 rounded-xl border ${isLight ? 'bg-slate-50' : 'bg-white/5'} ${focusedField === 'goal' ? 'border-brand-primary shadow-[0_0_12px_rgba(201,162,39,0.12)]' : isLight ? 'border-slate-200 hover:border-slate-300' : 'border-white/10 hover:border-white/20'}`}>
-            <select
-              id="learning-goal-card"
-              name="learningGoal"
-              value={formData.learningGoal}
+          <div className={`relative transition-all duration-300 rounded-xl border ${isLight ? 'bg-slate-50' : 'bg-white/5'} ${focusedField === 'name' ? 'border-brand-primary shadow-[0_0_12px_rgba(201,162,39,0.12)]' : isLight ? 'border-slate-200 hover:border-slate-300' : 'border-white/10 hover:border-white/20'}`}>
+            <Input
+              id="name-card"
+              name="name"
+              type="text"
+              autoComplete="name"
+              placeholder="Enter full name"
+              value={formData.name}
               onChange={handleChange}
-              onFocus={() => setFocusedField('goal')}
+              onFocus={() => setFocusedField('name')}
               onBlur={() => setFocusedField(null)}
-              className={`w-full appearance-none h-12 rounded-xl bg-transparent border-0 px-3.5 text-[14px] font-semibold focus:outline-none focus:ring-0 cursor-pointer ${isLight ? 'text-brand-navy font-bold' : 'text-white'}`}
-            >
-              <option value="Basics of Financial Markets" className={isLight ? 'bg-white text-brand-navy font-bold' : 'bg-slate-800 text-white'}>Basics of Financial Markets</option>
-              <option value="Fundamental Analysis" className={isLight ? 'bg-white text-brand-navy font-bold' : 'bg-slate-800 text-white'}>Fundamental Analysis</option>
-              <option value="Technical Analysis" className={isLight ? 'bg-white text-brand-navy font-bold' : 'bg-slate-800 text-white'}>Technical Analysis</option>
-              <option value="Futures & Options" className={isLight ? 'bg-white text-brand-navy font-bold' : 'bg-slate-800 text-white'}>Futures & Options</option>
-              <option value="Complete Stock Market Program" className={isLight ? 'bg-white text-brand-navy font-bold' : 'bg-slate-800 text-white'}>Complete Stock Market Program</option>
-              <option value="AI for Financial Markets" className={isLight ? 'bg-white text-brand-navy font-bold' : 'bg-slate-800 text-white'}>AI for Financial Markets</option>
-            </select>
-            <div className={`pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 ${isLight ? 'text-slate-400' : 'text-slate-400'}`}>
-              <ChevronDown className="w-4 h-4" />
-            </div>
-          </div>
-        </div>
-
-        {/* Message (Optional) */}
-        <div className="space-y-1 group">
-          <label htmlFor="message-card" className={`text-xs font-semibold pl-1 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
-            Message (Optional)
-          </label>
-          <div className={`relative transition-all duration-300 rounded-xl border ${isLight ? 'bg-slate-50' : 'bg-white/5'} ${focusedField === 'message' ? 'border-brand-primary shadow-[0_0_12px_rgba(201,162,39,0.12)]' : isLight ? 'border-slate-200 hover:border-slate-300' : 'border-white/10 hover:border-white/20'}`}>
-            <textarea
-              id="message-card"
-              name="message"
-              rows={2}
-              placeholder="Any details or questions..."
-              value={formData.message}
-              onChange={handleChange}
-              onFocus={() => setFocusedField('message')}
-              onBlur={() => setFocusedField(null)}
-              className={`w-full text-[14px] font-semibold rounded-xl bg-transparent border-0 focus:outline-none p-3 ${isLight ? 'text-brand-navy placeholder:text-slate-400 font-bold' : 'text-white placeholder:text-slate-500'}`}
+              aria-invalid={!!errors.name}
+              className={`h-12 text-[14px] font-semibold rounded-xl bg-transparent border-0 shadow-none focus-visible:ring-0 px-3.5 ${isLight ? 'text-brand-navy placeholder:text-slate-400 font-bold' : 'text-white placeholder:text-slate-500'}`}
             />
           </div>
+          {errors.name && <span className="text-[11px] text-brand-error pl-1">{errors.name}</span>}
         </div>
+
+        {/* Email Address */}
+        <div className="space-y-1 group">
+          <label htmlFor="email-card" className={`text-xs font-semibold pl-1 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+            Email Address *
+          </label>
+          <div className={`relative transition-all duration-300 rounded-xl border ${isLight ? 'bg-slate-50' : 'bg-white/5'} ${focusedField === 'email' ? 'border-brand-primary shadow-[0_0_12px_rgba(201,162,39,0.12)]' : isLight ? 'border-slate-200 hover:border-slate-300' : 'border-white/10 hover:border-white/20'}`}>
+            <Input
+              id="email-card"
+              name="email"
+              type="email"
+              placeholder="name@example.com"
+              value={formData.email}
+              onChange={handleChange}
+              onFocus={() => setFocusedField('email')}
+              onBlur={() => setFocusedField(null)}
+              aria-invalid={!!errors.email}
+              className={`h-12 text-[14px] font-semibold rounded-xl bg-transparent border-0 shadow-none focus-visible:ring-0 px-3.5 ${isLight ? 'text-brand-navy placeholder:text-slate-400 font-bold' : 'text-white placeholder:text-slate-500'}`}
+            />
+          </div>
+          {errors.email && <span className="text-[11px] text-brand-error pl-1">{errors.email}</span>}
+        </div>
+
+        {/* Mobile Number */}
+        <div className="space-y-1 group">
+          <label htmlFor="phone-card" className={`text-xs font-semibold pl-1 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+            Mobile Number *
+          </label>
+          <div className={`flex relative transition-all duration-300 rounded-xl border ${isLight ? 'bg-slate-50' : 'bg-white/5'} ${focusedField === 'phone' ? 'border-brand-primary shadow-[0_0_12px_rgba(201,162,39,0.12)]' : isLight ? 'border-slate-200 hover:border-slate-300' : 'border-white/10 hover:border-white/20'}`}>
+            <div className={`flex items-center justify-center pl-3 pr-2.5 border-r select-none ${isLight ? 'border-slate-200' : 'border-white/10'}`}>
+              <span className="text-base mr-1.5">🇮🇳</span>
+              <span className={`font-bold text-[14px] ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>+91</span>
+            </div>
+            <Input
+              id="phone-card"
+              name="phone"
+              type="tel"
+              inputMode="numeric"
+              autoComplete="tel"
+              placeholder="10-digit number"
+              value={formData.phone}
+              onChange={handleChange}
+              onFocus={() => setFocusedField('phone')}
+              onBlur={() => setFocusedField(null)}
+              aria-invalid={!!errors.phone}
+              className={`h-12 flex-1 text-[14px] font-semibold rounded-r-xl bg-transparent border-0 shadow-none focus-visible:ring-0 px-3.5 ${isLight ? 'text-brand-navy placeholder:text-slate-400 font-bold' : 'text-white placeholder:text-slate-500'}`}
+            />
+          </div>
+          {errors.phone && <span className="text-[11px] text-brand-error pl-1">{errors.phone}</span>}
+        </div>
+
+        {/* Security Captcha Canvas */}
+        <SecurityCaptcha
+          idPrefix="card"
+          theme={theme}
+          error={captchaError}
+          onVerify={(valid) => {
+            setIsCaptchaVerified(valid);
+            if (valid && captchaError) setCaptchaError(null);
+          }}
+        />
       </div>
 
       {/* Submit Button */}
@@ -291,7 +215,7 @@ export function LeadForm({
         </motion.button>
       </div>
 
-      {/* Below Form Trust Points */}
+      {/* Trust Points */}
       <div className={`pt-4 mt-2 border-t border-dashed space-y-3 ${isLight ? 'border-slate-200' : 'border-white/10'}`}>
         {[
           'Free Academic Counselling',
@@ -313,7 +237,6 @@ export function LeadForm({
 
   return (
     <div className={`rounded-3xl p-8 sm:p-10 relative overflow-hidden ${isLight ? 'bg-white shadow-[0_32px_64px_-16px_rgb(15,23,42,0.1)] border border-slate-200/50' : 'glass-card-premium'}`}>
-      {/* Decorative Glow inside card */}
       <div className={`absolute -top-32 -right-32 w-64 h-64 blur-[80px] rounded-full pointer-events-none ${isLight ? 'bg-brand-primary/10' : 'bg-brand-primary/20'}`} />
       {formContent}
     </div>

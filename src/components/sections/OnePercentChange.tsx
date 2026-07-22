@@ -53,19 +53,6 @@ export default function OnePercentChange() {
 
       <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         
-        {/* Back Button */}
-        <div className="flex justify-start mb-8">
-          <a href="#">
-            <motion.button
-              whileHover={{ x: -4 }}
-              className="inline-flex items-center gap-2 text-slate-300 hover:text-white font-bold text-sm bg-white/5 hover:bg-white/10 px-5 py-3 rounded-xl border border-white/10 cursor-pointer transition-colors backdrop-blur-md"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              Back to Home
-            </motion.button>
-          </a>
-        </div>
-
         {/* Hero Section */}
         <motion.div 
           initial="hidden"
@@ -92,15 +79,16 @@ export default function OnePercentChange() {
           </p>
 
           <div className="flex flex-wrap gap-4 justify-center mt-10">
-            <a href="#impact-calculator">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-gradient-to-r from-brand-primary-grad-start to-brand-primary-grad-end text-white text-base font-bold uppercase tracking-wider rounded-xl border-0 shadow-lg shadow-brand-primary/20 cursor-pointer"
-              >
-                See the Impact
-              </motion.button>
-            </a>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => {
+                document.getElementById('impact-calculator')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="px-8 py-4 bg-gradient-to-r from-brand-primary-grad-start to-brand-primary-grad-end text-white text-base font-bold uppercase tracking-wider rounded-xl border-0 shadow-lg shadow-brand-primary/20 cursor-pointer"
+            >
+              See the Impact
+            </motion.button>
             <a href="tel:+919845961990">
               <motion.button
                 whileHover={{ scale: 1.05 }}

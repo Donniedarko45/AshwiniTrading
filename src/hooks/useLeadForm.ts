@@ -71,10 +71,7 @@ export function useLeadForm({
       tempErrors.email = 'Please enter a valid email';
     }
 
-    if (!formData.city.trim()) {
-      tempErrors.city = 'City is required';
-    }
-
+    // City optional for low-friction lead submission
     setErrors(tempErrors);
     return Object.keys(tempErrors).length === 0;
   };

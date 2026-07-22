@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { fadeIn } from '@/lib/animations';
 import { workshopCourses, WorkshopCourse } from '@/data/curriculum';
 import { Button } from '@/components/ui/button';
+import { QuickLeadForm } from '@/components/shared/QuickLeadForm';
 
 export default function CourseDetails() {
   const [course, setCourse] = useState<WorkshopCourse | null>(null);
@@ -119,21 +120,36 @@ export default function CourseDetails() {
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4">
-            <a href={`#/checkout/${course.id}`}>
-              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                <Button size="lg" className="font-extrabold text-[15px] tracking-wide uppercase cursor-pointer">
-                  🟢 Enroll Now
-                </Button>
-              </motion.div>
-            </a>
-            <a href="#/join-us">
-              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                <Button variant="light-outline" size="lg" className="font-extrabold text-[15px] tracking-wide uppercase cursor-pointer border-brand-primary text-brand-primary hover:bg-brand-primary/10 hover:border-brand-primary hover:text-brand-primary">
-                  🔵 Book a Free Demo Class
-                </Button>
-              </motion.div>
-            </a>
+          <div className="flex flex-col sm:flex-row gap-4 mb-8">
+            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+              <Button 
+                size="lg" 
+                onClick={() => document.querySelector('form')?.scrollIntoView({ behavior: 'smooth' })}
+                className="font-extrabold text-[15px] tracking-wide uppercase cursor-pointer"
+              >
+                🟢 Enroll Now
+              </Button>
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+              <Button 
+                variant="light-outline" 
+                size="lg" 
+                onClick={() => document.querySelector('form')?.scrollIntoView({ behavior: 'smooth' })}
+                className="font-extrabold text-[15px] tracking-wide uppercase cursor-pointer border-brand-primary text-brand-primary hover:bg-brand-primary/10 hover:border-brand-primary hover:text-brand-primary"
+              >
+                🔵 Book a Free Demo Class
+              </Button>
+            </motion.div>
+          </div>
+
+          {/* Low-Friction Lead Form */}
+          <div className="mt-8">
+            <QuickLeadForm 
+              title={`Interested in ${course.title}?`}
+              subtitle="Fill in your details below and our academic counsellor will reach out with complete course syllabus & details."
+              buttonText="Book Free Demo Class"
+              interestedCourse={course.title}
+            />
           </div>
         </motion.div>
 
@@ -419,20 +435,25 @@ export default function CourseDetails() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center relative z-10">
-            <a href={`#/checkout/${course.id}`} className="w-full sm:w-auto">
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
-                <Button size="lg" className="w-full font-extrabold text-[15px] tracking-wide uppercase cursor-pointer">
-                  🟢 Enroll Now
-                </Button>
-              </motion.div>
-            </a>
-            <a href="#/join-us" className="w-full sm:w-auto">
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
-                <Button variant="outline" size="lg" className="w-full font-extrabold text-[15px] tracking-wide uppercase cursor-pointer">
-                  🔵 Book a Free Demo Class
-                </Button>
-              </motion.div>
-            </a>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
+              <Button 
+                size="lg" 
+                onClick={() => document.querySelector('form')?.scrollIntoView({ behavior: 'smooth' })}
+                className="w-full font-extrabold text-[15px] tracking-wide uppercase cursor-pointer"
+              >
+                🟢 Enroll Now
+              </Button>
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
+              <Button 
+                variant="outline" 
+                size="lg" 
+                onClick={() => document.querySelector('form')?.scrollIntoView({ behavior: 'smooth' })}
+                className="w-full font-extrabold text-[15px] tracking-wide uppercase cursor-pointer"
+              >
+                🔵 Book a Free Demo Class
+              </Button>
+            </motion.div>
             <a 
               href={`https://wa.me/918861756040?text=Hi%2C%20I%20want%20to%20enroll%20in%20${encodeURIComponent(course.title)}.`}
               target="_blank" 

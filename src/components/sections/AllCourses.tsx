@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { staggerContainer, scaleUp, fadeIn } from '@/lib/animations';
 import { coursesData } from '@/data/courses';
+import { QuickLeadForm } from '@/components/shared/QuickLeadForm';
 
 const themeStyles = {
   blue: {
@@ -65,21 +66,6 @@ export default function AllCourses() {
   return (
     <section className="py-24 px-5 sm:px-6 md:px-12 bg-white text-center">
       <div className="max-w-7xl mx-auto">
-        {/* Back Button */}
-        <div className="flex justify-start mb-8">
-          <a href="#">
-            <motion.button
-              whileHover={{ x: -4 }}
-              className="inline-flex items-center gap-2 text-slate-600 hover:text-brand-navy font-bold text-sm bg-slate-100/50 hover:bg-slate-100 px-5 py-3 rounded-xl border border-slate-200/80 cursor-pointer transition-colors backdrop-blur-md"
-            >
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-              </svg>
-              Back to Home
-            </motion.button>
-          </a>
-        </div>
-
         {/* Hero Header */}
         <motion.div 
           initial="hidden"
@@ -87,24 +73,32 @@ export default function AllCourses() {
           variants={fadeIn}
           className="mb-12"
         >
-          <div className="text-brand-primary font-extrabold text-sm tracking-widest uppercase mb-4">OUR COURSES</div>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-brand-navy tracking-tight mb-6 max-w-4xl mx-auto leading-tight">
+          <h1 className="text-brand-primary font-extrabold text-sm sm:text-base tracking-widest uppercase mb-4">OUR COURSES</h1>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-brand-navy tracking-tight mb-6 max-w-4xl mx-auto leading-tight">
             Learn Today. <span className="text-brand-primary">Invest Smarter Tomorrow.</span>
-          </h1>
+          </h2>
           <p className="text-slate-600 text-lg sm:text-xl font-medium max-w-3xl mx-auto leading-relaxed mb-8">
             Whether you're taking your first step into the financial markets or looking to advance your knowledge, our carefully designed programs provide structured learning for beginners, investors, traders, and finance professionals. Choose the course that matches your goals and start your learning journey with confidence.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#course-grid">
-              <motion.button whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="px-8 py-4 bg-brand-navy text-white font-bold text-sm uppercase tracking-wider rounded-xl shadow-md hover:bg-slate-900 transition-colors cursor-pointer">
-                🟢 Explore Our Courses
-              </motion.button>
-            </a>
-            <a href="#/join-us">
-              <motion.button whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="px-8 py-4 bg-white border-2 border-brand-navy text-brand-navy font-bold text-sm uppercase tracking-wider rounded-xl shadow-sm hover:bg-slate-50 transition-colors cursor-pointer">
-                🔵 Book a Free Demo Class
-              </motion.button>
-            </a>
+            <motion.button 
+              whileHover={{ scale: 1.02 }} 
+              whileTap={{ scale: 0.98 }} 
+              onClick={() => {
+                document.getElementById('course-grid')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="px-8 py-4 bg-brand-navy text-white font-bold text-sm uppercase tracking-wider rounded-xl shadow-md hover:bg-slate-900 transition-colors cursor-pointer"
+            >
+              🟢 Explore Our Courses
+            </motion.button>
+            <motion.button 
+              whileHover={{ scale: 1.02 }} 
+              whileTap={{ scale: 0.98 }} 
+              onClick={() => document.querySelector('form')?.scrollIntoView({ behavior: 'smooth' })}
+              className="px-8 py-4 bg-white border-2 border-brand-navy text-brand-navy font-bold text-sm uppercase tracking-wider rounded-xl shadow-sm hover:bg-slate-50 transition-colors cursor-pointer"
+            >
+              🔵 Book a Free Demo Class
+            </motion.button>
           </div>
         </motion.div>
 
@@ -113,25 +107,36 @@ export default function AllCourses() {
           initial="hidden"
           animate="visible"
           variants={fadeIn}
-          className="mb-16 bg-slate-50 rounded-[28px] p-8 sm:p-10 border border-slate-200 text-left"
+          className="mb-16 bg-slate-50/90 rounded-[24px] sm:rounded-[28px] p-5 sm:p-8 md:p-10 border border-slate-200/80 text-left shadow-sm"
         >
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-brand-navy mb-3 text-center">Why Choose Our Programs?</h2>
-          <p className="text-slate-600 text-base font-medium max-w-2xl mx-auto text-center mb-8">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-brand-navy mb-3 text-center tracking-tight">Why Choose Our Programs?</h2>
+          <p className="text-slate-600 text-sm sm:text-base font-medium max-w-2xl mx-auto text-center mb-6 sm:mb-8 leading-relaxed">
             At Ashwini Trading Academy, we believe learning should be practical, structured, and easy to understand. Every program is designed to simplify financial concepts and help you build knowledge through real-world examples and hands-on learning.
           </p>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
             {whyChooseItems.map((item, i) => (
-              <div key={i} className="flex items-center gap-2.5 bg-white rounded-xl px-4 py-3 border border-slate-200 shadow-sm">
+              <div key={i} className="flex items-center gap-3 bg-white rounded-xl px-4 py-3.5 border border-slate-200/80 shadow-sm transition-all hover:border-brand-primary/40 hover:shadow-md">
                 <span className="flex-shrink-0 w-5 h-5 rounded-full bg-brand-success/15 text-brand-success flex items-center justify-center">
                   <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                   </svg>
                 </span>
-                <span className="text-slate-700 font-semibold text-sm">{item}</span>
+                <span className="text-slate-800 font-bold text-sm">{item}</span>
               </div>
             ))}
           </div>
-          <p className="text-slate-400 text-xs mt-4 text-center">(*Applicable for eligible programs)</p>
+          <p className="text-slate-400 text-xs mt-5 text-center font-medium">(*Applicable for eligible programs)</p>
+        </motion.div>
+
+        {/* Quick Lead Form */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeIn}
+          className="mb-16 max-w-4xl mx-auto"
+        >
+          <QuickLeadForm />
         </motion.div>
 
         {/* Section Title */}
@@ -265,15 +270,14 @@ export default function AllCourses() {
                     </motion.button>
                   </a>
 
-                  <a href={`#/checkout/${course.id}`} className="block w-full">
-                    <motion.button 
-                      whileHover={{ scale: 1.02 }} 
-                      whileTap={{ scale: 0.98 }} 
-                      className={`w-full font-bold py-4.5 rounded-xl shadow-md border-0 transition-colors flex justify-center items-center gap-2 uppercase cursor-pointer ${styles.primaryButton}`}
-                    >
-                       🔵 ENROLL NOW <span className="text-xl leading-none">→</span>
-                    </motion.button>
-                  </a>
+                  <motion.button 
+                    whileHover={{ scale: 1.02 }} 
+                    whileTap={{ scale: 0.98 }} 
+                    onClick={() => document.querySelector('form')?.scrollIntoView({ behavior: 'smooth' })}
+                    className={`w-full font-bold py-4.5 rounded-xl shadow-md border-0 transition-colors flex justify-center items-center gap-2 uppercase cursor-pointer ${styles.primaryButton}`}
+                  >
+                     🔵 ENROLL NOW <span className="text-xl leading-none">→</span>
+                  </motion.button>
                 </div>
               </motion.div>
             );
@@ -296,11 +300,14 @@ export default function AllCourses() {
             Our academic advisors are here to help you choose the program that best matches your goals, experience, and learning preferences.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
-            <a href="#/join-us">
-              <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="px-8 py-4 bg-gradient-to-r from-brand-primary-grad-start to-brand-primary-grad-end text-brand-navy font-extrabold text-sm uppercase tracking-wider rounded-xl shadow-lg cursor-pointer">
-                🟢 Book a Free Demo Class
-              </motion.button>
-            </a>
+            <motion.button 
+              whileHover={{ scale: 1.05 }} 
+              whileTap={{ scale: 0.95 }} 
+              onClick={() => document.querySelector('form')?.scrollIntoView({ behavior: 'smooth' })}
+              className="px-8 py-4 bg-gradient-to-r from-brand-primary-grad-start to-brand-primary-grad-end text-brand-navy font-extrabold text-sm uppercase tracking-wider rounded-xl shadow-lg cursor-pointer"
+            >
+              🟢 Book a Free Demo Class
+            </motion.button>
             <a href="#/contact-us">
               <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="px-8 py-4 bg-white/10 border border-white/30 text-white font-extrabold text-sm uppercase tracking-wider rounded-xl cursor-pointer hover:bg-white/20 transition-colors">
                 🔵 Talk to an Academic Advisor

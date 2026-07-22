@@ -218,19 +218,6 @@ export default function CollegeCollaboration() {
     <div className="min-h-screen bg-slate-50 text-brand-navy pt-28 pb-20 border-b border-slate-200">
       <div className="max-w-[1400px] mx-auto px-5 sm:px-6 md:px-12 relative z-10">
         
-        {/* Back Button */}
-        <div className="flex justify-start mb-8">
-          <a href="#">
-            <motion.button
-              whileHover={{ x: -4 }}
-              className="inline-flex items-center gap-2 text-slate-600 hover:text-brand-navy font-bold text-sm bg-white hover:bg-slate-100/70 px-5 py-3 rounded-xl border border-slate-200 cursor-pointer transition-colors"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              Back to Home
-            </motion.button>
-          </a>
-        </div>
-
         {/* Hero Header */}
         <motion.div 
           initial="hidden"
