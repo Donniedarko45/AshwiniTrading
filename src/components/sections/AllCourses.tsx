@@ -73,10 +73,12 @@ export default function AllCourses() {
           variants={fadeIn}
           className="mb-12"
         >
-          <h1 className="text-brand-primary font-extrabold text-sm sm:text-base tracking-widest uppercase mb-4">OUR COURSES</h1>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-brand-navy tracking-tight mb-6 max-w-4xl mx-auto leading-tight">
-            Learn Today. <span className="text-brand-primary">Invest Smarter Tomorrow.</span>
-          </h2>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-brand-navy tracking-tight mb-3 max-w-4xl mx-auto leading-tight">
+            Stock Market & Trading Courses
+          </h1>
+          <p className="text-lg sm:text-xl font-bold text-brand-primary mb-6">
+            Learn Today. Invest Smarter Tomorrow.
+          </p>
           <p className="text-slate-600 text-lg sm:text-xl font-medium max-w-3xl mx-auto leading-relaxed mb-8">
             Whether you're taking your first step into the financial markets or looking to advance your knowledge, our carefully designed programs provide structured learning for beginners, investors, traders, and finance professionals. Choose the course that matches your goals and start your learning journey with confidence.
           </p>
